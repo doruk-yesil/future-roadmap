@@ -4,16 +4,19 @@ Kariyer, eğitim ve ticaret seçenekleri için Türkçe, düzenlenebilir kişise
 
 ## Kullanım
 
-- Bir ana yol ve alt seçenek seç; ihtiyaç duyduğun kartları aç.
-- Kartların tam açıklaması, gerekenler, resmî kaynaklar ve bağlı yollar sağ panelde bulunur.
+- Dört amaçtan birini seç: İberya & markalar, Ürün ticareti, Yazılım & teknoloji kariyeri, Tarım & gıda.
+- Her seviyede en fazla dört kısa seçenek görünür. Seçeneğe tıklayınca özet ve ilk adım sağ panelde açılır.
+- Ülke filtresi seçilen amacı daraltır. Tarım deneyimi, eğitim ve pilot birbirinden bağımsız yollardır.
+- Siber güvenlik ve CS/analytics masterları teknoloji kariyerinin içindedir. Tarım/gıda eğitimi kendi alanındadır.
+- Araştırmanın tamamı, gerekenler, kaynaklar ve gerçek ilişkiler ayrı ayrı genişletilir.
 - Kartları favorile, durum seç, kendi notunu yaz ve görev listene ekle.
 - Başlık, açıklama, koşul ve kaynakları kişisel kopyanda düzenle.
-- Arama bütün kartları kapsar; kart listesi haritaya alternatif görünüm sağlar.
-- Kesik bağlantılar seçenek/içerik ilişkisi; düz bağlantılar özgün araştırmadaki adım, koşul veya geri dönüş ilişkileridir.
+- Arama bütün özgün kartları kapsar. Elediğin kartlar seçenek panelinde kapalı bir bölümde tutulur.
+- 90 günlük plan, favoriler ve görevler çalışma alanında yer alır. Eski kart bağlantıları ve kayıt kimlikleri korunur.
 
 ## Veriler ve gizlilik
 
-350 kart, 632 ilişki, 325 benzersiz kaynak URL ve 84 şirket. Çin ürün ticareti 18 Ekim 2026; diğer kariyer ve eğitim yolları 14–15 Ekim 2026 araştırmasına dayanır. Araştırma bağlantıları güncel ilan, kabul, talep veya kârlılık garantisi değildir.
+350 özgün kart, 632 ilişki, 325 benzersiz kaynak URL ve 84 şirket. Çin ürün ticareti 18 Ekim 2026; diğer kariyer ve eğitim yolları 14–15 Ekim 2026 araştırmasına dayanır. 20 Ekim 2026 düzenlemesi amaç temelli gezinme ve Türkiye/Avrupa tarım keşif kanalları ekler. Türkiye/Avrupa için kişisel uygunluğu teyit edilmiş master veya açık iş listesi sunulduğu anlamına gelmez. Araştırma bağlantıları güncel ilan, kabul, talep veya kârlılık garantisi değildir.
 
 Açık sürümde kişisel profil ayrıntıları genelleştirilmiştir. Yayımlanan dosyalarda özel tam profil ve kişisel çalışma kayıtları bulunmaz.
 
@@ -44,9 +47,10 @@ Depodaki `.github/workflows/pages.yml`, `main` dalına her değişiklikte testle
 
 ## Dosyalar
 
-- `app.js`: gezinme, arama, harita ve ayrıntı paneli
-- `graph.js`: açılır dalların yerleşimi ve ilişki yönleri
+- `app.js`: kısa kartlar, ülke filtresi, arama ve ayrıntı paneli
+- `navigation.js`: amaç / seçenek gruplaması, özetler ve özgün kartlara bağlantılar
+- `graph.js`: özgün ilişkiler, arama ve önceki harita yerleşimi yardımcıları
 - `state.js`: kalıcı kişisel kayıt ve doğrulanan yedekleme
 - `data.json`: kişisel profili genelleştirilmiş araştırma verisi
-- `styles.css`, `app.css`: masaüstü ve mobil görünüm
-- `*.test.mjs`: yerleşim, kaynak ilişki yönleri, arama ve kayıt/yedekleme kontrolleri
+- `styles.css`, `app.css`, `navigation.css`: masaüstü ve mobil görünüm
+- `tests/`: yerleşim, kaynak ilişki yönleri, arama ve kayıt/yedekleme kontrolleri
