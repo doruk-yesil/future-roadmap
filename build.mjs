@@ -1,0 +1,11 @@
+import {mkdir,copyFile,readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const root=resolve(import.meta.dirname);const out=resolve(root,'dist');
+await mkdir(out,{recursive:true});
+const files=['index.html','styles.css','app.css','app.js','graph.js','state.js','data.json','favicon.svg','.nojekyll'];
+const data=JSON.parse(await readFile(resolve(root,'data.json'),'utf8'));
+const ids=new Set(data.nodes.map(n=>n.id));
+if(ids.size!==data.nodes.length||data.edges.some(e=>!ids.has(e.source)||!ids.has(e.target)))throw Error('Geçersiz harita ilişkileri');
+for(const file of files)await copyFile(resolve(root,file),resolve(out,file));
+await writeFile(resolve(out,'build-info.json'),JSON.stringify({version:'1.0.0',nodes:data.nodes.length,relations:data.edges.length},null,2));
+console.log(`Build hazır: ${files.length+1} dosya, ${data.nodes.length} kart, ${data.edges.length} ilişki → dist/`);
