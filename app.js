@@ -85,6 +85,7 @@ function choiceCard(c){
 }
 function renderRoute(){
  const route=currentRoute(),topic=currentTopic();
+ const sequential=route.sequence&&!topic;
  const countries=[...new Set((topic?[topic]:route.topics).flatMap(t=>t.choices.flatMap(c=>c.countries)))];
  const topics=route.topics.map(t=>({...t,choices:t.choices.filter(c=>matchesCountry(c,state.country))})).filter(t=>t.choices.length);
  const choices=topic?.choices.filter(c=>matchesCountry(c,state.country))||[];
@@ -92,8 +93,8 @@ function renderRoute(){
  <section class="route-heading"><div><div class="eyebrow">${esc(route.tag)}</div><h1>${esc(topic?.title||route.name)}</h1><p>${esc(topic?.summary||route.description)}</p></div>${topic?`<a class="button quiet" href="${href(route.id)}">${icon('back')}Diğer yollar</a>`:''}</section>
  ${route.id==='agriculture'?`<div class="independent-note">${icon('info',19)}<span>Çalışmak, eğitim almak ve pilot denemek ayrı seçenekler. Birini yapmak için diğerini tamamlaman gerekmiyor.</span></div>`:''}
  ${countries.length?`<div class="country-filter" role="group" aria-label="Ülkeye göre daralt"><span>Nerede?</span>${['all',...countries].map(c=>`<button class="country-chip ${state.country===c?'active':''}" data-action="country" data-country="${c}" aria-pressed="${state.country===c}">${COUNTRIES[c]}</button>`).join('')}</div>`:''}
- <div class="section-heading compact"><h2>${topic?'Hangi seçeneği incelemek istersin?':'Ne yapmak istersin?'}</h2><span class="muted small">${topic?'Kartın ayrıntısı sağda açılır':'Önce bir amaç seç'}</span></div>
- <section class="option-grid" aria-label="${topic?'Alt seçenekler':'Amaç seçenekleri'}">${topic?choices.map(choiceCard).join(''):topics.map((t,i)=>`<a class="option-card topic-card" href="${href(route.id,t.id)}"><span class="option-number">0${i+1}</span><strong>${esc(t.title)}</strong><span class="option-summary">${esc(t.summary)}</span><span class="option-open">${t.choices.length} seçenek ${icon('arrow',17)}</span></a>`).join('')}</section>
+ <div class="section-heading compact"><h2>${sequential?'Nasıl ilerleyeceksin?':topic?'Hangi seçeneği incelemek istersin?':'Ne yapmak istersin?'}</h2><span class="muted small">${sequential?'Genel iş akışı · yukarıdan aşağıya':topic?'Kartın ayrıntısı sağda açılır':'Önce bir amaç seç'}</span></div>
+ ${sequential?`<p class="flow-note">Ürün uygunluğu ve maliyet kontrolüne ilk aşamada başla; siparişten önce tamamla. <a href="${href(route.id,'sell')}">İlgili kontrolleri aç ${icon('arrow',13)}</a></p><ol class="sequence-list" aria-label="Ürün ticareti adımları">${topics.map(t=>`<li><a class="sequence-card" href="${href(route.id,t.id)}"><span class="step-number" aria-label="${route.topics.findIndex(x=>x.id===t.id)+1}. adım">${route.topics.findIndex(x=>x.id===t.id)+1}</span><span class="step-content"><strong>${esc(t.title)}</strong><span class="option-summary">${esc(t.summary)}</span></span><span class="step-open">${t.choices.length} seçenek ${icon('arrow',18)}</span></a></li>`).join('')}</ol>`:`<section class="option-grid" aria-label="${topic?'Alt seçenekler':'Amaç seçenekleri'}">${topic?choices.map(choiceCard).join(''):topics.map(t=>`<a class="option-card topic-card" href="${href(route.id,t.id)}"><span class="option-icon">${icon(route.icon,22)}</span><strong>${esc(t.title)}</strong><span class="option-summary">${esc(t.summary)}</span><span class="option-open">${t.choices.length} seçenek ${icon('arrow',17)}</span></a>`).join('')}</section>`}
  ${topic&&!choices.length?'<div class="empty-state"><h2>Bu yerde henüz araştırılmış seçenek yok.</h2><p>Diğer yerleri görmek için “Tüm yerler”i seç.</p></div>':''}
  ${topic?`<p class="quiet-hint">Bu seçenekler bir sıra veya zorunluluk listesi değil. Sana uygun olanı aç.</p>`:''}`;
 }
