@@ -6,6 +6,9 @@ Kariyer, eğitim ve ticaret seçenekleri için Türkçe, düzenlenebilir kişise
 
 - Dört amaçtan birini seç: İberya & markalar, Ürün ticareti, Yazılım & teknoloji kariyeri, Tarım & gıda.
 - Her seviyede en fazla dört kısa seçenek görünür. Seçeneğe tıklayınca özet ve ilk adım sağ panelde açılır.
+- Panel geniş bir okuma alanı olarak açılır. Ürün ticaretinin dokuz seçeneğinde üçer somut aşama; her aşamada araştırma soruları, gerekli temas, beklenen çıktı ve önceden okunmuş sayfa özetleri bulunur.
+- Kore / Çin güzellik ürünleri; kozmetik, profesyonel saç bakımı, elektriksiz araç ve cihaz alt yollarına ayrılır. Her alt yol ayrı üç aşamadır; ürün sınıfları birbirinin uygunluk süreci olarak sunulmaz.
+- Kaynak notları `research.json` içinde tarihli anlık araştırma olarak saklanır. Erişilemeyen sayfalar okunmuş gösterilmez; eski 350 kartın tüm kaynaklarının yeniden okunduğu iddia edilmez.
 - Ülke filtresi seçilen amacı daraltır. Tarım deneyimi, eğitim ve pilot birbirinden bağımsız yollardır.
 - Siber güvenlik ve CS/analytics masterları teknoloji kariyerinin içindedir. Tarım/gıda eğitimi kendi alanındadır.
 - Araştırmanın tamamı, gerekenler, kaynaklar ve gerçek ilişkiler ayrı ayrı genişletilir.
@@ -49,8 +52,9 @@ Depodaki `.github/workflows/pages.yml`, `main` dalına her değişiklikte testle
 
 - `app.js`: kısa kartlar, ülke filtresi, arama ve ayrıntı paneli
 - `navigation.js`: amaç / seçenek gruplaması, özetler ve özgün kartlara bağlantılar
+- `research.js`, `research.json`: eylem planları, tarihli sayfa özetleri ve kaynak eşleştirmesi
 - `graph.js`: özgün ilişkiler, arama ve önceki harita yerleşimi yardımcıları
 - `state.js`: kalıcı kişisel kayıt ve doğrulanan yedekleme
 - `data.json`: kişisel profili genelleştirilmiş araştırma verisi
-- `styles.css`, `app.css`, `navigation.css`: masaüstü ve mobil görünüm
+- `styles.css`, `app.css`, `navigation.css`, `reading.css`: masaüstü, mobil ve geniş okuma paneli
 - `tests/`: yerleşim, kaynak ilişki yönleri, arama ve kayıt/yedekleme kontrolleri

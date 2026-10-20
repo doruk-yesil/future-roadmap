@@ -1,0 +1,965 @@
+{
+  "checkedAt": "2026-10-20",
+  "scope": "Ürün ticaretinin 9 seçeneği için 2–3 adımlık çalışma önerileri ve Kore/Çin güzellik ürünlerinin 4 alt yolu. Bu paket 30 okunmuş kaynak kaydını ve 5 erişilemeyen sayfayı açıkça ayırır; aynı resmî ithalat sayfası iki araştırmada ayrı ID ile bulunur. Kontrol tarihi anlık araştırma kaydıdır; eski 350 kartın bütün bağlantılarının yeniden okunduğu veya canlı izleme yapıldığı iddia edilmez. Firmalara mesaj gönderilmedi.",
+  "sources": [
+    {
+      "id": "trade-market-report",
+      "title": "Ticaret Bakanlığı — Türkiye’de E-Ticaretin Görünümü 2025",
+      "url": "https://icticaret.ticaret.gov.tr/haberler/turkiyede-e-ticaretin-gorunumu-raporu-2025-yayinlandi",
+      "summary": "Bakanlığın 14 Mayıs 2026 duyurusu, 2025 e-ticaret hacmini ve sektör dağılımlarını açıklıyor; elektronik ile ev/bahçe/dekorasyon da izlenen sektörler arasında. Bu toplamlar pazarın genel resmini verir, tek bir ürünün satılacağını veya kârlı olacağını kanıtlamaz.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Sayfadaki Ticaret Bakanlığı kurumsal iletişim menüsü; ürün alıcısı veya talep garantisi değildir."
+    },
+    {
+      "id": "trade-alibaba-guide",
+      "title": "Alibaba.com — Resmî satın alma ve tedarik rehberi",
+      "url": "https://seller.alibaba.com/businessblogs/how-to-buy-and-source-from-alibaba-px65f6s8?lang=en",
+      "summary": "Resmî 2020 rehberi ürün arama veya RFQ, tedarikçi karşılaştırması ve numune için Contact Supplier / Chat Now kanallarını anlatıyor. Verified Supplier ile Trade Assurance farklı anlamlar taşır; platform dışına çıkan işlem rehbere göre Trade Assurance kapsamından çıkar, güncel sipariş şartları ayrıca okunmalıdır.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "İlgili tedarikçi profilindeki Contact Supplier / Chat Now; RFQ formu: https://rfq.alibaba.com/ (form ayrıca okunmadı)."
+    },
+    {
+      "id": "trade-hktdc-sourcing",
+      "title": "HKTDC — Çevrim içi tedarik ve görüşme araçları",
+      "url": "https://sourcing.hktdc.com/newsbites/tips/hktdc-sourcing/",
+      "summary": "HKTDC, ürün/tedarikçi arama, ilk çevrim içi görüşmeler ve fiziksel fuarda devam edilecek firma listesi oluşturma araçlarını açıklıyor. Sertifika ve üçüncü taraf doğrulama bilgileri araştırmaya yardımcıdır; Türkiye’deki ürün uygunluğu ayrıca değerlendirilmelidir.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Sayfadaki kayıt ve customer support bağlantıları; tedarikçi görüşmeleri platform üzerinden yapılabilir."
+    },
+    {
+      "id": "trade-hktdc-register",
+      "title": "HKTDC — Fuara alıcı kaydı ve iş eşleştirmesi",
+      "url": "https://eplussupport.hktdc.com/hc/en-us/articles/15598277152793-How-do-I-register-as-a-buyer-for-the-fair",
+      "summary": "Kılavuz alıcı kaydında kişisel/şirket bilgileri ve iş eşleştirme kategorileri seçilmesini anlatıyor. Fiziksel fuar, Click2Match ve çevrim içi tedarik tarihleri Fair at a Glance bölümünden ayrı ayrı kontrol edilebilir.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "İlgili fuarın To Visit / Buyer Online Registration ve business matching kanalı."
+    },
+    {
+      "id": "trade-canton-platform",
+      "title": "Canton Fair — Resmî çevrim içi platform ve eşleştirme açıklaması",
+      "url": "https://cmsfile.cantonfair.org.cn/fileserver/cms/2025-05/202505090958275827604.pdf",
+      "summary": "2025 tarihli resmî doküman, Canton Fair platformunda yıl boyunca ürün/katılımcı arama, mesajlaşma ve alıcı-tedarikçi eşleştirmesi bulunduğunu açıklıyor. Bu doküman güncel seyahat takvimi değildir; ürün fazı, sonraki etkinlik tarihi ve alıcı kaydı ana siteden ayrıca teyit edilmelidir.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "https://www.cantonfair.org.cn/ üzerinden buyer registration, çevrim içi mesajlaşma ve müşteri hizmetleri; bu PDF’deki import@ adresi katılımcı pavyonu içindir, genel alıcı adresi sayılmadı."
+    },
+    {
+      "id": "trade-customs-tariff",
+      "title": "Ticaret Bakanlığı — GTİP ve Bağlayıcı Tarife Bilgisi",
+      "url": "https://ticaret.gov.tr/gumruk-islemleri/sikca-sorulan-sorular/ticari/tarife",
+      "summary": "Bakanlığın tarife açıklaması GTİP yapısını ve yetkili bölge müdürlüklerine Bağlayıcı Tarife Bilgisi / Tarife Bilgisi başvuru yolunu anlatıyor. Ürün sınıflandırması ayrıntılı teknik tanıma dayanır; tedarikçinin verdiği HS kodu tek başına Türkiye’de kesin GTİP veya vergi hesabı değildir.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Sayfada belirtilen yetkili Gümrük ve Dış Ticaret Bölge Müdürlüğüne BTB / Tarife Bilgisi başvurusu; ilk dosyayı gümrük müşaviriyle hazırlama önerisi."
+    },
+    {
+      "id": "trade-import-groups",
+      "title": "Ticaret Bakanlığı — İthalatta denetlenen ürün grupları (2026)",
+      "url": "https://www.ticaret.gov.tr/urun-guvenligi/ithalatta-urun-guvenligi-denetimleri/ithalatta-denetimi-gerceklestirilen-urun-gruplari",
+      "summary": "5 Ekim 2026 sayfası telsiz ekipmanı, bazı CE kapsamındaki ürünler, oyuncaklar ve piller için ayrı ithalat denetim tebliğleri/rehberleri listeliyor. Ürünün oyuncak, elektrikli veya kablosuz olması kapsamı değiştirebilir; sayfadaki kategori adı tek başına modelin uygunluğunu kanıtlamaz.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Sayfadaki ilgili ürünün denetim rehberi ve yetkili kuruluş; CE kapsamındaki belirtilen denetimlerde TSE kanalı gösteriliyor."
+    },
+    {
+      "id": "trade-tareks",
+      "title": "Ticaret Bakanlığı — TAREKS",
+      "url": "https://ticaret.gov.tr/urun-guvenligi/tareks",
+      "summary": "5 Ağustos 2026 açıklaması TAREKS’i ithalat/ihracat denetimlerini elektronik ortamda ve risk esaslı yürüten sistem olarak tanımlıyor. Her partinin mutlaka fiziksel incelenmesi yerine risk kriterlerine göre seçim yapılıyor; bu, ürünün tabi olduğu şartları ortadan kaldırmaz.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Sayfadaki E-İşlemler / e-imza bağlantısı ve Bakanlık iletişim kanalları."
+    },
+    {
+      "id": "trade-7223",
+      "title": "TBMM — 7223 sayılı Kanun, ithalatçı yükümlülükleri",
+      "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D27/Y3/T2/KanunMetni/3a42371c-9161-4562-9606-2f114033afe9.html",
+      "summary": "Kanunun 9. maddesi ithalatçının uygunluğu ve gerekli belgeleri teyit etmesi, Türkçe güvenlik/kullanım bilgileri ve gerektiğinde düzeltici işlemler gibi sorumluluklarını sayıyor. Bu TBMM sayfası kabul edilen kanun metnidir; ürünün özel düzenlemesi ve güncel uygulama şartları ayrıca kontrol edilmelidir.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "İlgili ürünün yetkili denetim kuruluşu; model dosyası ve laboratuvar görüşü için ayrıca uygun uzman seçilmelidir."
+    },
+    {
+      "id": "trade-gubis",
+      "title": "Ticaret Bakanlığı — GÜBİS ürün sorgulama",
+      "url": "https://gubis.ticaret.gov.tr/Bildirim/DetaySorgu",
+      "summary": "GÜBİS yetkili kuruluşların güvensizliğini tespit ettiği ürünleri duyurur. Portal açıkça bildirimin yalnız belirtilen ürüne ait olduğunu söyler; listede bir kayıt bulunmaması güvenlik belgesi veya bütün markaya ilişkin sonuç değildir.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Bildirimde gösterilen yetkili kuruluş; ürün grubu ve marka/model filtresiyle araştırma."
+    },
+    {
+      "id": "trade-distance-sales",
+      "title": "Ticaret Bakanlığı — Mesafeli sözleşmeler bilgilendirmesi",
+      "url": "https://tuketici.ticaret.gov.tr/yayinlar/tuketici-bilgi-rehberi/mesafeli-sozlesmeler-hakkinda-bilgilendirme",
+      "summary": "17 Ağustos 2026 rehberi satış öncesinde ürün, satıcı, toplam fiyat, teslimat ek giderleri, cayma ve hak arama bilgilerinin verilmesini açıklıyor. Genel cayma kuralı ile istisnalar ayrı anlatılıyor; küçük deneme satışı veya sosyal medya kanalı bu konuları kendiliğinden ortadan kaldırmaz.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Bakanlığın Tüketici Bilgi Rehberi ve sitenin resmî iletişim kanalları; satıcı süreçlerini seçilen kanal için ayrıca doğrula."
+    },
+    {
+      "id": "beauty-mfds-market",
+      "title": "MFDS — Kore’nin 2025 kozmetik ihracat sonuçları",
+      "url": "https://www.mfds.go.kr/brd/m_1256/view.do?itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&page=12&seq=23",
+      "summary": "Kore gıda ve ilaç otoritesinin 28 Mayıs 2026 tarihli açıklaması, 2025 kozmetik ihracatını 11,4 milyar dolar ve ülkeyi dünya ikincisi olarak bildiriyor. Bu küresel ihracat verisi Türkiye’de belirli bir ürünün satılacağını veya kuaför cihazlarında Kore’nin üstünlüğünü göstermiyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read"
+    },
+    {
+      "id": "beauty-kotra-buyers",
+      "title": "KOTRA — Uluslararası alıcı hizmetleri",
+      "url": "https://www.kotra.or.kr/english/subList/41000046004",
+      "summary": "KOTRA uluslararası alıcılara buyKOREA, firma eşleştirme ve iş görüşmesi hizmetlerini açıklıyor. Ürün arayışını buyKOREA üzerinden veya bölgedeki KOTRA ofisine ileterek uygun Koreli satıcıları bulma yolu sunuyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Sayfadaki buyKOREA bağlantısı / Import Inquiries yönlendirmesi · https://www.kotra.or.kr/english/subList/41000046004"
+    },
+    {
+      "id": "beauty-buykorea",
+      "title": "buyKOREA — Resmî çevrim içi ürün ve tedarikçi kanalı",
+      "url": "https://fo.buykorea.org/comm/footer/aboutus.do",
+      "summary": "buyKOREA, Koreli şirketleri yurt dışındaki alıcılarla çevrim içi buluşturan ihracat destek platformu olduğunu açıklıyor. Sayfa, doğrudan ürün sorgularının yanında KOTRA ofislerinden gelen taleplerin de platforma aktarıldığını ve destek e-posta adresini gösteriyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "buyKOREA platform desteği · buykorea@kotra.or.kr · https://fo.buykorea.org/comm/footer/aboutus.do"
+    },
+    {
+      "id": "beauty-tradekorea",
+      "title": "tradeKorea / KITA — B2B eşleştirme ve teklif talebi",
+      "url": "https://www.tradekorea.com/ebms/gbms.do",
+      "summary": "KITA’nın tradeKorea hizmet sayfası, alıcılara ücretsiz tedarikçi eşleştirmesi ve birden çok teklif almak için RFQ sunuyor. Başvuru alıcı hesabına giriş, ürün ihtiyacını yazma ve tedarikçi listesini alma adımlarını izliyor; video görüşme desteği de açıklanıyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "tradeKorea destek / sayfadaki Apply Now · tradekorea@kita.net · https://www.tradekorea.com/ebms/gbms.do"
+    },
+    {
+      "id": "beauty-cosmobeauty-coex",
+      "title": "COEX — COSMOBEAUTY SEOUL 2026 ve organizatör iletişimi",
+      "url": "https://www.coex.co.kr/exhibitions/2026-%EC%84%9C%EC%9A%B8%EA%B5%AD%EC%A0%9C%ED%99%94%EC%9E%A5%ED%92%88%C2%B7%EB%AF%B8%EC%9A%A9%EC%82%B0%EC%97%85%EB%B0%95%EB%9E%8C%ED%9A%8C%EC%BD%94%EC%8A%A4%EB%AA%A8%EB%B7%B0%ED%8B%B0%EC%84%9C/?list_type=LIST&search_end_date=2026.05.28&search_start_date=2026.04.28&var_page=3",
+      "summary": "COEX’in resmî etkinlik kaydı COSMOBEAUTY SEOUL 2026’yı 27–29 Mayıs 2026, Hall A ve B1 olarak gösteriyor; bu etkinlik artık geçmişte kaldı. Kapsamında kozmetik, OEM/ODM, saç ve saç derisi, estetik/spa ve akıllı güzellik bulunuyor; organizatörün iletişimi de aynı sayfada yer alıyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Korea International Exhibition — organizatör · info@cosmobeautyseoul.com · +82 2 761 2527 · https://www.coex.co.kr/exhibitions/2026-%EC%84%9C%EC%9A%B8%EA%B5%AD%EC%A0%9C%ED%99%94%EC%9E%A5%ED%92%88%C2%B7%EB%AF%B8%EC%9A%A9%EC%82%B0%EC%97%85%EB%B0%95%EB%9E%8C%ED%9A%8C%EC%BD%94%EC%8A%A4%EB%AA%A8%EB%B7%B0%ED%8B%B0%EC%84%9C/?list_type=LIST&search_end_date=2026.05.28&search_start_date=2026.04.28&var_page=3"
+    },
+    {
+      "id": "beauty-cbe-show",
+      "title": "China Beauty Expo — Shanghai fuar kapsamı ve tarih",
+      "url": "https://www.chinabeautyexpo.com/about-us/show-information/",
+      "summary": "China Beauty Expo’nun resmî sayfa gövdesi sonraki Shanghai edisyonunu 12–14 Mayıs 2027’de Shanghai New International Expo Center’da gösteriyor. Sergi kapsamı perakende kozmetiği, profesyonel salon/spa ve saç ürünleri, güzellik ekipmanları ile OEM/ODM tedarikini ayrı grupluyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "CBE ziyaretçi / uluslararası bölüm · +86 21 2326 3727 · https://www.chinabeautyexpo.com/about-us/contact-us/"
+    },
+    {
+      "id": "beauty-cbe-contact",
+      "title": "China Beauty Expo — Resmî organizatör ve ziyaretçi iletişimi",
+      "url": "https://www.chinabeautyexpo.com/about-us/contact-us/",
+      "summary": "İletişim sayfası organizatörü Informa Markets – Shanghai Baiwen Exhibitions Co., Ltd. olarak tanımlıyor. Ziyaretçi ve uluslararası bölüm için +86 21 2326 3727 numarasını yayımlıyor; e-posta adresleri araştırma görünümünde gizlendiği için tahmin edilmedi.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Resmî ziyaretçi iletişimi · +86 21 2326 3727 · https://www.chinabeautyexpo.com/about-us/contact-us/"
+    },
+    {
+      "id": "beauty-cibe-contact",
+      "title": "China International Beauty Expo — Salon sektörü organizatör iletişimi",
+      "url": "https://www.cibe.cn/menu/article?menuId=319",
+      "summary": "CIBE’nin resmî iletişim sayfası organizatörü Guangzhou Jiamei Exhibition olarak ve ziyaretçi kayıt adresini visit@chinainternationalbeauty.com olarak gösteriyor. Yeni fuar tarihini veya ürün uygunluğunu bu iletişim sayfası tek başına doğrulamıyor; salon ürünü katılımcıları ve güncel takvim ayrıca istenmeli.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "CIBE ziyaretçi kaydı; genel iletişim info@chinainternationalbeauty.com · visit@chinainternationalbeauty.com · +86 20 8625 9008 · https://www.cibe.cn/menu/article?menuId=319"
+    },
+    {
+      "id": "beauty-kolmar-inquiry",
+      "title": "Kolmar Korea — Kozmetik ve saç ürünü için doğrudan üretici başvurusu",
+      "url": "https://www.kolmar.co.kr/eng/businessinfo/business.php",
+      "summary": "Kolmar Korea’nın iş başvuru formu cilt bakımı, renkli kozmetik ve saç ürünleri için üretim talebini alıyor; üretim yeri seçeneklerinde Kore ve Çin bulunuyor. Form iş deneyimi, hedef satış bölgesi, dağıtım kanalı ve hedef maliyeti soruyor; başlangıç yapacak müşterileri PLANIT147’ye yönlendirebileceğini belirtiyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "Kolmar resmî Business Inquiry formu; gönderilmedi · +82 2 515 0150 · https://www.kolmar.co.kr/eng/businessinfo/business.php"
+    },
+    {
+      "id": "beauty-cosmax-china-inquiry",
+      "title": "COSMAX China — Doğrudan üretici iş birliği formu",
+      "url": "https://www.cosmax.com.cn/contact/contact/",
+      "summary": "COSMAX China’nın resmî iş birliği formu cilt bakımı, makyaj, maske ve yıkama/bakım ürünleri için talepleri topluyor. Satış bölgesi, üretilecek adet, marka ve güzellik salonu/e-ticaret gibi satış kanallarını soruyor; Shanghai ve Guangzhou tesisleriyle resmî iletişim bilgisini yayımlıyor.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "COSMAX China resmî iş birliği formu; gönderilmedi · j.ni@cosmax.com · +86 21 6710 8705 · https://www.cosmax.com.cn/contact/contact/"
+    },
+    {
+      "id": "tr-cosmetic-overview",
+      "title": "Ticaret Bakanlığı — Kozmetik ürün kuralları",
+      "url": "https://urunkurallari.ticaret.gov.tr/tr/sektorel-rehber/kozmetik-urunler",
+      "summary": "Kozmetik için güvenlilik değerlendirmesi ve Ürün Bilgi Dosyası gerektiğini açıklıyor. Kozmetik mevzuatına uygunluk için özel bir işaret bulunmadığını belirtiyor; bu ürünlere otomatik olarak CE aranmaz.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "abteknik@ticaret.gov.tr — genel ürün irtibat noktası"
+    },
+    {
+      "id": "tr-cosmetic-notification",
+      "title": "TİTCK — Kozmetik ürün bildirimi",
+      "url": "https://www.titck.gov.tr/faaliyetalanlari/kozmetik/bildirim",
+      "summary": "Piyasaya arzdan önce sorumlu kişi ÜTS üzerinden ürün, formülasyon, menşe ve etiket bilgilerini bildirir; orijinal etikette Türkçe yoksa Türkçe etiket de sunulur. Kurum bildirimin kayda alındığını gösteren ayrı belge düzenlemez; yasal sorumluluk sorumlu kişide kalır ve bildirim ürün onayı gibi sunulmamalıdır.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "TİTCK iletişim merkezi: 444 4 680"
+    },
+    {
+      "id": "tr-cosmetic-pif",
+      "title": "TİTCK — Ürün Bilgi Dosyası",
+      "url": "https://www.titck.gov.tr/faaliyetalanlari/kozmetik/urun-bilgi-dosyasi",
+      "summary": "Ürün Bilgi Dosyasının sorumlu kişinin etiket adresinde Kuruma sunulmaya hazır tutulmasını anlatıyor. Dosyada bileşim, kalite spesifikasyonları, iyi imalat bilgileri, güvenlilik raporu ve gerekiyorsa ürün iddiasını destekleyen kanıtlar bulunur; dosya Türkçe veya İngilizce olabilir.",
+      "checkedAt": "2026-10-20",
+      "status": "read"
+    },
+    {
+      "id": "tr-cosmetic-label",
+      "title": "TİTCK — Ambalajda dikkat edilecekler",
+      "url": "https://www.titck.gov.tr/faaliyetalanlari/kozmetik/ambalajda-dikkat-edilecekler",
+      "summary": "Etiket ve tanıtımın kozmetik kapsamı içinde kalmasını, iddiaların kanıtlanmasını ve okunabilir ambalaj bilgisini açıklıyor. Tedavi/sağlık/antibakteriyel iddialar sınıflandırmayı değiştirebilir; kozmetiği yetkili otorite onaylı gösteren ifadeler kullanılamaz.",
+      "checkedAt": "2026-10-20",
+      "status": "read"
+    },
+    {
+      "id": "tr-cosmetic-contact",
+      "title": "Ticaret Bakanlığı — Kozmetik için TİTCK temas noktası",
+      "url": "https://urunkurallari.ticaret.gov.tr/tr/sektorel-rehber/kozmetik-urunler/temas-noktasi",
+      "summary": "Kozmetik alanındaki yetkili kuruluşu TİTCK ve ilgili birimi Kozmetik Ürünler Dairesi olarak listeliyor. Resmî sayfada yayımlanan e-posta ve telefon, ürünün kapsamı ile sorumlu kişi/bildirim sürecindeki tereddütleri yönlendirmek için kullanılabilir.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "kozmetik.soru@titck.gov.tr; 0312 218 36 49"
+    },
+    {
+      "id": "tr-product-safety",
+      "title": "Ticaret Bakanlığı — Genel ürün güvenliği",
+      "url": "https://www.ticaret.gov.tr/tuketici/piyasa-gozetimi/urun-guvenligi",
+      "summary": "Piyasaya sunulan her ürünün asgari güvenlik koşullarını sağlaması gerektiğini açıklıyor. Güvenlik sorumluluğu üretici, yetkili temsilci ve/veya ithalatçıya aittir; basit bir tarak veya fırçanın kozmetik bildirimi gerektirmemesi onu sorumluluktan muaf yapmaz.",
+      "checkedAt": "2026-10-20",
+      "status": "read"
+    },
+    {
+      "id": "tr-ce-scope",
+      "title": "Ticaret Bakanlığı — CE işareti kapsamı",
+      "url": "https://www.ticaret.gov.tr/urun-guvenligi/ab-teknik-mevzuat-uyumu/ce-isareti",
+      "summary": "CE işaretinin belirli teknik düzenlemeler kapsamındaki ürünler için uygunluk işareti olduğunu açıklıyor. Her güzellik veya kuaför ürününe ortak bir CE belgesi aranmaz; elektrikli ürünlerde uygulanabilir düzenlemeler modele ve teknik özelliklere göre belirlenmelidir.",
+      "checkedAt": "2026-10-20",
+      "status": "read"
+    },
+    {
+      "id": "tr-import-controls",
+      "title": "Ticaret Bakanlığı — 2026 ithalat denetimi ürün grupları",
+      "url": "https://www.ticaret.gov.tr/urun-guvenligi/ithalatta-urun-guvenligi-denetimleri/ithalatta-denetimi-gerceklestirilen-urun-gruplari",
+      "summary": "Elektrikli ürünler için 2026/9, tüketici ürünleri için 2026/12 ve tıbbi cihazlar için 2026/16 gibi farklı ithalat denetimi yollarını ve rehberlerini bir araya getiriyor. TAREKS kapsamı ürünün gerçek niteliği ve güncel tebliğ ekleriyle kontrol edilmeli; bütün güzellik ürünleri aynı denetime tabi varsayılmamalıdır.",
+      "checkedAt": "2026-10-20",
+      "status": "read"
+    },
+    {
+      "id": "tr-annex-xvi",
+      "title": "Ticaret Bakanlığı — Tıbbi cihaz ithalat denetim rehberi, Ek XVI bölümü",
+      "url": "https://ticaret.gov.tr/data/5b8f93aa13b8761f041fe997/Rehberler/16%20Say%C4%B1l%C4%B1%20Rehber%20%C3%87al%C4%B1%C5%9Fmas%C4%B1%20Taslak.pdf",
+      "summary": "Rehberin 5.3 bölümü, tıbbi amacı olmayan Ek XVI ürünlerinde de ortak spesifikasyonlar ve ilgili uygunluk kurallarının devreye girebildiğini açıklıyor. Lazer/IPL gibi ürünler basit salon aksesuarıyla aynı yoldan değerlendirilemez; cihazın amaç, teknoloji ve belgeleriyle kapsamı ayrıca doğrulanmalıdır.",
+      "checkedAt": "2026-10-20",
+      "status": "read",
+      "contact": "TİTCK genel iletişim merkezi: 444 4 680"
+    },
+    {
+      "id": "beauty-unread-1",
+      "title": "COSMOBEAUTY SEOUL — ana site",
+      "url": "https://www.cosmobeautyseoul.com/page/intro.do?hl=ENG",
+      "checkedAt": "2026-10-20",
+      "status": "unread",
+      "reason": "403 Forbidden; etkinlik kapsamı/tarihi COEX mekânının resmî kaydından okundu. İçerik okunamadı; bu sayfadan ürün, tarih veya mevzuat sonucu çıkarılmadı."
+    },
+    {
+      "id": "beauty-unread-2",
+      "title": "K-BEAUTY EXPO — ana site",
+      "url": "https://www.kbeautyexpo.com/",
+      "checkedAt": "2026-10-20",
+      "status": "unread",
+      "reason": "403 / Internal Error. 2027 tarihi doğrulanmadı, takvime eklenmemeli. İçerik okunamadı; bu sayfadan ürün, tarih veya mevzuat sonucu çıkarılmadı."
+    },
+    {
+      "id": "beauty-unread-3",
+      "title": "AKEI — 2026 fuar dizini",
+      "url": "https://www.akei.or.kr/english/img/directory2026_eng.pdf",
+      "checkedAt": "2026-10-20",
+      "status": "unread",
+      "reason": "68 MB dosya araç sınırını aştı. Arama özeti tarihleri görülse de okunan kaynak olarak kullanılmadı. İçerik okunamadı; bu sayfadan ürün, tarih veya mevzuat sonucu çıkarılmadı."
+    },
+    {
+      "id": "beauty-unread-4",
+      "title": "Resmî Gazete — Kozmetik Ürünler Yönetmeliği tam metin",
+      "url": "https://www.resmigazete.gov.tr/eskiler/2023/05/20230508M1-1.htm",
+      "checkedAt": "2026-10-20",
+      "status": "unread",
+      "reason": "Tam metin açma girişimleri zaman aşımı/iç hata verdi. Arama özeti tam okuma sayılmadı. İçerik okunamadı; bu sayfadan ürün, tarih veya mevzuat sonucu çıkarılmadı."
+    },
+    {
+      "id": "beauty-unread-5",
+      "title": "Mevzuat — Kozmetik Ürünler Yönetmeliği konsolide bağlantı",
+      "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=40405&MevzuatTur=7&MevzuatTertip=5",
+      "checkedAt": "2026-10-20",
+      "status": "unread",
+      "reason": "TİTCK ve Ticaret Bakanlığı resmî sayfalarının bağlantısı açılmaya çalışıldı, metin alınamadı. İçerik okunamadı; bu sayfadan ürün, tarih veya mevzuat sonucu çıkarılmadı."
+    }
+  ],
+  "choices": {
+    "market": {
+      "steps": [
+        {
+          "title": "Bir müşteri ve tek sorun seç",
+          "action": "Ev kullanıcısı, kuaför/salon veya küçük işletme gibi tek müşteri grubunu seç. Beş kısa görüşmede mevcut çözümü, kullanım sıklığını ve son ödediği fiyatı sor; beğeni ile satın alma davranışını ayır.",
+          "research": [
+            "Sorun ne sıklıkta yaşanıyor ve bugün nasıl çözülüyor?",
+            "Kullanıcı son benzer ürünü nereden, ne kadara aldı?"
+          ],
+          "contact": "Seçtiğin gruptan gerçek potansiyel müşteriler; görüşme sayısı öneridir, temas kurulmadı.",
+          "sourceIds": [
+            "trade-market-report"
+          ],
+          "output": "Tek müşteri tanımı ve tekrarlanan üç ihtiyaç."
+        },
+        {
+          "title": "Türkiye’deki alternatifi ve fiyatı kıyasla",
+          "action": "En fazla iki ürün için aynı özellikte üç yerli satış alternatifini fiyat, kargo, şikâyet ve bulunabilirlik bakımından karşılaştır. Bakanlığın sektör verisini arka plan olarak kullan; ürün talebini doğrudan kanıt yerine koyma.",
+          "research": [
+            "İthal ürünün yerli alternatife göre ölçülebilir farkı ne?",
+            "İadeler ve teslimat eklenince makul satış fiyatı ne kalıyor?"
+          ],
+          "contact": "Mevcut yerli satıcıların resmî ürün/iletişim sayfaları; belirli satıcı bu çalışmada doğrulanmadı.",
+          "sourceIds": [
+            "trade-market-report",
+            "trade-distance-sales"
+          ],
+          "output": "İki adaylık karşılaştırma ve birini eleme gerekçesi."
+        },
+        {
+          "title": "Satın almadan ilgi eşiği belirle",
+          "action": "Önce ürün görseli/şartnamesiyle görüşme veya açıkça talep araştırması olan bir sayfa kullan. Kaç nitelikli müşteri, hangi fiyat ve hangi toplam maliyette devam edeceğini yaz; ödeme alacaksan satış ve iade düzenini önceden hazırla.",
+          "research": [
+            "Olumlu yorum yerine hangi davranışı talep kanıtı sayacağım?",
+            "Ödeme almadan hangi belirsizliği çözebilirim?"
+          ],
+          "contact": "Potansiyel müşteriler; ödeme aşaması için seçilen satış kanalının satıcı destek birimi.",
+          "sourceIds": [
+            "trade-distance-sales"
+          ],
+          "output": "Ölçülebilir devam/eleme kararı."
+        }
+      ]
+    },
+    "simple-products": {
+      "steps": [
+        {
+          "title": "İki sade ürünü gerçek ihtiyaca bağla",
+          "action": "Örneğin masa/kablo düzenleyici ile mekanik bakım aksesuarını kıyasla. Malzeme, ölçü, temas ettiği yüzey ve kullanım amacını yaz; sade görünmenin mevzuatsız olmak anlamına gelmediğini hesaba kat.",
+          "research": [
+            "Kullanıcı hangi somut eksik için farklı ürüne geçer?",
+            "Malzeme, cilt/gıda teması veya çocuk kullanımı kapsamı değiştiriyor mu?"
+          ],
+          "contact": "Hedef kullanıcılar ve teknik tanımı inceleyecek gümrük müşaviri.",
+          "sourceIds": [
+            "trade-market-report",
+            "trade-7223",
+            "trade-import-groups"
+          ],
+          "output": "İki ürünün tek sayfalık özellik ve risk kıyası."
+        },
+        {
+          "title": "Aynı şartnameyle teklif ve numune iste",
+          "action": "Aynı boyut, malzeme, ambalaj ve miktarı üç firmaya gönder. Numune ile seri üretim modelinin aynı olacağını, minimum siparişi, teslim şeklini ve kusurlu ürün çözümünü yazılı netleştir. Numune sevkiyatının koşullarını müşavirle önceden teyit et.",
+          "research": [
+            "Numune, fiyat ve seri sipariş aynı ürün sürümüne mi ait?",
+            "Birim fiyat dışındaki numune/kargo/ambalaj masrafı ne?"
+          ],
+          "contact": "Alibaba Contact Supplier / Chat Now veya HKTDC platformundaki firma kanalı.",
+          "sourceIds": [
+            "trade-alibaba-guide",
+            "trade-hktdc-sourcing"
+          ],
+          "output": "Karşılaştırılabilir teklifler ve numune kabul ölçütü."
+        },
+        {
+          "title": "Maliyeti gör; sonra tek ürüne karar ver",
+          "action": "GTİP ve denetim kapsamını ürün dosyasıyla teyit ettir; nakliye, vergi, işlem, test ve iade payını birim maliyete ekle. Ancak fiyat ve numune hedefi tutan ürün için sınırlı ticari pilot planla.",
+          "research": [
+            "Depoya giriş maliyeti ile hedef net satış arasında pay kalıyor mu?",
+            "Numune testinde hangi sonuç ürünü eler?"
+          ],
+          "contact": "Gümrük müşaviri ve gerekiyorsa ürün kapsamına uygun laboratuvar.",
+          "sourceIds": [
+            "trade-customs-tariff",
+            "trade-import-groups",
+            "trade-distance-sales"
+          ],
+          "output": "Tek ürün için devam/eleme tablosu."
+        }
+      ]
+    },
+    "tech-toys": {
+      "steps": [
+        {
+          "title": "Kullanıcıyı ve teknik kapsamı ayır",
+          "action": "Yetişkin kodlama kiti, çocuk oyuncağı veya işletmeye kurulan sensörden birini seç. Yaş grubu, pil, gerilim, Wi‑Fi/Bluetooth ve kullanım iddiasını tam yaz; yalnız etiketi değiştirerek oyuncak kapsamından çıktığını varsayma.",
+          "research": [
+            "Gerçek kullanım çocuk oyunu mu, yetişkin eğitim mi, profesyonel sistem mi?",
+            "Pil, radyo veya elektrik özelliği hangi ek incelemeyi gerektiriyor?"
+          ],
+          "contact": "Ürün grubunun yetkili kuruluşu / uygunluk uzmanı; gümrük müşaviriyle GTİP teyidi.",
+          "sourceIds": [
+            "trade-import-groups",
+            "trade-customs-tariff"
+          ],
+          "output": "Tek ürünün kullanıcı ve kapsam özeti."
+        },
+        {
+          "title": "Model belgelerini ve numuneyi doğrula",
+          "action": "Üreticiden tam model, devre/özellik listesi, ilgili uygunluk beyanı ve test raporlarını iste. Raporlardaki modelin numuneyle eşleşmesini ve gerekli test kapsamını uzman/laboratuvarla karşılaştır; GÜBİS’te benzer riskleri araştır.",
+          "research": [
+            "Belge gerçek üretici ve sipariş modelini kapsıyor mu?",
+            "Türkçe kullanım/güvenlik bilgileri ve takip edilebilir parti bilgisi hazır mı?"
+          ],
+          "contact": "Tedarikçinin platform kanalı ve kapsamı uygun test laboratuvarı; belirli laboratuvar onayı verilmedi.",
+          "sourceIds": [
+            "trade-alibaba-guide",
+            "trade-7223",
+            "trade-gubis"
+          ],
+          "output": "Belge eksikleri, test planı ve numune değerlendirmesi."
+        },
+        {
+          "title": "Kurulum ve satış sonrası yükünü ölç",
+          "action": "B2B sensör/yazıcı için kurulum, yedek parça ve destek süresini; tüketici ürünü için kullanım, iade ve şikâyeti maliyetlendir. Tamamlanmış uygunluk dosyasından sonra küçük deneme ve tekrar sipariş eşiği belirle.",
+          "research": [
+            "Bir satıştan sonra kaç saat destek ve hangi yedekler gerekiyor?",
+            "Arıza/iade payı eklendiğinde kârlılık sürüyor mu?"
+          ],
+          "contact": "Pilot işletme veya hedef müşteri; satış kanalının satıcı desteği.",
+          "sourceIds": [
+            "trade-7223",
+            "trade-distance-sales"
+          ],
+          "output": "Destek dahil birim ekonomi ve sınırlı pilot kararı."
+        }
+      ]
+    },
+    "supplier": {
+      "steps": [
+        {
+          "title": "Tek şartnameyle üç teklif topla",
+          "action": "Model, malzeme/içerik, ölçü, miktar, ambalaj, etiket, hedef ülke Türkiye ve istenen belgeleri tek dosyada yaz. Aynı dosyayı platformdaki üç uygun firmaya iletip fiyat, minimum sipariş, numune, teslim süresi ve teslim şeklini aynı tabloda karşılaştır. Numuneyi göndertmeden ithalat/inceleme koşullarını ürün bazında teyit et; numune otomatik muafiyet değildir.",
+          "research": [
+            "Fiyat üretici çıkışı mı, hangi teslim şartıyla verildi?",
+            "Markalı üründe Türkiye’ye satış/distribütörlük yetkisi var mı?"
+          ],
+          "contact": "Alibaba Contact Supplier / Chat Now; HKTDC tedarikçi profili ve görüşme kanalı.",
+          "sourceIds": [
+            "trade-alibaba-guide",
+            "trade-hktdc-sourcing"
+          ],
+          "output": "Aynı kapsamda üç teklif."
+        },
+        {
+          "title": "Firma, belge ve numuneyi birlikte kontrol et",
+          "action": "Şirket unvanını, teklif/fatura/ödeme alıcısını ve doğrulama raporunu karşılaştır. Numuneyi gerçek model belgeleriyle incele; platform rozetini Türkiye’de ürün uygunluğu yerine kullanma.",
+          "research": [
+            "Görüşülen şirket, üretici ve ödeme alıcısı aynı mı; farklıysa neden?",
+            "Numune ile seri üretim arasında değişiklik nasıl önlenecek?"
+          ],
+          "contact": "Tedarikçinin platform kanalı; belge kapsamı için ilgili uzman/laboratuvar.",
+          "sourceIds": [
+            "trade-alibaba-guide",
+            "trade-7223"
+          ],
+          "output": "Doğrulama notu ve numune kabul/ret kaydı."
+        },
+        {
+          "title": "Sipariş şartlarını görünür hale getir",
+          "action": "Tam model, kalite kabul ölçütü, teslim tarihi, kontrol hakkı ve uygunsuzluk çözümünü siparişe yazdır. Trade Assurance seçilecekse güncel kapsamını ve ödeme kanalını sipariş ekranından oku; platform dışı ödemenin aynı korumayı verdiğini varsayma.",
+          "research": [
+            "Bir uyuşmazlıkta ölçülebilir hangi şart ve kanıt var?",
+            "Ödeme ve şikâyet için geçerli süre/koşul tam olarak ne?"
+          ],
+          "contact": "Platform içi sipariş/mesaj merkezi ve resmî müşteri desteği.",
+          "sourceIds": [
+            "trade-alibaba-guide"
+          ],
+          "output": "Kontrol edilebilir şartları olan taslak sipariş; ödeme yapılmış sayılmaz."
+        }
+      ]
+    },
+    "fair": {
+      "steps": [
+        {
+          "title": "Fuardan önce ürün ve görüşme listesi kur",
+          "action": "Seyahat seçmeden önce hedef ürünü ve çözülmemiş soruyu yaz. Canton Fair/HKTDC çevrim içi kataloglarından kısa liste çıkar; aynı şartnameyi adaylara gönderip uzaktan görüşmenin yeterli olup olmadığını değerlendir.",
+          "research": [
+            "İhtiyacım keşif mi, numune inceleme mi, üretici denetimi mi?",
+            "Hangi beş aday hedef ürünün gerçek üreticisi/tedarikçisi?"
+          ],
+          "contact": "Canton Fair çevrim içi mesajlaşma veya HKTDC sourcing görüşmeleri.",
+          "sourceIds": [
+            "trade-canton-platform",
+            "trade-hktdc-sourcing"
+          ],
+          "output": "Görüşülecek firmalar ve ortak soru listesi."
+        },
+        {
+          "title": "Kategori, tarih ve alıcı kaydını teyit et",
+          "action": "İlgili fuarın resmî ziyaretçi sayfasında ürün bölümü/fazı, fiziksel ve çevrim içi görüşme tarihlerini ayrı kontrol et. HKTDC için To Visit kaydındaki iş eşleştirme kategorilerini seç; Canton Fair için güncel ana siteden alıcı kaydı ve fazını teyit et. Güzellikte aşağıdaki COEX/CBE kayıtları ve CIBE iletişimini kullan; COEX 2026 etkinliği geçmişte, CBE gövdesinde 12–14 Mayıs 2027 yazıyor ve rezervasyondan önce yeniden teyit gerekiyor.",
+          "research": [
+            "Ürünüm doğru fazda/holde mi; katalogdaki firma katılımı güncel mi?",
+            "Giriş, seyahat ve kayıt masrafı hangi iş kararını iyileştirecek?"
+          ],
+          "contact": "Ürüne uygun fuarın resmî alıcı/ziyaretçi kaydı. CBE ziyaretçi/uluslararası bölüm: +86 21 2326 3727; COSMOBEAUTY: info@cosmobeautyseoul.com; CIBE: visit@chinainternationalbeauty.com.",
+          "sourceIds": [
+            "beauty-cosmobeauty-coex",
+            "beauty-cbe-show",
+            "beauty-cibe-contact"
+          ],
+          "output": "Doğrulanmış tarih/kategori ve gerekçeli seyahat veya online görüşme kararı."
+        },
+        {
+          "title": "Görüşmeyi karşılaştırılabilir teklife dönüştür",
+          "action": "Her görüşmede aynı model/şartname, MOQ, numune, belgeler ve teslim koşullarını iste. Fuar sonrası iki adayı numune ve firma doğrulama aşamasına taşı; fuarda bulunmayı kalite veya satış yetkisi kanıtı sayma.",
+          "research": [
+            "Hangi firma yazılı ve tam karşılaştırılabilir teklif verdi?",
+            "Numune ve belge incelemesinde çözülmemiş ne kaldı?"
+          ],
+          "contact": "Katılımcının resmî platform profili ve yazılı teklif kanalı.",
+          "sourceIds": [
+            "trade-hktdc-register",
+            "trade-alibaba-guide",
+            "beauty-cbe-contact"
+          ],
+          "output": "İki aday ve takip dosyası."
+        }
+      ]
+    },
+    "import": {
+      "steps": [
+        {
+          "title": "Teknik dosyayla GTİP ve kapsamı netleştir",
+          "action": "Fotoğraf, kullanım, malzeme/içerik, elektrik/radyo/pil özellikleri ve menşe bilgisini topla. Gümrük müşavirinden Türkiye sınıflandırmasını ve geçerli ithalat koşullarını yazılı değerlendirmesini iste; belirsizlikte resmî tarife bilgisi yolunu değerlendir.",
+          "research": [
+            "Tam ürün özellikleri hangi GTİP’i gerektiriyor?",
+            "Menşe ve ürün niteliği hangi vergi/denetim başlıklarını değiştiriyor?"
+          ],
+          "contact": "Gümrük müşaviri; gerektiğinde yetkili bölge müdürlüğüne BTB / Tarife Bilgisi başvurusu.",
+          "sourceIds": [
+            "trade-customs-tariff",
+            "trade-import-groups"
+          ],
+          "output": "Ürün bazında sınıflandırma ve açık belirsizlikler."
+        },
+        {
+          "title": "Toplam depoya giriş maliyetini hesapla",
+          "action": "Mal bedeli, nakliye/sigorta, güncel vergiler, müşavirlik, terminal/ardiye, denetim/test ve iç nakliyeyi tekliflerle listele. Teslim şekli ile kimin hangi masrafı ödediğini eşleştir; gerçek GTİP doğrulanmadan tek vergi yüzdesi kullanma.",
+          "research": [
+            "Teklifte hangi giderler hariç ve bekleme halinde ne artıyor?",
+            "Sipariş miktarı yarıya inerse birim maliyet hâlâ makul mü?"
+          ],
+          "contact": "Gümrük müşaviri, taşıyıcı ve gerekiyorsa denetim/laboratuvar kanalı.",
+          "sourceIds": [
+            "trade-customs-tariff",
+            "trade-tareks",
+            "trade-import-groups"
+          ],
+          "output": "Normal ve gecikmeli senaryolu maliyet tablosu."
+        },
+        {
+          "title": "Ödemeden önce dosya eksiklerini kapat",
+          "action": "Fatura, model/parti, ilgili uygunluk belgeleri ve Türkçe etiket/talimat taslağını kontrol ettir. Denetim başvurusu ve firma yetkilendirmesini planla; eksik dosya varken sevkiyatı yalnız ucuz fiyat için başlatma.",
+          "research": [
+            "Hangi belge sevkiyattan önce üreticiden alınmalı?",
+            "Denetim sürecini kim yürütecek ve olumsuzlukta maliyet ne olacak?"
+          ],
+          "contact": "Müşavir ve ürünün yetkili kuruluşu; TAREKS E-İşlemler kanalı.",
+          "sourceIds": [
+            "trade-tareks",
+            "trade-7223",
+            "trade-import-groups"
+          ],
+          "output": "Sevkiyat öncesi tamam/eksik listesi."
+        }
+      ]
+    },
+    "safety": {
+      "steps": [
+        {
+          "title": "Ürünün gerçek kullanımını ve tehlikelerini yaz",
+          "action": "Yaş, kullanım amacı, malzeme, elektrik, radyo, pil ve temas özelliklerini belirt. Oyuncak, elektrikli cihaz, telsiz veya diğer ürün gruplarını ilgili 2026 rehberleriyle eşleştir; GÜBİS’te benzer ürün risklerini incele.",
+          "research": [
+            "Beklenen ve makul öngörülebilir yanlış kullanım ne?",
+            "Ürün birden fazla teknik düzenleme veya denetime giriyor mu?"
+          ],
+          "contact": "Ürün grubunun yetkili kuruluşu ve kapsam uzmanı.",
+          "sourceIds": [
+            "trade-import-groups",
+            "trade-gubis"
+          ],
+          "output": "Risk ve uygulanacak düzenleme başlıkları."
+        },
+        {
+          "title": "Belgeyi modelle eşleştir ve eksik testi belirle",
+          "action": "Üretici, model, rapor kapsamı, beyan ve numuneyi birlikte incelet. Sadece CE logosu fotoğrafı veya başka modele ait raporu yeterli sayma; gereken test ve Türkçe güvenlik bilgilerini belirle.",
+          "research": [
+            "Raporun ürün fotoğrafı/modeli ve özellikleri siparişle aynı mı?",
+            "İlgili düzenlemede gereken hangi belge veya test eksik?"
+          ],
+          "contact": "Kapsamı uygun test laboratuvarı/uygunluk uzmanı; belgeyi veren kuruluşun resmî doğrulama kanalı.",
+          "sourceIds": [
+            "trade-7223",
+            "trade-import-groups"
+          ],
+          "output": "Modele bağlı belge/test eksik listesi."
+        },
+        {
+          "title": "Satış sonrası sorumluluğu kur",
+          "action": "İthalatçı bilgisi, Türkçe talimat, parti takibi ve şikâyet kaydını hazırla. Ürün uygunsuz çıkarsa satışı durdurma, düzeltme ve gerektiğinde geri çağırma akışında kimlerin görev alacağını yaz.",
+          "research": [
+            "Hangi partinin hangi müşteriye gittiğini bulabilecek miyim?",
+            "Bir güvenlik bildirimi gelirse ilk iş ve yetkili temas ne?"
+          ],
+          "contact": "İlgili yetkili kuruluş; tedarikçi ve satış kanalı destek ekipleri.",
+          "sourceIds": [
+            "trade-7223",
+            "trade-gubis"
+          ],
+          "output": "İzlenebilirlik ve sorun halinde işlem planı."
+        }
+      ]
+    },
+    "sales-pilot": {
+      "steps": [
+        {
+          "title": "Tek kanal ve sınırlı kayıp bütçesi seç",
+          "action": "Türkiye’de tek müşteri grubu ve tek satış kanalında deneme tasarla. Ürün, ithalat, paketleme, komisyon, kargo, iade ve destek giderini ekleyip denemenin azami nakit kaybını baştan belirle.",
+          "research": [
+            "İade ve destek sonrası sipariş başına ne kalıyor?",
+            "Hangi adet ve bütçe öğrenmek için yeterli; kaybetmeyi kabul ettiğim üst sınır ne?"
+          ],
+          "contact": "Seçilen kanalın satıcı desteği ve lojistik sağlayıcısı; mali/vergi akışı için muhasebeci.",
+          "sourceIds": [
+            "trade-market-report",
+            "trade-distance-sales"
+          ],
+          "output": "Tek kanal, bütçe ve birim ekonomi tablosu."
+        },
+        {
+          "title": "Satış sayfası ve tüketici sürecini hazırla",
+          "action": "Ürün özellikleri, satıcı iletişimi, vergiler dahil toplam fiyat, ek giderler, teslimat ve iade koşullarını ödeme öncesi görünür yap. Uygunluk/izlenebilirlik dosyasını tamamla; araştırma sayfası ile gerçek sipariş sayfasını açıkça ayır.",
+          "research": [
+            "Müşteri ödemeden önce gerekli tüm bilgileri görebiliyor mu?",
+            "Cayma istisnası iddiası varsa ürüne ve koşullara gerçekten uyuyor mu?"
+          ],
+          "contact": "Satış kanalının resmî satıcı desteği; ürün dosyası için ilgili uzman.",
+          "sourceIds": [
+            "trade-distance-sales",
+            "trade-7223"
+          ],
+          "output": "Yayınlanabilir ürün sayfası ve sipariş/iade akışı."
+        },
+        {
+          "title": "Sonucu ölç ve tekrar siparişi koşula bağla",
+          "action": "Satış adediyle birlikte iade, kusur, müşteri sorusu, teslim süresi ve gerçek net katkıyı kaydet. Önceden yazdığın eşiklerle devam et, ürünü/kanalı değiştir veya durdur; yalnız ciro yükseldi diye yeniden stok alma.",
+          "research": [
+            "Gerçek net katkı ve sorun oranı belirlediğim eşiği geçti mi?",
+            "Büyürsem destek, nakit ve tedarik sorunlarından hangisi artacak?"
+          ],
+          "contact": "Pilot müşteriler, tedarikçi ve kanal desteği; otomatik temas kurulmadı.",
+          "sourceIds": [
+            "trade-distance-sales",
+            "trade-7223"
+          ],
+          "output": "Devam / değiştir / durdur kararı ve gerekçesi."
+        }
+      ]
+    },
+    "beauty": {
+      "details": "Kore’nin kozmetik ihracatındaki gücü resmî veride görülüyor; Türkiye’de hangi ürünün satılacağı ayrıca sınanmalı. Perakende kozmetik, profesyonel saç ürünü, elektriksiz salon aracı ve elektrikli/özel kapsamlı cihazı aşağıdan ayrı incele. Önce ürünün sınıfını ve müşteri ihtiyacını seç; ülke veya fuar tek başına ürün kararı değildir.",
+      "steps": [
+        {
+          "title": "Müşteriyi ve ürün türünü seç",
+          "action": "Ev kullanıcısı, kuaför veya salon arasından bir alıcı seç. En fazla iki ürünü mevcut yerli fiyat ve kullanım sorunu bakımından karşılaştır; önce müşteri görüşmesi yap, satış veya kullanıcıda numune denemesine geçme.",
+          "research": [
+            "Türkiye’de aynı ürünün yetkili satıcısı ve bugünkü fiyatı ne?",
+            "Alıcı hangi sorun için mevcut tedarikçisini değiştirir?"
+          ],
+          "contact": "Hedef müşteriler / kuaför veya salon işletme sahibi; henüz görüşme yapılmadı.",
+          "sourceIds": [
+            "beauty-mfds-market",
+            "trade-market-report",
+            "tr-cosmetic-overview"
+          ],
+          "output": "Bir müşteri grubu, iki ürün ve ölçülebilir tercih nedeni."
+        },
+        {
+          "title": "Uzaktan eşleştirme ve belge iste",
+          "action": "KOTRA/buyKOREA veya KITA tradeKorea üzerinden hedef ürün, Türkiye satış kanalı ve tahmini adetle eşleştirme isteği hazırla. MOQ, marka satış yetkisi, numune ve belge koşullarını yazılı karşılaştır; numune ithalatını muaf varsayma.",
+          "research": [
+            "Üretici/marka sahibi kim ve Türkiye kanalına yazılı satış hakkı verebiliyor mu?",
+            "MOQ, numune, teslim şekli ve dosya paylaşım koşulu nedir?"
+          ],
+          "contact": "KOTRA uluslararası alıcı hizmetleri; buykorea@kotra.or.kr veya tradeKorea Apply Now / tradekorea@kita.net.",
+          "sourceIds": [
+            "beauty-kotra-buyers",
+            "beauty-buykorea",
+            "beauty-tradekorea"
+          ],
+          "output": "Aynı şartlara göre karşılaştırılmış 2–3 tedarikçi."
+        },
+        {
+          "title": "Ürüne göre uygunluk yolunu tamamla",
+          "action": "Aşağıdaki alt türün belge ve temas adımlarını aç. Tam model/formül, GTİP, menşe ve toplam maliyetle uygunluk yolunu teyit et; gerekli süreçler ve güvenli numune koşulları tamamlanmadan kullanıcıda deneme veya satış yapma.",
+          "research": [
+            "Ürün kozmetik, elektriksiz araç, elektrikli alet veya özel kapsamlı cihaz mı?",
+            "Vergi, belge/test, etiket, iade ve servis dahil marj kalıyor mu?"
+          ],
+          "contact": "Gümrük müşaviri ve ilgili ürünün yetkili kuruluşu; yalnız kozmetik sorularında TİTCK Kozmetik Ürünler Dairesi.",
+          "sourceIds": [
+            "tr-import-controls",
+            "trade-customs-tariff",
+            "trade-distance-sales"
+          ],
+          "output": "Alt türe bağlı uygunluk/maliyet dosyası ve devam/eleme kararı."
+        }
+      ],
+      "variants": [
+        {
+          "id": "retail",
+          "title": "Cilt bakımı ve perakende kozmetik",
+          "summary": "Temizleyici, nemlendirici veya maske: hazır markayı satmak ile kendi markan için üretim yaptırmak ayrı modeller.",
+          "steps": [
+            {
+              "title": "İki ürünü ve satış hakkını daralt",
+              "action": "Tek müşteri için iki ürünü fiyat, içerik iddiası ve Türkiye’deki yetkili satıcı bakımından kıyasla. Formül, kullanım yeri ve tanıtım iddialarıyla kozmetik kapsamını netleştir; tedavi/sağlık iddiasını doğrudan kozmetik kabul etme.",
+              "research": [
+                "Markanın Türkiye’de mevcut distribütörü ve kanal kısıtı var mı?",
+                "Etiket veya Türkçe tanıtım tedavi/antibakteriyel iddiası içeriyor mu?"
+              ],
+              "contact": "Marka sahibi/tedarikçi; kozmetik kapsamı belirsizse kozmetik.soru@titck.gov.tr, 0312 218 36 49.",
+              "sourceIds": [
+                "beauty-mfds-market",
+                "tr-cosmetic-label",
+                "tr-cosmetic-contact"
+              ],
+              "output": "İki adaydan tek ürün ve yazılı satış yetkisi gereksinimi."
+            },
+            {
+              "title": "Hazır marka veya üretim için teklif al",
+              "action": "Hazır markada yetkili satıcı zincirini; OEM/ODM üretimde formül, adet, ambalaj ve hedef maliyeti yazılı iste. Kolmar ve COSMAX China resmî iş formları üretim araştırma kanalıdır; düşük MOQ veya Türkiye kabulü doğrulanmış değildir.",
+              "research": [
+                "Numune/seri ürün aynı formül mü; raf ömrü, MOQ ve teslim süresi ne?",
+                "Üretici güvenlilik dosyasına gerekli formül/test verisini hangi koşulla paylaşır?"
+              ],
+              "contact": "KITA tradeKorea eşleştirmesi; Kolmar Business Inquiry ve COSMAX China iş birliği formları. Hiçbiri gönderilmedi.",
+              "sourceIds": [
+                "beauty-tradekorea",
+                "beauty-kolmar-inquiry",
+                "beauty-cosmax-china-inquiry"
+              ],
+              "output": "Markalı ürün veya OEM/ODM için karşılaştırılabilir teklif ve dosya listesi."
+            },
+            {
+              "title": "Kozmetik dosyası, etiket ve bildirimden sonra pilot",
+              "action": "Türkiye’de sorumlu kişi ve gerekli teknik düzeni kur; güvenlilik değerlendirmesi/Ürün Bilgi Dosyası, Türkçe etiket ve piyasaya arz öncesi ÜTS bildirimini tamamlat. Bildirim onay değildir; ithalat ve güvenli numune koşulları tamamlanmadan kullanıcıda deneme/satış yok.",
+              "research": [
+                "Formül, kalite/GMP verisi ve iddia kanıtları Ürün Bilgi Dosyası için yeterli mi?",
+                "Sorumlu kişi, Türkçe etiket ve bildirim maliyetinden sonra hedef fiyat tutuyor mu?"
+              ],
+              "contact": "Türkiye’de sorumlu kişi ve kozmetik güvenlilik/dosya uzmanı; kapsam veya bildirim sorusunda TİTCK Kozmetik Ürünler Dairesi.",
+              "sourceIds": [
+                "tr-cosmetic-pif",
+                "tr-cosmetic-notification",
+                "tr-cosmetic-label"
+              ],
+              "output": "Tamamlanan kozmetik dosyası ve sınırlı pilot/tekrar sipariş eşiği."
+            }
+          ]
+        },
+        {
+          "id": "hair",
+          "title": "Kuaför / salon için saç ürünleri",
+          "summary": "Şampuan, saç maskesi ve şekillendiricide salon tüketimi, teknik eğitim ve tekrar siparişi birlikte değerlendir.",
+          "steps": [
+            {
+              "title": "Kuaförün tüketimini ve ürün iddiasını öğren",
+              "action": "Beş kuaföre mevcut seri, aylık tüketim, ambalaj boyu, fiyat ve çözülmeyen sorunu sor. Saç/saç derisi bakım iddiasını tedavi iddiasından ayır; görüşme aşamasını müşteride ürün uygulamasıyla karıştırma.",
+              "research": [
+                "Salonun mevcut tedarikçisinden geçmesi için hangi somut fark gerekir?",
+                "Saç dökülmesi/saç derisi için vaatler kozmetik sınırını aşıyor mu?"
+              ],
+              "contact": "Kuaför işletme sahibi/satın alma sorumlusu; sınıflandırma belirsizse TİTCK kozmetik temas noktası.",
+              "sourceIds": [
+                "beauty-cosmobeauty-coex",
+                "tr-cosmetic-label",
+                "tr-cosmetic-contact"
+              ],
+              "output": "Tek profesyonel kullanım ve iki ürünlük ihtiyaç özeti."
+            },
+            {
+              "title": "Profesyonel seri ve üretim dosyasını iste",
+              "action": "Tedarikçi veya üreticiden salon boyu ambalajı, uygulama talimatı/eğitim, MOQ, marka yetkisi, formül/test verisi ve numune koşullarını sor. Kolmar saç ürünü kabul eden form sunuyor; COSMAX China üretim kanalı da ayrı teklif adayıdır.",
+              "research": [
+                "Türkiye profesyonel kanalında mevcut distribütör veya münhasırlık var mı?",
+                "Uygulama eğitimi ve dosya paylaşımı fiyata dahil mi?"
+              ],
+              "contact": "Kolmar resmî Business Inquiry; COSMAX China iş birliği formu; KITA tradeKorea eşleştirmesi.",
+              "sourceIds": [
+                "beauty-kolmar-inquiry",
+                "beauty-cosmax-china-inquiry",
+                "beauty-tradekorea"
+              ],
+              "output": "İki tedarikçinin fiyat, belge ve destek karşılaştırması."
+            },
+            {
+              "title": "Kozmetik şartlarını tamamla, sonra salon pilotunu ölç",
+              "action": "Kozmetik kapsamındaysa güvenlilik/Ürün Bilgi Dosyası, sorumlu kişi, Türkçe etiket ve ÜTS bildirimini piyasaya arzdan önce tamamlat. İthalat ve güvenli numune koşulları çözülmeden müşteriye uygulama veya satış yok; şartlar tamamlanınca tüketim, şikâyet ve tekrar sipariş ölç.",
+              "research": [
+                "Bu formül için güvenlilik raporu, iddia kanıtı ve Türkçe uyarılar hazır mı?",
+                "Kullanım başına maliyet ve tekrar sipariş mevcut seriye göre avantaj sağlıyor mu?"
+              ],
+              "contact": "Türkiye’de sorumlu kişi/kozmetik dosya uzmanı; kozmetik sorularında TİTCK Kozmetik Ürünler Dairesi; ticari ölçümde pilot salon.",
+              "sourceIds": [
+                "tr-cosmetic-pif",
+                "tr-cosmetic-notification",
+                "tr-cosmetic-label"
+              ],
+              "output": "Uygunluk dosyası ve salon tüketimine dayalı devam/durdur kararı."
+            }
+          ]
+        },
+        {
+          "id": "tools",
+          "title": "Elektriksiz kuaför ve salon araçları",
+          "summary": "Tarak, fırça, klips veya uygulama kabı: malzeme, dayanım ve temizlenebilirlik üzerinden farklılaşmayı araştır.",
+          "steps": [
+            {
+              "title": "Bir kullanım sorunu ve iki model seç",
+              "action": "Kırılma, saç çekme veya temizlenebilirlik gibi tek sorunu seç. Malzeme, ölçü, cilt teması ve kullanım amacını yaz; yalnız salonda kullanıldığı için kozmetik bildirimi veya CE yolu varsayma.",
+              "research": [
+                "Hangi malzeme/şekil mevcut ürüne göre somut fayda getiriyor?",
+                "Keskin kenar, kırılma ve temas kaynaklı riskler neler?"
+              ],
+              "contact": "Kuaför/salon satın alma sorumlusu; teknik kapsam için ürün güvenliği uzmanı.",
+              "sourceIds": [
+                "beauty-cbe-show",
+                "tr-product-safety",
+                "tr-ce-scope"
+              ],
+              "output": "İki model için ölçülebilir kullanım ve risk kıyası."
+            },
+            {
+              "title": "Malzeme, numune ve MOQ’yu karşılaştır",
+              "action": "Aynı özellikleri KITA eşleştirmesine veya CIBE katılımcı araştırmasına ilet. Üretici, malzeme bileşimi, dayanım bilgisi, numune/kargo, logo/ambalaj minimumu ve kusur telafisini iste; sevkiyat öncesi numune ithalat koşulunu teyit et.",
+              "research": [
+                "Rapor ve malzeme beyanı teklif edilen gerçek modele mi ait?",
+                "Özel ambalaj ve kusur/iade eklenince birim fiyat ne kalıyor?"
+              ],
+              "contact": "tradeKorea Apply Now / tradekorea@kita.net; CIBE ziyaretçi kaydı visit@chinainternationalbeauty.com.",
+              "sourceIds": [
+                "beauty-tradekorea",
+                "beauty-cibe-contact",
+                "trade-alibaba-guide"
+              ],
+              "output": "Karşılaştırılabilir iki teklif ve numune inceleme ölçütü."
+            },
+            {
+              "title": "Genel güvenlik ve ithalat yoluyla pilotu aç",
+              "action": "GTİP’i, varsa ürüne özel teknik/kimyasal kısıtları, izlenebilirlik ve etiket şartını gerçek malzeme ve işlevle doğrulat. Elektriksiz olması güvenlik sorumluluğunu kaldırmaz; gerekli koşullar tamamlanınca küçük satışta dayanım, şikâyet ve tekrar sipariş ölç.",
+              "research": [
+                "Hangi güncel ithalat tebliği ve ürüne özel şart uygulanıyor?",
+                "Malzeme/güvenlik kontrolü ile iade dahil maliyette satış fiyatı tutuyor mu?"
+              ],
+              "contact": "Gümrük müşaviri; kapsam için Ticaret Bakanlığı genel ürün irtibatı veya ilgili yetkili kuruluş; gerekiyorsa uygun kapsamlı laboratuvar.",
+              "sourceIds": [
+                "tr-product-safety",
+                "tr-import-controls",
+                "trade-customs-tariff"
+              ],
+              "output": "Genel güvenlik ve ithalat kontrolü tamamlanmış sınırlı pilot."
+            }
+          ]
+        },
+        {
+          "id": "devices",
+          "title": "Elektrikli aletler ve özel kapsamlı cihazlar",
+          "summary": "Kurutucu/düzleştirici ile lazer/IPL aynı yol değildir. Önce amaç, teknoloji, model belgeleri ve servis yükünü ayır.",
+          "steps": [
+            {
+              "title": "Elektrikli alet mi, özel kapsamlı cihaz mı?",
+              "action": "Gerilim, güç, batarya/adaptör, varsa radyo ve üreticinin kullanım amacını yaz. Saç kurutucu ile lazer/IPL’yi ayrı incele; bazı tıbbi amaçsız Ek XVI ürünleri de özel kurallara girebilir, bütün salon cihazlarını tıbbi kabul etme.",
+              "research": [
+                "Üreticinin belirttiği amaç, teknoloji/enerji ve hedef dokusu ne?",
+                "Hangi teknik düzenleme veya varsa Tıbbi Cihaz Yönetmeliği/Ek XVI kapsamı uygulanıyor?"
+              ],
+              "contact": "Elektrikli alette ilgili teknik düzenlemenin yetkili kuruluşu ve uygunluk uzmanı; tıbbi/Ek XVI tereddüdünde TİTCK genel iletişim 444 4 680.",
+              "sourceIds": [
+                "tr-ce-scope",
+                "tr-annex-xvi",
+                "tr-import-controls"
+              ],
+              "output": "Ürün bazında yazılı kapsam sorusu ve belge kontrol yolu."
+            },
+            {
+              "title": "Aynı modelin belgeleri ve servis teklifini al",
+              "action": "Üretici/modelle eşleşen uygunluk beyanı, ilgili test raporları, elektrik özellikleri, Türkçe talimat, yedek parça ve tamir düzenini iste. Uzman/laboratuvarla dosyayı karşılaştır; yalnız CE logosu fotoğrafını yeterli sayma.",
+              "research": [
+                "Raporlar aynı üretici/modeli ve tüm uygulanabilir düzenlemeleri kapsıyor mu?",
+                "Türkiye’de tamir, parça ve arıza maliyetini kim üstlenecek?"
+              ],
+              "contact": "Üreticinin resmî teknik satış birimi; kapsamı uygun test/uygunluk uzmanı; firma bulmak için KITA ve CBE uluslararası bölüm.",
+              "sourceIds": [
+                "trade-7223",
+                "beauty-tradekorea",
+                "beauty-cbe-contact"
+              ],
+              "output": "Model dosyası, eksik testler ve yazılı servis maliyeti."
+            },
+            {
+              "title": "İthalat ile kullanım yetkisini ayrı doğrula",
+              "action": "GTİP ve güncel denetim ekleriyle ithalat yolunu; gerekiyorsa ÜTS/özel uygunluk ve işletmenin cihazı kullanma yetkisini ayrı teyit et. Taslak adlı rehber bağlayıcı mevzuat yerine geçmez; dosya ve güvenli inceleme koşulları tamamlanmadan kullanıcıda deneme/satış yok.",
+              "research": [
+                "İthalat/piyasaya arz dosyası ve uygulayıcının işletme/kullanım koşulları ayrı ayrı tamam mı?",
+                "Garanti, servis, parça, test ve iade eklenince pilot hâlâ sürdürülebilir mi?"
+              ],
+              "contact": "Gümrük müşaviri ve ilgili ithalat denetim kuruluşu; özel cihaz kapsamında TİTCK genel temas; işletme/kullanım yetkisinde ilgili yetkili sağlık/ruhsat birimi.",
+              "sourceIds": [
+                "tr-import-controls",
+                "tr-annex-xvi",
+                "tr-ce-scope"
+              ],
+              "output": "Cihaz bazında kapsam/ithalat/kullanım teyidi ve devam/eleme kararı."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Bu adımlar editoryal öneridir; maliyet, kabul eşiği ve görüşme adedi kullanıcı tarafından seçilir.",
+    "Alibaba rehberi 2020 tarihlidir; güncel ödeme koruması, kabul edilen yöntemler ve uyuşmazlık süreleri sipariş ekranından yeniden okunmalıdır. Eski ödeme yöntemi/ücret iddiaları aktarılmadı.",
+    "Canton Fair resmî 2025 PDF’i platform işlevleri için okundu; güncel fuar tarihi, fazı veya genel alıcı e-posta adresi doğrulanmış sayılmadı. Ana site açıldı ancak metin çıkarılamadı.",
+    "Alibaba Help Center ve TAREKS Yardım Merkezi denemeleri zaman aşımı/hata verdi; onların içerikleri okunmuş olarak kullanılmadı.",
+    "Özel bir ürün modeli, ithalat vergisi, test raporu, tedarikçi firma veya laboratuvar bu çalışmada onaylanmadı.",
+    "TBMM kaynağı kabul metnidir; güncel konsolide mevzuat ve ürünün özel düzenlemesi sevkiyat öncesi ayrıca kontrol edilmelidir.",
+    "Türkiye’de Kore/Çin güzellik ürünü talebini veya kârlılığını kanıtlayan ürün bazlı veri bu kaynaklardan çıkarılamaz.",
+    "Kore’nin kozmetik ihracat verisi, kuaför aletleri/cihazları kategorisinde Çin’den büyük olduğu anlamına gelmez.",
+    "Bir platformun kayıt doğrulaması belirli ürünün orijinalliği, kalite veya Türkiye uygunluğu garantisi değildir.",
+    "Türkiye mevzuatı, ithalat tarifesi ve bildirim adımları bu görevde hukuki sonuç olarak doğrulanmadı; ayrı resmî Türkiye araştırmasıyla birleştirilmeli.",
+    "Hiçbir firmaya mesaj gönderilmedi, hesap oluşturulmadı ve fuar kaydı yapılmadı.",
+    "COSMOBEAUTY SEOUL ve K-BEAUTY EXPO ana siteleri 403 döndürdü; bu sayfalar okunmuş diye etiketlenmedi.",
+    "China Hair Expo kaynaklarında aynı sayfada 24–26 ve 24–27 Ağustos 2027 çelişkisi görüldü; kesin tarih olarak kullanılmadı.",
+    "CIBE ana sayfasında eski etkinlik kayıtları ve 29–30 Aralık Shenzhen duyuruları birlikte görünüyor; yeni tarih kesinleştirilmeden rezervasyon önerilmez.",
+    "Belirli ürün/model seçilmediği için kesin GTİP, vergi oranı veya ithalat uygunluğu verilmedi.",
+    "Kore'deki kayıt veya Çin'deki belge Türkiye uygunluğunun kendiliğinden kanıtı sayılmadı.",
+    "Bütün salon cihazlarının tıbbi cihaz olduğu veya bütün güzellik ürünlerinin CE taşıması gerektiği iddia edilmedi.",
+    "Satış sonrası hizmet/garanti ve salon uygulama yetkisi bu araştırmada modele göre sonuçlandırılmadı; elektrikli/enerjili cihaz için ayrıca incelenmeli.",
+    "Kaynaklar okunmuştur; hiçbir kuruma veya şirkete mesaj gönderilmemiştir."
+  ]
+}

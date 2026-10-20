@@ -1,5 +1,5 @@
 // The editorial navigation is separate from source IDs, edges and browser notes.
-export const COUNTRIES={all:'Tüm yerler',tr:'Türkiye',eu:'Avrupa',ae:'BAE / Dubai',us:'ABD',cn:'Çin',remote:'Uzaktan'};
+export const COUNTRIES={all:'Tüm yerler',tr:'Türkiye',eu:'Avrupa',ae:'BAE / Dubai',us:'ABD',cn:'Çin',kr:'Güney Kore',remote:'Uzaktan'};
 const choice=(id,title,summary,nodeIds,countries=[],extra={})=>({id,title,summary,nodeIds,countries,...extra});
 const topic=(id,title,summary,choices)=>({id,title,summary,choices});
 export function createNavigation(data){
@@ -23,7 +23,8 @@ export function createNavigation(data){
   topic('product','Satılabilecek bir ürün bul','Önce müşteri ve talep; sonra ürün seçimi.',[
    choice('market','Müşteri ve ihtiyacı seç','Ürün almadan önce sorunu ve yerli alternatifleri araştır.',['tradeprod_root','tradeprod_market','tradeprod_shortlist','tradeprod_validate'],['tr'],{firstStep:'Bir müşteri grubu ile görüşüp mevcut çözümünü öğren.'}),
    choice('simple-products','Sade ürün fikirlerini karşılaştır','Mekanik ev, bakım, hobi ve yedek parça seçenekleri.',['tradeprod_cable','tradeprod_stand','tradeprod_drawer','tradeprod_pet','tradeprod_wood','tradeprod_parts'],['tr'],{firstStep:'En fazla iki ürünü yerli alternatif ve satış fiyatıyla kıyasla.'}),
-   choice('tech-toys','Teknoloji, oyuncak veya B2B ürünü','Kodlama kiti, STEM oyuncağı, sensör ve kurulum fikirleri.',['tradeprod_coding','tradeprod_toy','tradeprod_sensor','tradeprod_printer','tradeprod_retail','tradeprod_hub'],['tr'],{firstStep:'Kullanıcıyı ve ürünün güvenlik kapsamını belirle.'})]),
+   choice('tech-toys','Teknoloji, oyuncak veya B2B ürünü','Kodlama kiti, STEM oyuncağı, sensör ve kurulum fikirleri.',['tradeprod_coding','tradeprod_toy','tradeprod_sensor','tradeprod_printer','tradeprod_retail','tradeprod_hub'],['tr'],{firstStep:'Kullanıcıyı ve ürünün güvenlik kapsamını belirle.'}),
+   choice('beauty','Kore / Çin güzellik ve salon ürünleri','Kozmetik, profesyonel saç bakımı, salon sarfı ve cihaz seçeneklerini ayır.',[],['tr','kr','cn'],{firstStep:'Tek bir ürün grubu ve müşteri kanalı seç.'})]),
   topic('supply','Tedarikçiye ve ürüne ulaş','Uzaktan tedarik, gerekirse fuar; ardından numune.',[
    choice('supplier','Uzaktan tedarikçi ve numune bul','Tek şartnameyle teklif al, firmayı ve numuneyi doğrula.',pick(ids('cn_sourcing')),['cn','remote'],{firstStep:'Aynı ürün tanımıyla üç firmadan karşılaştırılabilir teklif iste.'}),
    choice('fair','Ürüne uygun fuarı seç','Çin ve Hong Kong fuarlarını ürün grubuna göre daralt.',ids('cn_fairs'),['cn'],{firstStep:'Önce ürün kategorisini seç; fuar tarihini resmî kaynaktan kontrol et.'})]),

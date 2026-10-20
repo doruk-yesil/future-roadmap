@@ -2,7 +2,7 @@ import {mkdir,copyFile,readFile,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 const root=resolve(import.meta.dirname);const out=resolve(root,'dist');
 await mkdir(out,{recursive:true});
-const files=['index.html','styles.css','app.css','app.js','graph.js','navigation.js','navigation.css','state.js','data.json','favicon.svg','.nojekyll'];
+const files=['index.html','styles.css','app.css','app.js','graph.js','navigation.js','navigation.css','research.js','research.json','reading.css','state.js','data.json','favicon.svg','.nojekyll'];
 const data=JSON.parse(await readFile(resolve(root,'data.json'),'utf8'));
 const ids=new Set(data.nodes.map(n=>n.id));
 if(ids.size!==data.nodes.length||data.edges.some(e=>!ids.has(e.source)||!ids.has(e.target)))throw Error('Geçersiz harita ilişkileri');
