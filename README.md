@@ -16,6 +16,8 @@ Kariyer, eğitim ve ticaret seçenekleri için Türkçe, düzenlenebilir kişise
 - Başlık, açıklama, koşul ve kaynakları kişisel kopyanda düzenle.
 - Arama bütün özgün kartları kapsar. Elediğin kartlar seçenek panelinde kapalı bir bölümde tutulur.
 - 90 günlük plan, favoriler ve görevler çalışma alanında yer alır. Eski kart bağlantıları ve kayıt kimlikleri korunur.
+- Çalışma Alanım → Okul Projelerim: dokuz akademik çalışma, tıklanınca açılan proje ve SSS başlıklarıyla incelenir. Amaç, teknoloji, sonuç, kişisel katkı, CV/mülakat anlatımı ve kaynaklar ayrıdır. Projeler genel aramada da bulunur.
+- 26 Ekim 2026 incelemesi yedi depo kaydını ve iki yalnız-portfolyo kaydını ayırır. Kayıtlı çıktılar yeniden çalıştırılmış deneyler değildir. CLARITY notebookundaki weighted/macro F1 ayrımı açıkça korunur.
 
 ## Veriler ve gizlilik
 

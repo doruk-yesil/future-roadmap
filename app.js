@@ -2,6 +2,7 @@ import {createStore} from './state.js';
 import {relationLabels,searchNodes} from './graph.js';
 import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -26,10 +27,10 @@ function navigate(view,route=null,topic=null,choice=null,node=null){
 }
 function readRoute(){
  const params=new URLSearchParams(location.hash.slice(1));
- state.view=params.get('view')||'home';state.route=params.get('route');state.topic=params.get('topic');state.choice=params.get('choice');state.variant=params.get('variant');state.selected=params.get('node');state.country=COUNTRIES[params.get('country')]?params.get('country'):'all';state.editing=false;state.sidebar=false;
+ state.view=params.get('view')||'home';state.project=params.get('project');state.route=params.get('route');state.topic=params.get('topic');state.choice=params.get('choice');state.variant=params.get('variant');state.selected=params.get('node');state.country=COUNTRIES[params.get('country')]?params.get('country'):'all';state.editing=false;state.sidebar=false;
  const aliases={cyber:['career','cyber'],masters:['career','tech-study'],us:['agriculture','agri-study'],uae:['agriculture',null]};
  if(aliases[state.route]){[state.route,state.topic]=aliases[state.route];}
- if(!['home','route','favorites','tasks','search','settings'].includes(state.view))state.view='home';
+ if(!['home','route','favorites','tasks','search','settings','projects'].includes(state.view))state.view='home';
  if(state.view==='search')state.query=params.get('q')??state.query;
  if(state.selected&&NODES.has(state.selected)){
   const currentChoice=currentRoute()?.topics.find(t=>t.id===state.topic)?.choices.find(c=>c.id===state.choice);
@@ -59,18 +60,18 @@ function currentRoute(){return ROUTES.find(r=>r.id===state.route);}
 function button(action,label,ico,classes='quiet',attrs=''){return `<button type="button" class="button ${classes}" data-action="${action}" ${attrs}>${ico?icon(ico):''}<span>${esc(label)}</span></button>`;}
 function render(){
  const route=currentRoute();const selected=state.selected?getNode(state.selected):null;const choice=currentChoice();
- const title=state.view==='home'?'Genel bakış':state.view==='route'?route?.name:({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım'})[state.view];
+ const title=state.view==='home'?'Genel bakış':state.view==='route'?route?.name:({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım',projects:'Okul Projelerim'})[state.view];
  document.title=`${title} · Future`;
  $('#app').className='app-shell'+(selected||choice?' detail-open':'');
  $('#app').innerHTML=`<aside class="sidebar ${state.sidebar?'open':''}" aria-label="Ana gezinme">
  <a class="brand" href="#view=home"><span class="brand-mark">F<span>·</span></span><span>future<span class="brand-caption">KENDİ YOLUNU ÇİZ</span></span></a>
  <div class="nav-section"><a class="nav-item ${state.view==='home'?'active':''}" href="#view=home">${icon('home')}<span>Genel bakış</span></a></div>
  <div class="nav-section"><span class="nav-label">YOL HARİTALARIM</span>${ROUTES.filter(r=>!r.secondary).map(r=>`<a href="${href(r.id)}" class="nav-item ${state.view==='route'&&route?.id===r.id?'active':''}">${icon(r.icon)}<span>${esc(r.name)}</span></a>`).join('')}</div>
- <div class="nav-section"><span class="nav-label">ÇALIŞMA ALANIM</span><a class="nav-item ${state.route==='decision'?'active':''}" href="${href('decision')}">${icon('check')}<span>90 günlük plan</span></a><a class="nav-item ${state.view==='favorites'?'active':''}" href="#view=favorites">${icon('star')}<span>Favorilerim</span><span class="nav-count">${Object.values(personal.nodes).filter(n=>n.favorite).length}</span></a><a class="nav-item ${state.view==='tasks'?'active':''}" href="#view=tasks">${icon('check')}<span>Yapılacaklarım</span><span class="nav-count">${personal.tasks.filter(t=>!t.done).length}</span></a></div>
+ <div class="nav-section"><span class="nav-label">ÇALIŞMA ALANIM</span><a class="nav-item projects-nav-link ${state.view==='projects'?'active':''}" href="#view=projects">${icon('study')}<span>Okul Projelerim</span></a><a class="nav-item ${state.route==='decision'?'active':''}" href="${href('decision')}">${icon('check')}<span>90 günlük plan</span></a><a class="nav-item ${state.view==='favorites'?'active':''}" href="#view=favorites">${icon('star')}<span>Favorilerim</span><span class="nav-count">${Object.values(personal.nodes).filter(n=>n.favorite).length}</span></a><a class="nav-item ${state.view==='tasks'?'active':''}" href="#view=tasks">${icon('check')}<span>Yapılacaklarım</span><span class="nav-count">${personal.tasks.filter(t=>!t.done).length}</span></a></div>
  <div class="sidebar-bottom"><a class="nav-item" href="#view=settings">${icon('download')}<span>Yedekleme & kullanım</span></a><div class="local-note"><span class="local-dot"></span> Notların bu tarayıcıda saklanır</div></div>
  </aside><button class="mobile-scrim ${state.sidebar?'open':''}" data-action="close-menu" aria-label="Menüyü kapat"></button>${selected||choice?'<button class="drawer-scrim" data-action="close-detail" aria-label="Panelin dışından kapat"></button>':''}
  <div class="workspace"><header class="topbar"><button class="button icon mobile-nav-toggle" data-action="menu" aria-label="Menüyü aç">${icon('menu')}</button><nav class="breadcrumbs" aria-label="Sayfa yolu"><a href="#view=home">Çalışma alanım</a><span>/</span><strong>${esc(title)}</strong></nav><div class="topbar-actions"><label class="search-box">${icon('search',18)}<input type="search" id="search" aria-label="Tüm haritada ara" placeholder="Bir fikir, şirket veya koşul ara…" value="${esc(state.query)}"><kbd>/</kbd></label><button class="button icon backup-top" data-action="export" aria-label="Yedeğini indir" title="Yedeğini indir">${icon('download')}</button></div></header>
- <main id="main" class="view" tabindex="-1">${state.view==='home'?renderHome():state.view==='route'?renderRoute():state.view==='settings'?renderSettings():state.view==='tasks'?renderTasks():renderCollection()}</main></div>${selected?renderDetail(selected):choice?renderChoiceDetail(choice):''}`;
+ <main id="main" class="view" tabindex="-1">${state.view==='home'?renderHome():state.view==='route'?renderRoute():state.view==='projects'?renderProjects(state.project):state.view==='settings'?renderSettings():state.view==='tasks'?renderTasks():renderCollection()}</main></div>${selected?renderDetail(selected):choice?renderChoiceDetail(choice):''}`;
  if(state.selected&&!state.editing){const note=$('#node-notes');if(note)note.value=nodeState(state.selected).notes||'';}
  $('.workspace').inert=Boolean(selected||choice);$('.sidebar').inert=Boolean(selected||choice);
 }
@@ -131,7 +132,8 @@ function renderResult(n){return `<button class="result-item" data-action="open-n
 function renderCollection(){
  const favorites=state.view==='favorites';const nodes=favorites?DATA.nodes.filter(n=>nodeState(n.id).favorite).map(n=>getNode(n.id)):searchNodes(DATA.nodes.map(n=>getNode(n.id)),state.query);
  const choices=favorites?[]:searchNodes(searchableChoices(ROUTES),state.query);
- return `<section class="collection-heading"><span class="eyebrow">${favorites?'KENDİ SEÇKİN':'YOLLAR VE ARAŞTIRMA'}</span><h1>${favorites?'Geri dönmek istediğin fikirler.':'Aradığın yolu bul.'}</h1><p>${favorites?'Favorilediğin kartlar burada. Durum ve notların kartın ayrıntılarında.':state.query?`“${esc(state.query)}” için ${nodes.length+choices.length} sonuç`:'Üstteki arama alanına bir ürün, şirket, ülke veya koşul yaz.'}</p></section><div class="results-list">${choices.map(c=>`<button class="result-item" data-action="open-choice" data-choice="${esc(c.id)}" data-route="${esc(c.route)}" data-topic="${esc(c.topic)}"><span class="result-main"><span class="result-category">SEÇENEK VE EYLEM PLANI</span><strong>${esc(c.title)}</strong><span class="result-excerpt">${esc(summarize(c.body))}</span></span>${icon('arrow',17)}</button>`).join('')}${nodes.map(renderResult).join('')}</div>${!nodes.length&&!choices.length?`<div class="empty-state">${icon(favorites?'star':'search',38)}<h2>${favorites?'Henüz bir favorin yok.':state.query?'Eşleşen kart bulunamadı.':'Her şey bir kelimeyle başlar.'}</h2><p>${favorites?'Bir kartın ayrıntısındaki yıldızı kullanarak buraya ekleyebilirsin.':'Farklı bir kelime dene: güzellik, oyuncak, remote, master veya marka.'}</p></div>`:''}`;
+ const projects=favorites?[]:searchProjects(state.query);
+ return `<section class="collection-heading"><span class="eyebrow">${favorites?'KENDİ SEÇKİN':'YOLLAR VE ARAŞTIRMA'}</span><h1>${favorites?'Geri dönmek istediğin fikirler.':'Aradığın yolu bul.'}</h1><p>${favorites?'Favorilediğin kartlar burada. Durum ve notların kartın ayrıntılarında.':state.query?`“${esc(state.query)}” için ${nodes.length+choices.length+projects.length} sonuç`:'Üstteki arama alanına bir ürün, şirket, ülke veya koşul yaz.'}</p></section><div class="results-list">${renderProjectResults(projects)}${choices.map(c=>`<button class="result-item" data-action="open-choice" data-choice="${esc(c.id)}" data-route="${esc(c.route)}" data-topic="${esc(c.topic)}"><span class="result-main"><span class="result-category">SEÇENEK VE EYLEM PLANI</span><strong>${esc(c.title)}</strong><span class="result-excerpt">${esc(summarize(c.body))}</span></span>${icon('arrow',17)}</button>`).join('')}${nodes.map(renderResult).join('')}</div>${!nodes.length&&!choices.length&&!projects.length?`<div class="empty-state">${icon(favorites?'star':'search',38)}<h2>${favorites?'Henüz bir favorin yok.':state.query?'Eşleşen kart bulunamadı.':'Her şey bir kelimeyle başlar.'}</h2><p>${favorites?'Bir kartın ayrıntısındaki yıldızı kullanarak buraya ekleyebilirsin.':'Farklı bir kelime dene: güzellik, oyuncak, remote, master veya marka.'}</p></div>`:''}`;
 }
 function bodyHTML(body){return String(body||'').split(/\n\s*\n|\n---\n/).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');}
 function renderDetail(n){
