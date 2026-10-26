@@ -18,6 +18,8 @@ Kariyer, eğitim ve ticaret seçenekleri için Türkçe, düzenlenebilir kişise
 - 90 günlük plan, favoriler ve görevler çalışma alanında yer alır. Eski kart bağlantıları ve kayıt kimlikleri korunur.
 - Çalışma Alanım → Okul Projelerim: dokuz akademik çalışma, tıklanınca açılan proje ve SSS başlıklarıyla incelenir. Amaç, teknoloji, sonuç, kişisel katkı, CV/mülakat anlatımı ve kaynaklar ayrıdır. Projeler genel aramada da bulunur.
 - 26 Ekim 2026 incelemesi yedi depo kaydını ve iki yalnız-portfolyo kaydını ayırır. Kayıtlı çıktılar yeniden çalıştırılmış deneyler değildir. CLARITY notebookundaki weighted/macro F1 ayrımı açıkça korunur.
+- Kariyer → İş İlanları tek bir dar satır listesidir. Şirket/ilan araması, ülke/bölge, ülke, Remote/Hybrid/On-site, görev, kayıt türü ve gruplama filtreleri URL'de korunur. Beş okunmuş ilan sayfası, 84 önceki şirket kanalı ve bir doğrulanamayan eski kayıt ayrıdır; 84 portalın hepsi yeni açık ilan gibi sunulmaz.
+- CV dosyalarım PDF ve LaTeX kaynaklarını yalnız o tarayıcının IndexedDB alanında saklar. Dosyalar yayın paketine, GitHub'a, harita yedeğine veya bir işverene gönderilmez. Cihazlar arasında aktarım için kaynak dosyalar indirilip tekrar içe aktarılır. Orijinal CV'den otomatik yeni iddia/başarı üretilmez.
 
 ## Veriler ve gizlilik
 

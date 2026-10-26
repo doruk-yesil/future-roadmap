@@ -1,0 +1,3428 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-26",
+  "legacyChannelCheckedAt": "2026-10-14",
+  "records": [
+    {
+      "id": "company_001",
+      "sourceNodeId": "company_001",
+      "company": "ASELSAN",
+      "title": "Yazılım, gömülü yazılım, siber güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye savunma ve araştırma",
+      "summary": "Yazılım, gömülü yazılım, siber güvenlik\nÖğrenci ve yeni mezun resmî sayfası. a Yetenek programlarının bir kısmı öğrencilik gerektirir; mezunlar normal mühendis ilanlarını da kontrol etmeli. Çalışma modeli ve işe alım kriterleri ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.aselsan.com/tr/kariyer/ogrenci-yeni-mezun"
+        }
+      ],
+      "url": "https://www.aselsan.com/tr/kariyer/ogrenci-yeni-mezun",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_002",
+      "sourceNodeId": "company_002",
+      "company": "HAVELSAN",
+      "title": "Yazılım, simülasyon, siber güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye savunma ve araştırma",
+      "summary": "Yazılım, simülasyon, siber güvenlik\nResmî işe alım açıklamasında yönlendirilen başvuru portalı. Deneyimsiz/yeni mezun ve mühendis ilanlarını ara; öğrenci programları mezunlara otomatik uygun değildir. Türkiye konumu ve çalışma modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.havelsan.com.tr/"
+        }
+      ],
+      "url": "https://kariyer.havelsan.com.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_003",
+      "sourceNodeId": "company_003",
+      "company": "ROKETSAN",
+      "title": "Yazılım, gömülü sistemler, test · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye savunma ve araştırma",
+      "summary": "Yazılım, gömülü sistemler, test\nAçık Pozisyonlar ve Öz Geçmiş Bırak seçenekleri var. R-Force / Stage programlarının öğrenim koşullarını kontrol et; tamamı mezun programı değildir. Türkiye ofis rolleri için takip et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.roketsan.com.tr/"
+        }
+      ],
+      "url": "https://kariyer.roketsan.com.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_004",
+      "sourceNodeId": "company_004",
+      "company": "TUSAŞ",
+      "title": "Yazılım, aviyonik, gömülü yazılım, test · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye savunma ve araştırma",
+      "summary": "Yazılım, aviyonik, gömülü yazılım, test\nYurt içi işe alım portalı; süreç açıklaması yeni mezunları da kapsıyor. Eğitim, İngilizce ve diğer mühendis işe alım kriterlerini kontrol et. Türkiye çalışma yeri ve model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.tusas.com/ise-alim"
+        }
+      ],
+      "url": "https://kariyer.tusas.com/ise-alim",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_005",
+      "sourceNodeId": "company_005",
+      "company": "Baykar",
+      "title": "Yazılım, gömülü yazılım, yapay zekâ, test · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "data",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye savunma ve araştırma",
+      "summary": "Yazılım, gömülü yazılım, yapay zekâ, test\nResmî kariyer portalında yazılım/mühendis ilanlarını ara. Yeni mezun uygunluğu, deneyim ve Türkiye çalışma yeri ilan bazında; açık pozisyon garantisi değildir.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.baykartech.com/"
+        }
+      ],
+      "url": "https://kariyer.baykartech.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_006",
+      "sourceNodeId": "company_006",
+      "company": "STM",
+      "title": "Siber güvenlik, yazılım, büyük veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "cyber",
+        "software",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye savunma ve araştırma",
+      "summary": "Siber güvenlik, yazılım, büyük veri\nResmî SSS, STM İşe Alım Portalı / Kariyer.net / LinkedIn / SavunmaKariyer üzerinden başvuruyu açıklıyor. StarTeaM lisans öğrencileri içindir; mezunlar normal ilanlara yönelmeli. Ankara, İstanbul ve Gölcük ofisleri belirtiliyor.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.linkedin.com/company/stmdefence/jobs/"
+        }
+      ],
+      "url": "https://www.linkedin.com/company/stmdefence/jobs/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_007",
+      "sourceNodeId": "company_007",
+      "company": "TÜBİTAK / BİLGEM",
+      "title": "Yazılım, bilgi güvenliği, kriptoloji, araştırmacı · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye savunma ve araştırma",
+      "summary": "Yazılım, bilgi güvenliği, kriptoloji, araştırmacı\nKurumun resmî insan kaynakları sayfası bu portalı gösteriyor. BİLGEM filtresiyle araştırmacı/yazılım ilanlarına bak; öğrenim, not ortalaması ve sınav koşulları ilan bazında. Aday araştırmacı rolleri öğrencilik gerektirebilir.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.tubitak.gov.tr/"
+        }
+      ],
+      "url": "https://kariyer.tubitak.gov.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_008",
+      "sourceNodeId": "company_008",
+      "company": "Turkcell",
+      "title": "Backend, frontend, mobil, siber güvenlik, bulut · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "cyber",
+        "cloud"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Backend, frontend, mobil, siber güvenlik, bulut\nGNÇYTNK sayfası yeni mezun veya mezuniyet sonrası en fazla 2 yıl deneyimi olanları kapsıyor. Program dönemlidir; 2026 alımının tamamlandığı duyurulmuş. Türkiye model ve konumu ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyerim.turkcell.com.tr/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://kariyerim.turkcell.com.tr/genc-yetenek"
+        }
+      ],
+      "url": "https://kariyerim.turkcell.com.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_009",
+      "sourceNodeId": "company_009",
+      "company": "Türk Telekom",
+      "title": "Yazılım, siber güvenlik, veri, altyapı · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "data",
+        "devops"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Yazılım, siber güvenlik, veri, altyapı\nSTART sayfasında genç yetenek fırsatları bulunuyor. START Stajım ile işe alım programını ayır; öğrencilik ve mezuniyet şartını dönem ilanından kontrol et. Türkiye ofis/hibrit modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.turktelekomkariyer.com.tr/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.turktelekomkariyer.com.tr/start"
+        }
+      ],
+      "url": "https://www.turktelekomkariyer.com.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_010",
+      "sourceNodeId": "company_010",
+      "company": "Vodafone Türkiye",
+      "title": "Yazılım, teknoloji, siber güvenlik, veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Yazılım, teknoloji, siber güvenlik, veri\nDiscover: son sınıf, yeni mezun ve en fazla 1 yıl tam zamanlı deneyimli adaylar için. Program dönemlidir; bu sayfa açık başvuru teyidi değildir. Türkiye pozisyonlarını seç; model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.vodafone.com.tr/hakkimizda/insan-kaynaklari/discover-yetenek-programi"
+        }
+      ],
+      "url": "https://www.vodafone.com.tr/hakkimizda/insan-kaynaklari/discover-yetenek-programi",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_011",
+      "sourceNodeId": "company_011",
+      "company": "Turkish Technology",
+      "title": "Backend, frontend, mobil, QA, DevOps, siber güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "qa",
+        "devops",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Backend, frontend, mobil, QA, DevOps, siber güvenlik\nTHY teknoloji şirketinin resmî kariyer merkezi. New graduate / junior / software başlıklarını ara. Öğrenci ve tam zamanlı rolleri ayır; deneyim, Türkiye konumu ve model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.turkishtechnology.com/"
+        }
+      ],
+      "url": "https://careers.turkishtechnology.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_013",
+      "sourceNodeId": "company_013",
+      "company": "Trendyol",
+      "title": "Backend, frontend, platform, AppSec, veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "devops",
+        "cyber",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Backend, frontend, platform, AppSec, veri\nResmî kariyer sayfası Lever üzerinden başvuruyu doğruluyor. Türkiye konumlarını seç; portalda hibrit ve ofis etiketleri var. Early Careers bölümü takip edilebilir; 0 deneyimli rol olduğu varsayılmamalı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.lever.co/trendyol"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://careers.trendyol.com/"
+        }
+      ],
+      "url": "https://jobs.lever.co/trendyol",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_014",
+      "sourceNodeId": "company_014",
+      "company": "Hepsiburada",
+      "title": "Backend, frontend, DevOps, bilgi güvenliği, veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "devops",
+        "cyber",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Backend, frontend, DevOps, bilgi güvenliği, veri\nResmî kariyer sayfası teknoloji ekibine Bootcamp/DevOps etkinlikleriyle genç yetenek kazandırdığını belirtiyor; iletişim sayfası güncel ilanlar için LinkedIn ve Kariyer.net'i gösteriyor. Program ve model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kurumsal.hepsiburada.com/tr/hakkimizda/kariyer"
+        }
+      ],
+      "url": "https://kurumsal.hepsiburada.com/tr/hakkimizda/kariyer",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_015",
+      "sourceNodeId": "company_015",
+      "company": "Getir",
+      "title": "Yazılım, platform, veri, engineering · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "devops",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Yazılım, platform, veri, engineering\nGetir iş panosu; Türkiye konumları ve mühendislik rolleri kontrol edilebilir. Junior/graduate uygunluğu ve uzaktan çalışma her ilan için ayrıca doğrulanmalı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://getir.careers-page.com/"
+        }
+      ],
+      "url": "https://getir.careers-page.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_023",
+      "sourceNodeId": "company_023",
+      "company": "KoçSistem",
+      "title": "Yazılım, bulut, siber güvenlik, IT · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cloud",
+        "cyber",
+        "it"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Yazılım, bulut, siber güvenlik, IT\nLevel Up / NewChapter genç yetenek akışını kontrol et; öğrenci ve mezun uygunluğu program aşamasına göre değişir. Normal açık pozisyonlar da takip edilmeli. Türkiye konumu ve çalışma modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.kocsistem.com.tr/kurumsal/kariyer"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.kocsistem.com.tr/kurumsal/kariyer/level-up"
+        }
+      ],
+      "url": "https://www.kocsistem.com.tr/kurumsal/kariyer",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_024",
+      "sourceNodeId": "company_024",
+      "company": "Logo Yazılım",
+      "title": "Backend, frontend, QA, DevOps, kurumsal yazılım · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "software"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Backend, frontend, QA, DevOps, kurumsal yazılım\nLogo resmî kariyer panosu; junior / yeni mezun / yazılım ilanlarını ara. Bootcamp ve öğrenci fırsatları dönemli olabilir. Türkiye konumu, deneyim koşulu ve model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://live.peoplise.com/logo/career"
+        }
+      ],
+      "url": "https://live.peoplise.com/logo/career",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_027",
+      "sourceNodeId": "company_027",
+      "company": "Peak",
+      "title": "Backend, oyun yazılımı, software engineering · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "game",
+        "software"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Backend, oyun yazılımı, software engineering\nKontrol sırasında resmî listede Software Engineer, Backend (New Grad) ve Software Engineer, Games (New Grad) görüldü. Türkiye/İstanbul rolleri; çalışma modeli ve başvurunun hâlen açık olması ilan detayından teyit edilmeli.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://peak.com/open-positions"
+        }
+      ],
+      "url": "https://peak.com/open-positions",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_028",
+      "sourceNodeId": "company_028",
+      "company": "Dream Games",
+      "title": "Software engineer, oyun geliştirme, DevOps · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "game",
+        "devops"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Software engineer, oyun geliştirme, DevOps\nKontrol sırasında İstanbul için Software Engineer (New Grad) ve DevOps Engineer (New Grad) resmî sayfalarda yer alıyordu. Yazılım ilanı daha önce oyun geliştirme deneyimi zorunlu olmadığını söylüyor; Unity/C# ilgisi ve ilgili bölüm mezuniyeti aranıyor. Model ve güncel başvuru durumu ayrıca teyit edilmeli.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.dreamgames.com/open-positions"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.dreamgames.com/jobs/software-engineer-new-grad"
+        }
+      ],
+      "url": "https://www.dreamgames.com/open-positions",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_029",
+      "sourceNodeId": "company_029",
+      "company": "sahibinden.com",
+      "title": "Backend, frontend, mobil, platform, veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "devops",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye yazılım telekom ve bilişim",
+      "summary": "Backend, frontend, mobil, platform, veri\nŞirketin kendi LinkedIn iş panosu. Kullanıcıların yayımladığı genel sahibinden iş ilanları bölümüyle karıştırma. Kontrolde Frontend Developer rolü listeleniyordu; 0 deneyim uygunluğu, Türkiye çalışma yeri ve model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.linkedin.com/company/sahibinden-com/jobs/"
+        }
+      ],
+      "url": "https://www.linkedin.com/company/sahibinden-com/jobs/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_012",
+      "sourceNodeId": "company_012",
+      "company": "Türk Hava Yolları",
+      "title": "IT, dijital, veri, teknoloji odaklı birim rolleri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "IT, dijital, veri, teknoloji odaklı birim rolleri\nTecrübesiz Birim Çalışanı (Yeni Mezun/Öğrenci) kategorisi var. Yazılım için ayrıca Turkish Technology'yi önceliklendir. Programlar dönemli; öğrenci, mezun ve Türkiye konum şartını ayrı kontrol et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.turkishairlines.com/tr-TR"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://careers.turkishairlines.com/en-US/newly-graduatestudent"
+        }
+      ],
+      "url": "https://careers.turkishairlines.com/tr-TR",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_016",
+      "sourceNodeId": "company_016",
+      "company": "Beko / Arçelik",
+      "title": "Yazılım, gömülü, IoT, veri, IT · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "data",
+        "it"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Yazılım, gömülü, IoT, veri, IT\nBeko Koç kariyer portalında New Graduate etiketiyle ilanlar bulunabiliyor. Türkiye filtresi ve yazılım/IT anahtar kelimeleri kullan. Her yeni mezun ilanı yazılım değildir; çalışma modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.koccareers.com/beko"
+        }
+      ],
+      "url": "https://www.koccareers.com/beko",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_017",
+      "sourceNodeId": "company_017",
+      "company": "Vestel",
+      "title": "Yazılım, gömülü yazılım, test, IT · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "qa",
+        "it"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Yazılım, gömülü yazılım, test, IT\nVESTalent yeni mezun mühendisleri kapsayan dönemli program. Listelenen 16. MT ilanında son tarih 20 Temmuz 2026; geçmiş dönem referansıdır. Güncel ilanlar için ana portalı kontrol et. Türkiye şehir/model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.vestelkariyer.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.vestelkariyer.com/ilan/534"
+        }
+      ],
+      "url": "https://www.vestelkariyer.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_018",
+      "sourceNodeId": "company_018",
+      "company": "Ford Otosan",
+      "title": "Yazılım, dijital ürünler, gömülü, veri, IT · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "data",
+        "it"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Yazılım, dijital ürünler, gömülü, veri, IT\nResmî sayfa CTRL+Future yazılım/kariyer geliştirme projesinde yeni mezun ve son sınıf katılımını açıklıyor; bu bir güncel açık başvuru ilanı değildir. Kariyer Fırsatları menüsünden güncel rollere geç. Türkiye çalışma modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.fordotosan.com.tr/tr/kariyer/kariyer-firsatlari/yetenek-programlarimiz"
+        }
+      ],
+      "url": "https://www.fordotosan.com.tr/tr/kariyer/kariyer-firsatlari/yetenek-programlarimiz",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_019",
+      "sourceNodeId": "company_019",
+      "company": "Bosch Türkiye",
+      "title": "Yazılım, gömülü, IoT, veri, IT · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "data",
+        "it"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Yazılım, gömülü, IoT, veri, IT\nResmî sayfada İş olanaklarımıza göz at bağlantısı ve Mezunlar bölümü bulunuyor. Smart Start öğrenci programıdır; mezunlar mezun/uzman ilanlarına bakmalı. Türkiye filtresi ve model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.bosch.com.tr/kariyer/"
+        }
+      ],
+      "url": "https://www.bosch.com.tr/kariyer/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_020",
+      "sourceNodeId": "company_020",
+      "company": "Siemens Türkiye",
+      "title": "Yazılım, endüstriyel yazılım, siber güvenlik, otomasyon · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Yazılım, endüstriyel yazılım, siber güvenlik, otomasyon\nTürkiye lokasyonlu normal mühendis ilanlarını önceliklendir. Siemens Graduate Program yüksek lisans ve uluslararası rotasyon içerebilir; yalnız lisans mezununa veya yurt dışına çıkmadan çalışma tercihine otomatik uygun değildir. Model ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.siemens.com/tr-tr/company/jobs/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.siemens.com/tr-tr/company/jobs/growth-careers/siemens-graduate-program/"
+        }
+      ],
+      "url": "https://www.siemens.com/tr-tr/company/jobs/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_068",
+      "sourceNodeId": "company_068",
+      "company": "Samsung",
+      "title": "Software Engineer; Research; Graduate; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Software Engineer; Research; Graduate; Security\nTürkiye sayfasındaki İş ara bağlantısı resmî Workday portalına gider. Türkiye ve Ar-Ge yazılım ilanlarını ara.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://sec.wd3.myworkdayjobs.com/Samsung_Careers"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.samsung.com/tr/about-us/careers/"
+        }
+      ],
+      "url": "https://sec.wd3.myworkdayjobs.com/Samsung_Careers",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_077",
+      "sourceNodeId": "company_077",
+      "company": "Huawei Türkiye",
+      "title": "Software Engineer, Backend, Cloud, QA, R&D · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "cloud",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Software Engineer, Backend, Cloud, QA, R&D\nGenel portalda Turkey veya Türkiye ara; yerel kariyer sayfasını da kontrol et. Yeni mezun ve çalışma modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://career.huawei.com/en"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.huawei.com/tr/careers"
+        }
+      ],
+      "url": "https://career.huawei.com/en",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_078",
+      "sourceNodeId": "company_078",
+      "company": "Ericsson Türkiye",
+      "title": "Software Developer, Backend, Network Software, Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Software Developer, Backend, Network Software, Security\nTürkiye sayfasında Graduate Program var; sayfa başvuruların yakında açılacağını belirtiyor. Genel ilanları da kontrol et. Türkiye ofis veya hibrit koşulları ilana bağlı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.ericsson.com/en/careers/global-locations/turkey"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.ericsson.com/en/careers/students-early-careers/early-career-program"
+        }
+      ],
+      "url": "https://www.ericsson.com/en/careers/global-locations/turkey",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_079",
+      "sourceNodeId": "company_079",
+      "company": "Nokia",
+      "title": "Software Engineer, Network Software, Security, Test Automation · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye sanayi ve kurumsal teknoloji",
+      "summary": "Software Engineer, Network Software, Security, Test Automation\nGraduate or Entry Level filtresi var. Turkey konumunu ara; küresel graduate sayfası Türkiye'de veya Türkiye remote açık rol garantisi değil.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.nokia.com/en/sites/CX_1/jobs"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.nokia.com/careers/students-and-graduates/"
+        }
+      ],
+      "url": "https://jobs.nokia.com/en/sites/CX_1/jobs",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_021",
+      "sourceNodeId": "company_021",
+      "company": "Softtech",
+      "title": "Backend, frontend, mobil, QA, veri, siber güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "qa",
+        "data",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Backend, frontend, mobil, QA, veri, siber güvenlik\nYetenek Kuşağı doğrudan yeni mezunlara yönelik tam zamanlı yazılım işe alım programıdır. 2026 dönemi son tarih 3 Mayıs 2026 idi; sonraki dönem ve normal ilanları takip et. Çalışma modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://softtech.com.tr/kariyer"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://softtech.com.tr/yetenekkusagi/"
+        }
+      ],
+      "url": "https://softtech.com.tr/kariyer",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_022",
+      "sourceNodeId": "company_022",
+      "company": "Intertech",
+      "title": "Backend, frontend, mobil, QA, altyapı, güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "qa",
+        "devops",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Backend, frontend, mobil, QA, altyapı, güvenlik\nResmî aday başvuru sitesi. StartTech Part-Time son sınıf öğrencileri içindir; mezunlar normal ilanlardaki junior/deneyimsiz koşullarını kontrol etmeli. Resmî sayfa uzaktan çalışma süreçlerinden bahsediyor; güncel rol modelini teyit et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://career.intertech.com.tr/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://intertech.com.tr/career.html"
+        }
+      ],
+      "url": "https://career.intertech.com.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_025",
+      "sourceNodeId": "company_025",
+      "company": "Garanti BBVA Teknoloji",
+      "title": "Backend, frontend, mobil, veri, siber güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "data",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Backend, frontend, mobil, veri, siber güvenlik\nTech Talent / Talent Week yeni mezunlar için uygun işe alım yoludur; 2026 başvuru son tarihi 19 Şubat idi. Resmî şirket sayfasında hibrit ve Türkiye'nin farklı yerlerinden çalışma açıklanıyor; pozisyon bazında teyit et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.garantibbva.com.tr/garantibbva-kuruluslari/garanti-bbva-teknoloji"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.garantibbva.com.tr/kurumsal-iletisim/garanti-bbva-talent-week-2026"
+        }
+      ],
+      "url": "https://kariyer.garantibbva.com.tr/garantibbva-kuruluslari/garanti-bbva-teknoloji",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_026",
+      "sourceNodeId": "company_026",
+      "company": "Akbank",
+      "title": "Yazılım, mobil, veri, siber güvenlik, IT · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "mobile",
+        "data",
+        "cyber",
+        "it"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Yazılım, mobil, veri, siber güvenlik, IT\nResmî kariyer portalında teknoloji ve yeni mezun fırsatlarını ara. Eğitim etkinliği ile iş ilanını ayır; 0 deneyim uygunluğu, Türkiye çalışma yeri ve hibrit/ofis modeli ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.akbank.com/"
+        }
+      ],
+      "url": "https://kariyer.akbank.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_043",
+      "sourceNodeId": "company_043",
+      "company": "Türkiye İş Bankası",
+      "title": "Bilgi teknolojileri, yapay zekâ, veri, siber güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "data",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Bilgi teknolojileri, yapay zekâ, veri, siber güvenlik\nResmî sayfa işe alımların deneyim beklentisi olmadan başlangıç seviyesinde olduğunu belirtiyor. Sistem uzmanı, mühendis ve uzman yardımcısı duyurularını takip et; aktif teknik ilan ayrıca kontrol edilmeli.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://ik.isbank.com.tr/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.isbank.com.tr/bankamizi-taniyin/iste-kariyer"
+        }
+      ],
+      "url": "https://ik.isbank.com.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_044",
+      "sourceNodeId": "company_044",
+      "company": "AkTech (Akbank grubu)",
+      "title": "Yazılım, finansal teknoloji, backend, altyapı · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "devops"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Yazılım, finansal teknoloji, backend, altyapı\nResmî sitede PDF CV için kariyer@aktech.com adresi veriliyor. Ayrı yeni mezun ilanı doğrulanmadı; site üzerinden güncel koşulları kontrol et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.aktech.com/"
+        }
+      ],
+      "url": "https://www.aktech.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_045",
+      "sourceNodeId": "company_045",
+      "company": "Yapı Kredi Teknoloji",
+      "title": "Software, backend, frontend, mobil, cloud, veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "frontend",
+        "mobile",
+        "cloud",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Software, backend, frontend, mobil, cloud, veri\nResmî sayfa açık ilanlar için LinkedIn ve Koç Kariyerim'e yönlendiriyor. Future Squad uzun dönem stajı var; mezun aday için normal yazılım ilanlarına bakılmalı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://ykteknoloji.com.tr/en/career/career-place"
+        }
+      ],
+      "url": "https://ykteknoloji.com.tr/en/career/career-place",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_046",
+      "sourceNodeId": "company_046",
+      "company": "QNB Türkiye",
+      "title": "Bilgi teknolojileri, dijital ürün, veri, güvenlik · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "data",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Bilgi teknolojileri, dijital ürün, veri, güvenlik\nPortalda 1 yıldan az deneyimi olanlar için Yeni Mezunum yolu bulunuyor. Bankacılık dışı teknik rolleri filtrele; açık software ilanı doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://qnbkariyer.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.qnb.com.tr/insan-kaynaklari/ailemize-katilin/yeni-mezun-ve-ogrenciler"
+        }
+      ],
+      "url": "https://qnbkariyer.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_047",
+      "sourceNodeId": "company_047",
+      "company": "Kuveyt Türk",
+      "title": "Bilgi teknolojileri, software, backend, veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "software",
+        "backend",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Bilgi teknolojileri, software, backend, veri\nResmî kariyer gelişimi sayfası Tech Talent için ilgili bölümlerden yeni mezun veya aynı yıl mezun olacak adayları tanımlıyor. Güncel dönem ve ilan takvimini kontrol et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.kuveytturk.com.tr/hakkimizda/kuveyt-turk-kariyer"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.kuveytturk.com.tr/hakkimizda/kuveyt-turk-kariyer/kariyer-gelisimi"
+        }
+      ],
+      "url": "https://www.kuveytturk.com.tr/hakkimizda/kuveyt-turk-kariyer",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_048",
+      "sourceNodeId": "company_048",
+      "company": "Ziraat Teknoloji",
+      "title": "Software, bankacılık yazılımları, altyapı, veri · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "devops",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "Software, bankacılık yazılımları, altyapı, veri\nKariyer günleri ön başvuru formunda Mezun seçeneği var. Bu form tek başına açık iş ilanı değildir; normal alım ve uzman yardımcılığı duyurularını ayrıca takip et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.ziraatteknoloji.com/tr/kariyer/ziraat-teknolojili-olmak/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.ziraatteknoloji.com/kariyer-gunleri/"
+        }
+      ],
+      "url": "https://www.ziraatteknoloji.com/tr/kariyer/ziraat-teknolojili-olmak/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_049",
+      "sourceNodeId": "company_049",
+      "company": "Halkbank",
+      "title": "BT uzman yardımcısı, bilgi teknolojileri, yazılım · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "software"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye bankacılık ve finans teknolojileri",
+      "summary": "BT uzman yardımcısı, bilgi teknolojileri, yazılım\nResmî kariyer ve başvuru sistemi var. BT uzman yardımcılığı duyurularını izle; eski sınav ilanları aktif başvuru anlamına gelmez. Açık teknik alım ayrıca doğrulanmalı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kariyer.halkbank.com.tr/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://basvuru.halkbank.com.tr/kariyerbasvuru/giris"
+        }
+      ],
+      "url": "https://kariyer.halkbank.com.tr/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_030",
+      "sourceNodeId": "company_030",
+      "company": "Canonical / Ubuntu",
+      "title": "Software, backend, Linux, cloud, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "cloud",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, backend, Linux, cloud, security\nGraduate ve Associate giriş yolları var; şirket remote-first çalışıyor. Genel portalda Graduate, Associate ve Worldwide veya EMEA filtrelerini kontrol et. Türkiye sözleşmesi, ülke uygunluğu ve seyahat koşulları ilana bağlı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.\nGraduate kanalı 26 Ekim 2026 tarihinde ayrıca okundu; bu kayıt hâlâ genel başvuru kanalıdır.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://canonical.com/careers/all?search=software"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://canonical.com/careers/early-careers"
+        },
+        {
+          "title": "Graduate / Associate kariyer yolu",
+          "url": "https://canonical.com/careers/early-careers",
+          "summary": "26 Ekim’de okundu: Graduate → Associate → Prof I gelişim yolu ve remote-first kültür. Tekil açık ilan veya Türkiye sözleşme uygunluğu teyidi değil."
+        }
+      ],
+      "url": "https://canonical.com/careers/all?search=software",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_031",
+      "sourceNodeId": "company_031",
+      "company": "GitLab",
+      "title": "Software, backend, frontend, DevSecOps, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "frontend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, backend, frontend, DevSecOps, security\nRemote kültürü var; lokasyon filtresi ve ilan ülke koşulları esas. Ayrı bir açık yeni mezun ilanı doğrulanmadı; Talent Community mevcut.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://about.gitlab.com/jobs/all-jobs/"
+        }
+      ],
+      "url": "https://about.gitlab.com/jobs/all-jobs/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_032",
+      "sourceNodeId": "company_032",
+      "company": "Automattic / WordPress",
+      "title": "Software, backend, web, infrastructure, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "devops",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, backend, web, infrastructure, security\nResmî sayfa uzaktan çalışmayı vurguluyor. Görülen yazılım ilanları deneyimli odaklı; 0 deneyim uygunluğu garanti değil. Türkiye sözleşme koşulunu ilana göre kontrol et.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://automattic.com/work-with-us/jobs/"
+        }
+      ],
+      "url": "https://automattic.com/work-with-us/jobs/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_033",
+      "sourceNodeId": "company_033",
+      "company": "Elastic",
+      "title": "Backend, distributed systems, cloud, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "cloud",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Backend, distributed systems, cloud, security\nDağıtık çalışma modeli; Engineering ve country filtreleri var. Görülen ülke listesinde Türkiye yok; Türkiye'den çalışma doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.elastic.co/"
+        }
+      ],
+      "url": "https://jobs.elastic.co/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_034",
+      "sourceNodeId": "company_034",
+      "company": "Grafana Labs",
+      "title": "Backend, frontend, observability, SRE, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "devops",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Backend, frontend, observability, SRE, security\nTamamen remote şirket; ilanlar belirli ülkelere bağlanabiliyor. Türkiye ve junior uygunluğu doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://grafana.com/careers/"
+        }
+      ],
+      "url": "https://grafana.com/careers/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_035",
+      "sourceNodeId": "company_035",
+      "company": "Cloudflare",
+      "title": "Software, network, cybersecurity, infrastructure · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "devops"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, network, cybersecurity, infrastructure\nŞirket hibrit modele geçtiğini belirtiyor. Early Talent çoğunlukla staj; 2027 yazılım stajlarında Lizbon ve Londra görüldü. Türkiye'den remote varsayma.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.cloudflare.com/careers/jobs/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.cloudflare.com/careers/early-talent/"
+        }
+      ],
+      "url": "https://www.cloudflare.com/careers/jobs/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_036",
+      "sourceNodeId": "company_036",
+      "company": "Atlassian",
+      "title": "Backend, frontend, fullstack, security, SRE · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "fullstack",
+        "cyber",
+        "devops"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Backend, frontend, fullstack, security, SRE\nGraduate programı son sınıf ve yeni mezunlara yönelik. Remote için yasal şirket varlığı, çalışma hakkı ve saat dilimi koşulları var; Türkiye filtresi bulunması uygun ilan olduğu anlamına gelmez.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.atlassian.com/company/careers/all-jobs"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.atlassian.com/company/careers/earlycareers"
+        }
+      ],
+      "url": "https://www.atlassian.com/company/careers/all-jobs",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_037",
+      "sourceNodeId": "company_037",
+      "company": "Docker",
+      "title": "Software, backend, containers, developer tooling, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, backend, containers, developer tooling, security\nRemote-first şirket. İşe alım rehberi tüm koşulları karşılamayan adayları da başvurmaya teşvik ediyor; açık junior ilanı ve Türkiye uygunluğu ayrıca kontrol edilmeli.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.docker.com/career-openings/"
+        }
+      ],
+      "url": "https://www.docker.com/career-openings/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_038",
+      "sourceNodeId": "company_038",
+      "company": "Mozilla",
+      "title": "Frontend, browser, backend, Rust/C++, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "frontend",
+        "backend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Frontend, browser, backend, Rust/C++, security\nRemote ilanları var ancak görülen ilanlarda belirli ülke listeleri ve senior/staff seviyeleri baskın. Türkiye listede görünmedi; Türkiye remote uygunluğu doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.mozilla.org/en-US/careers/listings/"
+        }
+      ],
+      "url": "https://www.mozilla.org/en-US/careers/listings/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_039",
+      "sourceNodeId": "company_039",
+      "company": "Red Hat",
+      "title": "Software, Linux, cloud, backend, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cloud",
+        "backend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, Linux, cloud, backend, security\nResmî araştırma sayfası üniversite stajı ve graduate programlarına yönlendiriyor. Remote seçenekleri bulunuyor; Türkiye lokasyonu ve mezuniyet şartı ilana bağlı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.redhat.com/en/jobs"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://research.redhat.com/internships/"
+        }
+      ],
+      "url": "https://www.redhat.com/en/jobs",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_040",
+      "sourceNodeId": "company_040",
+      "company": "Spotify",
+      "title": "Backend, frontend, data, platform, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "frontend",
+        "data",
+        "devops",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Backend, frontend, data, platform, security\nWork From Anywhere yalnız operasyonel varlık ve bölge koşullarında çalışıyor. Öğrenci sayfasındaki staj bilgileri eski dönem içerebilir; Türkiye'den remote ve aktif yeni mezun ilanı doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.lifeatspotify.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.lifeatspotify.com/students"
+        }
+      ],
+      "url": "https://www.lifeatspotify.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_041",
+      "sourceNodeId": "company_041",
+      "company": "Dropbox",
+      "title": "Software, backend, web, application security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, backend, web, application security\nVirtual First; remote ilanlar ülke kısıtlı. Yeni mezun kadroları ağırlıkla stajdan tam zamanlı geçişle doluyor; dış ilan açılırsa Emerging Talent altında yayımlanıyor. Türkiye uygunluğu doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.dropbox.jobs/en/jobs/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.dropbox.jobs/en/emerging-talent/"
+        }
+      ],
+      "url": "https://www.dropbox.jobs/en/jobs/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_042",
+      "sourceNodeId": "company_042",
+      "company": "GitHub",
+      "title": "Software, backend, frontend, developer platform, security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "frontend",
+        "devops",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Uzaktan çalışma için izlenecek şirketler",
+      "summary": "Software, backend, frontend, developer platform, security\nRemote-first kültürü var; her ilanın ülkesi esas. Açık Türkiye remote veya 0 deneyim ilanı doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.github.careers/careers-home/"
+        }
+      ],
+      "url": "https://www.github.careers/careers-home/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_050",
+      "sourceNodeId": "company_050",
+      "company": "Apple",
+      "title": "Software Engineer; Backend; Front End; Security; Early Careers · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "frontend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Engineer; Backend; Front End; Security; Early Careers\nÖğrenci stajları aktif öğrencilik isteyebilir; mezunlar genel aramayı da kullanmalı. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.apple.com/en-us/search"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.apple.com/careers/us/work-at-apple/students.html"
+        }
+      ],
+      "url": "https://jobs.apple.com/en-us/search",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_051",
+      "sourceNodeId": "company_051",
+      "company": "Google",
+      "title": "Software Engineer; Early Career; Security Engineer · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Engineer; Early Career; Security Engineer\nExperience filtresinde Early seç; Türkiye ve Remote eligible konumlarını ayrıca kontrol et. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.google.com/about/careers/applications/jobs/results"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.google.com/about/careers/applications/early-career"
+        }
+      ],
+      "url": "https://www.google.com/about/careers/applications/jobs/results",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_052",
+      "sourceNodeId": "company_052",
+      "company": "Amazon / AWS",
+      "title": "Software Development Engineer; Graduate; Security; Cloud · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "cloud"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Development Engineer; Graduate; Security; Cloud\nGraduate, Student Programs ve Less than 1 year filtreleri; AWS aynı başvuru sisteminde. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.amazon.jobs/en/search"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://amazon.jobs/content/en-gb/career-programs/university/jobs-for-grads"
+        }
+      ],
+      "url": "https://www.amazon.jobs/en/search",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_053",
+      "sourceNodeId": "company_053",
+      "company": "NVIDIA",
+      "title": "New College Grad; Software Engineer; Systems Software; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "New College Grad; Software Engineer; Systems Software; Security\nNew College Grad (NCG) ilanlarını ara; yazılım ve sistem rolleri öncelikli. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/careers/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/"
+        }
+      ],
+      "url": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_054",
+      "sourceNodeId": "company_054",
+      "company": "Microsoft",
+      "title": "Software Engineer; Early in Profession; Security; Cloud · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "cloud"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Engineer; Early in Profession; Security; Cloud\nEarly in Profession sayfası okuldan veya farklı yollardan kariyere başlayanları kapsıyor. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.microsoft.com/v2/global/en/home.html"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://careers.microsoft.com/v2/global/en/students"
+        }
+      ],
+      "url": "https://careers.microsoft.com/v2/global/en/home.html",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_055",
+      "sourceNodeId": "company_055",
+      "company": "Meta",
+      "title": "Software Engineer University Grad; Production Engineer; Security Engineer · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Engineer University Grad; Production Engineer; Security Engineer\nUniversity Grad etiketini kullan; portal tarayıcıda oturum açmayı isteyebilir. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.metacareers.com/jobsearch/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.metacareers.com/careerprograms/students/"
+        }
+      ],
+      "url": "https://www.metacareers.com/jobsearch/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_056",
+      "sourceNodeId": "company_056",
+      "company": "IBM",
+      "title": "Entry Level; Associate Application Developer; Software; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Entry Level; Associate Application Developer; Software; Security\nExperience: Entry Level; Software Engineering, Cloud ve Security alanları. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.ibm.com/careers/search"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.ibm.com/careers/career-opportunities"
+        }
+      ],
+      "url": "https://www.ibm.com/careers/search",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_057",
+      "sourceNodeId": "company_057",
+      "company": "Intel",
+      "title": "College Graduate; Software Application; Cloud Software; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cloud",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "College Graduate; Software Application; Cloud Software; Security\nEski jobs.intel.com sayfaları hata verebiliyor; Intel'in resmî destek sayfasının bağladığı Workday portalını kullan. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://intel.wd1.myworkdayjobs.com/External/page/6042070b79e01001f04fa9b468070000"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.intel.ie/content/www/ie/en/company-overview/students.html"
+        }
+      ],
+      "url": "https://intel.wd1.myworkdayjobs.com/External/page/6042070b79e01001f04fa9b468070000",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_058",
+      "sourceNodeId": "company_058",
+      "company": "AMD",
+      "title": "New Grad; Software; GPU; Firmware; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "embedded",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "New Grad; Software; GPU; Firmware; Security\nStudent & New Grad Opportunities bölümünden New Grad seç. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.amd.com/en/corporate/careers.html"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://careers.amd.com/students/"
+        }
+      ],
+      "url": "https://www.amd.com/en/corporate/careers.html",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_059",
+      "sourceNodeId": "company_059",
+      "company": "Qualcomm",
+      "title": "Associate Software Engineer; Software; Security; Early Career · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Associate Software Engineer; Software; Security; Early Career\nEMEA programlarını ve software alanını kontrol et. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.qualcomm.com/careers"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.qualcomm.com/company/careers/internships-and-early-in-career-opportunities"
+        }
+      ],
+      "url": "https://careers.qualcomm.com/careers",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_060",
+      "sourceNodeId": "company_060",
+      "company": "Adobe",
+      "title": "University Graduate; Software Engineer; Frontend; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "frontend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "University Graduate; Software Engineer; Frontend; Security\nTechnical internships and graduate roles bölümü; öğrenci stajı ve mezun rolünü ayır. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.adobe.com/us/en"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://careers.adobe.com/us/en/graduates"
+        }
+      ],
+      "url": "https://careers.adobe.com/us/en",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_061",
+      "sourceNodeId": "company_061",
+      "company": "Salesforce",
+      "title": "New Grad; Software Engineer; Security; Full Stack · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "fullstack"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "New Grad; Software Engineer; Security; Full Stack\nFutureforce New Grad; Tech & Product alanını seç. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.salesforce.com/company/careers/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.salesforce.com/company/careers/university/new-grads/"
+        }
+      ],
+      "url": "https://www.salesforce.com/company/careers/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_062",
+      "sourceNodeId": "company_062",
+      "company": "Oracle",
+      "title": "Graduate; Software Developer; Cloud; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cloud",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Graduate; Software Developer; Cloud; Security\nExperience Level: Graduate filtresi; Oracle Global Tech Program yolunu da kontrol et. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.oracle.com/en/sites/jobsearch/jobs"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.oracle.com/careers/students-grads/"
+        }
+      ],
+      "url": "https://careers.oracle.com/en/sites/jobsearch/jobs",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_063",
+      "sourceNodeId": "company_063",
+      "company": "SAP",
+      "title": "Graduate; Associate Developer; Software; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Graduate; Associate Developer; Software; Security\nSAP Next Gen, entry-level ve academy programları; geçiş döneminde careers.sap.com sitesini de kontrol et. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.sap.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://jobs.sap.com/en/students-and-graduates/"
+        }
+      ],
+      "url": "https://jobs.sap.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_064",
+      "sourceNodeId": "company_064",
+      "company": "Cisco",
+      "title": "Software Engineer; Security; Graduate; Entry Level · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Engineer; Security; Graduate; Entry Level\nFind entry-level roles ile ara; siber güvenlik ve networking software için uygun alanlar. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.cisco.com/global/en"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://careers.cisco.com/global/en/entry-level-careers"
+        }
+      ],
+      "url": "https://careers.cisco.com/global/en",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_065",
+      "sourceNodeId": "company_065",
+      "company": "Dell Technologies",
+      "title": "Graduate; Software Engineer; Cloud; Cybersecurity · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cloud",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Graduate; Software Engineer; Cloud; Cybersecurity\nGraduate Development Program ve bölgesel graduate deneyimleri. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.dell.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://jobs.dell.com/en/graduates"
+        }
+      ],
+      "url": "https://jobs.dell.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_066",
+      "sourceNodeId": "company_066",
+      "company": "HPE",
+      "title": "Graduate Software Engineer; Cybersecurity; Cloud; IT · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "cloud",
+        "it"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Graduate Software Engineer; Cybersecurity; Cloud; IT\nGraduate opportunities; Engineering, Cybersecurity and Digital Risk Management ve IT alanları. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.hpe.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://careers.hpe.com/students"
+        }
+      ],
+      "url": "https://careers.hpe.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_067",
+      "sourceNodeId": "company_067",
+      "company": "HP",
+      "title": "Graduate; Software; Data & Information Technology; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "data",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Graduate; Software; Data & Information Technology; Security\nSeniority: Graduate, Job Category: Software; Remote veya Teleworker filtresini ayrıca kontrol et. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://apply.hp.com/careers/search"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://jobs.hp.com/"
+        }
+      ],
+      "url": "https://apply.hp.com/careers/search",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_069",
+      "sourceNodeId": "company_069",
+      "company": "Intuit",
+      "title": "Software Engineer 1; Entry Level; Backend; Full Stack; Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "fullstack",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Engineer 1; Entry Level; Backend; Full Stack; Security\nEntry-level engineering fırsatları; remote filtreli sonucun izin verilen ülkelerini oku. Türkiye’den remote uygunluğu ilan bazında; genel bir kabul doğrulanmadı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.intuit.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.intuit.com/careers/programs/entry-level-careers/"
+        }
+      ],
+      "url": "https://jobs.intuit.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_084",
+      "sourceNodeId": "company_084",
+      "company": "Capgemini",
+      "title": "Software Engineer, Backend, Frontend, Cloud, Cybersecurity · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "backend",
+        "frontend",
+        "cloud",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel büyük teknoloji şirketleri",
+      "summary": "Software Engineer, Backend, Frontend, Cloud, Cybersecurity\nGraduate programları var. Türkiye'den remote uygunluğu doğrulanmadı; sadece Turkey veya Türkiye'yi açıkça kapsayan remote roller için değerlendir.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.capgemini.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.capgemini.com/careers/career-paths/students-and-graduates/"
+        }
+      ],
+      "url": "https://jobs.capgemini.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_070",
+      "sourceNodeId": "company_070",
+      "company": "Palo Alto Networks",
+      "title": "Software Engineer, Security Engineer, R&D, QA · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel siber güvenlik şirketleri",
+      "summary": "Software Engineer, Security Engineer, R&D, QA\nInternship ve early career programları var. Türkiye ve remote ülke koşulları ilan bazında kontrol edilmeli.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://jobs.paloaltonetworks.com/en"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://jobs.paloaltonetworks.com/en/early-in-career"
+        }
+      ],
+      "url": "https://jobs.paloaltonetworks.com/en",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_071",
+      "sourceNodeId": "company_071",
+      "company": "Fortinet",
+      "title": "Software Developer, R&D, Network Security, QA · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel siber güvenlik şirketleri",
+      "summary": "Software Developer, R&D, Network Security, QA\nEarly Talent sayfası ağırlıkla öğrenci stajlarını anlatıyor. Mezuniyet ve lokasyon koşullarını ayrıca kontrol et; Türkiye remote garantisi yok.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.fortinet.com/corporate/careers"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.fortinet.com/corporate/careers/early-talent-program"
+        }
+      ],
+      "url": "https://www.fortinet.com/corporate/careers",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_072",
+      "sourceNodeId": "company_072",
+      "company": "CrowdStrike",
+      "title": "Software Engineer, Cloud Security, Threat Research, Detection · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cloud",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel siber güvenlik şirketleri",
+      "summary": "Software Engineer, Cloud Security, Threat Research, Detection\nUniversity programı ve new grad yolları var; sayfa görüşme sırasında öğrenci olma koşulu belirtiyor. Mezunsan genel junior ilanlarını da ara. Remote ülke ile sınırlanabilir.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.crowdstrike.com/en-us/careers/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.crowdstrike.com/en-au/careers/university-interns/"
+        }
+      ],
+      "url": "https://www.crowdstrike.com/en-us/careers/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_073",
+      "sourceNodeId": "company_073",
+      "company": "Check Point",
+      "title": "R&D, Software Developer, QA, Security Engineer · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "qa",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel siber güvenlik şirketleri",
+      "summary": "R&D, Software Developer, QA, Security Engineer\nPortalda Entry Level filtresi var. Programlar rol ve ülkeye göre değişiyor; Türkiye ilanları varsa ayrıca filtrele. Türkiye remote garantisi yok.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://careers.checkpoint.com/"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.checkpoint.com/careers/programs/"
+        }
+      ],
+      "url": "https://careers.checkpoint.com/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_074",
+      "sourceNodeId": "company_074",
+      "company": "SentinelOne",
+      "title": "Backend Engineer, Frontend Engineer, Security Research, Detection · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "backend",
+        "software",
+        "frontend",
+        "cyber"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel siber güvenlik şirketleri",
+      "summary": "Backend Engineer, Frontend Engineer, Security Research, Detection\nKariyer sayfası internships ve early career fırsatlarını belirtiyor. Genel portalda ara; remote ilanların ülke sınırı ve deneyim şartı değişiyor.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.sentinelone.com/careers/"
+        }
+      ],
+      "url": "https://www.sentinelone.com/careers/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_075",
+      "sourceNodeId": "company_075",
+      "company": "Trend Micro",
+      "title": "Software Engineer, Cybersecurity, Threat Research, Cloud Security · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "cloud"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel siber güvenlik şirketleri",
+      "summary": "Software Engineer, Cybersecurity, Threat Research, Cloud Security\nTürkçe kariyer sayfasından global ilan merkezine geç. Türkiye veya Türkiye'yi kapsayan remote lokasyonunu kontrol et; yeni mezun uygunluğu ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.trendmicro.com/tr_tr/about/careers.html"
+        }
+      ],
+      "url": "https://www.trendmicro.com/tr_tr/about/careers.html",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_076",
+      "sourceNodeId": "company_076",
+      "company": "ESET",
+      "title": "Software Developer, Malware Research, Security, QA · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "global",
+      "countries": [],
+      "location": "Çok ülke · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "software",
+        "cyber",
+        "qa"
+      ],
+      "level": "İlan bazında",
+      "industry": "Küresel siber güvenlik şirketleri",
+      "summary": "Software Developer, Malware Research, Security, QA\nTürkçe kariyer sayfası farklı ülke ofislerine ve açık pozisyonlara yönlendiriyor. Türkçe sayfa Türkiye'de açık rol veya Türkiye remote anlamına gelmiyor.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.eset.com/tr/about/careers/"
+        }
+      ],
+      "url": "https://www.eset.com/tr/about/careers/",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_080",
+      "sourceNodeId": "company_080",
+      "company": "PwC Türkiye",
+      "title": "Technology Consulting, Cybersecurity, IT Audit, Data · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "cyber",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye teknoloji danışmanlığı",
+      "summary": "Technology Consulting, Cybersecurity, IT Audit, Data\nYeni mezun yolu var. STEM ve teknoloji ekiplerini hedefle; BT denetimi yazılım geliştirmeden farklıdır. Türkiye ofis veya hibrit koşulları ilana bağlı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.pwc.com.tr/kariyer"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.pwc.com.tr/tr/kariyer-sayfalari/ogrenci-yeni-mezun.html"
+        }
+      ],
+      "url": "https://www.pwc.com.tr/kariyer",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_081",
+      "sourceNodeId": "company_081",
+      "company": "Deloitte Türkiye",
+      "title": "Technology Consulting, Cyber, Software, Data, Cloud · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "cyber",
+        "software",
+        "data",
+        "cloud"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye teknoloji danışmanlığı",
+      "summary": "Technology Consulting, Cyber, Software, Data, Cloud\nTürkiye kariyer sayfasından ilanlara geç; analyst, junior ve graduate ara. Teknoloji danışmanlığı ve siber güvenlik rollerini ayır; yeni mezun uygunluğu ilan bazında.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.deloitte.com/tr/en/careers.html"
+        }
+      ],
+      "url": "https://www.deloitte.com/tr/en/careers.html",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_082",
+      "sourceNodeId": "company_082",
+      "company": "EY Türkiye",
+      "title": "Technology Consulting, Cybersecurity, IT Risk, Data · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "it",
+        "cyber",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye teknoloji danışmanlığı",
+      "summary": "Technology Consulting, Cybersecurity, IT Risk, Data\nTürkiye ilanlarında junior, assistant veya analyst ara. Saf yazılım geliştirme yerine danışmanlık ve BT risk rolleri de çıkabilir; koşullar ilana bağlı.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://www.ey.com/tr_tr/careers/job-search"
+        },
+        {
+          "title": "Yeni mezun / early career",
+          "url": "https://www.ey.com/tr_tr/careers"
+        }
+      ],
+      "url": "https://www.ey.com/tr_tr/careers/job-search",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "company_083",
+      "sourceNodeId": "company_083",
+      "company": "KPMG Türkiye",
+      "title": "Cybersecurity, Technology Consulting, IT Audit, Data · başvuru kanalı",
+      "kind": "channel",
+      "status": "channel",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · ilandan seçilir",
+      "workModel": "unknown",
+      "roles": [
+        "cyber",
+        "it",
+        "data"
+      ],
+      "level": "İlan bazında",
+      "industry": "Türkiye teknoloji danışmanlığı",
+      "summary": "Cybersecurity, Technology Consulting, IT Audit, Data\nResmî sayfada Yeni Mezun Programı bulunuyor. Teknoloji ve siber ekipleri hedefle; genel denetim rolleri yazılım geliştirme ile aynı değil. Program dönemli olabilir.\nKontrol: 14 Ekim 2026. Resmî portal; aktif uygun ilan teyidi değil.",
+      "requirements": [
+        "İlanın deneyim ve mezuniyet koşulları",
+        "Türkiye konumu veya Türkiye’den remote uygunluğu"
+      ],
+      "checkedAt": "2026-10-14",
+      "checkNote": "Önceki araştırmadan aktarılan kariyer kanalı; 26 Ekim’de tüm portallar yeniden okunmadı.",
+      "sources": [
+        {
+          "title": "Normal başvuru",
+          "url": "https://kpmg.com/tr/tr/careers.html"
+        }
+      ],
+      "url": "https://kpmg.com/tr/tr/careers.html",
+      "locationNote": "Şirket merkezi işin konumu sayılmadı. Çalışma şekli ve ülke her ilanda ayrıca doğrulanır."
+    },
+    {
+      "id": "career_job_peak_backend",
+      "sourceNodeId": "career_job_peak_backend",
+      "company": "Peak",
+      "title": "Software Engineer, Backend (New Grad)",
+      "kind": "vacancy",
+      "status": "open",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · İstanbul bilgisi önceki kayıttan",
+      "workModel": "onsite",
+      "roles": [
+        "backend",
+        "software"
+      ],
+      "level": "Yeni mezun",
+      "industry": "Oyun ve teknoloji",
+      "summary": "Oyun özelliklerini destekleyen backend servisleri, API ve veri altyapısı; yeni mezun rolü.",
+      "requirements": [
+        "CS veya eşdeğer lisans; güçlü programlama ve OOP temeli",
+        "Java, JavaScript veya C#; Spring Boot/backend deneyimi",
+        "İlişkisel ve ilişkisel olmayan veri tabanı bilgisi; Redis/Docker benzeri araçlar artı"
+      ],
+      "checkedAt": "2026-10-26",
+      "checkNote": "Resmî ilan metni açılıp okundu; kontrol tarihindeki durumdur, canlı takip yapılmaz.",
+      "sources": [
+        {
+          "title": "Resmî ilan ve kısa özeti",
+          "url": "https://www.peak.com/open-positions/software-engineer-backend-new-grad",
+          "summary": "26 Ekim’de resmî sayfa okundu: On-site / Full-time. Backend, Spring Boot, OOP ve veri tabanı bilgisi bekleniyor. Apply bağlantısı var; harici başvuru formu bu kontrolde açılamadı."
+        }
+      ],
+      "url": "https://www.peak.com/open-positions/software-engineer-backend-new-grad",
+      "locationNote": "On-site resmî sayfada açık. İstanbul bilgisi önceki araştırmada mevcut; güncel ilan/formda iş yerini ayrıca teyit et."
+    },
+    {
+      "id": "career_job_peak_games",
+      "sourceNodeId": "career_job_peak_games",
+      "company": "Peak",
+      "title": "Software Engineer, Games (New Grad)",
+      "kind": "vacancy",
+      "status": "open",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye · İstanbul bilgisi önceki kayıttan",
+      "workModel": "onsite",
+      "roles": [
+        "game",
+        "software"
+      ],
+      "level": "Yeni mezun",
+      "industry": "Oyun ve teknoloji",
+      "summary": "Mobil oyun özellikleri ve ürün geliştirme. Önceden oyun geliştirme deneyimi şart değil; Unity projesi avantaj.",
+      "requirements": [
+        "CS / Software Engineering veya eşdeğer lisans",
+        "Yazılım temelleri, temiz kod ve ekip içinde geliştirme",
+        "Unity oyun projesi avantaj; önceki oyun deneyimi gerekli değil"
+      ],
+      "checkedAt": "2026-10-26",
+      "checkNote": "Resmî ilan metni açılıp okundu; kontrol tarihindeki durumdur, canlı takip yapılmaz.",
+      "sources": [
+        {
+          "title": "Resmî ilan ve kısa özeti",
+          "url": "https://www.peak.com/open-positions/software-engineer-games-new-grad",
+          "summary": "Resmî ilan ve Lever başvuru formu okundu: New Grad, full-time, on-site. Oyun deneyimi zorunlu değil; Unity projesi avantaj."
+        }
+      ],
+      "url": "https://www.peak.com/open-positions/software-engineer-games-new-grad",
+      "locationNote": "On-site güncel resmî ilan ve formda açık; İstanbul önceki kayıttan, iş yerini başvuruda teyit et.",
+      "applyUrl": "https://jobs.lever.co/peakgames/5ec3c72f-47a3-4aaa-963a-8a7620f8039d/apply"
+    },
+    {
+      "id": "career_job_dream_software",
+      "sourceNodeId": "career_job_dream_software",
+      "company": "Dream Games",
+      "title": "Software Engineer (New Grad)",
+      "kind": "vacancy",
+      "status": "open",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye / İstanbul",
+      "workModel": "onsite",
+      "roles": [
+        "game",
+        "software"
+      ],
+      "level": "Yeni mezun",
+      "industry": "Oyun ve teknoloji",
+      "summary": "Unity ile grafik, oyun mantığı ve arayüz geliştirme. Yeni mezunlara yönelik İstanbul rolü.",
+      "requirements": [
+        "CS / Computer Engineering / Software Engineering yeni mezunu",
+        "OOP bilgisi; Unity ve C# ilgisi",
+        "Oyun ilgisi ve ekip çalışması; önceki oyun deneyimi gerekli değil"
+      ],
+      "checkedAt": "2026-10-26",
+      "checkNote": "Resmî ilan metni açılıp okundu; kontrol tarihindeki durumdur, canlı takip yapılmaz.",
+      "sources": [
+        {
+          "title": "Resmî ilan ve kısa özeti",
+          "url": "https://www.dreamgames.com/jobs/software-engineer-new-grad",
+          "summary": "Resmî sayfa ve Lever formu okundu: İstanbul, full-time, on-site. Unity/C#, OOP ve yeni mezun koşulları yer alıyor."
+        }
+      ],
+      "url": "https://www.dreamgames.com/jobs/software-engineer-new-grad",
+      "locationNote": "İlanda belirtilen kapsam; başvuru sırasında yeniden kontrol et.",
+      "applyUrl": "https://jobs.lever.co/dreamgames/0714caf0-4077-44f3-a1d4-8985b9baf1bc/apply"
+    },
+    {
+      "id": "career_job_goodjob",
+      "sourceNodeId": "career_job_goodjob",
+      "company": "Good Job Games",
+      "title": "Software Engineer - New Grad",
+      "kind": "vacancy",
+      "status": "open",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Sarıyer, İstanbul, Türkiye",
+      "workModel": "onsite",
+      "roles": [
+        "backend",
+        "software"
+      ],
+      "level": "Yeni mezun",
+      "industry": "Oyun ve teknoloji",
+      "summary": "Go ile dağıtık oyun servisleri, iç araçlar ve altyapı geliştirme. İstanbul/Sarıyer ofis rolü.",
+      "requirements": [
+        "CS veya başka bir mühendislik lisansı",
+        "Başlangıç düzeyi Go; goroutine ve channel temelleri",
+        "Dağıtık sistem temelleri; AWS, NoSQL ve CI/CD aşinalığı"
+      ],
+      "checkedAt": "2026-10-26",
+      "checkNote": "Resmî ilan metni açılıp okundu; kontrol tarihindeki durumdur, canlı takip yapılmaz.",
+      "sources": [
+        {
+          "title": "Resmî ilan ve kısa özeti",
+          "url": "https://job-boards.greenhouse.io/goodjobgames/jobs/7574002003",
+          "summary": "Greenhouse ilanı ve başvuru alanları okundu. Sayfa Sarıyer/İstanbul on-site rolü olduğunu ve tam remote sunulmadığını açıkça belirtiyor."
+        }
+      ],
+      "url": "https://job-boards.greenhouse.io/goodjobgames/jobs/7574002003",
+      "locationNote": "İlanda belirtilen kapsam; başvuru sırasında yeniden kontrol et."
+    },
+    {
+      "id": "career_job_tervax",
+      "sourceNodeId": "career_job_tervax",
+      "company": "TervaX",
+      "title": "Junior Penetration Test Engineer",
+      "kind": "vacancy",
+      "status": "open",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "Türkiye",
+      "workModel": "remote",
+      "roles": [
+        "cyber"
+      ],
+      "level": "Junior",
+      "industry": "Siber güvenlik",
+      "summary": "Web, mobil ve altyapı güvenlik değerlendirmeleri; şirket sayfasında Türkiye / Remote olarak listeleniyor.",
+      "requirements": [
+        "CS / Cybersecurity veya ilgili lisans",
+        "OWASP Top 10; Burp Suite, Nmap, Metasploit aşinalığı",
+        "Python, Bash veya PowerShell; teknik raporlama"
+      ],
+      "checkedAt": "2026-10-26",
+      "checkNote": "Resmî ilan metni açılıp okundu; kontrol tarihindeki durumdur, canlı takip yapılmaz.",
+      "sources": [
+        {
+          "title": "Resmî ilan ve kısa özeti",
+          "url": "https://tervax.com/careers",
+          "summary": "Şirketin kariyer sayfasında Junior, full-time, Turkey / Remote başlığı ve e-posta başvuru kanalı var. Sayfa beyanıdır; şirket ölçeği ve teklif/sözleşme koşulları bağımsız doğrulanmadı."
+        }
+      ],
+      "url": "https://tervax.com/careers",
+      "locationNote": "İlan Turkey / Remote diyor. Yurt dışından çalışma veya farklı ülkede sözleşme hakkı çıkarılmadı."
+    },
+    {
+      "id": "career_job_dream_devops",
+      "sourceNodeId": "career_job_dream_devops",
+      "company": "Dream Games",
+      "title": "DevOps Engineer (New Grad) · eski kayıt",
+      "kind": "vacancy",
+      "status": "unverified",
+      "region": "tr",
+      "countries": [
+        "TR"
+      ],
+      "location": "İstanbul · önceki kayıt",
+      "workModel": "unknown",
+      "roles": [
+        "devops"
+      ],
+      "level": "Yeni mezun · önceki kayıt",
+      "industry": "Oyun ve teknoloji",
+      "summary": "Önceki haritada bulunan ilan bağlantısı 26 Ekim kontrolünde 404 verdi. Geçerli açık ilan olarak sayılmıyor.",
+      "requirements": [],
+      "checkedAt": "2026-10-26",
+      "checkNote": "Bağlantı 404 döndü; pozisyonun kapandığı veya başka adrese taşındığı kesinleştirilmedi.",
+      "sources": [
+        {
+          "title": "Önceki ilan bağlantısı",
+          "url": "https://www.dreamgames.com/jobs/devops-engineer-new-grad",
+          "summary": "Bu kontrolde içerik okunamadı; eski gereklilikler güncel ilan özeti olarak sunulmuyor."
+        }
+      ],
+      "url": "https://www.dreamgames.com/jobs/devops-engineer-new-grad",
+      "locationNote": "Konum ve çalışma modeli güncel ilanla doğrulanamadı."
+    }
+  ],
+  "notes": [
+    "İlan ülkesi ile şirket merkezi ayrı tutuldu.",
+    "Remote etiketi Türkiye’den her ülkeye çalışma hakkı anlamına gelmez.",
+    "84 önceki şirket kanalı korundu; tümü yeniden kontrol edilmiş açık ilan değildir."
+  ]
+}
