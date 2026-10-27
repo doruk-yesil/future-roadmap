@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-27",
+  "products": [
+    {
+      "id": "salon-towels",
+      "category": "beauty",
+      "title": "Kuaför havlusu ve yenileme seti",
+      "summary": "50×90 salon havlusu, büyük mikrofiber havlu ve logolu küçük parti seçenekleri.",
+      "options": [
+        {
+          "name": "Baskılı Havlu · Mikrofiber 50×90",
+          "url": "https://www.baskilihavlu.com.tr/products/kuafor-mikrofiber-sac-havlusu-boya-tutmaz-50x90-logo-nakisli",
+          "description": "Salon havlusu; logo ve özel ölçü seçenekleri. Boya dayanımı satıcı iddiasıdır."
+        },
+        {
+          "name": "Melis Home · MFH70145 75×140",
+          "url": "https://www.melishome.com/urun/boya-tutmayan-mikrofiber-havlu-75x140-berber-havlusu-kuafor-havlusu",
+          "description": "Büyük boy polyester mikrofiber; numune için ürün sayfası."
+        },
+        {
+          "name": "Luna Cotton · Logolu kuaför havlusu",
+          "url": "https://www.lunacotton.com.tr/kuafor-berber-havlusu/",
+          "description": "Ölçü, renk ve logo uygulamasına göre teklif istenebilen seri."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Baskılı Havlu",
+          "url": "https://www.baskilihavlu.com.tr/products/kuafor-mikrofiber-sac-havlusu-boya-tutmaz-50x90-logo-nakisli",
+          "type": "Üretici",
+          "summary": "50×90 mikrofiber salon havlusu, nakış ve özel üretim seçenekleri listeleniyor; üretici beyanı firmaya ait.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Melis Home",
+          "url": "https://www.melishome.com/urun/boya-tutmayan-mikrofiber-havlu-75x140-berber-havlusu-kuafor-havlusu",
+          "type": "Perakende",
+          "summary": "MFH70145 kodlu 75×140 mikrofiber ürünün malzeme ve ölçü bilgisi okunuyor. Toplu alım şartları ayrıca sorulmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Luna Cotton",
+          "url": "https://www.lunacotton.com.tr/kuafor-berber-havlusu/",
+          "type": "Üretici",
+          "summary": "Kuaför/berber havlusu, özel ölçü ve logo için üretim-teklif kanalı. Adet ve teslim şartları teklife bağlı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Karabay Ticaret",
+          "url": "https://www.karabayticaret.com/urun-kategori/kuafor-havlusu/",
+          "type": "Toptancı",
+          "summary": "Kuaför havlusu kataloğunda farklı renk, pamuk/mikrofiber ve gramaj seçenekleri bulunuyor; tek ürün ayrıntısı bu kontrolde açılamadı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Serraca Profesyonel",
+          "url": "https://serracaprofesyonel.com/urunler/",
+          "type": "Toptancı",
+          "summary": "Katalogda Microfiber Havlu, pamuk havlu ve salon tekstili var. İşletmelere özel toplu teklif kanalı sunuluyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Aynı ölçü/gramaj için üç firmadan adetli teklif iste.",
+        "İki numuneyi salonun mevcut havlusuyla aynı yıkamada karşılaştır.",
+        "Çekme, emicilik ve kusur değişim şartını görüp küçük parti seç."
+      ],
+      "notes": [
+        "“Boya tutmaz” gibi dayanım ifadeleri bağımsız doğrulanmış sonuç değil; numunede ölçülmeli.",
+        "Tekstil üretim hattına veya marka kullanım hakkına erişim varsayılmadı."
+      ]
+    },
+    {
+      "id": "salon-capes",
+      "category": "beauty",
+      "title": "Kuaför pelerini, önlük ve kimono",
+      "summary": "Kesim penuarı, çalışan önlüğü ve kısa fön pelerini için model ve toplu tedarik seçenekleri.",
+      "options": [
+        {
+          "name": "D-APRON · Berber33",
+          "url": "https://d-apron.com/urun/kuafor-onlugu",
+          "description": "Çapraz bağlı çalışan önlüğü; isteğe bağlı isim/logo uygulaması."
+        },
+        {
+          "name": "Barber Mood · Black Apron BM-D116",
+          "url": "https://www.barbermood.com/urun/black-apron-boya-onlugu-duz-siyah-baskisiz/",
+          "description": "Düz siyah baskısız boya önlüğü; marka ürün sayfası."
+        },
+        {
+          "name": "Serraca · Fön Penuarı",
+          "url": "https://serracaprofesyonel.com/urunler/",
+          "description": "Katalogda kısa fön penuarı, logolu penuar ve kimono seçenekleri var."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "D-APRON Uniform",
+          "url": "https://d-apron.com/urun/kuafor-onlugu",
+          "type": "Üretici",
+          "summary": "Berber33 çalışan önlüğü ve isim/logo seçenekleri okunuyor. Siparişe özel üretim anlatılıyor; toplu adet şartı sorulmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Serraca Profesyonel",
+          "url": "https://serracaprofesyonel.com/urunler/",
+          "type": "Toptancı",
+          "summary": "Logolu penuar, askılı önlük, fön penuarı ve kimono kataloğu; salonlara özel teklif kanalı mevcut.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Barber Mood",
+          "url": "https://www.barbermood.com/urunkat/boya-onlugu-apron/",
+          "type": "Üretici",
+          "summary": "Boya önlükleri model kodlarıyla listeleniyor. Toptan ve özel logo üretimi kendi site beyanı; güncel şartlar ayrıca alınmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Pennuara Design",
+          "url": "https://penuaradesign.com/",
+          "type": "Perakende",
+          "summary": "Barber Önlük 2730, Apron İş Önlüğü 2501, penuar ve kimono koleksiyonları var; toplu fiyat/üretim teklifi teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Çalışan önlüğü mü müşteri pelerini mi gerektiğini seç.",
+        "Boyun kapanışı, kumaş ve baskı için üç aynı kapsamlı teklif al.",
+        "Bir kullanım/yıkama numunesini onayladıktan sonra adet belirle."
+      ],
+      "notes": [
+        "Kesim pelerini ile çalışan önlüğü aynı ürün değildir; teklifi kullanım türüne göre iste.",
+        "Katalog bağlantıları okunabildi; Serraca ve Pennuara içindeki bazı tekil ürün adresleri araçla açılamadı."
+      ]
+    },
+    {
+      "id": "salon-consumables",
+      "category": "beauty",
+      "title": "Tek kullanımlık salon sarfları",
+      "summary": "Havlu, rulo boyun bandı ve kullan-at penuarı küçük bir ikmal sepeti olarak karşılaştır.",
+      "options": [
+        {
+          "name": "Haygi · 100’lü salon havlusu",
+          "url": "https://www.haygi.com/urun/tek-kullanimlik-berber-ve-kuafor-havlusu",
+          "description": "Tek tek katlanmış 100’lü paket ve tekli ambalaj seçenekleri."
+        },
+        {
+          "name": "More For You · 500 adet boyun bandı",
+          "url": "https://www.defark.com/more-for-you-kuafor-boyun-bandi-500-adet",
+          "description": "5 rulo × 100 adet beyaz boyun bandı; paket adedini teklifte karşılaştır."
+        },
+        {
+          "name": "Gebze Endüstriyel · 100×140 penuar",
+          "url": "https://www.gebzeendustriyel.com/tek-kullanimlik-kuafor-onlugu-penuar/",
+          "description": "50 adetlik kullan-at kuaför penuarı; bantlı paket seçeneği."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Haygi",
+          "url": "https://www.haygi.com/urun/tek-kullanimlik-berber-ve-kuafor-havlusu",
+          "type": "Üretici",
+          "summary": "45–50 gsm tek kullanımlık havlu, tekli/100’lü paket ve özel ölçü üretimi site tarafından belirtiliyor. Fiyat teklif ile alınır.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Gebze Endüstriyel",
+          "url": "https://www.gebzeendustriyel.com/tek-kullanimlik-kuafor-onlugu-penuar/",
+          "type": "Toptancı",
+          "summary": "100×140 penuar sayfasında 50’li paket ve farklı toplu adet seçenekleri var; havlu/örtü kategorileri de listeleniyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Defark",
+          "url": "https://www.defark.com/more-for-you-kuafor-boyun-bandi-500-adet",
+          "type": "Toptancı",
+          "summary": "More For You 500 adet rulo boyun bandı ayrıntısı ve koli bazlı toptan kanal okunuyor; stok satın almadan teyit edilmeli.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Fi Kozmetik",
+          "url": "https://fikozmetik.com/category/toptan-kuafor-malzemeleri",
+          "type": "Toptancı",
+          "summary": "Katalogda Moreforyou 5’li boyun bandı, Cleansoft 30’lu boya önlüğü ve 50’li sedye örtüsü bulunuyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Salonun bir haftalık gerçek havlu/bant/penuar tüketimini al.",
+        "Aynı paket adedi ve sevk maliyetiyle üç teklif kıyasla.",
+        "Küçük ücretli teslimattan sonra doğal tükenmede tekrar siparişi ölç."
+      ],
+      "notes": [
+        "“Steril”, tıbbi koruma veya antibakteriyel etki iddiası doğrulanmadı ve bu seçeneğe taşınmadı."
+      ]
+    },
+    {
+      "id": "korean-haircare",
+      "category": "beauty",
+      "title": "Kore saç bakım ürünleri",
+      "summary": "MOREMO ve La’dor için somut maskeler, balm ve bakım ampulü; yerel ve yurt dışı tedarik yolları.",
+      "options": [
+        {
+          "name": "MOREMO · Hair Treatment 2X 180 ml",
+          "url": "https://www.korendy.com.tr/products/moremo-hair-treatment-miracle-2x-180ml",
+          "description": "Durulanarak kullanılan saç maskesi; farklı ambalaj hacimleri listeleniyor."
+        },
+        {
+          "name": "MOREMO · Recovery Balm B 120 ml",
+          "url": "https://www.korendy.com.tr/products/moremo-recovery-balm-b-120ml",
+          "description": "Durulanmayan bakım balmı; ürün, içerik ve ambalaj bilgilerini karşılaştır."
+        },
+        {
+          "name": "La’dor · Perfect Hair Fill-Up",
+          "url": "https://glamkloud.com/product/lador-perfect-hair-fill-up/",
+          "description": "Saç bakım ampulü formatı; ihracatçı katalog ürünü, Türkiye satış izni teyitsiz."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Korendy · Türkiye toptan kanalı",
+          "url": "https://www.korendy.com/pages/ortaklik-partnership-wholesale",
+          "type": "Toptancı",
+          "summary": "Türkiye/Orta Doğu için toptan ve ortaklık başvurusu kabul eden kanal. MOREMO ürün kataloğu ayrıca okundu; marka/kanal onayı garanti değil.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Glamkloud / Global Line",
+          "url": "https://glamkloud.com/product-category/la_dor/",
+          "type": "Toptancı",
+          "summary": "Kore merkezli ihracatçı katalogda La’dor Fill-Up, Hydro LPP ve Keratin Power Glue modellerini sunuyor. Türkiye teslim/yetki koşulları sorulmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "LP INTERNATIONAL · La’dor",
+          "url": "https://www.lpintl.co.kr/brands/lador-wholesale-korea",
+          "type": "Toptancı",
+          "summary": "Kore merkezli La’dor B2B ihracat talebi kanalı; marka, ülke ve satış kanalı onayına göre tedarik değerlendirdiğini açıkça yazıyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "LH Brands GmbH",
+          "url": "https://lhbg.de/en",
+          "type": "Toptancı",
+          "summary": "La’dor dahil Kore markaları için B2B kanal. Sayfa AB içi sevkiyat diyor; Türkiye’ye tedarik doğrudan doğrulanmadı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Bir veya iki model için Türkiye yeniden satış ve salon kanal iznini sor.",
+        "Lot/SKT, fatura, minimum sipariş ve iade koşullarını aynı teklifte iste.",
+        "Yerel küçük partiyi test et; yurt dışı tedarikte ürün dosyası ve ithalat kapsamını ayrıca doğrula."
+      ],
+      "notes": [
+        "Yurt dışı tedarikçi kataloğu Türkiye’de satış yetkisi veya mevzuat uygunluğu belgesi değildir.",
+        "İçerik ve bakım faydaları satıcı beyanıdır; tedavi/saç dökülmesi önleme iddiası bu kataloğa eklenmedi."
+      ]
+    },
+    {
+      "id": "label-printer",
+      "category": "b2b",
+      "title": "Barkod ve etiket yazıcısı",
+      "summary": "Küçük giyim satıcısına yazıcı, etiket şablonu ve kurulum paketi.",
+      "options": [
+        {
+          "name": "TSC TE200",
+          "url": "https://www.ribonsepeti.com/urunler/tsc-te200",
+          "description": "Direkt termal ve termal transfer baskı; bağlantı varyantını teklifte netleştir."
+        },
+        {
+          "name": "Zebra ZD220D",
+          "url": "https://www.ranket.com.tr/category/all-products",
+          "description": "Ranket kataloğunda listelenen masaüstü model; etiket ve işletim sistemi uyumunu sor."
+        },
+        {
+          "name": "Zebra ZD230T Ethernet",
+          "url": "https://www.ranket.com.tr/product-page/zebra-zd230t-termal-transfer-ethernetli",
+          "description": "Termal transfer model; sayfada Ethernet ve USB seçenekleri açıklanıyor."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Ribon Sepeti · TSC TE200",
+          "url": "https://www.ribonsepeti.com/urunler/tsc-te200",
+          "type": "Perakende",
+          "summary": "TE200 ürün sayfası, etiket/ribon kategorileri ve satın alma kanalı var; özellikleri tam SKU üzerinden teyit et.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Mobis Bilişim · TSC TE200",
+          "url": "https://www.mobis.com.tr/urun/tsc-te200/",
+          "type": "Tedarikçi",
+          "summary": "TE200 teknik açıklaması ve teklif isteme kanalı var. İhtiyaç duyulan bağlantı, garanti ve kurulum kapsamı sorulabilir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Ranket Etiket · Zebra ZD230T",
+          "url": "https://www.ranket.com.tr/product-page/zebra-zd230t-termal-transfer-ethernetli",
+          "type": "Perakende",
+          "summary": "Zebra ZD230T ürün sayfası; toplu alım iletişimi ve uzaktan kurulum ifadesi mevcut. Ticari koşullar ayrıca teyit edilmeli.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Baskı adedi, etiket ölçüsü ve kullanılacak bilgisayarı belirle.",
+        "Aynı model/SKU için cihaz, sarf ve kurulum kapsamını birlikte sor.",
+        "Numunede barkod bas, okut ve mevcut satış sistemiyle dene."
+      ],
+      "notes": [
+        "Yazıcı modelinin son harfi ve bağlantı varyantı önemlidir; tüm TE200/ZD220 ürünleri aynı donanım değildir.",
+        "Liste, stok veya toptan fiyat garantisi vermez."
+      ]
+    },
+    {
+      "id": "label-consumables",
+      "category": "b2b",
+      "title": "Barkod etiketi ve ribon sarfı",
+      "summary": "Ürün, kargo veya raf için ölçüye ve baskı yöntemine uygun etiket.",
+      "options": [
+        {
+          "name": "Kuşe etiket + uygun ribon",
+          "url": "https://www.nanotermal.com.tr/urun/kuse-etiket/",
+          "description": "Termal transfer baskıya uygun kâğıt etiket; ölçü, yapışkan ve sarım seçilir."
+        },
+        {
+          "name": "Eco termal etiket",
+          "url": "https://usb.com.tr/eco-termal-etiket/",
+          "description": "Ribonsuz direkt termal seçenek; kısa süreli kullanım ve ortam koşulunu kontrol et."
+        },
+        {
+          "name": "Lamine termal etiket",
+          "url": "https://usb.com.tr/lamine-termal-etiket/",
+          "description": "Koruyucu yüzeyli termal seçenek; gerçek yüzeyde ve yazıcıda numune denemesi gerekir."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Nano Termal · Kuşe etiket",
+          "url": "https://www.nanotermal.com.tr/urun/kuse-etiket/",
+          "type": "Üretici",
+          "summary": "Sayfa özel ölçü, sarım ve yapışkan seçenekleriyle kuşe etiket imalatını açıklıyor; yazıcı/ribon uyumuna dikkat çekiyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "USB Etiket · Kuşe ve termal ürünler",
+          "url": "https://usb.com.tr/kuse-etiket/",
+          "type": "Üretici",
+          "summary": "Kuşe, eco termal, lamine termal ve ribon aileleri katalogda var; malzeme, yapışkan ve rulo koşulları sorulabilir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Ribon Etiket · Özel ölçü",
+          "url": "https://ribonetiket.com/barkod-etiket/kuse-etiket/",
+          "type": "Üretici",
+          "summary": "Kuşe etiket için müşteriye özel ölçü, yapışkan, sarım ve teknik teklif kanalı açıklanıyor; seri iş öncesi numune öneriliyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Yazıcı modelini, etiket en/boyunu ve yapışacağı yüzeyi yaz.",
+        "Üç firmadan aynı rulo adedi, masura ve malzeme için teklif iste.",
+        "Baskı, tarama ve yapışma testinden geçen numuneyi sakla."
+      ],
+      "notes": [
+        "Üretici etiketi firmanın kendi üretim beyanına dayanır; fabrika denetimi yapılmadı.",
+        "Kuşe, termal ve sentetik etiketler aynı kullanım ömrüne veya ribon ihtiyacına sahip değildir."
+      ]
+    },
+    {
+      "id": "coding-kit",
+      "category": "technology",
+      "title": "Yetişkinler için kodlama ve elektronik seti",
+      "summary": "UNO uyumlu kart, breadboard, sensörler ve kısa proje içeriği.",
+      "options": [
+        {
+          "name": "Robotistan UNO Rev3 Süper Başlangıç Seti",
+          "url": "https://www.robotistan.com/arduino-ile-uyumlu-super-baslangic-seti-uno-rev3",
+          "description": "UNO uyumlu kart, sensörler ve e-kitap/video içeriği. Kontrolde stok dışı gösteriliyordu."
+        },
+        {
+          "name": "Robocombo Arduino Başlangıç Seti",
+          "url": "https://robocombo.com/arduino-baslangic-seti-3407",
+          "description": "2312110001 kodlu, UNO R3 SMD uyumlu kart ve temel devre parçaları içeren set."
+        },
+        {
+          "name": "Robotzade UNO Başlangıç Seti · 100 Parça",
+          "url": "https://www.robotzade.com/urun/arduino-uno-baslangic-seti-100-parca",
+          "description": "ARDU100 kodlu UNO R3 klon kart, USB kablo, breadboard ve başlangıç bileşenleri."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Robotistan · UNO Rev3 set",
+          "url": "https://www.robotistan.com/arduino-ile-uyumlu-super-baslangic-seti-uno-rev3",
+          "type": "Perakende",
+          "summary": "Set içeriği ve eğitim bağlantıları okundu. Sayfa kontrolde Tükendi gösterdi; yeni teslim tarihi sorulmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Robocombo · Başlangıç seti",
+          "url": "https://robocombo.com/arduino-baslangic-seti-3407",
+          "type": "Perakende",
+          "summary": "UNO R3 SMD/CH340 tabanlı başlangıç seti ve diğer set seçenekleri listeleniyor; adetli alım koşulları ayrıca sorulabilir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Robotzade · 100 parçalı set",
+          "url": "https://www.robotzade.com/urun/arduino-uno-baslangic-seti-100-parca",
+          "type": "Perakende",
+          "summary": "ARDU100 setin kart ve bileşen listesi açık; sitede bayilik başvuru bağlantısı da bulunuyor, kabul varsayılmıyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Hedef projeyi ve aynı kutuda bulunacak parçaları seç.",
+        "Klon/orijinal kart ayrımını ve eğitim içeriği kullanım hakkını sor.",
+        "Tek kutuyla kod yükleme, bağlantı ve iki proje denemesi yap."
+      ],
+      "notes": [
+        "Bu satır yetişkin odaklı teklif fikridir; satıcının tüm setlerini yetişkin ürünü olarak sınıflandırmaz.",
+        "Hazır seti yeniden paketleme veya eğitim içeriğini kopyalama hakkı varsayılmadı."
+      ]
+    },
+    {
+      "id": "environment-sensor",
+      "category": "technology",
+      "title": "Ortam sıcaklığı ve su teması sensör modülleri",
+      "summary": "İşletmede prototip izleme için kablolu modüller; hazır alarm sistemi değil.",
+      "options": [
+        {
+          "name": "DHT22 / AM2302 sıcaklık-nem sensörü",
+          "url": "https://www.robotistan.com/dht22-sicaklik-ve-nem-sensoru-am2302",
+          "description": "Dijital sıcaklık/nem ölçüm modülü; kart, besleme ve yazılım ayrıca gerekir."
+        },
+        {
+          "name": "Su seviyesi / yağmur sensörü",
+          "url": "https://www.robotistan.com/su-seviyesi-yagmur-sensoru-water-level-rain-sensor",
+          "description": "Su temasıyla analog sinyal üreten geliştirme modülü; 5V çalışma bilgisi sayfada var."
+        },
+        {
+          "name": "AHT10 I2C sıcaklık-nem modülü",
+          "url": "https://www.direnc.net/nem-ve-sicaklik-sensorleri",
+          "description": "Direnc.net kataloğunda I2C modülü olarak listeleniyor; kart ve arayüz uyumu kontrol edilir."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Robotistan · DHT22 / AM2302",
+          "url": "https://www.robotistan.com/dht22-sicaklik-ve-nem-sensoru-am2302",
+          "type": "Perakende",
+          "summary": "DHT22 ürün, bağlantı ve doküman bilgileri bulunuyor. Nihai doğruluk iddiası için datasheet ve numune ölçümü gerekir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Robotistan · Su teması modülü",
+          "url": "https://www.robotistan.com/su-seviyesi-yagmur-sensoru-water-level-rain-sensor",
+          "type": "Perakende",
+          "summary": "Su seviyesi/yağmur modülünün analog çıkışı ve ölçüleri açıklanıyor; bitmiş işletme alarmı olarak sunulmuyor.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Robolink · DHT22 modülü",
+          "url": "https://www.robolinkmarket.com/dht22-isi-ve-nem-sensoru",
+          "type": "Perakende",
+          "summary": "DHT22 modülünün bağlantı, paket ve teknik özellikleri okunabiliyor; endüstriyel kurulum hizmeti teyidi değil.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Direnc.net · Sıcaklık-nem sensörleri",
+          "url": "https://www.direnc.net/nem-ve-sicaklik-sensorleri",
+          "type": "Perakende",
+          "summary": "AHT10, DHT11/DHT22 ve kablolu sensör ailelerinin katalog sayfası. Tam model ile çalışma gerilimi ve stok ayrıca seçilir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Tek ölçüm seç: oda nemi, sıcaklık veya zeminde su teması.",
+        "Modül, kontrol kartı, kutu ve beslemeyi birlikte numune al.",
+        "Referans ölçüm ve bağlantı kesilmesi senaryosuyla sahada dene."
+      ],
+      "notes": [
+        "Hobi modülü hazır, kalibre edilmiş endüstriyel izleme veya güvenlik sistemi yerine konmadı.",
+        "Muhafaza, besleme, veri kaydı ve sahaya uygunluk nihai ürünün ayrıca doğrulanacak parçalarıdır."
+      ]
+    },
+    {
+      "id": "usb-c-hub",
+      "category": "technology",
+      "title": "USB-C hub ve kompakt bağlantı aksesuarı",
+      "summary": "HDMI, veri, Ethernet ve şarj portlarını modele göre seç.",
+      "options": [
+        {
+          "name": "UGREEN Revodok 6-in-1 · 45364",
+          "url": "https://eu.ugreen.com/products/ugreen-revodok-6-in-1-usb-c-hub-ethernet-4k-60hz-hdmi-display",
+          "description": "Ethernet ve HDMI içeren model; USB-C veri portunun görüntü/PD portundan farkı açıklanıyor."
+        },
+        {
+          "name": "Anker 332 USB-C Hub · A8355",
+          "url": "https://www.anker.com/eu-en/products/a8355?variant=null",
+          "description": "5-in-1, HDMI ve PD girişli model. Resmî EU sayfası kontrolde Sold Out gösterdi."
+        },
+        {
+          "name": "S-Link SW-U708 · 7-in-1",
+          "url": "https://www.slink.com.tr/tr/urunler/adaptorler",
+          "description": "Resmî katalogda HDMI, PD, USB ve SD/TF içeren Type-C hub seçeneği."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "UGREEN Türkiye · Hub kataloğu",
+          "url": "https://www.ugreenofficial.tr/usb-hub-ve-dock-istasyonlari",
+          "type": "Perakende",
+          "summary": "Türkiye vitrini USB hub ve dock modellerini listeliyor; toplu alım veya yeniden satış yetkisi bu sayfadan çıkarılmadı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "UGREEN EU · Revodok 45364",
+          "url": "https://eu.ugreen.com/products/ugreen-revodok-6-in-1-usb-c-hub-ethernet-4k-60hz-hdmi-display",
+          "type": "Üretici",
+          "summary": "Markanın Avrupa mağazasında 45364 ürün özellikleri ve satın alma kanalı var; Türkiye teslimatı teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Anker EU · 332 A8355",
+          "url": "https://www.anker.com/eu-en/products/a8355?variant=null",
+          "type": "Üretici",
+          "summary": "Markanın kendi 332 ürün sayfası teknik seçenekleri açıklıyor. Kontrolde Sold Out; tedarik tarihi teyit edilmeli.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Segment / S-Link · Türkiye katalog kanalı",
+          "url": "https://www.segment.com.tr/en/products/usb-hubs",
+          "type": "Distribütör",
+          "summary": "Türkiye katalog sayfasında S-Link hub modelleri ve B2B bayi portalı bağlantısı var; bayi kabulü veya fiyatı varsayılmadı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Baseus EU · Hub ailesi",
+          "url": "https://eu.baseus.com/collections/usb-hubs",
+          "type": "Üretici",
+          "summary": "Markanın Joystar ve diğer USB-C hub modelleri listeleniyor; bazı modeller stok dışı, Türkiye teslimatı doğrulanmadı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Hedef bilgisayarın USB-C görüntü ve PD desteğini öğren.",
+        "Aynı SKU için port, kutu içeriği ve garanti koşullarını karşılaştır.",
+        "Numunede ekran, veri aktarımı ve eşzamanlı şarjı dene."
+      ],
+      "notes": [
+        "USB-C biçimi tek başına görüntü veya şarj desteği anlamına gelmez.",
+        "Avrupa mağazası linki Türkiye’ye sevkiyat, ithalat maliyeti veya toptan kanal onayı değildir."
+      ]
+    },
+    {
+      "id": "mechanical-stem",
+      "category": "toys",
+      "title": "Mekanik STEM ve yapı setleri",
+      "summary": "Dişli, kaldıraç ve yapı kurma setleri; marka kataloğu ile yerel numune kanallarını karşılaştır.",
+      "options": [
+        {
+          "name": "Clementoni Mechanics – Machine Engineering 61419",
+          "description": "Mekanik yapı seti; resmî sayfada 250'den fazla parça ve 8+ yaş bilgisi var.",
+          "url": "https://en.clementoni.com/products/mechanics-machine-enginerring"
+        },
+        {
+          "name": "Engino DISCOVERING STEM",
+          "description": "Mekanik/STEM seri kataloğu; seçilecek alt setin içeriği ve yaşını ayrı kontrol et.",
+          "url": "https://products.engino.com/"
+        },
+        {
+          "name": "fischertechnik Universal / Junior yapı setleri",
+          "description": "2026 üretici kataloğunda farklı yaş ve mekanik kapsamlı setler yer alıyor.",
+          "url": "https://www.fischertechnik.de/-/media/fischertechnik/rebrush/service/kataloge/documents/2026/toy_2026_en_digital-compressed.pdf"
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Clementoni · resmî ürün kataloğu",
+          "url": "https://en.clementoni.com/products/mechanics-machine-enginerring",
+          "type": "Üretici",
+          "summary": "61419 mekanik setinin parça, yaş ve model bilgisi okunuyor. Türkiye ticari tedarik koşulu bu sayfada teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Engino · ürün serileri",
+          "url": "https://products.engino.com/",
+          "type": "Üretici",
+          "summary": "INVENTOR, DISCOVERING STEM ve CREATIVE BUILDER serileri listeleniyor. Bayilik, Türkiye sevkiyatı ve fiyat teklifi ayrıca sorulmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "fischertechnik · 2026 katalog",
+          "url": "https://www.fischertechnik.de/-/media/fischertechnik/rebrush/service/kataloge/documents/2026/toy_2026_en_digital-compressed.pdf",
+          "type": "Üretici",
+          "summary": "Junior, Universal, dişli ve yapı setlerinin güncel model adları var; katalog satın alma veya toptan teklif değildir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "KitaToys · STEM setleri",
+          "url": "https://www.kitatoys.com/kategori/stem-oyuncaklari-egitim-setleri",
+          "type": "Perakende / kurumsal satış",
+          "summary": "Türkiye'de STEM, yapı blokları ve eğitim materyali listesi okunuyor. Toplu okul/kurum koşulları için teklif istenebilir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "fischertechnikwebshop · yapı setleri",
+          "url": "https://www.fischertechnikwebshop.com/en-gb/fischertechnik-construction-kits-en-gb",
+          "type": "Perakende",
+          "summary": "Yurt dışı yapı seti ve aksesuar satış listesi. Üreticinin sitesiyle aynı işletme olduğu veya Türkiye'ye teslimat teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "İki modelin kutu içeriğini ve yaş aralığını karşılaştır.",
+        "Numuneyle kurulum süresi ve eksik parça desteğini dene.",
+        "Ticari alım için model bazlı belge, adet ve teslim teklifi iste."
+      ],
+      "notes": [
+        "Yaş ve küçük parça uyarılarını seçilen modelden al; katalog genelini güvenlik belgesi sayma.",
+        "Üretici kataloğu bulunması bayilik veya Türkiye ithalat uygunluğunu doğrulamaz."
+      ]
+    },
+    {
+      "id": "wooden-toys",
+      "category": "toys",
+      "title": "Ahşap eğitici oyuncaklar",
+      "summary": "Saat, tangram, şekil eşleştirme ve blok setleri için yerel üretici ve satış kanalları.",
+      "options": [
+        {
+          "name": "212 Toyzz Ahşap Eğitici Saat 26 cm",
+          "description": "MDF gövdeli, çıkarılabilir sayı/şekil parçaları ve hareketli akrep-yelkovan.",
+          "url": "https://212toyzz.com/ahsap-egitici-saat-26-cm-geometrik-sekilli-puzzle-sayi-ve-saat-ogretici-cocuk-oyuncagi"
+        },
+        {
+          "name": "Edutoys Ahşap Bloklar 100 Parça",
+          "description": "Blok seti ürün sayfası açıldı; aynı katalogda tangram ve rakam tablaları da var.",
+          "url": "https://www.edutoys.com.tr/urun/ahsap-bloklar-100-parca"
+        },
+        {
+          "name": "Hape ahşap puzzle serisi",
+          "description": "Resmî puzzle koleksiyonu; modelin yaşına ve parçalarına göre kısa liste yapılabilir.",
+          "url": "https://toys.hape.com/collections/category-puzzles"
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "212 Toyzz · ahşap saat",
+          "url": "https://212toyzz.com/ahsap-egitici-saat-26-cm-geometrik-sekilli-puzzle-sayi-ve-saat-ogretici-cocuk-oyuncagi",
+          "type": "Üretici / perakende",
+          "summary": "Ürün sayfasında üretici adı 212toyzz, malzeme ve ölçü yer alıyor. Özel üretim ve toplu adet için yazılı teklif gerekir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Edutoys · ahşap eğitim ürünleri",
+          "url": "https://www.edutoys.com.tr/kategori/egitici-ahsap-oyuncaklar",
+          "type": "Perakende",
+          "summary": "Blok, tangram, saat ve rakam tablaları listeleniyor. Numune alım kanalı; fabrika/OEM yetkisi doğrulanmış değil.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "KitaToys · ahşap oyuncaklar",
+          "url": "https://www.kitatoys.com/kategori/ahsap-oyuncaklar",
+          "type": "Perakende / kurumsal satış",
+          "summary": "Okul öncesi ahşap bloklar, yapı setleri, oyuncak mutfak ve eşleştirme ürünleri var; kurumsal/toplu alım koşulları ayrıca sorulmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Hape · resmî puzzle koleksiyonu",
+          "url": "https://toys.hape.com/collections/category-puzzles",
+          "type": "Üretici / marka mağazası",
+          "summary": "Hape'nin resmî ahşap puzzle koleksiyonu açıldı. Türkiye distribütörlüğü veya Türkiye'ye doğrudan sevkiyat bu kontrolde teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Books and Toys · ahşap oyuncaklar",
+          "url": "https://www.booksandtoys.com.tr/urun-kategori/oyuncaklar/ahsap-oyuncaklar/",
+          "type": "Perakende",
+          "summary": "Ahşap blok, şekil eşleştirme, tamir ve tren setleri için Türkiye numune satın alma alternatifi; toplu üretim hizmeti kanıtı yok.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Saat, tangram veya bloktan iki somut modeli seç.",
+        "Numunede kenar, boya, parça sayısı ve ambalajı karşılaştır.",
+        "Satış öncesi modele ait yaş uyarısı ve teknik dosya kapsamını teyit et."
+      ],
+      "notes": [
+        "Ahşap/MDF olması oyuncak güvenliğini tek başına kanıtlamaz.",
+        "Katalog fiyatı, stok ve toplu alım koşulları siparişte yeniden kontrol edilmeli."
+      ]
+    },
+    {
+      "id": "cable-organizers",
+      "category": "home",
+      "title": "Kablo ve masa düzenleyiciler",
+      "summary": "Masa altı kablo kanalı, yeniden kullanılabilir bant ve silikon kablo tutucu seçenekleri.",
+      "options": [
+        {
+          "name": "IKEA SIGNUM 70 cm",
+          "description": "Masa altına takılan çelik kablo düzenleyici; montaj ve masa uyumu önemli.",
+          "url": "https://www.ikea.com.tr/p30200253"
+        },
+        {
+          "name": "UGREEN 40354 · 2 metre cırt bant",
+          "description": "İhtiyaca göre kesilen ve yeniden kullanılabilen 20 mm genişliğinde kablo bandı.",
+          "url": "https://ugreen.com.tr/urun/ugreen-kablo-duzenleyici-cirt-bant-2-metre/"
+        },
+        {
+          "name": "UGREEN 70585 / LP208 silikon tutucu",
+          "description": "Yapışkanlı 3+1 kablo tutucu; uygun kablo çapı ve yüzeyde numuneyle denenmeli.",
+          "url": "https://www.ugreenofficial.tr/ugreen-3-1-kanalli-silikon-kablo-duzenleyici-organizer-70585"
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "IKEA Türkiye · SIGNUM",
+          "url": "https://www.ikea.com.tr/p30200253",
+          "type": "Perakende",
+          "summary": "70 cm SIGNUM modelinin ölçü, malzeme ve montaj bilgisi okunuyor. Cam masa kullanımına ilişkin uyarı var; toptan üretim teklifi değil.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "UGREEN Türkiye · 40354 ürün bilgisi",
+          "url": "https://ugreen.com.tr/urun/ugreen-kablo-duzenleyici-cirt-bant-2-metre/",
+          "type": "Marka kataloğu",
+          "summary": "40354 cırt bandın ölçüsü ve paket içeriği var. Bu ürün bilgi kanalıdır; satıcı/toptan sevkiyat koşulları ayrıca doğrulanmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "UGREEN satış sayfası · 70585",
+          "url": "https://www.ugreenofficial.tr/ugreen-3-1-kanalli-silikon-kablo-duzenleyici-organizer-70585",
+          "type": "Perakende",
+          "summary": "LP208/70585 silikon tutucu ürün sayfası okundu; kontrolde stok bildirimi gösteriyor. Markanın üretim/OEM kanalı olduğu varsayılmadı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Koçtaş · kablo düzenleyiciler",
+          "url": "https://www.koctas.com.tr/elektrik-malzemeleri/kablo-duzenleyiciler/c/101025",
+          "type": "Platform / perakende",
+          "summary": "Arama özetinde kablo bağı/kanalı çeşitleri var; doğrudan sayfa iki denemede zaman aşımına uğradı. İçerik yeniden açılıp kontrol edilmeli.",
+          "checkedAt": "2026-10-27",
+          "status": "unavailable"
+        }
+      ],
+      "steps": [
+        "Masa altı kanal, cırt bant veya silikon klipsten bir form seç.",
+        "İki numuneyi gerçek masa ve kablo çapıyla dene.",
+        "Toplu alım için aynı malzeme, ölçü ve paket adediyle teklif iste."
+      ],
+      "notes": [
+        "UGREEN bilgi ve satış bağlantıları aynı markaya ait ürünleri gösteriyor; bağımsız iki üretici teklifi sayılmaz.",
+        "Kablo düzenleyici ürüne elektriksel koruma veya yangın dayanımı iddiası eklenmedi."
+      ]
+    },
+    {
+      "id": "drawer-organizers",
+      "category": "home",
+      "title": "Çekmece ve modüler organizerler",
+      "summary": "Bölmeli modüler kutu, çekmece içi ayırıcı ve kaşıklık türlerini ölçüye göre karşılaştır.",
+      "options": [
+        {
+          "name": "IKEA UPPDATERA 60 cm çekmece düzenleyici",
+          "description": "60460008 modelinin gerçek genişliği 47,5 cm; 60 cm çekmece sistemine göre belirtiliyor.",
+          "url": "https://www.ikea.com.tr/urun/uppdatera-antrasit-60-cm-cekmece-duzenleyici-60460008"
+        },
+        {
+          "name": "Meleni Home 7,5 cm modüler kutu",
+          "description": "7,5 × 7,5 × 5,5 cm şeffaf plastik parça; kontrolde ürün stokta yok mesajı var.",
+          "url": "https://www.melenihome.com/cekmece-ici-duzenleyici-moduler-saklama-kabi-makyaj-taki-organizeri-75-cm-6203"
+        },
+        {
+          "name": "EWS 6 / 7 parçalı şeffaf organizer setleri",
+          "description": "Farklı ölçülerde parçalardan oluşan makyaj/takı çekmece setleri katalogda listeleniyor.",
+          "url": "https://www.ews.com.tr/depolama-duzenleme-urunleri"
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "IKEA Türkiye · UPPDATERA",
+          "url": "https://www.ikea.com.tr/seriler/uppdatera-serisi",
+          "type": "Perakende",
+          "summary": "Çekmece düzenleyici, çatal-bıçaklık ve kutu setleri listeleniyor. Numuneyi gerçek iç ölçüye göre seç; fabrika teklifi değildir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "EWS · depolama ve düzenleme",
+          "url": "https://www.ews.com.tr/depolama-duzenleme-urunleri",
+          "type": "Perakende",
+          "summary": "Şeffaf 3–14 parçalı organizer setleri ile bambu ve metal düzenleyiciler var. Toplu satış/özel üretim koşulları bu sayfada teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Meleni Home · modüler organizer",
+          "url": "https://www.melenihome.com/cekmece-ici-duzenleyici-moduler-saklama-kabi-makyaj-taki-organizeri-75-cm-6203",
+          "type": "Perakende",
+          "summary": "Tekli şeffaf kutunun ölçüsü ve malzemesi okunuyor. Sayfa kontrolde stokta kalmadığını söylüyor; tekrar tedarik tarihi sorulmalı.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Koçtaş · mutfak/çekmece düzenleme",
+          "url": "https://www.koctas.com.tr/saklama-ve-duzenleme/mutfak-raf-duzenleyici/c/110018010",
+          "type": "Platform / perakende",
+          "summary": "Farklı satıcılardan raf, çekmece ve kapak organizerleri listeleniyor. Satıcı, malzeme ve iade koşulu ürün bazında değişebilir.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        }
+      ],
+      "steps": [
+        "Müşterinin çekmecesinin net iç ölçüsünü al.",
+        "İki farklı modüler seti boşluk ve kullanım yönünden dene.",
+        "Aynı ölçü/renkte tekrar tedarik ve paketleme teklifini karşılaştır."
+      ],
+      "notes": [
+        "Katalogdaki 60 cm gibi sistem ölçüsü, ürünün gerçek dış ölçüsüyle aynı olmayabilir.",
+        "Gıda teması iddiası bu listedeki genel organizerlere otomatik atanmadı."
+      ]
+    },
+    {
+      "id": "pet-accessories",
+      "category": "home",
+      "title": "Kedi oyuncakları ve oyun aksesuarları",
+      "summary": "Elektriksiz kedi oyun yolu, olta ve tünel modelleri; mama veya takviye içermeyen aksesuarlar.",
+      "options": [
+        {
+          "name": "Ferplast MAGIC CIRCLE",
+          "description": "Modüler kedi oyun yolu; resmî koleksiyon listesinde yer alıyor.",
+          "url": "https://www.ferplast.com/collections/cat-toys/plastic"
+        },
+        {
+          "name": "KONG Teaser Loopz kedi oltası",
+          "description": "Petzzshop'ta doğrudan ürün sayfası açıldı; ipli oyun gözetim gerektirir.",
+          "url": "https://www.petzzshop.com/kong-teaser-loopz-kedi-olta-oyuncagi-62468?adet=1"
+        },
+        {
+          "name": "Rimba üç yollu kedi oyun tüneli",
+          "description": "Petlebi kedi oyuncakları listesinde 80 × 23 cm tünel modeli var.",
+          "url": "https://www.petlebi.com/kedi-oyuncaklari"
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Ferplast · resmî kedi oyuncakları",
+          "url": "https://www.ferplast.com/collections/cat-toys/plastic",
+          "type": "Üretici / marka mağazası",
+          "summary": "MAGIC CIRCLE, TYPHON ve diğer oyun yolu modelleri listeleniyor. Türkiye bayiliği, ithalat veya teslimat kapsamı teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Petlebi · kedi aksesuarları",
+          "url": "https://www.petlebi.com/kedi-oyuncaklari",
+          "type": "Perakende",
+          "summary": "Rimba tünel ve olta modelleri ile çeşitli markaların oyuncakları var. Yerel numune alım kanalı; fabrika veya toptan teklif sayılmaz.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "Petzzshop · kedi oyuncakları",
+          "url": "https://www.petzzshop.com/kedi-oyuncaklari",
+          "type": "Perakende",
+          "summary": "KONG, Trixie, Ferplast ve diğer markaların olta, peluş ve oyun ürünleri listeleniyor. Toplu alım indirimi veya marka hakkı teyit edilmedi.",
+          "checkedAt": "2026-10-27",
+          "status": "read"
+        },
+        {
+          "name": "TRIXIE · kedi oyuncakları",
+          "url": "https://www.trixie.de/en/cat/toys-for-cats",
+          "type": "Marka kataloğu",
+          "summary": "Doğrudan kategori sayfası iki denemede zaman aşımına uğradı. Arama sonuçlarındaki modeller güncel tedarik teyidi sayılmadı.",
+          "checkedAt": "2026-10-27",
+          "status": "unavailable"
+        }
+      ],
+      "steps": [
+        "Oyun yolu, olta veya tünelden tek tip seç.",
+        "Numunede dikiş, kopan küçük parça ve temizleme kolaylığını incele.",
+        "Aynı modelin yeniden bulunması ve kusurlu ürün değişimi için teklif iste."
+      ],
+      "notes": [
+        "İpli/olta oyuncakları gözetimli kullanım için değerlendir; sağlık veya tedavi iddiası eklenmedi.",
+        "Perakende katalogları ürün ve numune alternatifi gösterir; OEM/özel markalı üretim anlaşması değildir."
+      ]
+    }
+  ]
+}

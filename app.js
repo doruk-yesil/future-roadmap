@@ -1,10 +1,11 @@
 import {createStore} from './state.js';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.3.0';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.4.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
 import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.3.0';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.3.0';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.4.0';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.4.0';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.4.0';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -12,6 +13,7 @@ const icons={home:'M3 10 12 3l9 7v11H3z M9 21v-8h6v8',map:'M3 5l6-2 6 2 6-2v16l-
 function icon(name,size=20){return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${(icons[name]||icons.map).split(' M').map((d,i)=>`<path d="${i?'M':''}${d}"/>`).join('')}</svg>`;}
 const STATUS={explore:'Henüz seçilmedi',researching:'Araştırıyorum',chosen:'Seçtim',done:'Tamamladım',eliminated:'Eledim'};
 let ROUTES,JOBS=[],cvSummary=[],cvError='';
+let PRODUCTS=[],expandedProductCategories=new Set();
 let DATA,NODES,GROUPS,store,personal,RESEARCH,SOURCES_BY_URL;
 let state={view:'home',route:null,topic:null,choice:null,country:'all',selected:null,expanded:new Set(),mode:'map',query:'',filter:'all',zoom:1,editing:false,sidebar:false};
 let toastTimer,searchTimer,persistenceError='';
@@ -28,7 +30,9 @@ function navigate(view,route=null,topic=null,choice=null,node=null){
  const hash='#'+params.toString();if(location.hash===hash){readRoute();return;}location.hash=hash;
 }
 function readRoute(){
+ const previousProduct=state.product;
  const params=new URLSearchParams(location.hash.slice(1));
+ state.product=params.get('product');
  state.job=params.get('job');state.jobFilters=jobFiltersFromParams(params);
  state.view=params.get('view')||'home';state.project=params.get('project');state.route=params.get('route');state.topic=params.get('topic');state.choice=params.get('choice');state.variant=params.get('variant');state.selected=params.get('node');state.country=COUNTRIES[params.get('country')]?params.get('country'):'all';state.editing=false;state.sidebar=false;
  const aliases={cyber:['career','cyber'],masters:['career','tech-study'],us:['agriculture','agri-study'],uae:['agriculture',null]};
@@ -54,7 +58,14 @@ function readRoute(){
   state.choice=null;
  }
  if(state.job&&!JOBS.some(j=>j.id===state.job))state.job=null;
+ if(state.route==='china'&&state.topic==='product'&&!state.selected&&state.choice){
+  const legacy={beauty:'salon-towels','tech-toys':'coding-kit','simple-products':'cable-organizers'};
+  state.product=legacy[state.choice]||null;state.choice=null;
+ }
+ if(state.product&&!PRODUCTS.some(p=>p.id===state.product))state.product=null;
+ if(state.product)expandedProductCategories.add(PRODUCTS.find(p=>p.id===state.product).category);
  render();
+ if(previousProduct&&!state.product&&state.route==='china'&&state.topic==='product')document.querySelector(`[data-product-row="${CSS.escape(previousProduct)}"]`)?.focus();
 }
 function currentTopic(){return currentRoute()?.topics.find(t=>t.id===state.topic);}
 function currentChoice(){return currentTopic()?.choices.find(c=>c.id===state.choice);}
@@ -71,7 +82,8 @@ function button(action,label,ico,classes='quiet',attrs=''){return `<button type=
 function render(){
  const route=currentRoute();const selected=state.selected?getNode(state.selected):null;const choice=currentChoice();
  const job=state.view==='route'&&state.route==='career'&&state.topic==='jobs'&&state.job?JOBS.find(j=>j.id===state.job):null;
- const panel=Boolean(selected||choice||job);
+ const product=state.view==='route'&&state.route==='china'&&state.topic==='product'&&state.product?PRODUCTS.find(p=>p.id===state.product):null;
+ const panel=Boolean(selected||choice||job||product);
  const title=state.view==='home'?'Genel bakış':state.view==='route'?(state.route==='career'&&state.topic==='jobs'?'İş İlanları':route?.name):({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım',projects:'Okul Projelerim',cv:'CV dosyalarım'})[state.view];
  document.title=`${title} · Future`;
  $('#app').className='app-shell'+(panel?' detail-open':'');
@@ -83,10 +95,11 @@ function render(){
  <div class="sidebar-bottom"><a class="nav-item" href="#view=settings">${icon('download')}<span>Yedekleme & kullanım</span></a><div class="local-note"><span class="local-dot"></span> Notların bu tarayıcıda saklanır</div></div>
  </aside><button class="mobile-scrim ${state.sidebar?'open':''}" data-action="close-menu" aria-label="Menüyü kapat"></button>${panel?'<button class="drawer-scrim" data-action="close-detail" aria-label="Panelin dışından kapat"></button>':''}
  <div class="workspace"><header class="topbar"><button class="button icon mobile-nav-toggle" data-action="menu" aria-label="Menüyü aç">${icon('menu')}</button><nav class="breadcrumbs" aria-label="Sayfa yolu"><a href="#view=home">Çalışma alanım</a><span>/</span><strong>${esc(title)}</strong></nav><div class="topbar-actions"><label class="search-box">${icon('search',18)}<input type="search" id="search" aria-label="Tüm haritada ara" placeholder="Bir fikir, şirket veya koşul ara…" value="${esc(state.query)}"><kbd>/</kbd></label><button class="button icon backup-top" data-action="export" aria-label="Yedeğini indir" title="Yedeğini indir">${icon('download')}</button></div></header>
- <main id="main" class="view" tabindex="-1">${state.view==='home'?renderHome():state.view==='route'?renderRoute():state.view==='projects'?renderProjects(state.project):state.view==='cv'?renderCVVault(cvSummary,JOBS.find(j=>j.id===state.job),cvError):state.view==='settings'?renderSettings():state.view==='tasks'?renderTasks():renderCollection()}</main></div>${selected?renderDetail(selected):choice?renderChoiceDetail(choice):job?renderJobDetail(job,state.jobFilters):''}`;
+ <main id="main" class="view" tabindex="-1">${state.view==='home'?renderHome():state.view==='route'?renderRoute():state.view==='projects'?renderProjects(state.project):state.view==='cv'?renderCVVault(cvSummary,JOBS.find(j=>j.id===state.job),cvError):state.view==='settings'?renderSettings():state.view==='tasks'?renderTasks():renderCollection()}</main></div>${selected?renderDetail(selected):choice?renderChoiceDetail(choice):job?renderJobDetail(job,state.jobFilters):product?renderProductDetail(product):''}`;
  if(state.selected&&!state.editing){const note=$('#node-notes');if(note)note.value=nodeState(state.selected).notes||'';}
  $('.workspace').inert=panel;$('.sidebar').inert=panel;
  if(job)$('#job-detail-close')?.focus();
+ if(product)$('#product-detail-close')?.focus();
 }
 function renderHome(){
  const active=Object.keys(personal.nodes).filter(id=>['researching','chosen','done'].includes(status(id)));
@@ -101,6 +114,11 @@ function choiceCard(c){
 }
 function renderRoute(){
  if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(JOBS,state.jobFilters,state.job,cvSummary);
+ if(state.route==='china'&&state.topic==='product')return renderProductCatalog(PRODUCTS,expandedProductCategories,state.product);
+ if(state.route==='china'&&state.topic==='supply'){
+  const p=PRODUCTS.find(p=>p.id===state.product);
+  return (p?renderProductSuppliers(p):renderProductCatalog(PRODUCTS,expandedProductCategories,null,true))+`<details class="catalog-old-notes"><summary>Fuar ve tedarik araştırması</summary>${currentTopic().choices.map(c=>`<button class="relation-link" data-action="open-choice" data-choice="${esc(c.id)}"><span><strong>${esc(c.title)}</strong></span>${icon('arrow',16)}</button>`).join('')}</details>`;
+ }
  const route=currentRoute(),topic=currentTopic();
  const sequential=route.sequence&&!topic;
  const countries=[...new Set((topic?[topic]:route.topics).flatMap(t=>t.choices.flatMap(c=>c.countries)))];
@@ -111,7 +129,7 @@ function renderRoute(){
  ${route.id==='agriculture'?`<div class="independent-note">${icon('info',19)}<span>Çalışmak, eğitim almak ve pilot denemek ayrı seçenekler. Birini yapmak için diğerini tamamlaman gerekmiyor.</span></div>`:''}
  ${countries.length?`<div class="country-filter" role="group" aria-label="Ülkeye göre daralt"><span>Nerede?</span>${['all',...countries].map(c=>`<button class="country-chip ${state.country===c?'active':''}" data-action="country" data-country="${c}" aria-pressed="${state.country===c}">${COUNTRIES[c]}</button>`).join('')}</div>`:''}
  <div class="section-heading compact"><h2>${sequential?'Nasıl ilerleyeceksin?':topic?'Hangi seçeneği incelemek istersin?':'Ne yapmak istersin?'}</h2><span class="muted small">${sequential?'Genel iş akışı · yukarıdan aşağıya':topic?'Kartın ayrıntısı sağda açılır':'Önce bir amaç seç'}</span></div>
- ${sequential?`<p class="flow-note">Ürün uygunluğu ve maliyet kontrolüne ilk aşamada başla; siparişten önce tamamla. <a href="${href(route.id,'sell')}">İlgili kontrolleri aç ${icon('arrow',13)}</a></p><ol class="sequence-list" aria-label="Ürün ticareti adımları">${topics.map(t=>`<li><a class="sequence-card" href="${href(route.id,t.id)}"><span class="step-number" aria-label="${route.topics.findIndex(x=>x.id===t.id)+1}. adım">${route.topics.findIndex(x=>x.id===t.id)+1}</span><span class="step-content"><strong>${esc(t.title)}</strong><span class="option-summary">${esc(t.summary)}</span></span><span class="step-open">${t.choices.length} seçenek ${icon('arrow',18)}</span></a></li>`).join('')}</ol>`:`<section class="option-grid" aria-label="${topic?'Alt seçenekler':'Amaç seçenekleri'}">${topic?choices.map(choiceCard).join(''):topics.map(t=>`<a class="option-card topic-card" href="${href(route.id,t.id)}"><span class="option-icon">${icon(route.icon,22)}</span><strong>${esc(t.title)}</strong><span class="option-summary">${esc(t.summary)}</span><span class="option-open">${route.id==='career'&&t.id==='jobs'?`${JOBS.filter(j=>j.status==='open').length} doğrulanmış ilan · ${JOBS.filter(j=>j.status==='unverified').length} doğrulanamayan`:`${t.choices.length} seçenek`} ${icon('arrow',17)}</span></a>`).join('')}</section>`}
+ ${sequential?`<p class="flow-note">Ürün uygunluğu ve maliyet kontrolüne ilk aşamada başla; siparişten önce tamamla. <a href="${href(route.id,'sell')}">İlgili kontrolleri aç ${icon('arrow',13)}</a></p><ol class="sequence-list" aria-label="Ürün ticareti adımları">${topics.map(t=>`<li><a class="sequence-card" href="${href(route.id,t.id)}"><span class="step-number" aria-label="${route.topics.findIndex(x=>x.id===t.id)+1}. adım">${route.topics.findIndex(x=>x.id===t.id)+1}</span><span class="step-content"><strong>${esc(t.title)}</strong><span class="option-summary">${esc(t.summary)}</span></span><span class="step-open">${t.id==='product'?PRODUCTS.length+' ürün':t.id==='supply'?'Ürüne göre tedarik':t.choices.length+' seçenek'} ${icon('arrow',18)}</span></a></li>`).join('')}</ol>`:`<section class="option-grid" aria-label="${topic?'Alt seçenekler':'Amaç seçenekleri'}">${topic?choices.map(choiceCard).join(''):topics.map(t=>`<a class="option-card topic-card" href="${href(route.id,t.id)}"><span class="option-icon">${icon(route.icon,22)}</span><strong>${esc(t.title)}</strong><span class="option-summary">${esc(t.summary)}</span><span class="option-open">${route.id==='career'&&t.id==='jobs'?`${JOBS.filter(j=>j.status==='open').length} doğrulanmış ilan · ${JOBS.filter(j=>j.status==='unverified').length} doğrulanamayan`:`${t.choices.length} seçenek`} ${icon('arrow',17)}</span></a>`).join('')}</section>`}
  ${topic&&!choices.length?'<div class="empty-state"><h2>Bu yerde henüz araştırılmış seçenek yok.</h2><p>Diğer yerleri görmek için “Tüm yerler”i seç.</p></div>':''}
  ${topic?`<p class="quiet-hint">Bu seçenekler bir sıra veya zorunluluk listesi değil. Sana uygun olanı aç.</p>`:''}`;
 }
@@ -147,7 +165,8 @@ function renderCollection(){
  const favorites=state.view==='favorites';const nodes=favorites?DATA.nodes.filter(n=>nodeState(n.id).favorite).map(n=>getNode(n.id)):searchNodes(DATA.nodes.map(n=>getNode(n.id)),state.query);
  const choices=favorites?[]:searchNodes(searchableChoices(ROUTES),state.query);
  const projects=favorites?[]:searchProjects(state.query);
- return `<section class="collection-heading"><span class="eyebrow">${favorites?'KENDİ SEÇKİN':'YOLLAR VE ARAŞTIRMA'}</span><h1>${favorites?'Geri dönmek istediğin fikirler.':'Aradığın yolu bul.'}</h1><p>${favorites?'Favorilediğin kartlar burada. Durum ve notların kartın ayrıntılarında.':state.query?`“${esc(state.query)}” için ${nodes.length+choices.length+projects.length} sonuç`:'Üstteki arama alanına bir ürün, şirket, ülke veya koşul yaz.'}</p></section><div class="results-list">${renderProjectResults(projects)}${choices.map(c=>`<button class="result-item" data-action="open-choice" data-choice="${esc(c.id)}" data-route="${esc(c.route)}" data-topic="${esc(c.topic)}"><span class="result-main"><span class="result-category">SEÇENEK VE EYLEM PLANI</span><strong>${esc(c.title)}</strong><span class="result-excerpt">${esc(summarize(c.body))}</span></span>${icon('arrow',17)}</button>`).join('')}${nodes.map(renderResult).join('')}</div>${!nodes.length&&!choices.length&&!projects.length?`<div class="empty-state">${icon(favorites?'star':'search',38)}<h2>${favorites?'Henüz bir favorin yok.':state.query?'Eşleşen kart bulunamadı.':'Her şey bir kelimeyle başlar.'}</h2><p>${favorites?'Bir kartın ayrıntısındaki yıldızı kullanarak buraya ekleyebilirsin.':'Farklı bir kelime dene: güzellik, oyuncak, remote, master veya marka.'}</p></div>`:''}`;
+ const products=favorites?[]:searchProducts(PRODUCTS,state.query);
+ return `<section class="collection-heading"><span class="eyebrow">${favorites?'KENDİ SEÇKİN':'YOLLAR VE ARAŞTIRMA'}</span><h1>${favorites?'Geri dönmek istediğin fikirler.':'Aradığın yolu bul.'}</h1><p>${favorites?'Favorilediğin kartlar burada. Durum ve notların kartın ayrıntılarında.':state.query?`“${esc(state.query)}” için ${nodes.length+choices.length+projects.length+products.length} sonuç`:'Üstteki arama alanına bir ürün, şirket, ülke veya koşul yaz.'}</p></section><div class="results-list">${renderProductResults(products)}${renderProjectResults(projects)}${choices.map(c=>`<button class="result-item" data-action="open-choice" data-choice="${esc(c.id)}" data-route="${esc(c.route)}" data-topic="${esc(c.topic)}"><span class="result-main"><span class="result-category">SEÇENEK VE EYLEM PLANI</span><strong>${esc(c.title)}</strong><span class="result-excerpt">${esc(summarize(c.body))}</span></span>${icon('arrow',17)}</button>`).join('')}${nodes.map(renderResult).join('')}</div>${!nodes.length&&!choices.length&&!projects.length&&!products.length?`<div class="empty-state">${icon(favorites?'star':'search',38)}<h2>${favorites?'Henüz bir favorin yok.':state.query?'Eşleşen kart bulunamadı.':'Her şey bir kelimeyle başlar.'}</h2><p>${favorites?'Bir kartın ayrıntısındaki yıldızı kullanarak buraya ekleyebilirsin.':'Farklı bir kelime dene: güzellik, oyuncak, remote, master veya marka.'}</p></div>`:''}`;
 }
 function bodyHTML(body){return String(body||'').split(/\n\s*\n|\n---\n/).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');}
 function renderDetail(n){
@@ -178,7 +197,8 @@ document.addEventListener('click',async event=>{
  case 'expand':state.expanded.has(el.dataset.module)?state.expanded.delete(el.dataset.module):state.expanded.add(el.dataset.module);refresh();break;
  case 'collapse':state.expanded.clear();refresh();break;
  case 'open-node':openNode(id);break;
- case 'close-detail':if(state.job)location.hash=jobsHref(state.jobFilters);else navigate('route',state.route,state.topic);break;
+ case 'close-detail':if(state.product&&state.route==='china'&&state.topic==='product'&&!state.selected)location.hash=productHref();else if(state.job)location.hash=jobsHref(state.jobFilters);else navigate('route',state.route,state.topic);break;
+ case 'close-product':location.hash=productHref();break;
  case 'close-job':location.hash=jobsHref(state.jobFilters);break;
  case 'jobs-clear':location.hash=jobsHref();break;
  case 'cv-choose':$('#cv-files')?.click();break;
@@ -233,6 +253,7 @@ document.addEventListener('keydown',event=>{
   if($('#modal-root').children.length){$('#modal-root').innerHTML='';pendingBackup=null;}
   else if(state.editing){state.editing=false;refresh();}
   else if(state.job&&state.view==='route')location.hash=jobsHref(state.jobFilters);
+  else if(state.product&&state.route==='china'&&state.topic==='product'&&!state.selected)location.hash=productHref();
   else if(state.selected)navigate('route',state.route,state.topic,state.choice);
   else if(state.choice)navigate('route',state.route,state.topic);
   else if(state.sidebar){state.sidebar=false;render();}
@@ -256,13 +277,14 @@ function updateJobFilters(){
  const field=focus&&document.getElementById(focus);if(field){field.focus();if(caret!==null)field.setSelectionRange(caret,caret);}
 }
 document.addEventListener('toggle',async event=>{
+ if(event.target.matches('.product-category')&&event.target.isConnected){const id=event.target.dataset.productCategory;event.target.open?expandedProductCategories.add(id):expandedProductCategories.delete(id);return;}
  if(!event.target.matches('.cv-source')||!event.target.open)return;
  const field=document.getElementById('cv-source-text');if(!field)return;
  try{const record=await getCVFile('latex');if(field.isConnected)field.value=record?.text||'LaTeX kaynağı bulunamadı.';}catch(error){toast(error.message);}
 },true);
 
 async function init(){
- try{const [response,researchResponse,jobsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.3.0')]);if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
+ try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.4.0'),fetch('./products-data.json?v=2.4.0')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
   try{cvSummary=await getCVSummary();}catch(error){cvError=error.message;}
   store=createStore({onError:error=>{persistenceError=error.message;toast(error.message);}});personal=store.getState();store.subscribe(next=>{personal=next;});window.addEventListener('hashchange',readRoute);readRoute();
  }catch(error){$('#app').innerHTML=`<main class="empty-state"><h1>Harita açılamadı.</h1><p>${esc(error.message)}</p><p>Sayfayı yeniden yükleyebilirsin. Yerel dosyayı doğrudan açıyorsan önizleme sunucusunu kullan.</p><button class="button primary" onclick="location.reload()">Yeniden dene</button></main>`;}

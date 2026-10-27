@@ -69,3 +69,10 @@ Depodaki `.github/workflows/pages.yml`, `main` dalına her değişiklikte testle
 İlan listesi sabit yükseklikte kendi içinde kayar. Varsayılan görünüm yalnız tekil resmî sayfada yeni mezun/Graduate uygunluğu ve çalışma biçimi doğrulanan pozisyonları gösterir. Junior etiketi tek başına yeterli değildir. 90 özgün kaydın tamamının ana bağlantısı ve uygun takip sayfaları açılarak 191 farklı adres kontrol edildi. 7 doğrulanmış ilan ve gerekçeli 86 doğrulanamayan kayıt var. Genel kariyer kanalları ilan sayılmaz. Kaynaklarda ziyaret tarihli özet, kontrolde izlenen adresler ve belirsizlikler korunur. Bu kontrol canlı otomatik takip değildir.
 
 Yerel yeniden hazırlama: `python tools/prepare_jobs.py` ardından `python tools/apply_jobs_audit.py`. Denetim girişleri `outputs/jobs-audit-*.json` içinde tutulur; kişisel CV kaynaklarını içermez.
+
+
+## Ürün ve tedarik kataloğu
+
+`products-data.json` 27 Ekim 2026 tarihinde okunan 14 ürün grubu, 42 somut seçenek ve 55 okunmuş tedarik sayfası referansı içerir. Aynı kaynağın farklı ürünlerde kullanılması mümkündür; 54 farklı tedarik URL’si vardır. İki okunamayan bağlantı ayrı gösterilir. Kategori başlıkları açılır, ürünler ince satırlardır. Ürün paneli somut seçenekleri ve üç kısa aşamayı gösterir. Dış bağlantılar, seçili `product` kimliğiyle mevcut `topic=supply` sayfasına taşınır. Model, üretici, toptan ve perakende bağlantılarının kapsamı sayfa özetlerinde ayrılır. Katalog, stok veya ticari sözleşme teyidi değildir.
+
+Önceki 350 araştırma kartı ve kişisel kayıt şeması korunur. Ürün adları, modeller ve tedarikçi adları genel aramaya dahildir. Yeni statik modüller `products.js` ve `products.css`; denetim girdileri yerelde `outputs/product-suppliers-*.json` dosyalarındadır. `python tools/prepare_product_catalog.py` katalog verisini yeniden birleştirir.
