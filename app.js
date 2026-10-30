@@ -1,12 +1,13 @@
-import {renderMasters,mastersHref} from './masters.js?v=2.5.0';
+import {renderAgriculture,agriHref} from './agriculture.js?v=2.6.0';
+import {renderMasters,mastersHref} from './masters.js?v=2.6.0';
 import {createStore} from './state.js';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.5.0';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.6.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
 import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.5.0';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.5.0';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.5.0';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.6.0';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.6.0';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.6.0';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -109,13 +110,14 @@ function renderHome(){
  const done=active.filter(id=>status(id)==='done').length;
  return `<section class="hero"><div><div class="eyebrow">GELECEĞİN İÇİN BİR ÇALIŞMA ALANI</div><h1 class="hero-title">Bir sonraki adımın,<br><em>gözünün önünde.</em></h1><p class="hero-description">Önce ne yapmak istediğini seç.<br>Yalnız ilgilendiğin yolun ayrıntılarını aç.</p><div class="hero-meta"><span>4 ana yol</span><i></i><span>Önce amaç, sonra yer</span></div></div><aside class="progress-summary"><span class="eyebrow">SENİN İLERLEMEN</span><div class="progress-numbers"><strong>${active.length}</strong><span>kart üzerinde<br>çalışıyorsun</span></div><div class="progress-line"><span style="width:${active.length?done/active.length*100:0}%"></span></div><p>${done} tamamlanan · ${personal.tasks.filter(t=>!t.done).length} bekleyen görev</p><a href="#view=tasks">Sonraki adımını yaz ${icon('arrow',16)}</a></aside></section>
  <div class="section-heading"><div><span class="eyebrow">BAŞLAMAK İÇİN BİR YOL SEÇ</span><h2>Her seçenek, yeni bir kapı.</h2></div><span class="muted small">Ayrıntılar seçtikçe açılır</span></div>
- <section class="home-grid" aria-label="Yol seçenekleri">${ROUTES.filter(r=>!r.secondary).map((r,i)=>{const ns=routeNodes(r),picked=ns.filter(n=>status(n.id)==='chosen').length;return `<a class="route-card ${r.tone} ${i===1?'featured':''}" href="${href(r.id)}"><div class="route-card-top"><span class="route-icon">${icon(r.icon,24)}</span><span class="route-tag">${esc(r.tag)}</span></div><h3 class="route-title">${esc(r.name)}</h3><p class="route-description">${esc(r.description)}</p><div class="route-footer"><span class="route-stat">${r.topics.length} seçenek${picked?` · ${picked} seçim`:''}</span><span class="route-open">Yolu keşfet ${icon('arrow',18)}</span></div></a>`;}).join('')}</section>
+ <section class="home-grid" aria-label="Yol seçenekleri">${ROUTES.filter(r=>!r.secondary).map((r,i)=>{const ns=routeNodes(r),picked=ns.filter(n=>status(n.id)==='chosen').length;return `<a class="route-card ${r.tone} ${i===1?'featured':''}" href="${href(r.id)}"><div class="route-card-top"><span class="route-icon">${icon(r.icon,24)}</span><span class="route-tag">${esc(r.tag)}</span></div><h3 class="route-title">${esc(r.name)}</h3><p class="route-description">${esc(r.description)}</p><div class="route-footer"><span class="route-stat">${r.id==='agriculture'?2:r.topics.length} seçenek${picked?` · ${picked} seçim`:''}</span><span class="route-open">Yolu keşfet ${icon('arrow',18)}</span></div></a>`;}).join('')}</section>
  <section class="home-bottom"><div><h2>Haritayı kendine göre kullan.</h2><p>Bir yol seç → bir seçeneği aç → ayrıntıyı sağda incele. Notların, favorilerin ve 90 günlük planın çalışma alanında seni bekler.</p></div><a class="button quiet" href="#view=settings">Nasıl çalışır? ${icon('arrow',17)}</a></section><p class="research-footnote">Güzellik ürünleri ve eylem planları: 20 Ekim 2026 · Çin ürün ticareti: 18 Ekim 2026 · İş ve eğitim: 14–15 Ekim 2026. Bağlantılar güncel ilan veya kabul garantisi değildir.</p>`;
 }
 function choiceCard(c){
  return `<button class="option-card ${state.choice===c.id?'selected':''}" data-action="open-choice" data-choice="${esc(c.id)}"><span class="option-icon">${icon(currentRoute().icon,22)}</span><strong>${esc(c.title)}</strong><span class="option-summary">${esc(c.summary)}</span><span class="option-tags">${c.countries.map(x=>`<span>${COUNTRIES[x]}</span>`).join('')}</span><span class="option-open">Özeti ve ilk adımı gör ${icon('arrow',17)}</span></button>`;
 }
 function renderRoute(){
+ if(state.route==='agriculture'&&!state.selected&&!state.choice)return renderAgriculture(state.topic,new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='tech-study'&&!state.selected)return renderMasters(new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(JOBS,state.jobFilters,state.job,cvSummary);
  if(state.route==='china'&&state.topic==='product')return renderProductCatalog(PRODUCTS,expandedProductCategories,state.product);
@@ -226,6 +228,7 @@ document.addEventListener('click',async event=>{
  }catch(error){toast(error.message||'İşlem tamamlanamadı.');}
 });
 document.addEventListener('input',event=>{
+ if(event.target.id==='agri-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateAgriFilters,180);return;}
  if(event.target.id==='master-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateMasterFilters,180);return;}
  if(event.target.id==='jobs-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateJobFilters,180);return;}
  if(event.target.id==='node-notes'){try{store.updateNode(state.selected,{notes:event.target.value});}catch(e){toast(e.message);}return;}
@@ -238,6 +241,7 @@ document.addEventListener('input',event=>{
  }
 });
 document.addEventListener('change',async event=>{
+ if(event.target.matches('[data-agri-filter]')){updateAgriFilters();return;}
  if(event.target.matches('[data-master-filter]')){updateMasterFilters();return;}
  if(event.target.matches('[data-job-filter]')){updateJobFilters();return;}
  if(event.target.id==='cv-files'){
@@ -247,6 +251,7 @@ document.addEventListener('change',async event=>{
  try{if(event.target.id==='node-status'){store.updateNode(state.selected,{status:event.target.value});refresh();}if(event.target.id==='list-filter'){state.filter=event.target.value;refresh();}}catch(e){toast(e.message);}
 });
 document.addEventListener('submit',event=>{
+ if(event.target.id==='agri-filters'){event.preventDefault();updateAgriFilters();return;}
  if(event.target.id==='master-filters'){event.preventDefault();updateMasterFilters();return;}
  if(event.target.id==='task-form'){event.preventDefault();try{store.addTask($('#task-text').value);refresh();toast('Yeni görev eklendi.');}catch(e){toast(e.message);}}
  if(event.target.id==='edit-form'){
@@ -278,6 +283,12 @@ $('#backup-file').addEventListener('change',async event=>{
 });
 function downloadBackup(){const value=store.exportBackup();const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`future-yedek-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);}
 
+function updateAgriFilters(){
+ const field=document.activeElement,focus=field?.id,caret=focus==='agri-query'?field.selectionStart:null;
+ const form=document.getElementById('agri-filters');if(!form)return;
+ const f=Object.fromEntries(new FormData(form));history.replaceState(null,'',agriHref(state.topic==='experience'?'experience':'education',f));render();
+ const next=focus&&document.getElementById(focus);if(next){next.focus();if(caret!==null)next.setSelectionRange(caret,caret);}
+}
 function updateMasterFilters(){
  const field=document.activeElement,focus=field?.id,caret=focus==='master-query'?field.selectionStart:null;
  const f=Object.fromEntries(new FormData(document.getElementById('master-filters')));
@@ -299,7 +310,7 @@ document.addEventListener('toggle',async event=>{
 },true);
 
 async function init(){
- try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.5.0'),fetch('./products-data.json?v=2.5.0')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
+ try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.6.0'),fetch('./products-data.json?v=2.6.0')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
   try{cvSummary=await getCVSummary();}catch(error){cvError=error.message;}
   store=createStore({onError:error=>{persistenceError=error.message;toast(error.message);}});personal=store.getState();store.subscribe(next=>{personal=next;});window.addEventListener('hashchange',readRoute);readRoute();
  }catch(error){$('#app').innerHTML=`<main class="empty-state"><h1>Harita açılamadı.</h1><p>${esc(error.message)}</p><p>Sayfayı yeniden yükleyebilirsin. Yerel dosyayı doğrudan açıyorsan önizleme sunucusunu kullan.</p><button class="button primary" onclick="location.reload()">Yeniden dene</button></main>`;}
