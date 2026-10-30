@@ -1,11 +1,12 @@
+import {renderMasters,mastersHref} from './masters.js?v=2.5.0';
 import {createStore} from './state.js';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.4.3';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.5.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
 import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.4.3';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.4.3';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.4.3';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.5.0';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.5.0';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.5.0';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -86,7 +87,7 @@ function render(){
  const job=state.view==='route'&&state.route==='career'&&state.topic==='jobs'&&state.job?JOBS.find(j=>j.id===state.job):null;
  const product=state.view==='route'&&state.route==='china'&&state.topic==='product'&&state.product?PRODUCTS.find(p=>p.id===state.product):null;
  const panel=Boolean(selected||choice||job||product);
- const title=state.view==='home'?'Genel bakış':state.view==='route'?(state.route==='career'&&state.topic==='jobs'?'İş İlanları':route?.name):({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım',projects:'Okul Projelerim',cv:'CV dosyalarım'})[state.view];
+ const title=state.view==='home'?'Genel bakış':state.view==='route'?(state.route==='career'&&state.topic==='jobs'?'İş İlanları':state.route==='career'&&state.topic==='tech-study'?'Master opsiyonları':route?.name):({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım',projects:'Okul Projelerim',cv:'CV dosyalarım'})[state.view];
  document.title=`${title} · Future`;
  $('#app').className='app-shell'+(panel?' detail-open':'');
  $('#app').innerHTML=`<aside class="sidebar ${state.sidebar?'open':''}" aria-label="Ana gezinme">
@@ -115,6 +116,7 @@ function choiceCard(c){
  return `<button class="option-card ${state.choice===c.id?'selected':''}" data-action="open-choice" data-choice="${esc(c.id)}"><span class="option-icon">${icon(currentRoute().icon,22)}</span><strong>${esc(c.title)}</strong><span class="option-summary">${esc(c.summary)}</span><span class="option-tags">${c.countries.map(x=>`<span>${COUNTRIES[x]}</span>`).join('')}</span><span class="option-open">Özeti ve ilk adımı gör ${icon('arrow',17)}</span></button>`;
 }
 function renderRoute(){
+ if(state.route==='career'&&state.topic==='tech-study'&&!state.selected)return renderMasters(new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(JOBS,state.jobFilters,state.job,cvSummary);
  if(state.route==='china'&&state.topic==='product')return renderProductCatalog(PRODUCTS,expandedProductCategories,state.product);
  if(state.route==='china'&&state.topic==='supply'){
@@ -224,6 +226,7 @@ document.addEventListener('click',async event=>{
  }catch(error){toast(error.message||'İşlem tamamlanamadı.');}
 });
 document.addEventListener('input',event=>{
+ if(event.target.id==='master-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateMasterFilters,180);return;}
  if(event.target.id==='jobs-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateJobFilters,180);return;}
  if(event.target.id==='node-notes'){try{store.updateNode(state.selected,{notes:event.target.value});}catch(e){toast(e.message);}return;}
  if(event.target.id==='search'){
@@ -235,6 +238,7 @@ document.addEventListener('input',event=>{
  }
 });
 document.addEventListener('change',async event=>{
+ if(event.target.matches('[data-master-filter]')){updateMasterFilters();return;}
  if(event.target.matches('[data-job-filter]')){updateJobFilters();return;}
  if(event.target.id==='cv-files'){
   const files=Array.from(event.target.files);event.target.value='';if(!files.length)return;
@@ -243,6 +247,7 @@ document.addEventListener('change',async event=>{
  try{if(event.target.id==='node-status'){store.updateNode(state.selected,{status:event.target.value});refresh();}if(event.target.id==='list-filter'){state.filter=event.target.value;refresh();}}catch(e){toast(e.message);}
 });
 document.addEventListener('submit',event=>{
+ if(event.target.id==='master-filters'){event.preventDefault();updateMasterFilters();return;}
  if(event.target.id==='task-form'){event.preventDefault();try{store.addTask($('#task-text').value);refresh();toast('Yeni görev eklendi.');}catch(e){toast(e.message);}}
  if(event.target.id==='edit-form'){
   event.preventDefault();try{
@@ -273,6 +278,12 @@ $('#backup-file').addEventListener('change',async event=>{
 });
 function downloadBackup(){const value=store.exportBackup();const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`future-yedek-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);}
 
+function updateMasterFilters(){
+ const field=document.activeElement,focus=field?.id,caret=focus==='master-query'?field.selectionStart:null;
+ const f=Object.fromEntries(new FormData(document.getElementById('master-filters')));
+ history.replaceState(null,'',mastersHref(f));render();
+ const next=focus&&document.getElementById(focus);if(next){next.focus();if(caret!==null)next.setSelectionRange(caret,caret);}
+}
 function updateJobFilters(){
  const ids={query:'jobs-query',region:'jobs-region',country:'jobs-country',model:'jobs-model',role:'jobs-role',type:'jobs-type',group:'jobs-group'};
  const f={};for(const [key,id]of Object.entries(ids)){const field=document.getElementById(id);if(!field)return;f[key]=field.value;}
@@ -288,7 +299,7 @@ document.addEventListener('toggle',async event=>{
 },true);
 
 async function init(){
- try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.4.3'),fetch('./products-data.json?v=2.4.3')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
+ try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.5.0'),fetch('./products-data.json?v=2.5.0')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
   try{cvSummary=await getCVSummary();}catch(error){cvError=error.message;}
   store=createStore({onError:error=>{persistenceError=error.message;toast(error.message);}});personal=store.getState();store.subscribe(next=>{personal=next;});window.addEventListener('hashchange',readRoute);readRoute();
  }catch(error){$('#app').innerHTML=`<main class="empty-state"><h1>Harita açılamadı.</h1><p>${esc(error.message)}</p><p>Sayfayı yeniden yükleyebilirsin. Yerel dosyayı doğrudan açıyorsan önizleme sunucusunu kullan.</p><button class="button primary" onclick="location.reload()">Yeniden dene</button></main>`;}
