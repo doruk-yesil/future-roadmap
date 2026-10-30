@@ -1,11 +1,11 @@
 import {createStore} from './state.js';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.4.1';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.4.2';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
 import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.4.1';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.4.1';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.4.1';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.4.2';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.4.2';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.4.2';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -121,12 +121,14 @@ function renderRoute(){
   return (p?renderProductSuppliers(p):renderProductCatalog(PRODUCTS,expandedProductCategories,null,true))+`<details class="catalog-old-notes"><summary>Fuar ve tedarik araştırması</summary>${currentTopic().choices.map(c=>`<button class="relation-link" data-action="open-choice" data-choice="${esc(c.id)}"><span><strong>${esc(c.title)}</strong></span>${icon('arrow',16)}</button>`).join('')}</details>`;
  }
  const route=currentRoute(),topic=currentTopic();
+ const careerMenu=route.id==='career'&&!topic;
+ const menuTopics=careerMenu?route.topics.filter(t=>t.id==='jobs'):route.topics;
  const sequential=route.sequence&&!topic;
- const countries=[...new Set((topic?[topic]:route.topics).flatMap(t=>t.choices.flatMap(c=>c.countries)))];
- const topics=route.topics.map(t=>({...t,choices:t.choices.filter(c=>matchesCountry(c,state.country))})).filter(t=>t.choices.length);
+ const countries=[...new Set((topic?[topic]:menuTopics).flatMap(t=>t.choices.flatMap(c=>c.countries)))];
+ const topics=menuTopics.map(t=>({...t,choices:t.choices.filter(c=>matchesCountry(c,state.country))})).filter(t=>t.choices.length);
  const choices=topic?.choices.filter(c=>matchesCountry(c,state.country))||[];
  return `<nav class="route-trail" aria-label="Yol içinde gezinme"><a href="#view=home">Dört ana yol</a>${icon('chevron',13)}${topic?`<a href="${href(route.id)}">${esc(route.name)}</a>${icon('chevron',13)}<span>${esc(topic.title)}</span>`:`<span>${esc(route.name)}</span>`}</nav>
- <section class="route-heading"><div><div class="eyebrow">${esc(route.tag)}</div><h1>${esc(topic?.title||route.name)}</h1><p>${esc(topic?.summary||route.description)}</p></div>${topic?`<a class="button quiet" href="${href(route.id)}">${icon('back')}Diğer yollar</a>`:''}</section>
+ <section class="route-heading"><div><div class="eyebrow">${esc(route.tag)}</div><h1>${esc(topic?.title||route.name)}</h1><p>${esc(topic?.summary||route.description)}</p></div>${topic?`<a class="button quiet" href="${href(route.id)}">${icon('back')}Diğer yollar</a>`:careerMenu?`<a class="button quiet" href="${href('career','tech-study')}">${icon('study')}Master imkanları</a>`:''}</section>
  ${route.id==='agriculture'?`<div class="independent-note">${icon('info',19)}<span>Çalışmak, eğitim almak ve pilot denemek ayrı seçenekler. Birini yapmak için diğerini tamamlaman gerekmiyor.</span></div>`:''}
  ${countries.length?`<div class="country-filter" role="group" aria-label="Ülkeye göre daralt"><span>Nerede?</span>${['all',...countries].map(c=>`<button class="country-chip ${state.country===c?'active':''}" data-action="country" data-country="${c}" aria-pressed="${state.country===c}">${COUNTRIES[c]}</button>`).join('')}</div>`:''}
  <div class="section-heading compact"><h2>${sequential?'Nasıl ilerleyeceksin?':topic?'Hangi seçeneği incelemek istersin?':'Ne yapmak istersin?'}</h2><span class="muted small">${sequential?'Genel iş akışı · yukarıdan aşağıya':topic?'Kartın ayrıntısı sağda açılır':'Önce bir amaç seç'}</span></div>
@@ -285,7 +287,7 @@ document.addEventListener('toggle',async event=>{
 },true);
 
 async function init(){
- try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.4.1'),fetch('./products-data.json?v=2.4.1')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
+ try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.4.2'),fetch('./products-data.json?v=2.4.2')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
   try{cvSummary=await getCVSummary();}catch(error){cvError=error.message;}
   store=createStore({onError:error=>{persistenceError=error.message;toast(error.message);}});personal=store.getState();store.subscribe(next=>{personal=next;});window.addEventListener('hashchange',readRoute);readRoute();
  }catch(error){$('#app').innerHTML=`<main class="empty-state"><h1>Harita açılamadı.</h1><p>${esc(error.message)}</p><p>Sayfayı yeniden yükleyebilirsin. Yerel dosyayı doğrudan açıyorsan önizleme sunucusunu kullan.</p><button class="button primary" onclick="location.reload()">Yeniden dene</button></main>`;}
