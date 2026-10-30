@@ -1,11 +1,11 @@
 import {createStore} from './state.js';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.4.2';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=2.4.3';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
 import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.4.2';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.4.2';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.4.2';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=2.4.3';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=2.4.3';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=2.4.3';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -51,6 +51,7 @@ function readRoute(){
  if(state.view==='route'&&!currentRoute()){state.view='home';state.route=null;}
  if(state.topic&&!currentRoute()?.topics.some(t=>t.id===state.topic)){state.topic=null;state.choice=null;}
  if(state.choice&&!currentTopic()?.choices.some(c=>c.id===state.choice))state.choice=null;
+ if(state.view==='route'&&state.route==='career'&&!state.topic)state.topic='jobs';
  if(state.route==='career'&&state.topic==='jobs'&&!state.selected){
   if(state.choice==='jobs-tr'&&!params.has('jr'))state.jobFilters.region='tr';
   if(state.choice==='jobs-remote'&&!params.has('jr'))state.jobFilters.region='global';
@@ -287,7 +288,7 @@ document.addEventListener('toggle',async event=>{
 },true);
 
 async function init(){
- try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.4.2'),fetch('./products-data.json?v=2.4.2')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
+ try{const [response,researchResponse,jobsResponse,productsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=2.4.3'),fetch('./products-data.json?v=2.4.3')]);if(!productsResponse.ok)throw Error('Ürün kataloğu yüklenemedi.');PRODUCTS=(await productsResponse.json()).products;if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=applyResearch(createNavigation(DATA),RESEARCH);
   try{cvSummary=await getCVSummary();}catch(error){cvError=error.message;}
   store=createStore({onError:error=>{persistenceError=error.message;toast(error.message);}});personal=store.getState();store.subscribe(next=>{personal=next;});window.addEventListener('hashchange',readRoute);readRoute();
  }catch(error){$('#app').innerHTML=`<main class="empty-state"><h1>Harita açılamadı.</h1><p>${esc(error.message)}</p><p>Sayfayı yeniden yükleyebilirsin. Yerel dosyayı doğrudan açıyorsan önizleme sunucusunu kullan.</p><button class="button primary" onclick="location.reload()">Yeniden dene</button></main>`;}
