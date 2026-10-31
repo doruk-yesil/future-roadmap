@@ -278,6 +278,13 @@ export default {
       "url": "https://org.wwoof.de/help-support/",
       "sources": [
         {
+          "title": "WWOOF — dünya genelinde ülke ve çiftlik bul",
+          "url": "https://wwoof.net/",
+          "summary": "WWOOF’un genel sitesi; ülke seçimiyle ulusal ağlara ve organik çiftliklerde öğrenme seçeneklerine yönlendirir. Katılım eğitim ve kültürel değişim temellidir; ev sahibiyle gönüllü arasında ücret alışverişi yoktur.",
+          "status": "read",
+          "checkedAt": "2026-10-31"
+        },
+        {
           "title": "WWOOF Germany — yardım ve ziyaret koşulları",
           "url": "https://org.wwoof.de/help-support/",
           "summary": "Organik çiftlik ziyaretlerini gönüllü eğitim ilişkisi olarak tanımlıyor; ödeme veya istihdam ilişkisi olmadığını, 35 € üyelik ücretini, sigorta ve davet mektubu verilmediğini açıklıyor.",
