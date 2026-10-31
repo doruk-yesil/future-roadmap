@@ -2,79 +2,79 @@ export default {
   "checkedAt": "2026-10-31",
   "records": [
     {
-      "id": "tr-istanbul-sheep",
-      "title": "İstanbul kuzeyinde koyun ve tavuk çiftliğinde öğren",
-      "organization": "Fehmi aile çiftliği · Workaway ev sahibi",
-      "country": "Türkiye",
+      "id": "platform-workaway",
+      "title": "Workaway — çiftlik ve hayvan bakımı seçenekleri",
+      "organization": "Workaway",
+      "country": "Dünya çapında",
       "track": "experience",
-      "area": "Hayvancılık + sebzecilik",
-      "kind": "Gönüllü değişim",
-      "summary": "Koyun, tavuk ve sebze üretimi olan aile çiftliği. Ev sahibi önceki çiftçilik deneyiminin gerekmediğini ve işleri göstereceğini açıkça söylüyor.",
+      "area": "Tarım / hayvan bakımı / kültürel değişim",
+      "kind": "Gönüllü değişim platformu",
+      "summary": "Ülke ve ev sahibini Workaway üzerinde seç; çiftlik yaşamı ve hayvan bakımı seçeneklerini tek yerden araştır.",
       "learn": [
-        "Hayvanları besleme, sulama ve barınak temizliği",
-        "Yumurta toplama; sebze dikimi, bakım ve hasat"
+        "Ev sahibine göre yetiştiricilik, bahçe ve hayvan bakımı",
+        "Çiftliğin günlük işlerini uygulayarak öğrenme; öğretici ve görevleri önceden netleştir."
       ],
       "entry": [
-        "Önceki çiftçilik deneyimi gerekmiyor; öğrenme isteği ve esneklik bekleniyor.",
-        "Yaklaşık günde 4–5 saat, haftada 5 gün; saatler parçalı olabilir."
+        "Deneyimsiz kabul eden ev sahiplerini seç; koşullar her profil için ayrı.",
+        "Dil, süre, fiziksel görevler ve öğrenme desteğini ev sahibiyle doğrula."
       ],
-      "costPay": "Maaşlı iş değil. Ev sahibi yemek ve misafir evi sunuyor; Workaway üyeliği ve yol masrafı ayrıca kontrol edilmeli.",
-      "availability": "Profil açık; son etkinlik 26 Ekim 2026. Belirli tarihler için boş yer ve kabul henüz doğrulanmadı.",
+      "costPay": "Platform üyeliği ücretli olabilir. Yemek, konaklama ve varsa ödeme koşulları ev sahibine göre değişir; maaşlı iş varsayma.",
+      "availability": "Ana sitede ülke ve ev sahibi araması var; belirli çiftlik veya kontenjan seçilmedi.",
       "applySteps": [
-        "Platform üzerinden tarih ve öğrenmek istediğin hayvancılık görevlerini yaz.",
-        "Mentorun kim olacağını, saatleri ve kalış koşullarını yazılı netleştir."
+        "Ana sitede ülke seç; Farmstay ve Animal care alanlarını ara.",
+        "Yeni başlayan kabulü, mentorluk, tarihler ve günlük işleri ev sahibiyle netleştir."
       ],
-      "url": "https://www.workaway.info/en/host/489232862851",
+      "url": "https://www.workaway.info/",
       "sources": [
         {
-          "title": "Ev sahibinin çiftlik ve öğrenme açıklaması",
-          "url": "https://www.workaway.info/en/host/489232862851",
-          "summary": "Deneyimsiz gönüllü kabulü, hayvan bakım görevleri, yemek ve konaklama ev sahibinin kendi profilinde açıklanıyor.",
+          "title": "Workaway — ana site ve ev sahibi araması",
+          "url": "https://www.workaway.info/",
+          "summary": "Ana site ülke araması ile Farmstay ve Animal care kategorilerine yönlendiriyor; uygun ev sahibini platformda seçebilirsin.",
           "status": "read",
           "checkedAt": "2026-10-31"
         }
       ],
       "limits": [
-        "İş sözleşmesi veya mesleki diploma değil; bilgiler ev sahibinin beyanıdır.",
-        "Veterinerlik veya ticari sürü yöneticiliği yeterliği kazandırdığı varsayılmamalı."
+        "Platform üyeliği kabul, iş veya vize garantisi sağlamaz.",
+        "Yurt dışında yapılacak faaliyete uygun giriş ve çalışma koşullarını ayrıca kontrol et."
       ]
     },
     {
-      "id": "tr-kucukyoncali-permaculture",
-      "title": "Küçükyoncalı yakınında permakültür çiftliği",
-      "organization": "Süleyman ve Aylin aile çiftliği · Workaway ev sahibi",
-      "country": "Türkiye",
+      "id": "platform-wwoof",
+      "title": "WWOOF — organik çiftliklerde öğrenme ağı",
+      "organization": "WWOOF",
+      "country": "Dünya çapında",
       "track": "experience",
-      "area": "Ekolojik tarım + küçükbaş / kanatlı",
-      "kind": "Gönüllü değişim",
-      "summary": "Sebze bahçesi, kompost, gıda ormanı ve hayvan bakımını bir arada deneyimleme seçeneği. İstanbul’dan yaklaşık iki saatlik ulaşım tarif ediliyor.",
+      "area": "Organik tarım / hayvancılık",
+      "kind": "Gönüllü öğrenme platformu",
+      "summary": "WWOOF ana sitesinden ülkeyi seç; ulusal ağda sana uygun çiftliği ve öğrenmek istediğin işleri bul.",
       "learn": [
-        "Ekim, bakım, hasat ve tohum saklama",
-        "Kompost ve su sistemleri; koyun ve kanatlı bakımı"
+        "Ev sahibine göre organik yetiştiricilik ve günlük çiftlik işleri",
+        "Hayvancılık yapan çiftliklerde besleme ve bakım süreçleri"
       ],
       "entry": [
-        "Profil belirli bir tarım diploması istemiyor; deneyimsiz olarak yapabileceğin işleri önceden onaylat.",
-        "İstenen asgari kalış en az 3 hafta; iki gönüllü kapasitesi belirtiliyor."
+        "Önce hedef ülkenin ağını, sonra yeni başlayan kabul eden ev sahibini seç.",
+        "Dil, kalış süresi, görevler ve eğitim desteği ev sahibine göre değişir."
       ],
-      "costPay": "Maaş belirtilmiyor; gönüllülük. Üç öğün ve kırsal konaklama sunuluyor; platform üyeliği/yol ayrıca.",
-      "availability": "Profil açık; son etkinlik 5 Ekim 2026. Kontenjanı doğrudan ev sahibi teyit etmeli.",
+      "costPay": "Maaşlı iş değil; yemek ve konaklamayla eğitim/kültür alışverişi. Ulusal ağın üyelik bedeli, ulaşım ve sigorta ayrıca kontrol edilmeli.",
+      "availability": "Ana siteden ülke ve ulusal ağ seçimi yapılabiliyor; tekil çiftlik veya açık kontenjan garantisi yok.",
       "applySteps": [
-        "Tarihini ve 3 haftalık kalış imkânını gönder.",
-        "Mevsimde hangi üretim işlerine katılacağını ve günlük saatleri sor."
+        "wwoof.net ana sayfasında Find your destination ile ülke seç.",
+        "Ulusal ağda ilgilendiğin üretimi ve ev sahibini bul; öğrenme planını ve tarihleri teyit et."
       ],
-      "url": "https://www.workaway.info/en/host/364136799637",
+      "url": "https://wwoof.net/",
       "sources": [
         {
-          "title": "Çiftliğin uygulama ve konaklama açıklaması",
-          "url": "https://www.workaway.info/en/host/364136799637",
-          "summary": "Ev sahibi tarım, hayvan bakımı ve permakültür görevlerini, en az üç haftalık kalışı ve yemek/konaklamayı listeliyor.",
+          "title": "WWOOF — ana site ve ülke seçimi",
+          "url": "https://wwoof.net/",
+          "summary": "WWOOF ülke seçimiyle ulusal çiftlik ağlarına yönlendiriyor. Organik çiftlikte eğitim, günlük yaşama katılım, yemek ve konaklama ilişkisini açıklıyor.",
           "status": "read",
           "checkedAt": "2026-10-31"
         }
       ],
       "limits": [
-        "Konaklama çadır/yurt olabilir; profesyonel maaşlı staj değildir.",
-        "Mevsim, görev ve kontenjan değişir; iş başında eğitimin kapsamı netleştirilmeli."
+        "Üyelik, ev sahibi kabulü veya faaliyete uygun vize yerine geçmez.",
+        "Öğrenilecek görevleri ve öğretici kişiyi ev sahibiyle önceden konuş."
       ]
     },
     {
@@ -199,116 +199,6 @@ export default {
       "limits": [
         "Türkiye’den doğrudan işe giriş veya vize sponsorluğu teyitli değil.",
         "Bu nedenle kolay/garanti erişilebilir seçenek olarak değerlendirilmemeli."
-      ]
-    },
-    {
-      "id": "us-sunshine-ranch",
-      "title": "Sunshine Acres Ranch — hayvan bakımıyla öğrenme",
-      "organization": "Sunshine Acres Ranch / WWOOF",
-      "country": "ABD",
-      "track": "experience",
-      "area": "Hayvancılık / mera",
-      "kind": "Ücretsiz gönüllülük · vize koşullu",
-      "summary": "Arkansas’ta at, keçi, koyun ve tavuklarla günlük çiftlik yaşamı. Sıfır deneyim kabulü açık; üç aylık katılım tercih ediliyor. ABD’ye bu faaliyet için giriş hakkı doğrulanmış değil.",
-      "learn": [
-        "Besleme, sulama ve yumurta toplama",
-        "Keçi sağımı ve hayvan bakımı",
-        "Dönüşümlü otlatma, çit ve mera işleri"
-      ],
-      "entry": [
-        "Deneyim gerekmiyor; öğrenme isteği bekleniyor.",
-        "Yaklaşık 18 kg kaldırabilecek fiziksel durum ve günlük uzun yürüyüşe uyum gerekiyor.",
-        "Önce faaliyete uygun vize/statü konsolosluk veya resmî makamdan netleştirilmeli."
-      ],
-      "costPay": "Maaşlı iş değil. Çiftlik sayfası yemek ve konaklama sunuyor; ulaşım, sigorta ve varsa ağ üyeliği kişiye ait.",
-      "availability": "Ev sahibi yıl boyunca açık olduğunu yazıyor; belirli tarihte yer olduğu teyit edilmedi.",
-      "applySteps": [
-        "Önce resmî vize/statü uygunluğunu öğren; turist vizesiyle yapılabildiğini varsayma.",
-        "Uygunsa çiftlikle uygun dönem, mentorluk ve hayvan bakımı görevlerini konuş.",
-        "Konaklama, sigorta ve günlük düzeni yazılı netleştir."
-      ],
-      "url": "https://www.sunshineacresranch.com/wwoof-usa",
-      "sources": [
-        {
-          "title": "Sunshine Acres Ranch — WWOOF",
-          "url": "https://www.sunshineacresranch.com/wwoof-usa",
-          "summary": "Çiftlik tecrübesiz katılımcıları kabul ettiğini; hayvan bakımı, keçi sağımı ve mera görevlerini, üç aylık tercih süresini ve yemek/konaklama koşullarını açıklıyor.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        },
-        {
-          "title": "WWOOF USA — vize bilgisi",
-          "url": "https://info.wwoofusa.org/visainfo/",
-          "summary": "WWOOF USA, ABD’ye uygun vizenin ev sahiplerine başvurmadan önce alınmasını istiyor. Ev sahipleri vize başvurusu, sponsorluk veya davet mektubu sağlamıyor; eğitim amaçlı olması izin garantisi değil.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        }
-      ],
-      "limits": [
-        "Bu bir ücretli staj veya J-1 sponsorlu program olarak doğrulanmadı.",
-        "Faaliyet için uygun ABD statüsü teyit edilmeden rezervasyon/üyelik yapılmamalı."
-      ]
-    },
-    {
-      "id": "eu-wwoof-germany",
-      "title": "WWOOF Almanya — organik çiftlikte kısa saha deneyimi",
-      "organization": "WWOOF Deutschland e.V.",
-      "country": "Avrupa",
-      "track": "experience",
-      "area": "Organik tarım / hayvancılık",
-      "kind": "Ücretsiz eğitsel çiftlik ziyareti",
-      "summary": "Mesleği kısa süre deneyebilmek için organik çiftlik ağı. Tecrübe zorunlu değil; bitki veya hayvancılık öğrenme hedefi olan bir ev sahibi seçilmeli. Almanya’nın ağ açıklaması bunu ücretli istihdamdan ayırıyor.",
-      "learn": [
-        "Ev sahibine göre ekim, bakım ve hasat",
-        "Hayvancılık yapan ev sahibinde günlük hayvan bakımı",
-        "Organik işletmenin mevsimlik rutini"
-      ],
-      "entry": [
-        "WWOOF genel kuralı önceki deneyim aramıyor.",
-        "Dil, fiziksel görevler ve öğretme isteği ev sahibiyle eşleştirilmeli.",
-        "Türkiye’den seyahat için pasaport/vize ve ziyaretin niteliği resmî temsilcilikle kontrol edilmeli."
-      ],
-      "costPay": "Maaş yok. Tek kişilik üyelik sayfada 35 €; sigorta dahil değil. Ulaşım ve sigorta ayrıca.",
-      "availability": "Ev sahibi ağı sürekli erişilebilir; tekil açık iş veya garantili konaklama değil.",
-      "applySteps": [
-        "Vize ve sigorta koşullarını önce incele.",
-        "Hayvan bakımı veya sebze yetiştirme ve yeni başlayan kabul eden ev sahibi seç.",
-        "Tarih, öğrenme görevleri ve öğretici kişiyi anlaş; onay gelmeden gitme."
-      ],
-      "url": "https://org.wwoof.de/help-support/",
-      "sources": [
-        {
-          "title": "WWOOF — dünya genelinde ülke ve çiftlik bul",
-          "url": "https://wwoof.net/",
-          "summary": "WWOOF’un genel sitesi; ülke seçimiyle ulusal ağlara ve organik çiftliklerde öğrenme seçeneklerine yönlendirir. Katılım eğitim ve kültürel değişim temellidir; ev sahibiyle gönüllü arasında ücret alışverişi yoktur.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        },
-        {
-          "title": "WWOOF Germany — yardım ve ziyaret koşulları",
-          "url": "https://org.wwoof.de/help-support/",
-          "summary": "Organik çiftlik ziyaretlerini gönüllü eğitim ilişkisi olarak tanımlıyor; ödeme veya istihdam ilişkisi olmadığını, 35 € üyelik ücretini, sigorta ve davet mektubu verilmediğini açıklıyor.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        },
-        {
-          "title": "WWOOF — deneyim gerekiyor mu?",
-          "url": "https://help.wwoof.net/hc/en-us/articles/16654314666397-Do-I-need-experience-to-be-a-WWOOFer",
-          "summary": "Önceki tarım deneyimi gerekmediğini; ev sahiplerinin öğrenmeye istekli katılımcılara çiftçilik yöntemlerini öğrettiğini belirtiyor.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        },
-        {
-          "title": "AB Türkiye Delegasyonu — Schengen",
-          "url": "https://www.eeas.europa.eu/delegations/t%C3%BCrkiye/visa_en",
-          "summary": "Kısa Schengen ziyaretlerinin 180 günde en fazla 90 gün çerçevesini ve gerçek seyahat amacına uygun başvuru gereğini açıklıyor. Üyelik, vize yerine geçmiyor.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        }
-      ],
-      "limits": [
-        "Ağın eğitim ziyareti tanımı, kişisel vize uygunluğu kararı yerine geçmez.",
-        "Her çiftlik aynı miktarda öğretmez; görev ve mentor önceden konuşulmalı."
       ]
     },
     {
@@ -473,55 +363,6 @@ export default {
       "limits": [
         "Bu kurs yüksek lisans diploması veya ücretli çiftlik işi sağlamaz.",
         "Yalnız izleme seçeneğinde öğretmen/öğrenci etkileşimi ve konferans yok."
-      ]
-    },
-    {
-      "id": "eu-west-town-farm",
-      "title": "West Town Farm — organik çiftlikte hayvan ve ürün bakımı",
-      "organization": "West Town Farm / WWOOF UK",
-      "country": "Avrupa",
-      "track": "experience",
-      "area": "Hayvancılık / organik tarım",
-      "kind": "Ücretsiz gönüllülük · Birleşik Krallık vizesi koşullu",
-      "summary": "Exeter yakınında somut organik çiftlik. Önceki çiftçilik deneyimi aramıyor; en az bir ay, haftada dört gün çiftlik yaşamı ve uygulama. İngiltere’nin giriş/çalışma koşulları ayrıca çözülmeli.",
-      "learn": [
-        "Hayvanları besleme, altlık, izleme ve taşıma",
-        "Kabak yetiştirme ve elma bakımı/hasadı",
-        "Çit, çit bitkisi ve doğa koruma işleri"
-      ],
-      "entry": [
-        "18 yaş ve üzeri; önceki çiftçilik deneyimi gerekmiyor.",
-        "Kendi yemek/temizlik düzenini bağımsız yürütebilmek ve fiziksel çiftlik işine uyum gerekiyor.",
-        "Birleşik Krallık’ta bu faaliyete izin veren statü teyit edilmeli; ücretsiz olması ziyaretçi vizesiyle izin verildiğini kanıtlamaz."
-      ],
-      "costPay": "Maaş yok. Yerinde konaklama ve haftalık organik gıda tedariki veriliyor; ağ üyeliği, yol ve sigorta ayrıca.",
-      "availability": "Çiftlik başvuruyu WWOOF UK profili üzerinden kabul ediyor; belirli tarihte yer teyidi yok. En az bir ay; değerlendirmeyle üç aya uzatılabilir.",
-      "applySteps": [
-        "Önce planlanan bir aylık çiftlik faaliyetinin İngiltere vize/statü koşullarına uygunluğunu netleştir.",
-        "Uygunsa çiftliğin bağlantısından WWOOF UK profiline başvur.",
-        "Tarih, öğrenilecek hayvan görevleri ve konaklamayı çiftlikle teyit et."
-      ],
-      "url": "https://www.westtownfarm.co.uk/wwoof",
-      "sources": [
-        {
-          "title": "West Town Farm — Volunteer With Us",
-          "url": "https://www.westtownfarm.co.uk/wwoof",
-          "summary": "Çiftlik 18+ ve tecrübesiz gönüllü kabulünü açıkça yazıyor. Hayvan bakımı, kabak/elma işleri, haftada dört gün katılım, en az bir ay ve yemek/konaklama koşullarını açıklıyor. Başvuru yalnız WWOOF UK üzerinden.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        },
-        {
-          "title": "WWOOF UK — ziyaret ve vize",
-          "url": "https://org.wwoof.uk/visiting-the-uk-visa/",
-          "summary": "Ücretsiz WWOOF faaliyetlerinin göçmenlik kurallarında yine de çalışma sayılabileceğini açıklıyor. Özel WWOOF vizesi yok; ağ bireysel uygunluğu onaylamıyor. Ziyaretçi statüsü otomatik izin değil.",
-          "status": "read",
-          "checkedAt": "2026-10-31"
-        }
-      ],
-      "limits": [
-        "Birleşik Krallık AB/Schengen üyesi değil; Schengen vizesi bu ziyaret için yeterli kabul edilmemeli.",
-        "Vize sponsorluğu ve kişi için yasal katılım hakkı doğrulanmadı.",
-        "Ücretli iş veya garantili yerleştirme değil."
       ]
     },
     {

@@ -1,4 +1,4 @@
-import DATA from './agriculture-data.js?v=2.6.2';
+import DATA from './agriculture-data.js?v=2.6.3';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=v=>{try{return new URL(v).protocol==='https:';}catch{return false;}};
 export const AGRI_DATA=DATA;
