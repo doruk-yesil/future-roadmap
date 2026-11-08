@@ -61,7 +61,7 @@ Depodaki `.github/workflows/pages.yml`, `main` dalına her değişiklikte testle
 - `state.js`: kalıcı kişisel kayıt ve doğrulanan yedekleme
 - `data.json`: kişisel profili genelleştirilmiş araştırma verisi
 - `styles.css`, `app.css`, `navigation.css`, `reading.css`: masaüstü, mobil ve geniş okuma paneli
-- `tests/`: yerleşim, kaynak ilişki yönleri, arama ve kayıt/yedekleme kontrolleri
+- `*.test.mjs`: kök dizindeki yerleşim, kaynak ilişkileri, arama ve kayıt/yedekleme kontrolleri
 
 
 ## 26 Ekim 2026 ilan denetimi
@@ -76,3 +76,10 @@ Yerel yeniden hazırlama: `python tools/prepare_jobs.py` ardından `python tools
 `products-data.json` 27 Ekim 2026 tarihinde okunan 14 ürün grubu, 42 somut seçenek ve 55 okunmuş tedarik sayfası referansı içerir. Aynı kaynağın farklı ürünlerde kullanılması mümkündür; 54 farklı tedarik URL’si vardır. İki okunamayan bağlantı ayrı gösterilir. Kategori başlıkları açılır, ürünler ince satırlardır. Ürün paneli somut seçenekleri ve üç kısa aşamayı gösterir. Dış bağlantılar, seçili `product` kimliğiyle mevcut `topic=supply` sayfasına taşınır. Model, üretici, toptan ve perakende bağlantılarının kapsamı sayfa özetlerinde ayrılır. Katalog, stok veya ticari sözleşme teyidi değildir.
 
 Önceki 350 araştırma kartı ve kişisel kayıt şeması korunur. Ürün adları, modeller ve tedarikçi adları genel aramaya dahildir. Yeni statik modüller `products.js` ve `products.css`; denetim girdileri yerelde `outputs/product-suppliers-*.json` dosyalarındadır. `python tools/prepare_product_catalog.py` katalog verisini yeniden birleştirir.
+
+
+## Depodan devam etme ve yerel veri sınırları
+
+8 Kasım 2026 README incelemesinde yukarıda anılan `tools/prepare_jobs.py`, `tools/apply_jobs_audit.py`, `tools/prepare_product_catalog.py` ve `outputs/` denetim girdileri bu Git kopyasında bulunmadı. Bunlar önceki yerel çalışma sürecine ait referanslardır; yalnız bu repoyu klonlayarak o Python adımları yeniden çalıştırılamaz. Mevcut site, kökteki statik veri/modül dosyaları ve `package.json` komutlarıyla çalıştırılır. İleride bu üretim süreci kullanılacaksa eksik araçlar ve uygun denetim girdileri ayrıca korunmalıdır.
+
+Git deposu kişisel tarayıcı verilerinin yedeği değildir: görev/not/favoriler için uygulamanın JSON dışa aktarmasını, CV kasasındaki dosyalar için ayrı indirmeyi kullanın. Kaynak kodu yeniden kurmak bu kişisel kayıtları geri getirmez. Bu dokümantasyon incelemesi tarihli ilan/tedarik araştırmalarını canlı olarak yeniden doğrulamadı; kaynak tarihlerini yeni kontrol yapılmış gibi güncellemedi.
