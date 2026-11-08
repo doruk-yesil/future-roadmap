@@ -34,3 +34,5 @@
 @media(min-width:1550px){.detail-open .option-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:1100px){.detail-panel{width:450px;max-width:100%}.option-card{padding:22px;min-height:225px}.option-card.selected{padding:21px}.option-card strong{font-size:17px}}
 @media(max-width:760px){.option-grid{grid-template-columns:1fr}.option-card{min-height:190px}.option-card strong{margin-top:12px}.country-filter{margin:20px 0 26px}.country-chip{padding:8px 12px}.route-trail{font-size:10px;gap:7px;margin-bottom:19px}.home-grid{grid-template-columns:1fr}.independent-note{font-size:11px}.detail-fold>summary{padding:18px 0}.detail-panel{width:100%!important}.detail-content{padding:22px!important}.detail-title{font-size:22px}}
+
+.home-grid.three-paths{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1300px}.three-paths .route-footer{gap:10px}.three-paths .route-stat{max-width:75%;line-height:1.7}@media(max-width:1000px){.home-grid.three-paths{grid-template-columns:1fr}.three-paths .route-card{min-height:210px}}
