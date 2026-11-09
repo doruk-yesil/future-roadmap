@@ -9,7 +9,7 @@ let taskSequence = 0;
 const now = () => new Date().toISOString();
 const clone = value => JSON.parse(JSON.stringify(value));
 const fail = message => { throw new Error(message); };
-const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], jobCountries: [], agricultureCards: [], updatedAt: now() });
+const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], jobCountries: [], agricultureCards: [], foodCards: [], updatedAt: now() });
 
 function object(value, label) {
   if (!value || typeof value !== 'object' || Array.isArray(value) ||
@@ -122,7 +122,7 @@ function agricultureCard(value){
 }
 
 function validateState(value, validNodeIds) {
-  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'jobCountries', 'agricultureCards', 'updatedAt'], 'Durum');
+  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'jobCountries', 'agricultureCards', 'foodCards', 'updatedAt'], 'Durum');
   if (value.version !== 1) fail('Bu yedek sürümü desteklenmiyor.');
   object(value.nodes, 'Kartlar');
   if (Object.keys(value.nodes).length > MAX_ITEMS || !Array.isArray(value.tasks) || value.tasks.length > MAX_ITEMS) fail('Yedekte çok fazla kart veya görev var.');
@@ -150,7 +150,9 @@ function validateState(value, validNodeIds) {
   if(jobCountries.length>1000) fail('Çok fazla ülke var.');
   const agricultureCards=(value.agricultureCards??[]).map(agricultureCard);
   if(agricultureCards.length>MAX_ITEMS||new Set(agricultureCards.map(c=>c.id)).size!==agricultureCards.length)fail('Tarım kartları geçersiz.');
-  return { version: 1, nodes, tasks, jobs, jobCountries, agricultureCards, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
+  const foodCards=(value.foodCards??[]).map(agricultureCard);
+  if(foodCards.length>MAX_ITEMS||new Set(foodCards.map(c=>c.id)).size!==foodCards.length)fail('Gıda kartları geçersiz.');
+  return { version: 1, nodes, tasks, jobs, jobCountries, agricultureCards, foodCards, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
 }
 
 export function createStore(options = {}) {
@@ -247,6 +249,18 @@ export function createStore(options = {}) {
     },
     removeAgricultureCard(id){return commit({...clone(state),agricultureCards:state.agricultureCards.filter(c=>c.id!==id)});},
     restoreAgricultureCard(value){const card=agricultureCard(value);if(state.agricultureCards.some(c=>c.id===card.id))return;return commit({...clone(state),agricultureCards:[...state.agricultureCards,card]});},
+    addFoodCard(title){
+      if(state.foodCards.length>=MAX_ITEMS)fail('Kart sınırına ulaşıldı.');
+      const card=agricultureCard({id:globalThis.crypto?.randomUUID?.()||`food-${Date.now()}-${++taskSequence}`,title,description:'',notes:''});
+      commit({...clone(state),foodCards:[...state.foodCards,card]});return clone(card);
+    },
+    updateFoodCard(id,patch){
+      keys(patch,['title','description','notes'],'Kart değişikliği');
+      if(!state.foodCards.some(c=>c.id===id))fail('Kart bulunamadı.');
+      return commit({...clone(state),foodCards:state.foodCards.map(c=>c.id===id?agricultureCard({...c,...patch}):c)});
+    },
+    removeFoodCard(id){return commit({...clone(state),foodCards:state.foodCards.filter(c=>c.id!==id)});},
+    restoreFoodCard(value){const card=agricultureCard(value);if(state.foodCards.some(c=>c.id===card.id))return;return commit({...clone(state),foodCards:[...state.foodCards,card]});},
     addJobCountry(value) {
       const name=string(value,100,'Ülke adı',false).trim();
       const existing=state.jobCountries.find(c=>c.toLocaleLowerCase('tr-TR')===name.toLocaleLowerCase('tr-TR'));

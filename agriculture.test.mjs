@@ -35,3 +35,12 @@ test('manual agriculture page starts empty and editable side panel escapes perso
  const html=renderManualAgriculture([]);assert.match(html,/Kart ekle/);assert.ok(!html.includes('WWOOF'));assert.ok(!html.includes('Çalışarak ve sahada öğren'));
  const panel=renderAgricultureCard({id:'test',title:'<script>',description:'</textarea><script>',notes:'not'});assert.match(panel,/role="dialog"/);assert.match(panel,/data-agriculture-edit="notes"/);assert.ok(!panel.includes('<script>'));
 });
+
+test('food cards use the same editor while staying separate from agriculture and persisting in backups',()=>{
+ const s=createStore({storage:null});s.addAgricultureCard('Çiftlik');const card=s.addFoodCard('Zincir restoran');s.updateFoodCard(card.id,{notes:'Operasyonu öğren',description:'Yemek sektörü'});
+ assert.equal(s.getState().agricultureCards.length,1);assert.equal(s.getState().foodCards[0].notes,'Operasyonu öğren');
+ const copy=createStore({storage:null});copy.importBackup(s.exportBackup());assert.equal(copy.getState().foodCards[0].description,'Yemek sektörü');
+ const html=renderManualAgriculture(copy.getState().foodCards,'food');assert.match(html,/<h1>Gıda<\/h1>/);assert.match(html,/route=food/);assert.ok(!html.includes('Çiftlik'));
+ assert.match(renderAgricultureCard(card,'food'),/>GIDA</);copy.removeFoodCard(card.id);assert.equal(copy.getState().foodCards.length,0);copy.restoreFoodCard(card);assert.equal(copy.getState().foodCards.length,1);
+ const old=s.exportBackup();delete old.state.foodCards;copy.importBackup(old);assert.deepEqual(copy.getState().foodCards,[]);
+});
