@@ -44,3 +44,12 @@ test('food cards use the same editor while staying separate from agriculture and
  assert.match(renderAgricultureCard(card,'food'),/>GIDA</);copy.removeFoodCard(card.id);assert.equal(copy.getState().foodCards.length,0);copy.restoreFoodCard(card);assert.equal(copy.getState().foodCards.length,1);
  const old=s.exportBackup();delete old.state.foodCards;copy.importBackup(old);assert.deepEqual(copy.getState().foodCards,[]);
 });
+
+import {isUSAgricultureMasterCard,US_AGRI_MASTERS,renderUSAgricultureMasters} from './us-agriculture-masters.js';
+test('only named US agriculture master card links to separate US list; removed header button stays absent',()=>{
+ const card={id:'mine',title:'Amerikada Master Agriculture',description:'',notes:''};assert.ok(isUSAgricultureMasterCard(card));
+ const html=renderManualAgriculture([card]);assert.match(html,/study=us-masters/);assert.ok(!html.includes('master-mini-card'));assert.ok(!html.includes('route=career'));
+ const other=renderManualAgriculture([{...card,title:'Çiftlik'}]);assert.ok(!other.includes('study=us-masters'));assert.match(other,/card=mine/);
+ assert.equal(US_AGRI_MASTERS.length,4);for(const p of US_AGRI_MASTERS){assert.ok(p.entry&&p.transition);for(const source of p.sources)assert.equal(new URL(source[1]).protocol,'https:');}
+ const list=renderUSAgricultureMasters('mine');assert.match(list,/ABD tarım masterları listesi/);assert.match(list,/card=mine/);assert.match(list,/Cornell University/);assert.ok(!list.includes('Georgia Tech'));
+});
