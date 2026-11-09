@@ -1,41 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
-import {filterJobs,jobFiltersFromParams,jobsHref,renderJobsBoard,renderJobDetail} from './jobs.js';
-const data=JSON.parse(readFileSync(new URL('./jobs-data.json',import.meta.url),'utf8'));
-const source=JSON.parse(readFileSync(new URL('./data.json',import.meta.url),'utf8'));
-const records=data.records;
-const filters=overrides=>({...jobFiltersFromParams(new URLSearchParams()),...overrides});
-
-test('all original records retain a visited audit; only evidenced graduate vacancies are admitted',()=>{
- const companies=source.nodes.filter(n=>n.kind==='company');
- assert.equal(companies.length,84);
- for(const c of companies)assert.ok(records.find(r=>r.sourceNodeId===c.id));
- assert.equal(data.auditCoverage.checkedOriginalRecords,90);
- assert.equal(data.auditCoverage.originalRecords,90);
- const verified=records.filter(r=>r.status==='open');assert.equal(verified.length,7);
- assert.equal(records.filter(r=>r.status==='unverified').length,86);
- for(const r of verified){assert.equal(r.kind,'vacancy');assert.equal(r.verification.newGradConfirmed,true);assert.equal(r.verification.modelConfirmed,true);assert.notEqual(r.workModel,'unknown');assert.ok(r.verification.newGradEvidence&&r.verification.modelEvidence);}
- for(const r of records){assert.ok(r.auditVisitedUrls.length);assert.ok(r.checkedAt);assert.ok(r.sources.length);for(const s of r.sources)assert.equal(new URL(s.url).protocol,'https:');}
- for(const id of ['career_job_tervax','career_job_dream_devops','company_052','company_053'])assert.equal(records.find(r=>r.id===id).status,'unverified');
- assert.equal(new Set(records.map(r=>r.id)).size,records.length);
+import {filterJobs,renderJobsBoard,jobFiltersFromParams,jobsHref} from './jobs.js';
+import {createStore} from './state.js';
+const memory=()=>{const m=new Map();return {getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)};};
+test('manual jobs persist edits and backup restore, with old backups supported',()=>{
+ const storage=memory(),s=createStore({storage});const j=s.addJob('Zeta','Developer');
+ s.updateJob(j.id,{country:'DE',workModel:'hybrid',application:'test_2'});
+ const next=createStore({storage});assert.equal(next.getState().jobs[0].application,'test_2');
+ const other=createStore({storage:memory()});other.importBackup(s.exportBackup());assert.deepEqual(other.getState().jobs,s.getState().jobs);
+ const old=s.exportBackup();delete old.state.jobs;other.importBackup(old);assert.deepEqual(other.getState().jobs,[]);
+ s.removeJob(j.id);assert.equal(s.getState().jobs.length,0);s.restoreJob(next.getState().jobs[0]);assert.equal(s.getState().jobs.length,1);
+ assert.throws(()=>s.addJob(' ','Developer'));assert.throws(()=>s.updateJob(j.id,{application:'bogus'}));
 });
-test('default excludes unverified records and country, role and work model filters combine',()=>{
- assert.equal(filterJobs(records,filters()).length,7);
- const remote=filterJobs(records,filters({model:'remote'}));assert.equal(remote.length,1);assert.equal(remote[0].company,'Canonical / Ubuntu');
- assert.equal(filterJobs(records,filters({region:'us',model:'hybrid'}))[0].id,'hpe_1213624');
- assert.equal(filterJobs(records,filters({country:'SG',model:'hybrid'}))[0].id,'sap_447781');
- assert.equal(filterJobs(records,filters({type:'unverified',role:'cyber',model:'remote'}))[0].id,'career_job_tervax');
- const f=filters({query:'Go',role:'backend',model:'onsite',region:'tr',group:'company'});
- assert.ok(filterJobs(records,f).some(r=>r.company==='Good Job Games'));
- assert.deepEqual(jobFiltersFromParams(new URLSearchParams(jobsHref(f,'career_job_goodjob').slice(1))),f);
- const amazon=records.find(r=>r.id==='company_052');assert.equal(amazon.region,'eu');assert.equal(amazon.workModel,'unknown');assert.equal(amazon.verification.newGradConfirmed,true);
+test('country, model and application filters combine and results are always alphabetical',()=>{
+ const s=createStore({storage:memory()});const z=s.addJob('Zeta','Dev');const a=s.addJob('Alfa','Tester');s.updateJob(a.id,{country:'US',workModel:'remote',application:'interview_1'});
+ const all=jobFiltersFromParams(new URLSearchParams());assert.deepEqual(filterJobs(s.getState().jobs,all).map(j=>j.company),['Alfa','Zeta']);
+ const f={country:'US',model:'remote',application:'interview_1'};assert.equal(filterJobs(s.getState().jobs,f)[0].id,a.id);assert.deepEqual(jobFiltersFromParams(new URLSearchParams(jobsHref(f).split('?')[0].slice(1))),f);
+ assert.equal(filterJobs(s.getState().jobs,{...f,application:'applied'}).length,0);
 });
-test('render exposes bounded scroll area, unknown reasons and evidence without allowing markup',()=>{
- const html=renderJobsBoard(records,filters());assert.match(html,/7 doğrulanmış yeni mezun ilanı/);assert.match(html,/86 doğrulanamayan kayıt/);
- assert.match(html,/Kaydırılabilir iş ilanları listesi/);assert.match(html,/tabindex="0"/);assert.match(html,/Doğrulanamayanlar/);
- assert.equal(html.includes('Junior Penetration Test Engineer'),false);
- const old=renderJobDetail(records.find(r=>r.id==='career_job_tervax'),filters());assert.match(old,/Bu grupta olma nedeni/);assert.match(old,/Junior yazıyor/);
- const malicious={...records.find(r=>r.status==='open'),company:'<img src=x onerror=alert(1)>',auditReason:'<script>bad</script>',status:'unverified'};
- const injected=renderJobsBoard([malicious],filters({type:'unverified'}));assert.equal(injected.includes('<img'),false);assert.equal(injected.includes('<script>'),false);assert.ok(injected.includes('&lt;img'));
+test('board exposes only three filters, inline dropdowns, add form and escaped personal data',()=>{
+ const s=createStore({storage:memory()});s.addJob('<script>','<img>');const html=renderJobsBoard(s.getState().jobs,jobFiltersFromParams(new URLSearchParams()));
+ assert.equal((html.match(/data-job-filter /g)||[]).length,3);assert.equal((html.match(/data-job-edit=/g)||[]).length,3);assert.match(html,/job-add-form/);assert.match(html,/Kaydırılabilir/);assert.ok(!html.includes('<script>'));assert.match(html,/&lt;script&gt;/);assert.ok(!html.includes('jobs-role'));assert.ok(!html.includes('Doğrulanamayan'));
 });

@@ -1,14 +1,14 @@
-import {activeSections} from './sections.js?v=3.1.0';
-import {renderAgriculture,agriHref} from './agriculture.js?v=3.1.0';
-import {renderMasters,mastersHref} from './masters.js?v=3.1.0';
-import {createStore} from './state.js';
+import {activeSections} from './sections.js?v=3.2.0';
+import {renderAgriculture,agriHref} from './agriculture.js?v=3.2.0';
+import {renderMasters,mastersHref} from './masters.js?v=3.2.0';
+import {createStore} from './state.js?v=3.2.0';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.1.0';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.2.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
-import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.1.0';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.1.0';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.1.0';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.1.0';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.2.0';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.2.0';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.2.0';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.2.0';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -119,7 +119,7 @@ function renderRoute(){
  if(state.route==='food')return `<nav class="route-trail" aria-label="Yol içinde gezinme"><a href="#view=home">Genel bakış</a><span>›</span><span>Gıda</span></nav><section class="route-heading"><div><span class="eyebrow">ZİNCİR YEMEK SEKTÖRÜ</span><h1>Gıda</h1><p>Zincir restoranlar ve hızlı servis yemek işletmeleri.</p></div></section><div class="empty-state"><h2>Bu bölümün içeriği henüz eklenmedi.</h2><p>Nasıl ilerleyeceğini bir sonraki adımda belirleyeceğiz.</p></div>`;
  if(state.route==='agriculture'&&!state.selected&&!state.choice)return renderAgriculture(state.topic,new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='tech-study'&&!state.selected)return renderMasters(new URLSearchParams(location.hash.slice(1)));
- if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(JOBS,state.jobFilters,state.job,cvSummary);
+ if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(personal.jobs||[],state.jobFilters,null,cvSummary)+(removedJob?'<button class="button quiet" data-action="undo-job">Silinen ilanı geri al</button>':'');
  if(state.route==='china'&&state.topic==='product')return renderProductCatalog(PRODUCTS,expandedProductCategories,state.product);
  if(state.route==='china'&&state.topic==='supply'){
   const p=PRODUCTS.find(p=>p.id===state.product);
@@ -188,7 +188,7 @@ function renderTasks(){
  const marked=DATA.nodes.filter(n=>status(n.id)==='chosen'||status(n.id)==='researching');
  return `<section class="collection-heading"><span class="eyebrow">DÜŞÜNCEDEN EYLEME</span><h1>Bir sonraki küçük adım.</h1><p>Kendi görevlerini yaz veya bir kartı doğrudan görev listene ekle.</p></section><form id="task-form" class="task-form"><input class="field-input" id="task-text" placeholder="Örneğin: Üç tedarikçiden aynı ürün için teklif al" aria-label="Yeni görev" maxlength="500" required><button class="button primary" type="submit">${icon('plus',18)}Görev ekle</button></form><div class="task-list">${personal.tasks.length?personal.tasks.map(t=>`<div class="task-row ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} data-action="toggle-task" data-id="${esc(t.id)}" aria-label="${esc(t.text)}"><div><strong>${esc(t.text)}</strong>${t.nodeId&&getNode(t.nodeId)?`<button class="text-link" data-action="open-node" data-id="${esc(t.nodeId)}">${esc(getNode(t.nodeId).title)} ${icon('arrow',14)}</button>`:''}</div>${button('remove-task','Görevi kaldır','close','icon','data-id="'+esc(t.id)+'" aria-label="Görevi kaldır"')}</div>`).join(''):`<div class="empty-state">${icon('check',38)}<h2>Listeni küçük tut, adımını netleştir.</h2><p>İlk görevini yukarıya yazabilirsin.</p></div>`}</div>${marked.length?`<div class="section-heading"><h2>Üzerinde çalıştığın yollar</h2><span>${marked.length} kart</span></div><div class="results-list">${marked.map(n=>renderResult(getNode(n.id))).join('')}</div>`:''}`;
 }
-function renderSettings(){return `<section class="collection-heading"><span class="eyebrow">SANA AİT BİR ÇALIŞMA ALANI</span><h1>Notların sende kalsın.</h1><p>Kaynaklı harita herkese açık. Notların, seçimlerin ve kişisel kart düzenlemelerin bu tarayıcıda saklanır; sunucuya gönderilmez.</p></section><section class="settings-grid"><article class="settings-block"><h2>Yedeğini indir</h2><p>Tarayıcı verilerini silmeden, cihaz değiştirmeden veya önemli düzenlemelerden sonra yedek al. Dosya notlarını, favorilerini, görevlerini ve kart düzenlemelerini içerir.</p>${button('export','JSON yedeğini indir','download','primary')}</article><article class="settings-block"><h2>Yedeğini geri yükle</h2><p>Başka cihazda veya tarayıcıda devam etmek için yedek dosyanı yükle. Geri yükleme bu tarayıcıdaki kişisel çalışma verilerinin yerine geçer; önce mevcut yedeğin indirilir.</p>${button('import','Yedek dosyası seç','upload')}</article></section><section class="settings-block how-to"><h2>Harita nasıl kullanılır?</h2><ol><li>Ana sayfadan bir yol seç.</li><li>Bir amaç seç; kısa seçenek kartları görünür.</li><li>Bir seçeneğe tıkla; özet ve ilk adım sağda açılır. Araştırmanın tamamını, koşulları ve kaynakları istediğinde genişlet.</li><li>Bir durum seç, not ekle veya kartı göreve dönüştür.</li></ol><p>Önce amaç seçilir, ülke filtresi sonra uygulanır. Seçenekler birbirinin zorunlu ön koşulu değildir. Gerçek koşullar ve geri dönüşler araştırma kartının bağlantılarında belirtilir. Elediğin kartlar seçenek özetinde kapalı tutulur; aramada erişilebilir.</p></section><section class="settings-block"><h2>İçeriğin kapsamı</h2><p>Yazılım sektörü, tarım ve hayvancılık ile zincir yemek sektörü olmak üzere üç ana yol bulunur. İlan ve eğitim koşullarının kontrol tarihleri ilgili listelerde gösterilir.</p><p>Kişisel profil bilgileri açık sürümden çıkarıldı. Yerel notların otomatik olarak cihazlar arasında eşitlenmez.</p></section>`;}
+function renderSettings(){return `<section class="collection-heading"><span class="eyebrow">SANA AİT BİR ÇALIŞMA ALANI</span><h1>Notların sende kalsın.</h1><p>Kaynaklı harita herkese açık. Notların, seçimlerin ve kişisel kart düzenlemelerin bu tarayıcıda saklanır; sunucuya gönderilmez.</p></section><section class="settings-grid"><article class="settings-block"><h2>Yedeğini indir</h2><p>Tarayıcı verilerini silmeden, cihaz değiştirmeden veya önemli düzenlemelerden sonra yedek al. Dosya notlarını, favorilerini, görevlerini, iş ilanlarını ve kart düzenlemelerini içerir.</p>${button('export','JSON yedeğini indir','download','primary')}</article><article class="settings-block"><h2>Yedeğini geri yükle</h2><p>Başka cihazda veya tarayıcıda devam etmek için yedek dosyanı yükle. Geri yükleme bu tarayıcıdaki kişisel çalışma verilerinin yerine geçer; önce mevcut yedeğin indirilir.</p>${button('import','Yedek dosyası seç','upload')}</article></section><section class="settings-block how-to"><h2>Harita nasıl kullanılır?</h2><ol><li>Ana sayfadan bir yol seç.</li><li>Bir amaç seç; kısa seçenek kartları görünür.</li><li>Bir seçeneğe tıkla; özet ve ilk adım sağda açılır. Araştırmanın tamamını, koşulları ve kaynakları istediğinde genişlet.</li><li>Bir durum seç, not ekle veya kartı göreve dönüştür.</li></ol><p>Önce amaç seçilir, ülke filtresi sonra uygulanır. Seçenekler birbirinin zorunlu ön koşulu değildir. Gerçek koşullar ve geri dönüşler araştırma kartının bağlantılarında belirtilir. Elediğin kartlar seçenek özetinde kapalı tutulur; aramada erişilebilir.</p></section><section class="settings-block"><h2>İçeriğin kapsamı</h2><p>Yazılım sektörü, tarım ve hayvancılık ile zincir yemek sektörü olmak üzere üç ana yol bulunur. İlan ve eğitim koşullarının kontrol tarihleri ilgili listelerde gösterilir.</p><p>Kişisel profil bilgileri açık sürümden çıkarıldı. Yerel notların otomatik olarak cihazlar arasında eşitlenmez.</p></section>`;}
 
 document.addEventListener('click',async event=>{
  const el=event.target.closest('[data-action]');if(!el)return;
@@ -208,6 +208,8 @@ document.addEventListener('click',async event=>{
  case 'close-detail':if(state.product&&state.route==='china'&&state.topic==='product'&&!state.selected)location.hash=productHref();else if(state.job)location.hash=jobsHref(state.jobFilters);else navigate('route',state.route,state.topic);break;
  case 'close-product':location.hash=productHref();break;
  case 'close-job':location.hash=jobsHref(state.jobFilters);break;
+ case 'remove-job':{const job=personal.jobs.find(j=>j.id===id);if(job){store.removeJob(job.id);removedJob=job;refresh();toast('İlan silindi. Geri almak için Geri al düğmesini kullan.');}break;}
+ case 'undo-job':if(removedJob){store.restoreJob(removedJob);removedJob=null;refresh();}break;
  case 'jobs-clear':location.hash=jobsHref();break;
  case 'cv-choose':$('#cv-files')?.click();break;
  case 'cv-download':downloadCVRecord(await getCVFile(el.dataset.cv));break;
@@ -243,6 +245,7 @@ document.addEventListener('input',event=>{
 document.addEventListener('change',async event=>{
  if(event.target.matches('[data-agri-filter]')){updateAgriFilters();return;}
  if(event.target.matches('[data-master-filter]')){updateMasterFilters();return;}
+ if(event.target.matches('[data-job-edit]')){try{store.updateJob(event.target.dataset.id,{[event.target.dataset.jobEdit]:event.target.value});refresh();}catch(e){toast(e.message);}return;}
  if(event.target.matches('[data-job-filter]')){updateJobFilters();return;}
  if(event.target.id==='cv-files'){
   const files=Array.from(event.target.files);event.target.value='';if(!files.length)return;
@@ -253,6 +256,7 @@ document.addEventListener('change',async event=>{
 document.addEventListener('submit',event=>{
  if(event.target.id==='agri-filters'){event.preventDefault();updateAgriFilters();return;}
  if(event.target.id==='master-filters'){event.preventDefault();updateMasterFilters();return;}
+ if(event.target.id==='job-add-form'){event.preventDefault();try{const record=store.addJob($('#new-job-company').value,$('#new-job-title').value);history.replaceState(null,'',jobsHref());state.jobFilters=jobFiltersFromParams(new URLSearchParams());refresh();$('#new-job-company')?.focus();toast(record.company+' eklendi.');}catch(e){toast(e.message);}return;}
  if(event.target.id==='task-form'){event.preventDefault();try{store.addTask($('#task-text').value);refresh();toast('Yeni görev eklendi.');}catch(e){toast(e.message);}}
  if(event.target.id==='edit-form'){
   event.preventDefault();try{
@@ -274,6 +278,7 @@ document.addEventListener('keydown',event=>{
  }
 });
 let pendingBackup;
+let removedJob=null;
 $('#backup-file').addEventListener('change',async event=>{
  const file=event.target.files[0];event.target.value='';if(!file)return;
  try{if(file.size>10*1024*1024)throw Error('Yedek dosyası 10 MB sınırını aşıyor.');pendingBackup=JSON.parse(await file.text());
@@ -296,7 +301,7 @@ function updateMasterFilters(){
  const next=focus&&document.getElementById(focus);if(next){next.focus();if(caret!==null)next.setSelectionRange(caret,caret);}
 }
 function updateJobFilters(){
- const ids={query:'jobs-query',region:'jobs-region',country:'jobs-country',model:'jobs-model',role:'jobs-role',type:'jobs-type',group:'jobs-group'};
+ const ids={country:'jobs-country',model:'jobs-model',application:'jobs-application'};
  const f={};for(const [key,id]of Object.entries(ids)){const field=document.getElementById(id);if(!field)return;f[key]=field.value;}
  const focus=document.activeElement?.id;const caret=focus==='jobs-query'?document.activeElement.selectionStart:null;
  const hash=jobsHref(f);history.replaceState(null,'',hash);state.jobFilters=jobFiltersFromParams(new URLSearchParams(hash.slice(1)));state.job=null;render();
@@ -310,9 +315,9 @@ document.addEventListener('toggle',async event=>{
 },true);
 
 async function init(){
- try{const [response,researchResponse,jobsResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json'),fetch('./jobs-data.json?v=3.1.0')]);if(!jobsResponse.ok)throw Error('İş ilanları yüklenemedi.');JOBS=(await jobsResponse.json()).records;if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=activeSections(applyResearch(createNavigation(DATA),RESEARCH));
+ try{const [response,researchResponse]=await Promise.all([fetch('./data.json'),fetch('./research.json')]);JOBS=[];if(!response.ok||!researchResponse.ok)throw Error('Harita veya kaynak notları yüklenemedi.');[DATA,RESEARCH]=await Promise.all([response.json(),researchResponse.json()]);SOURCES_BY_URL=new Map((RESEARCH.sources||[]).map(s=>[s.url,s]));NODES=new Map(DATA.nodes.map(n=>[n.id,n]));GROUPS=new Map(DATA.groups.map(g=>[g.id,g]));ROUTES=activeSections(applyResearch(createNavigation(DATA),RESEARCH));
   try{cvSummary=await getCVSummary();}catch(error){cvError=error.message;}
-  store=createStore({onError:error=>{persistenceError=error.message;toast(error.message);}});personal=store.getState();store.subscribe(next=>{personal=next;});window.addEventListener('hashchange',readRoute);readRoute();
+  store=createStore({onError:error=>{persistenceError=error.message;toast(error.message);}});personal=store.getState();store.subscribe(next=>{personal=next;JOBS=next.jobs||[];});JOBS=personal.jobs||[];window.addEventListener('hashchange',readRoute);readRoute();
  }catch(error){$('#app').innerHTML=`<main class="empty-state"><h1>Harita açılamadı.</h1><p>${esc(error.message)}</p><p>Sayfayı yeniden yükleyebilirsin. Yerel dosyayı doğrudan açıyorsan önizleme sunucusunu kullan.</p><button class="button primary" onclick="location.reload()">Yeniden dene</button></main>`;}
 }
 init();
