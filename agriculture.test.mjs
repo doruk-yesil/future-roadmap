@@ -84,3 +84,10 @@ test('metadata drafts are isolated until save and cancelling cannot discard auto
  assert.equal(changed.duration,'2 yıl');assert.equal(changed.notes,'Kalıcı not');
  const invalid={...createUSMasterDraft(changed),programUrl:'javascript:alert(1)'};const before=s.getState();assert.throws(()=>s.saveUSAgriProgram(base.id,invalid));assert.deepEqual(s.getState(),before);
 });
+
+test('program creation is inline like the jobs form and uses entered country/state/status',()=>{
+ const html=renderUSAgricultureMasters();assert.match(html,/id="usm-add-form" class="job-add-form/);assert.match(html,/id="usm-new-country"/);assert.match(html,/id="usm-new-state"/);assert.match(html,/id="usm-new-application"/);assert.ok(!html.includes('data-action="usm-add"'));
+ const s=createStore({storage:null});s.saveUSAgriProgram('manual',{custom:true,school:'Üniversite',program:'Tarım',country:'ABD',usState:'Texas',application:'eligible'});
+ const record=mergeUSAgriPrograms(s.getState().usAgriPrograms).find(p=>p.id==='manual');assert.equal(record.country,'ABD');assert.equal(record.usState,'Texas');assert.equal(record.application,'eligible');
+ assert.ok(!html.includes('<option value="Alabama"'));assert.match(html,/usm-country-suggestions/);
+});

@@ -121,12 +121,12 @@ function agricultureCard(value){
  return {id:identifier(value.id),title:string(value.title,200,'Kart başlığı',false).trim(),description:string(value.description??'',50000,'Açıklama'),notes:string(value.notes??'',20000,'Not')};
 }
 
-const USM_FIELDS=['school','program','usState','location','area','duration','application','description','notes','researchNotes','format','entry','transition','timing','contact','programUrl','applicationUrl'];
+const USM_FIELDS=['school','program','country','usState','location','area','duration','application','description','notes','researchNotes','format','entry','transition','timing','contact','programUrl','applicationUrl'];
 function usAgriProgram(value){
  keys(value,['id','custom',...USM_FIELDS],'ABD master kaydı');const result={id:identifier(value.id)};
  if(value.custom!==undefined)result.custom=boolean(value.custom,'Program kaydı');
  for(const key of USM_FIELDS)if(value[key]!==undefined){
-  const limit=['programUrl','applicationUrl'].includes(key)?4000:key==='notes'?20000:['school','program','location','area','duration','usState','application'].includes(key)?500:50000;
+  const limit=['programUrl','applicationUrl'].includes(key)?4000:key==='notes'?20000:['school','program','country','location','area','duration','usState','application'].includes(key)?500:50000;
   result[key]=string(value[key],limit,key,!['school','program'].includes(key));
   if(['programUrl','applicationUrl'].includes(key)&&result[key]){let u;try{u=new URL(result[key]);}catch{fail('Geçerli bir bağlantı gir.');}if(!['http:','https:'].includes(u.protocol)||u.username||u.password)fail('Yalnız HTTP / HTTPS bağlantısı kullanılabilir.');}
  }

@@ -1,16 +1,16 @@
-import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.7.0';
-import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.7.0';
-import {activeSections} from './sections.js?v=3.7.0';
-import {renderAgriculture,agriHref} from './agriculture.js?v=3.7.0';
-import {renderMasters,mastersHref} from './masters.js?v=3.7.0';
-import {createStore} from './state.js?v=3.7.0';
+import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.7.1';
+import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.7.1';
+import {activeSections} from './sections.js?v=3.7.1';
+import {renderAgriculture,agriHref} from './agriculture.js?v=3.7.1';
+import {renderMasters,mastersHref} from './masters.js?v=3.7.1';
+import {createStore} from './state.js?v=3.7.1';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.7.0';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.7.1';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
-import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.7.0';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.7.0';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.7.0';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.7.0';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.7.1';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.7.1';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.7.1';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.7.1';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -222,7 +222,6 @@ document.addEventListener('click',async event=>{
  case 'usm-save':{const draft=usMasterUI.drafts.get(id);if(draft){store.saveUSAgriProgram(id,draft);usMasterUI.drafts.delete(id);refresh();toast('Program bilgileri kaydedildi.');}break;}
  case 'usm-cancel':usMasterUI.drafts.delete(id);refresh();break;
  case 'usm-tab':if(['overview','program','requirements'].includes(el.dataset.tab)){usMasterUI.tabs.set(id,el.dataset.tab);openedUSMasterPrograms.add(id);refresh();}break;
- case 'usm-add':$('#modal-root').innerHTML='<div class="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="usm-add-title"><h2 id="usm-add-title">Program ekle</h2><form id="usm-add-form"><label class="job-query-label"><span>Üniversite adı</span><input id="usm-new-school" maxlength="300" required></label><label class="job-query-label"><span>Program adı</span><input id="usm-new-program" maxlength="500" required></label><div class="detail-buttons"><button class="button primary" type="submit">Programı ekle</button><button class="button quiet" type="button" data-action="cancel-import">Vazgeç</button></div></form></section></div>';$('#usm-new-school').focus();break;
  case 'close-agriculture-card':location.hash=agricultureCardHref(null,state.route);break;
  case 'remove-agriculture-card':{removedAgricultureCard={route:state.route,card:personalCardList().find(c=>c.id===id)};personalCardMethod('remove')(id);location.hash=agricultureCardHref(null,state.route);break;}
  case 'undo-agriculture-card':if(removedAgricultureCard){personalCardMethod('restore',removedAgricultureCard.route)(removedAgricultureCard.card);removedAgricultureCard=null;refresh();}break;
@@ -281,7 +280,7 @@ document.addEventListener('change',async event=>{
 document.addEventListener('submit',event=>{
  if(event.target.id==='agri-filters'){event.preventDefault();updateAgriFilters();return;}
  if(event.target.id==='master-filters'){event.preventDefault();updateMasterFilters();return;}
- if(event.target.id==='usm-add-form'){event.preventDefault();try{const id=crypto.randomUUID();store.saveUSAgriProgram(id,{custom:true,school:$('#usm-new-school').value,program:$('#usm-new-program').value,application:'review'});$('#modal-root').innerHTML='';location.hash=usAgricultureMastersHref(state.agriMastersFrom,{programId:id});}catch(e){toast(e.message);}return;}
+ if(event.target.id==='usm-add-form'){event.preventDefault();try{const id=crypto.randomUUID();store.saveUSAgriProgram(id,{custom:true,school:$('#usm-new-school').value.trim(),program:$('#usm-new-program').value.trim(),country:$('#usm-new-country').value.trim(),usState:$('#usm-new-state').value.trim(),application:$('#usm-new-application').value});state.usMasterFilters={usState:'all',application:'all'};history.replaceState(null,'',usAgricultureMastersHref(state.agriMastersFrom));refresh();$('#usm-new-school').focus();toast('Program eklendi.');}catch(e){toast(e.message);}return;}
  if(event.target.id==='agriculture-card-add'){event.preventDefault();try{const card=personalCardMethod('add')($('#agriculture-card-title').value);location.hash=agricultureCardHref(card.id,state.route);}catch(e){toast(e.message);}return;}
  if(event.target.id==='job-add-form'){event.preventDefault();try{const record=store.addJob($('#new-job-company').value,$('#new-job-title').value,{country:$('#new-job-country').value,workModel:$('#new-job-model').value,application:$('#new-job-application').value});history.replaceState(null,'',jobsHref());state.jobFilters=jobFiltersFromParams(new URLSearchParams());refresh();$('#new-job-company')?.focus();toast(record.company+' eklendi.');}catch(e){toast(e.message);}return;}
  if(event.target.id==='task-form'){event.preventDefault();try{store.addTask($('#task-text').value);refresh();toast('Yeni görev eklendi.');}catch(e){toast(e.message);}}
