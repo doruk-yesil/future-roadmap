@@ -91,3 +91,18 @@ test('program creation is inline like the jobs form and uses entered country/sta
  const record=mergeUSAgriPrograms(s.getState().usAgriPrograms).find(p=>p.id==='manual');assert.equal(record.country,'ABD');assert.equal(record.usState,'Texas');assert.equal(record.application,'eligible');
  assert.ok(!html.includes('<option value="Alabama"'));assert.ok(!html.includes('usm-country-suggestions'));
 });
+
+test('deleted seeded and custom masters stay removed after reload and backup, and can be restored with notes',()=>{
+ const m=new Map(),storage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)},s=createStore({storage});
+ s.saveUSAgriProgram('cornell-cea',{notes:'Korunan not',deleted:true});
+ s.saveUSAgriProgram('custom-delete',{custom:true,school:'Test University',program:'MS',deleted:true});
+ const restored=createStore({storage});
+ assert.ok(!mergeUSAgriPrograms(restored.getState().usAgriPrograms).some(p=>['cornell-cea','custom-delete'].includes(p.id)));
+ const copy=createStore({storage:null});copy.importBackup(restored.exportBackup());
+ assert.equal(mergeUSAgriPrograms(copy.getState().usAgriPrograms).length,3);
+ copy.saveUSAgriProgram('cornell-cea',{deleted:false});
+ assert.equal(mergeUSAgriPrograms(copy.getState().usAgriPrograms).find(p=>p.id==='cornell-cea').notes,'Korunan not');
+ const view=renderUSAgricultureMasters(),editing=renderUSAgricultureMasters(null,[],{usState:'all',application:'all'},new Set(),{drafts:new Map([['cornell-cea',createUSMasterDraft(mergeUSAgriPrograms()[0])]])});
+ assert.ok(!view.includes('data-action="usm-delete"'));assert.match(editing,/data-action="usm-delete"/);
+});
+

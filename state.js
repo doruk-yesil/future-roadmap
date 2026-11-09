@@ -123,7 +123,8 @@ function agricultureCard(value){
 
 const USM_FIELDS=['school','program','country','usState','location','area','duration','application','description','notes','researchNotes','format','entry','transition','timing','contact','programUrl','applicationUrl'];
 function usAgriProgram(value){
- keys(value,['id','custom',...USM_FIELDS],'ABD master kaydı');const result={id:identifier(value.id)};
+ keys(value,['id','custom','deleted',...USM_FIELDS],'ABD master kaydı');const result={id:identifier(value.id)};
+ if(value.deleted!==undefined)result.deleted=boolean(value.deleted,'Silinen program');
  if(value.custom!==undefined)result.custom=boolean(value.custom,'Program kaydı');
  for(const key of USM_FIELDS)if(value[key]!==undefined){
   const limit=['programUrl','applicationUrl'].includes(key)?4000:key==='notes'?20000:['school','program','country','location','area','duration','usState','application'].includes(key)?500:50000;
@@ -277,7 +278,7 @@ export function createStore(options = {}) {
     removeFoodCard(id){return commit({...clone(state),foodCards:state.foodCards.filter(c=>c.id!==id)});},
     restoreFoodCard(value){const card=agricultureCard(value);if(state.foodCards.some(c=>c.id===card.id))return;return commit({...clone(state),foodCards:[...state.foodCards,card]});},
     saveUSAgriProgram(id,patch){
-      keys(patch,['custom',...USM_FIELDS],'Program değişikliği');
+      keys(patch,['custom','deleted',...USM_FIELDS],'Program değişikliği');
       const old=state.usAgriPrograms.find(p=>p.id===id);const record=usAgriProgram({...old,...patch,id});
       if(!old&&state.usAgriPrograms.length>=MAX_ITEMS)fail('Program sınırına ulaşıldı.');
       commit({...clone(state),usAgriPrograms:old?state.usAgriPrograms.map(p=>p.id===id?record:p):[...state.usAgriPrograms,record]});return clone(record);

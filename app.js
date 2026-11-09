@@ -1,16 +1,16 @@
-import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.7.4';
-import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.7.4';
-import {activeSections} from './sections.js?v=3.7.4';
-import {renderAgriculture,agriHref} from './agriculture.js?v=3.7.4';
-import {renderMasters,mastersHref} from './masters.js?v=3.7.4';
-import {createStore} from './state.js?v=3.7.4';
+import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.7.5';
+import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.7.5';
+import {activeSections} from './sections.js?v=3.7.5';
+import {renderAgriculture,agriHref} from './agriculture.js?v=3.7.5';
+import {renderMasters,mastersHref} from './masters.js?v=3.7.5';
+import {createStore} from './state.js?v=3.7.5';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.7.4';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.7.5';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
-import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.7.4';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.7.4';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.7.4';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.7.4';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.7.5';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.7.5';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.7.5';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.7.5';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -126,7 +126,7 @@ function choiceCard(c){
  return `<button class="option-card ${state.choice===c.id?'selected':''}" data-action="open-choice" data-choice="${esc(c.id)}"><span class="option-icon">${icon(currentRoute().icon,22)}</span><strong>${esc(c.title)}</strong><span class="option-summary">${esc(c.summary)}</span><span class="option-tags">${c.countries.map(x=>`<span>${COUNTRIES[x]}</span>`).join('')}</span><span class="option-open">Özeti ve ilk adımı gör ${icon('arrow',17)}</span></button>`;
 }
 function renderRoute(){
- if(state.route==='agriculture'&&state.agriMasters)return renderUSAgricultureMasters(personal.agricultureCards.some(c=>c.id===state.agriMastersFrom)?state.agriMastersFrom:null,personal.usAgriPrograms,state.usMasterFilters,openedUSMasterPrograms,usMasterUI);
+ if(state.route==='agriculture'&&state.agriMasters)return renderUSAgricultureMasters(personal.agricultureCards.some(c=>c.id===state.agriMastersFrom)?state.agriMastersFrom:null,personal.usAgriPrograms,state.usMasterFilters,openedUSMasterPrograms,usMasterUI)+(removedUSMaster?'<button class="button quiet" data-action="usm-undo-delete">Silinen programı geri al</button>':'');
  if(['agriculture','food'].includes(state.route))return renderManualAgriculture(personalCardList(),state.route)+(removedAgricultureCard?.route===state.route?'<button class="button quiet" data-action="undo-agriculture-card">Silinen kartı geri al</button>':'');
  if(state.route==='career'&&state.topic==='tech-study'&&!state.selected)return renderMasters(new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(personal.jobs||[],state.jobFilters,null,cvSummary,personal.jobCountries||[],openedJobs)+(removedJob?'<button class="button quiet" data-action="undo-job">Silinen ilanı geri al</button>':'');
@@ -220,6 +220,8 @@ document.addEventListener('click',async event=>{
  case 'close-job':location.hash=jobsHref(state.jobFilters);break;
  case 'usm-edit':{const p=mergeUSAgriPrograms(personal.usAgriPrograms).find(p=>p.id===id);if(p){usMasterUI.drafts.set(id,createUSMasterDraft(p));openedUSMasterPrograms.add(id);refresh();}break;}
  case 'usm-save':{const draft=usMasterUI.drafts.get(id);if(draft){store.saveUSAgriProgram(id,draft);usMasterUI.drafts.delete(id);refresh();toast('Program bilgileri kaydedildi.');}break;}
+ case 'usm-delete':{const p=mergeUSAgriPrograms(personal.usAgriPrograms).find(p=>p.id===id);if(p){store.saveUSAgriProgram(id,{deleted:true});removedUSMaster=id;usMasterUI.drafts.delete(id);openedUSMasterPrograms.delete(id);refresh();toast('Program silindi. Geri al düğmesiyle geri yükleyebilirsin.');}break;}
+ case 'usm-undo-delete':if(removedUSMaster){store.saveUSAgriProgram(removedUSMaster,{deleted:false});removedUSMaster=null;refresh();}break;
  case 'usm-cancel':usMasterUI.drafts.delete(id);refresh();break;
  case 'usm-tab':if(['overview','program','requirements'].includes(el.dataset.tab)){usMasterUI.tabs.set(id,el.dataset.tab);openedUSMasterPrograms.add(id);refresh();}break;
  case 'close-agriculture-card':location.hash=agricultureCardHref(null,state.route);break;
@@ -305,6 +307,7 @@ document.addEventListener('keydown',event=>{
  }
 });
 let pendingBackup;
+let removedUSMaster=null;
 let removedJob=null;
 let removedAgricultureCard=null;
 $('#backup-file').addEventListener('change',async event=>{
