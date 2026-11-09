@@ -45,7 +45,7 @@ test('food cards use the same editor while staying separate from agriculture and
  const old=s.exportBackup();delete old.state.foodCards;copy.importBackup(old);assert.deepEqual(copy.getState().foodCards,[]);
 });
 
-import {isUSAgricultureMasterCard,US_AGRI_MASTERS,renderUSAgricultureMasters,mergeUSAgriPrograms,filterUSAgriPrograms,renderUSAgriMasterDetail} from './us-agriculture-masters.js';
+import {isUSAgricultureMasterCard,US_AGRI_MASTERS,renderUSAgricultureMasters,mergeUSAgriPrograms,filterUSAgriPrograms,renderUSAgriMasterDetail,createUSMasterDraft} from './us-agriculture-masters.js';
 test('only named US agriculture master card links to separate US list; removed header button stays absent',()=>{
  const card={id:'mine',title:'Amerikada Master Agriculture',description:'',notes:''};assert.ok(isUSAgricultureMasterCard(card));
  const html=renderManualAgriculture([card]);assert.match(html,/study=us-masters/);assert.ok(!html.includes('master-mini-card'));assert.ok(!html.includes('route=career'));
@@ -65,10 +65,22 @@ test('US master overrides and custom programs persist and remain included in com
  assert.throws(()=>s.saveUSAgriProgram('my-program',{application:'fake'}));assert.throws(()=>s.saveUSAgriProgram('my-program',{applicationUrl:'javascript:alert(1)'}));
  const old=s.exportBackup();delete old.state.usAgriPrograms;other.importBackup(old);assert.deepEqual(other.getState().usAgriPrograms,[]);
 });
-test('US master quick view stays short while the full panel contains additional editable details',()=>{
+test('master rows have three inline tabs and notes stay editable while other information requires edit mode',()=>{
  const p=mergeUSAgriPrograms([{id:'cornell-cea',notes:'<script>not</script>'}])[0];
- const quick=renderUSAgricultureMasters(null,[{id:'cornell-cea',notes:'<script>not</script>'}]);const full=renderUSAgriMasterDetail(p);
- assert.match(quick,/data-usm-filter/);assert.match(quick,/data-usm-edit="usState"/);assert.match(quick,/data-usm-edit="application"/);assert.match(quick,/Tüm detaylar/);
- assert.ok(!quick.includes('data-usm-edit="entry"'));assert.match(full,/data-usm-edit="entry"/);assert.match(full,/data-usm-edit="notes"/);assert.match(full,/role="dialog"/);
- assert.ok(!quick.includes('<script>'));assert.ok(!full.includes('<script>'));assert.match(quick,/usm-quick-cornell-cea-notes/);assert.match(full,/usm-full-cornell-cea-notes/);
+ const view=renderUSAgricultureMasters(null,[{id:'cornell-cea',notes:'<script>not</script>'}]);
+ assert.match(view,/data-usm-filter/);assert.match(view,/Bilgileri düzenle/);assert.match(view,/role="tablist"/);assert.match(view,/Program bilgisi/);assert.match(view,/Gereklilikler/);
+ assert.match(view,/data-usm-edit="notes"/);assert.ok(!view.includes('data-usm-draft='));assert.ok(!view.includes('Tüm detaylar'));assert.ok(!view.includes('role="dialog"'));assert.equal(renderUSAgriMasterDetail(p),'');
+ const ui={drafts:new Map([[p.id,createUSMasterDraft(p)]]),tabs:new Map([[p.id,'program']])};
+ const editing=renderUSAgricultureMasters(null,[],{usState:'all',application:'all'},new Set([p.id]),ui);
+ assert.match(editing,/data-usm-draft="duration"/);assert.match(editing,/Bilgileri kaydet/);assert.match(editing,/Düzenlemeden vazgeç/);
+ assert.ok(!view.includes('<script>'));
+});
+test('metadata drafts are isolated until save and cancelling cannot discard auto-saved notes',()=>{
+ const s=createStore({storage:null}),base=mergeUSAgriPrograms()[0],draft=createUSMasterDraft(base);
+ draft.description='Henüz kaydedilmedi';draft.duration='2 yıl';
+ s.saveUSAgriProgram(base.id,{notes:'Kalıcı not'});
+ assert.notEqual(mergeUSAgriPrograms(s.getState().usAgriPrograms)[0].description,draft.description);
+ s.saveUSAgriProgram(base.id,draft);const changed=mergeUSAgriPrograms(s.getState().usAgriPrograms)[0];
+ assert.equal(changed.duration,'2 yıl');assert.equal(changed.notes,'Kalıcı not');
+ const invalid={...createUSMasterDraft(changed),programUrl:'javascript:alert(1)'};const before=s.getState();assert.throws(()=>s.saveUSAgriProgram(base.id,invalid));assert.deepEqual(s.getState(),before);
 });
