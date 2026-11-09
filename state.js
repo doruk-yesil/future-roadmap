@@ -9,7 +9,7 @@ let taskSequence = 0;
 const now = () => new Date().toISOString();
 const clone = value => JSON.parse(JSON.stringify(value));
 const fail = message => { throw new Error(message); };
-const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], jobCountries: [], updatedAt: now() });
+const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], jobCountries: [], agricultureCards: [], updatedAt: now() });
 
 function object(value, label) {
   if (!value || typeof value !== 'object' || Array.isArray(value) ||
@@ -116,8 +116,13 @@ function manualJob(value) {
  return {id:identifier(value.id),company:string(value.company,200,'Şirket adı',false).trim(),title:string(value.title,300,'İş başlığı',false).trim(),country:value.country,workModel:value.workModel,application:value.application,notes:string(value.notes??'',20000,'İlan notu'),description:string(value.description??'',50000,'İlan açıklaması')};
 }
 
+function agricultureCard(value){
+ keys(value,['id','title','description','notes'],'Tarım kartı');
+ return {id:identifier(value.id),title:string(value.title,200,'Kart başlığı',false).trim(),description:string(value.description??'',50000,'Açıklama'),notes:string(value.notes??'',20000,'Not')};
+}
+
 function validateState(value, validNodeIds) {
-  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'jobCountries', 'updatedAt'], 'Durum');
+  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'jobCountries', 'agricultureCards', 'updatedAt'], 'Durum');
   if (value.version !== 1) fail('Bu yedek sürümü desteklenmiyor.');
   object(value.nodes, 'Kartlar');
   if (Object.keys(value.nodes).length > MAX_ITEMS || !Array.isArray(value.tasks) || value.tasks.length > MAX_ITEMS) fail('Yedekte çok fazla kart veya görev var.');
@@ -143,7 +148,9 @@ function validateState(value, validNodeIds) {
   if (jobs.length > MAX_ITEMS || new Set(jobs.map(j=>j.id)).size !== jobs.length) fail('İlan sayısı veya kimlikleri geçersiz.');
   const jobCountries=(value.jobCountries??[]).map(c=>string(c,100,'Ülke',false));
   if(jobCountries.length>1000) fail('Çok fazla ülke var.');
-  return { version: 1, nodes, tasks, jobs, jobCountries, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
+  const agricultureCards=(value.agricultureCards??[]).map(agricultureCard);
+  if(agricultureCards.length>MAX_ITEMS||new Set(agricultureCards.map(c=>c.id)).size!==agricultureCards.length)fail('Tarım kartları geçersiz.');
+  return { version: 1, nodes, tasks, jobs, jobCountries, agricultureCards, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
 }
 
 export function createStore(options = {}) {
@@ -228,6 +235,18 @@ export function createStore(options = {}) {
       if (!state.tasks.some(item => item.id === id)) fail('Görev bulunamadı.');
       return commit({ ...clone(state), tasks: state.tasks.filter(item => item.id !== id).map(clone) });
     },
+    addAgricultureCard(title){
+      if(state.agricultureCards.length>=MAX_ITEMS)fail('Kart sınırına ulaşıldı.');
+      const card=agricultureCard({id:globalThis.crypto?.randomUUID?.()||`agri-${Date.now()}-${++taskSequence}`,title,description:'',notes:''});
+      commit({...clone(state),agricultureCards:[...state.agricultureCards,card]});return clone(card);
+    },
+    updateAgricultureCard(id,patch){
+      keys(patch,['title','description','notes'],'Kart değişikliği');
+      if(!state.agricultureCards.some(c=>c.id===id))fail('Kart bulunamadı.');
+      return commit({...clone(state),agricultureCards:state.agricultureCards.map(c=>c.id===id?agricultureCard({...c,...patch}):c)});
+    },
+    removeAgricultureCard(id){return commit({...clone(state),agricultureCards:state.agricultureCards.filter(c=>c.id!==id)});},
+    restoreAgricultureCard(value){const card=agricultureCard(value);if(state.agricultureCards.some(c=>c.id===card.id))return;return commit({...clone(state),agricultureCards:[...state.agricultureCards,card]});},
     addJobCountry(value) {
       const name=string(value,100,'Ülke adı',false).trim();
       const existing=state.jobCountries.find(c=>c.toLocaleLowerCase('tr-TR')===name.toLocaleLowerCase('tr-TR'));

@@ -20,3 +20,18 @@ test('exchange platforms appear once with homepages instead of separate host rec
  assert.equal(exp.find(r=>r.organization==='WWOOF').url,'https://wwoof.net/');assert.equal(exp.find(r=>r.organization==='Workaway').url,'https://www.workaway.info/');
  assert.ok(!exp.some(r=>/West Town|Sunshine|Fehmi|Küçükyoncalı/.test(r.title+' '+r.organization)));
 });
+
+import {createStore} from './state.js';
+import {renderManualAgriculture,renderAgricultureCard} from './manual-agriculture.js';
+test('personal agriculture cards save edits, reload and round-trip through existing backups',()=>{
+ const m=new Map(),storage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)},s=createStore({storage});
+ const c=s.addAgricultureCard('Çiftlik fikri');s.updateAgricultureCard(c.id,{description:'Sahada öğrenme',notes:'İletişim kurulacak'});
+ const reloaded=createStore({storage});assert.equal(reloaded.getState().agricultureCards[0].notes,'İletişim kurulacak');
+ const other=createStore({storage:null});other.importBackup(s.exportBackup());assert.deepEqual(other.getState().agricultureCards,s.getState().agricultureCards);
+ const card=s.getState().agricultureCards[0];s.removeAgricultureCard(c.id);assert.equal(s.getState().agricultureCards.length,0);s.restoreAgricultureCard(card);assert.equal(s.getState().agricultureCards.length,1);
+ const old=s.exportBackup();delete old.state.agricultureCards;other.importBackup(old);assert.deepEqual(other.getState().agricultureCards,[]);
+});
+test('manual agriculture page starts empty and editable side panel escapes personal text',()=>{
+ const html=renderManualAgriculture([]);assert.match(html,/Kart ekle/);assert.ok(!html.includes('WWOOF'));assert.ok(!html.includes('Çalışarak ve sahada öğren'));
+ const panel=renderAgricultureCard({id:'test',title:'<script>',description:'</textarea><script>',notes:'not'});assert.match(panel,/role="dialog"/);assert.match(panel,/data-agriculture-edit="notes"/);assert.ok(!panel.includes('<script>'));
+});
