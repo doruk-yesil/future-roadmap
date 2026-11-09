@@ -9,7 +9,7 @@ let taskSequence = 0;
 const now = () => new Date().toISOString();
 const clone = value => JSON.parse(JSON.stringify(value));
 const fail = message => { throw new Error(message); };
-const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], jobCountries: [], agricultureCards: [], foodCards: [], updatedAt: now() });
+const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], jobCountries: [], agricultureCards: [], foodCards: [], usAgriPrograms: [], updatedAt: now() });
 
 function object(value, label) {
   if (!value || typeof value !== 'object' || Array.isArray(value) ||
@@ -121,8 +121,21 @@ function agricultureCard(value){
  return {id:identifier(value.id),title:string(value.title,200,'Kart başlığı',false).trim(),description:string(value.description??'',50000,'Açıklama'),notes:string(value.notes??'',20000,'Not')};
 }
 
+const USM_FIELDS=['school','program','usState','location','area','application','description','notes','researchNotes','format','entry','transition','timing','contact','programUrl','applicationUrl'];
+function usAgriProgram(value){
+ keys(value,['id','custom',...USM_FIELDS],'ABD master kaydı');const result={id:identifier(value.id)};
+ if(value.custom!==undefined)result.custom=boolean(value.custom,'Program kaydı');
+ for(const key of USM_FIELDS)if(value[key]!==undefined){
+  const limit=['programUrl','applicationUrl'].includes(key)?4000:key==='notes'?20000:['school','program','location','area','usState','application'].includes(key)?500:50000;
+  result[key]=string(value[key],limit,key,!['school','program'].includes(key));
+  if(['programUrl','applicationUrl'].includes(key)&&result[key]){let u;try{u=new URL(result[key]);}catch{fail('Geçerli bir bağlantı gir.');}if(!['http:','https:'].includes(u.protocol)||u.username||u.password)fail('Yalnız HTTP / HTTPS bağlantısı kullanılabilir.');}
+ }
+ if(result.application!==undefined&&!['review','eligible','conditional','ineligible','applied','closed'].includes(result.application))fail('Geçersiz başvuru durumu.');
+ return result;
+}
+
 function validateState(value, validNodeIds) {
-  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'jobCountries', 'agricultureCards', 'foodCards', 'updatedAt'], 'Durum');
+  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'jobCountries', 'agricultureCards', 'foodCards', 'usAgriPrograms', 'updatedAt'], 'Durum');
   if (value.version !== 1) fail('Bu yedek sürümü desteklenmiyor.');
   object(value.nodes, 'Kartlar');
   if (Object.keys(value.nodes).length > MAX_ITEMS || !Array.isArray(value.tasks) || value.tasks.length > MAX_ITEMS) fail('Yedekte çok fazla kart veya görev var.');
@@ -152,7 +165,9 @@ function validateState(value, validNodeIds) {
   if(agricultureCards.length>MAX_ITEMS||new Set(agricultureCards.map(c=>c.id)).size!==agricultureCards.length)fail('Tarım kartları geçersiz.');
   const foodCards=(value.foodCards??[]).map(agricultureCard);
   if(foodCards.length>MAX_ITEMS||new Set(foodCards.map(c=>c.id)).size!==foodCards.length)fail('Gıda kartları geçersiz.');
-  return { version: 1, nodes, tasks, jobs, jobCountries, agricultureCards, foodCards, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
+  const usAgriPrograms=(value.usAgriPrograms??[]).map(usAgriProgram);
+  if(usAgriPrograms.length>MAX_ITEMS||new Set(usAgriPrograms.map(p=>p.id)).size!==usAgriPrograms.length)fail('Master kayıtları geçersiz.');
+  return { version: 1, nodes, tasks, jobs, jobCountries, agricultureCards, foodCards, usAgriPrograms, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
 }
 
 export function createStore(options = {}) {
@@ -261,6 +276,12 @@ export function createStore(options = {}) {
     },
     removeFoodCard(id){return commit({...clone(state),foodCards:state.foodCards.filter(c=>c.id!==id)});},
     restoreFoodCard(value){const card=agricultureCard(value);if(state.foodCards.some(c=>c.id===card.id))return;return commit({...clone(state),foodCards:[...state.foodCards,card]});},
+    saveUSAgriProgram(id,patch){
+      keys(patch,['custom',...USM_FIELDS],'Program değişikliği');
+      const old=state.usAgriPrograms.find(p=>p.id===id);const record=usAgriProgram({...old,...patch,id});
+      if(!old&&state.usAgriPrograms.length>=MAX_ITEMS)fail('Program sınırına ulaşıldı.');
+      commit({...clone(state),usAgriPrograms:old?state.usAgriPrograms.map(p=>p.id===id?record:p):[...state.usAgriPrograms,record]});return clone(record);
+    },
     addJobCountry(value) {
       const name=string(value,100,'Ülke adı',false).trim();
       const existing=state.jobCountries.find(c=>c.toLocaleLowerCase('tr-TR')===name.toLocaleLowerCase('tr-TR'));

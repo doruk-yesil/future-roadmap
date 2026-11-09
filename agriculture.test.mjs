@@ -45,11 +45,30 @@ test('food cards use the same editor while staying separate from agriculture and
  const old=s.exportBackup();delete old.state.foodCards;copy.importBackup(old);assert.deepEqual(copy.getState().foodCards,[]);
 });
 
-import {isUSAgricultureMasterCard,US_AGRI_MASTERS,renderUSAgricultureMasters} from './us-agriculture-masters.js';
+import {isUSAgricultureMasterCard,US_AGRI_MASTERS,renderUSAgricultureMasters,mergeUSAgriPrograms,filterUSAgriPrograms,renderUSAgriMasterDetail} from './us-agriculture-masters.js';
 test('only named US agriculture master card links to separate US list; removed header button stays absent',()=>{
  const card={id:'mine',title:'Amerikada Master Agriculture',description:'',notes:''};assert.ok(isUSAgricultureMasterCard(card));
  const html=renderManualAgriculture([card]);assert.match(html,/study=us-masters/);assert.ok(!html.includes('master-mini-card'));assert.ok(!html.includes('route=career'));
  const other=renderManualAgriculture([{...card,title:'Çiftlik'}]);assert.ok(!other.includes('study=us-masters'));assert.match(other,/card=mine/);
  assert.equal(US_AGRI_MASTERS.length,4);for(const p of US_AGRI_MASTERS){assert.ok(p.entry&&p.transition);for(const source of p.sources)assert.equal(new URL(source[1]).protocol,'https:');}
  const list=renderUSAgricultureMasters('mine');assert.match(list,/ABD tarım masterları listesi/);assert.match(list,/card=mine/);assert.match(list,/Cornell University/);assert.ok(!list.includes('Georgia Tech'));
+});
+
+test('US master overrides and custom programs persist and remain included in compatible backups',()=>{
+ const m=new Map(),storage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)},s=createStore({storage});
+ s.saveUSAgriProgram('cornell-cea',{application:'eligible',notes:'Sorulacaklar',description:'Kısa açıklama',usState:'New York'});
+ s.saveUSAgriProgram('my-program',{custom:true,school:'Yeni Üniversite',program:'Agriculture MS',usState:'Texas',application:'conditional'});
+ const restored=createStore({storage});assert.equal(restored.getState().usAgriPrograms[0].notes,'Sorulacaklar');
+ const other=createStore({storage:null});other.importBackup(s.exportBackup());const rows=mergeUSAgriPrograms(other.getState().usAgriPrograms);assert.equal(rows.length,5);
+ assert.equal(filterUSAgriPrograms(rows,{usState:'New York',application:'eligible'}).length,1);
+ assert.equal(filterUSAgriPrograms(rows,{usState:'Texas',application:'eligible'}).length,0);
+ assert.throws(()=>s.saveUSAgriProgram('my-program',{application:'fake'}));assert.throws(()=>s.saveUSAgriProgram('my-program',{applicationUrl:'javascript:alert(1)'}));
+ const old=s.exportBackup();delete old.state.usAgriPrograms;other.importBackup(old);assert.deepEqual(other.getState().usAgriPrograms,[]);
+});
+test('US master quick view stays short while the full panel contains additional editable details',()=>{
+ const p=mergeUSAgriPrograms([{id:'cornell-cea',notes:'<script>not</script>'}])[0];
+ const quick=renderUSAgricultureMasters(null,[{id:'cornell-cea',notes:'<script>not</script>'}]);const full=renderUSAgriMasterDetail(p);
+ assert.match(quick,/data-usm-filter/);assert.match(quick,/data-usm-edit="usState"/);assert.match(quick,/data-usm-edit="application"/);assert.match(quick,/Tüm detaylar/);
+ assert.ok(!quick.includes('data-usm-edit="entry"'));assert.match(full,/data-usm-edit="entry"/);assert.match(full,/data-usm-edit="notes"/);assert.match(full,/role="dialog"/);
+ assert.ok(!quick.includes('<script>'));assert.ok(!full.includes('<script>'));assert.match(quick,/usm-quick-cornell-cea-notes/);assert.match(full,/usm-full-cornell-cea-notes/);
 });

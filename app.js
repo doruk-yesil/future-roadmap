@@ -1,16 +1,16 @@
-import {renderUSAgricultureMasters} from './us-agriculture-masters.js?v=3.5.0';
-import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.5.0';
-import {activeSections} from './sections.js?v=3.5.0';
-import {renderAgriculture,agriHref} from './agriculture.js?v=3.5.0';
-import {renderMasters,mastersHref} from './masters.js?v=3.5.0';
-import {createStore} from './state.js?v=3.5.0';
+import {renderUSAgricultureMasters,renderUSAgriMasterDetail,mergeUSAgriPrograms,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.6.0';
+import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.6.0';
+import {activeSections} from './sections.js?v=3.6.0';
+import {renderAgriculture,agriHref} from './agriculture.js?v=3.6.0';
+import {renderMasters,mastersHref} from './masters.js?v=3.6.0';
+import {createStore} from './state.js?v=3.6.0';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.5.0';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.6.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
-import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.5.0';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.5.0';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.5.0';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.5.0';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.6.0';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.6.0';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.6.0';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.6.0';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -20,6 +20,7 @@ const STATUS={explore:'Henüz seçilmedi',researching:'Araştırıyorum',chosen:
 let ROUTES,JOBS=[],cvSummary=[],cvError='';
 let PRODUCTS=[],expandedProductCategories=new Set();
 const openedJobs=new Set();
+const openedUSMasterPrograms=new Set();
 let DATA,NODES,GROUPS,store,personal,RESEARCH,SOURCES_BY_URL;
 let state={view:'home',route:null,topic:null,choice:null,country:'all',selected:null,expanded:new Set(),mode:'map',query:'',filter:'all',zoom:1,editing:false,sidebar:false};
 let toastTimer,searchTimer,persistenceError='';
@@ -39,7 +40,7 @@ function navigate(view,route=null,topic=null,choice=null,node=null){
 function readRoute(){
  const previousProduct=state.product;
  const params=new URLSearchParams(location.hash.slice(1));
- state.product=params.get('product');state.agricultureCard=params.get('card');state.agriMasters=params.get('study')==='us-masters';state.agriMastersFrom=params.get('fromCard');
+ state.product=params.get('product');state.agricultureCard=params.get('card');state.agriMasters=params.get('study')==='us-masters';state.agriMastersFrom=params.get('fromCard');state.usMasterProgram=params.get('program');state.usMasterFilters=usMasterFilters(params);
  state.job=params.get('job');state.jobFilters=jobFiltersFromParams(params);
  state.view=params.get('view')||'home';state.project=params.get('project');state.route=params.get('route');state.topic=params.get('topic');state.choice=params.get('choice');state.variant=params.get('variant');state.selected=params.get('node');state.country=COUNTRIES[params.get('country')]?params.get('country'):'all';state.editing=false;state.sidebar=false;
  const aliases={cyber:['career','cyber'],masters:['career','tech-study'],us:['agriculture','agri-study'],uae:['agriculture',null]};
@@ -97,7 +98,8 @@ function render(){
  const job=state.view==='route'&&state.route==='career'&&state.topic==='jobs'&&state.job?JOBS.find(j=>j.id===state.job):null;
  const product=state.view==='route'&&state.route==='china'&&state.topic==='product'&&state.product?PRODUCTS.find(p=>p.id===state.product):null;
  const agricultureCard=state.view==='route'&&['agriculture','food'].includes(state.route)?personalCardList().find(c=>c.id===state.agricultureCard):null;
- const panel=Boolean(selected||choice||job||product||agricultureCard);
+ const usMasterProgram=state.view==='route'&&state.route==='agriculture'&&state.agriMasters?mergeUSAgriPrograms(personal.usAgriPrograms).find(p=>p.id===state.usMasterProgram):null;
+ const panel=Boolean(selected||choice||job||product||agricultureCard||usMasterProgram);
  const title=state.view==='home'?'Genel bakış':state.view==='route'?(state.route==='career'&&state.topic==='jobs'?'İş İlanları':state.route==='career'&&state.topic==='tech-study'?'Master opsiyonları':route?.name):({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım',projects:'Okul Projelerim',cv:'CV dosyalarım'})[state.view];
  document.title=`${title} · Future`;
  $('#app').className='app-shell'+(panel?' detail-open':'');
@@ -109,12 +111,13 @@ function render(){
  <div class="sidebar-bottom"><a class="nav-item" href="#view=settings">${icon('download')}<span>Yedekleme & kullanım</span></a><div class="local-note"><span class="local-dot"></span> Notların bu tarayıcıda saklanır</div></div>
  </aside><button class="mobile-scrim ${state.sidebar?'open':''}" data-action="close-menu" aria-label="Menüyü kapat"></button>${panel?'<button class="drawer-scrim" data-action="close-detail" aria-label="Panelin dışından kapat"></button>':''}
  <div class="workspace"><header class="topbar"><button class="button icon mobile-nav-toggle" data-action="menu" aria-label="Menüyü aç">${icon('menu')}</button><nav class="breadcrumbs" aria-label="Sayfa yolu"><a href="#view=home">Çalışma alanım</a><span>/</span><strong>${esc(title)}</strong></nav><div class="topbar-actions"><label class="search-box">${icon('search',18)}<input type="search" id="search" aria-label="Tüm haritada ara" placeholder="Bir fikir, şirket veya koşul ara…" value="${esc(state.query)}"><kbd>/</kbd></label><button class="button icon backup-top" data-action="export" aria-label="Yedeğini indir" title="Yedeğini indir">${icon('download')}</button></div></header>
- <main id="main" class="view" tabindex="-1">${state.view==='home'?renderHome():state.view==='route'?renderRoute():state.view==='projects'?renderProjects(state.project):state.view==='cv'?renderCVVault(cvSummary,JOBS.find(j=>j.id===state.job),cvError):state.view==='settings'?renderSettings():state.view==='tasks'?renderTasks():renderCollection()}</main></div>${selected?renderDetail(selected):choice?renderChoiceDetail(choice):job?renderJobDetail(job,state.jobFilters):product?renderProductDetail(product):agricultureCard?renderAgricultureCard(agricultureCard,state.route):''}`;
+ <main id="main" class="view" tabindex="-1">${state.view==='home'?renderHome():state.view==='route'?renderRoute():state.view==='projects'?renderProjects(state.project):state.view==='cv'?renderCVVault(cvSummary,JOBS.find(j=>j.id===state.job),cvError):state.view==='settings'?renderSettings():state.view==='tasks'?renderTasks():renderCollection()}</main></div>${selected?renderDetail(selected):choice?renderChoiceDetail(choice):job?renderJobDetail(job,state.jobFilters):product?renderProductDetail(product):agricultureCard?renderAgricultureCard(agricultureCard,state.route):usMasterProgram?renderUSAgriMasterDetail(usMasterProgram):''}`;
  if(state.selected&&!state.editing){const note=$('#node-notes');if(note)note.value=nodeState(state.selected).notes||'';}
  $('.workspace').inert=panel;$('.sidebar').inert=panel;
  if(job)$('#job-detail-close')?.focus();
  if(product)$('#product-detail-close')?.focus();
  if(agricultureCard)$('#agriculture-detail-close')?.focus();
+ if(usMasterProgram)$('#usm-detail-close')?.focus();
 }
 function renderHome(){
  return `<section class="collection-heading"><span class="eyebrow">GELECEĞİN İÇİN ÜÇ YOL</span><h1>Hangi alanda ilerlemek istersin?</h1><p>Bir alan seç; ilgilendiğin seçenekleri orada incele.</p></section><section class="home-grid three-paths" aria-label="Yol seçenekleri">${ROUTES.map(r=>`<a class="route-card ${r.tone}" href="${href(r.id)}"><div class="route-card-top"><span class="route-icon">${icon(r.icon,24)}</span><span class="route-tag">${esc(r.tag)}</span></div><h2 class="route-title">${esc(r.name)}</h2><p class="route-description">${esc(r.description)}</p><div class="route-footer"><span class="route-stat">${r.id==='career'?'İş ilanları · Master opsiyonları':r.id==='agriculture'?'Kartlarım · Açıklamalar · Notlar':'Zincir yemek sektörü'}</span><span class="route-open">Aç ${icon('arrow',18)}</span></div></a>`).join('')}</section>`;
@@ -124,7 +127,7 @@ function choiceCard(c){
  return `<button class="option-card ${state.choice===c.id?'selected':''}" data-action="open-choice" data-choice="${esc(c.id)}"><span class="option-icon">${icon(currentRoute().icon,22)}</span><strong>${esc(c.title)}</strong><span class="option-summary">${esc(c.summary)}</span><span class="option-tags">${c.countries.map(x=>`<span>${COUNTRIES[x]}</span>`).join('')}</span><span class="option-open">Özeti ve ilk adımı gör ${icon('arrow',17)}</span></button>`;
 }
 function renderRoute(){
- if(state.route==='agriculture'&&state.agriMasters)return renderUSAgricultureMasters(personal.agricultureCards.some(c=>c.id===state.agriMastersFrom)?state.agriMastersFrom:null);
+ if(state.route==='agriculture'&&state.agriMasters)return renderUSAgricultureMasters(personal.agricultureCards.some(c=>c.id===state.agriMastersFrom)?state.agriMastersFrom:null,personal.usAgriPrograms,state.usMasterFilters,openedUSMasterPrograms);
  if(['agriculture','food'].includes(state.route))return renderManualAgriculture(personalCardList(),state.route)+(removedAgricultureCard?.route===state.route?'<button class="button quiet" data-action="undo-agriculture-card">Silinen kartı geri al</button>':'');
  if(state.route==='career'&&state.topic==='tech-study'&&!state.selected)return renderMasters(new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(personal.jobs||[],state.jobFilters,null,cvSummary,personal.jobCountries||[],openedJobs)+(removedJob?'<button class="button quiet" data-action="undo-job">Silinen ilanı geri al</button>':'');
@@ -216,6 +219,8 @@ document.addEventListener('click',async event=>{
  case 'close-detail':if(state.product&&state.route==='china'&&state.topic==='product'&&!state.selected)location.hash=productHref();else if(state.job)location.hash=jobsHref(state.jobFilters);else navigate('route',state.route,state.topic);break;
  case 'close-product':location.hash=productHref();break;
  case 'close-job':location.hash=jobsHref(state.jobFilters);break;
+ case 'usm-close':location.hash=usAgricultureMastersHref(state.agriMastersFrom,state.usMasterFilters);break;
+ case 'usm-add':$('#modal-root').innerHTML='<div class="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="usm-add-title"><h2 id="usm-add-title">Program ekle</h2><form id="usm-add-form"><label class="job-query-label"><span>Üniversite adı</span><input id="usm-new-school" maxlength="300" required></label><label class="job-query-label"><span>Program adı</span><input id="usm-new-program" maxlength="500" required></label><div class="detail-buttons"><button class="button primary" type="submit">Programı ekle</button><button class="button quiet" type="button" data-action="cancel-import">Vazgeç</button></div></form></section></div>';$('#usm-new-school').focus();break;
  case 'close-agriculture-card':location.hash=agricultureCardHref(null,state.route);break;
  case 'remove-agriculture-card':{removedAgricultureCard={route:state.route,card:personalCardList().find(c=>c.id===id)};personalCardMethod('remove')(id);location.hash=agricultureCardHref(null,state.route);break;}
  case 'undo-agriculture-card':if(removedAgricultureCard){personalCardMethod('restore',removedAgricultureCard.route)(removedAgricultureCard.card);removedAgricultureCard=null;refresh();}break;
@@ -243,6 +248,7 @@ document.addEventListener('click',async event=>{
 document.addEventListener('input',event=>{
  if(event.target.id==='agri-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateAgriFilters,180);return;}
  if(event.target.id==='master-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateMasterFilters,180);return;}
+ if(event.target.matches('input[data-usm-edit],textarea[data-usm-edit]')){if(event.target.type==='url')return;saveUSMasterField(event.target,false);return;}
  if(event.target.matches('[data-agriculture-edit]')){try{personalCardMethod('update')(event.target.dataset.id,{[event.target.dataset.agricultureEdit]:event.target.value});if(event.target.dataset.agricultureEdit==='title')$('#agriculture-detail-title').textContent=event.target.value;}catch(e){toast(e.message);}return;}
  if(event.target.matches('[data-job-text]')){try{store.updateJob(event.target.dataset.id,{[event.target.dataset.jobText]:event.target.value});}catch(e){toast(e.message);}return;}
  if(event.target.id==='jobs-query'){clearTimeout(searchTimer);searchTimer=setTimeout(updateJobFilters,180);return;}
@@ -258,6 +264,9 @@ document.addEventListener('input',event=>{
 document.addEventListener('change',async event=>{
  if(event.target.matches('[data-agri-filter]')){updateAgriFilters();return;}
  if(event.target.matches('[data-master-filter]')){updateMasterFilters();return;}
+ if(event.target.matches('input[type="url"][data-usm-edit]')){saveUSMasterField(event.target,false);return;}
+ if(event.target.matches('select[data-usm-edit]')){saveUSMasterField(event.target,true);return;}
+ if(event.target.matches('[data-usm-filter]')){const f={usState:$('#usm-filter-state').value,application:$('#usm-filter-application').value};history.replaceState(null,'',usAgricultureMastersHref(state.agriMastersFrom,f));state.usMasterFilters=f;refresh();return;}
  if(event.target.matches('[data-job-edit]')){try{store.updateJob(event.target.dataset.id,{[event.target.dataset.jobEdit]:event.target.value});refresh();}catch(e){toast(e.message);}return;}
  if(event.target.matches('[data-job-filter]')){updateJobFilters();return;}
  if(event.target.id==='cv-files'){
@@ -269,6 +278,7 @@ document.addEventListener('change',async event=>{
 document.addEventListener('submit',event=>{
  if(event.target.id==='agri-filters'){event.preventDefault();updateAgriFilters();return;}
  if(event.target.id==='master-filters'){event.preventDefault();updateMasterFilters();return;}
+ if(event.target.id==='usm-add-form'){event.preventDefault();try{const id=crypto.randomUUID();store.saveUSAgriProgram(id,{custom:true,school:$('#usm-new-school').value,program:$('#usm-new-program').value,application:'review'});$('#modal-root').innerHTML='';location.hash=usAgricultureMastersHref(state.agriMastersFrom,{programId:id});}catch(e){toast(e.message);}return;}
  if(event.target.id==='agriculture-card-add'){event.preventDefault();try{const card=personalCardMethod('add')($('#agriculture-card-title').value);location.hash=agricultureCardHref(card.id,state.route);}catch(e){toast(e.message);}return;}
  if(event.target.id==='job-add-form'){event.preventDefault();try{const record=store.addJob($('#new-job-company').value,$('#new-job-title').value,{country:$('#new-job-country').value,workModel:$('#new-job-model').value,application:$('#new-job-application').value});history.replaceState(null,'',jobsHref());state.jobFilters=jobFiltersFromParams(new URLSearchParams());refresh();$('#new-job-company')?.focus();toast(record.company+' eklendi.');}catch(e){toast(e.message);}return;}
  if(event.target.id==='task-form'){event.preventDefault();try{store.addTask($('#task-text').value);refresh();toast('Yeni görev eklendi.');}catch(e){toast(e.message);}}
@@ -284,6 +294,7 @@ document.addEventListener('keydown',event=>{
  if(event.key==='Escape'){
   if($('#modal-root').children.length){$('#modal-root').innerHTML='';pendingBackup=null;}
   else if(state.editing){state.editing=false;refresh();}
+  else if(state.usMasterProgram&&state.agriMasters)location.hash=usAgricultureMastersHref(state.agriMastersFrom,state.usMasterFilters);
   else if(state.agricultureCard)location.hash=agricultureCardHref(null,state.route);
   else if(state.job&&state.view==='route')location.hash=jobsHref(state.jobFilters);
   else if(state.product&&state.route==='china'&&state.topic==='product'&&!state.selected)location.hash=productHref();
@@ -316,6 +327,13 @@ function updateMasterFilters(){
  history.replaceState(null,'',mastersHref(f));render();
  const next=focus&&document.getElementById(focus);if(next){next.focus();if(caret!==null)next.setSelectionRange(caret,caret);}
 }
+function saveUSMasterField(field,rerender){
+ try{const key=field.dataset.usmEdit,id=field.dataset.id;store.saveUSAgriProgram(id,{[key]:field.value});
+  document.querySelectorAll('[data-usm-edit]').forEach(other=>{if(other!==field&&other.dataset.id===id&&other.dataset.usmEdit===key)other.value=field.value;});
+  if(key==='school'&&$('#usm-detail-title'))$('#usm-detail-title').textContent=field.value;
+  if(rerender)refresh();
+ }catch(error){toast(error.message);}
+}
 function updateJobFilters(){
  const ids={country:'jobs-country',model:'jobs-model',application:'jobs-application'};
  const f={};for(const [key,id]of Object.entries(ids)){const field=document.getElementById(id);if(!field)return;f[key]=field.value;}
@@ -324,6 +342,7 @@ function updateJobFilters(){
  const field=focus&&document.getElementById(focus);if(field){field.focus();if(caret!==null)field.setSelectionRange(caret,caret);}
 }
 document.addEventListener('toggle',async event=>{
+ if(event.target.matches('[data-usm-details]')&&event.target.isConnected){const id=event.target.dataset.usmDetails;event.target.open?openedUSMasterPrograms.add(id):openedUSMasterPrograms.delete(id);return;}
  if(event.target.matches('[data-job-details]')&&event.target.isConnected){const id=event.target.dataset.jobDetails;event.target.open?openedJobs.add(id):openedJobs.delete(id);return;}
  if(event.target.matches('.product-category')&&event.target.isConnected){const id=event.target.dataset.productCategory;event.target.open?expandedProductCategories.add(id):expandedProductCategories.delete(id);return;}
  if(!event.target.matches('.cv-source')||!event.target.open)return;
