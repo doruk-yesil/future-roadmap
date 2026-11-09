@@ -1,15 +1,15 @@
-import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.4.1';
-import {activeSections} from './sections.js?v=3.4.1';
-import {renderAgriculture,agriHref} from './agriculture.js?v=3.4.1';
-import {renderMasters,mastersHref} from './masters.js?v=3.4.1';
-import {createStore} from './state.js?v=3.4.1';
+import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.4.2';
+import {activeSections} from './sections.js?v=3.4.2';
+import {renderAgriculture,agriHref} from './agriculture.js?v=3.4.2';
+import {renderMasters,mastersHref} from './masters.js?v=3.4.2';
+import {createStore} from './state.js?v=3.4.2';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.4.1';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.4.2';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
-import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.4.1';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.4.1';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.4.1';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.4.1';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.4.2';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.4.2';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.4.2';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.4.2';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
