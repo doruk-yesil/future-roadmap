@@ -27,6 +27,16 @@ test('country options contain only user additions and existing entries, survive 
  const s=createStore({storage:memory()});const name=s.addJobCountry('Almanya');assert.equal(s.addJobCountry('almanya'),name);
  const j=s.addJob('Test','Dev');assert.equal(j.country,'');s.updateJob(j.id,{country:name});
  const html=renderJobsBoard(s.getState().jobs,jobFiltersFromParams(new URLSearchParams()),null,[],s.getState().jobCountries);
- assert.match(html,/Almanya/);assert.ok(!html.includes('Afganistan'));assert.match(html,/Ülke ekle/);
+ assert.match(html,/Almanya/);assert.ok(!html.includes('Afganistan'));assert.ok(!html.includes('job-country-add'));
  const restored=createStore({storage:memory()});restored.importBackup(s.exportBackup());assert.deepEqual(restored.getState().jobCountries,['Almanya']);
+});
+
+test('new job accepts all three fields and editable notes survive reload and backup',()=>{
+ const storage=memory(),s=createStore({storage});const j=s.addJob('Firma','Developer',{country:'İrlanda',workModel:'hybrid',application:'interview_2'});
+ assert.equal(j.country,'İrlanda');assert.equal(j.workModel,'hybrid');assert.equal(j.application,'interview_2');
+ s.updateJob(j.id,{notes:'Bir sonraki görüşme cuma',description:'<script>ilan metni</script>'});
+ const next=createStore({storage});assert.equal(next.getState().jobs[0].notes,'Bir sonraki görüşme cuma');
+ const target=createStore({storage:memory()});target.importBackup(next.exportBackup());assert.equal(target.getState().jobs[0].description,'<script>ilan metni</script>');
+ const html=renderJobsBoard(target.getState().jobs,jobFiltersFromParams(new URLSearchParams()),null,[],[],new Set([j.id]));
+ assert.match(html,/data-job-details=/);assert.match(html,/data-job-text="notes"/);assert.match(html,/data-job-text="description"/);assert.match(html,/new-job-country/);assert.ok(!html.includes('<script>'));assert.ok(!html.includes('job-country-add'));
 });

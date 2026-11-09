@@ -109,11 +109,11 @@ function node(value) {
 }
 
 function manualJob(value) {
- keys(value,['id','company','title','country','workModel','application'],'İş ilanı');
+ keys(value,['id','company','title','country','workModel','application','notes','description'],'İş ilanı');
  string(value.country,100,'İlan ülkesi');
  if(!['onsite','hybrid','remote'].includes(value.workModel)) fail('Çalışma şekli geçersiz.');
  if(!['not_applied','applied','interview_1','interview_2','test_1','test_2','offer','rejected','withdrawn'].includes(value.application)) fail('Başvuru durumu geçersiz.');
- return {id:identifier(value.id),company:string(value.company,200,'Şirket adı',false).trim(),title:string(value.title,300,'İş başlığı',false).trim(),country:value.country,workModel:value.workModel,application:value.application};
+ return {id:identifier(value.id),company:string(value.company,200,'Şirket adı',false).trim(),title:string(value.title,300,'İş başlığı',false).trim(),country:value.country,workModel:value.workModel,application:value.application,notes:string(value.notes??'',20000,'İlan notu'),description:string(value.description??'',50000,'İlan açıklaması')};
 }
 
 function validateState(value, validNodeIds) {
@@ -235,13 +235,13 @@ export function createStore(options = {}) {
       if(state.jobCountries.length>=1000)fail('Ülke sınırına ulaşıldı.');
       commit({...clone(state),jobCountries:[...state.jobCountries,name]});return name;
     },
-    addJob(company,title) {
+    addJob(company,title,fields={}) {
       if(state.jobs.length>=MAX_ITEMS) fail('İlan sınırına ulaşıldı.');
-      const record=manualJob({id:globalThis.crypto?.randomUUID?.()||`job-${Date.now()}-${++taskSequence}`,company,title,country:'',workModel:'onsite',application:'not_applied'});
+      const record=manualJob({id:globalThis.crypto?.randomUUID?.()||`job-${Date.now()}-${++taskSequence}`,company,title,country:fields.country?.trim()||'',workModel:fields.workModel||'onsite',application:fields.application||'not_applied',notes:'',description:''});
       commit({...clone(state),jobs:[...state.jobs,record]}); return clone(record);
     },
     updateJob(id,patch) {
-      keys(patch,['country','workModel','application'],'İlan değişikliği');
+      keys(patch,['country','workModel','application','notes','description'],'İlan değişikliği');
       if(!state.jobs.some(j=>j.id===id)) fail('İlan bulunamadı.');
       return commit({...clone(state),jobs:state.jobs.map(j=>j.id===id?manualJob({...j,...patch}):j)});
     },
