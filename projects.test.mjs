@@ -5,7 +5,7 @@ import {ACADEMIC_PROJECTS,renderProjects,searchProjects} from './academic-projec
 test('academic archive preserves evidence boundaries and complete useful sections',()=>{
  assert.equal(ACADEMIC_PROJECTS.length,9);
  assert.equal(new Set(ACADEMIC_PROJECTS.map(p=>p.id)).size,9);
- assert.equal(ACADEMIC_PROJECTS.filter(p=>p.evidence==='Yalnız portfolyo kaydı').length,2);
+ assert.equal(ACADEMIC_PROJECTS.filter(p=>p.evidence==='Yalnız portfolyo kaydı').length,1);
  for(const p of ACADEMIC_PROJECTS){
   assert.ok(p.purpose&&p.role&&p.cv&&p.sources.length,p.id);
   for(const key of ['tech','approach','results','interview','next'])assert.ok(p[key].length,p.id+': '+key);
@@ -30,3 +30,10 @@ test('project links open a single accordion and global search finds methods',()=
  assert.deepEqual(searchProjects(''),[]);
  assert.equal(renderProjects('"><script>').includes('<script>'),false);
 });
+
+ test('portfolio selection replaces duplicate NLP entry and includes internship demos',()=>{
+ assert.equal(ACADEMIC_PROJECTS.some(p=>p.id==='turkish-nlp'),false);
+ const demos=ACADEMIC_PROJECTS.find(p=>p.id==='frontend-experiments');
+ assert.ok(demos.sources.some(s=>s.url.endsWith('/blockly-demo')));
+ assert.ok(ACADEMIC_PROJECTS.every(p=>p.summary===p.portfolioDescription&&p.period));
+ });

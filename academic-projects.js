@@ -1,11 +1,12 @@
 // Curated from repository files and the existing portfolio, checked 2026-10-26.
 // Results describe saved evidence, not experiments rerun by this website.
+import {PORTFOLIO_PROJECTS} from './portfolio-projects-data.js?v=3.1.0';
 const github='https://github.com/';
 const file=(repo,path)=>github+repo+'/blob/main/'+path;
 const portfolio=file('doruk-yesil/my-portfolio','src/data/content.js');
 const source=(title,url,summary,restricted=false)=>({title,url,summary,restricted});
-export const PROJECTS_CHECKED_AT='26 Ekim 2026';
-export const ACADEMIC_PROJECTS=[
+export const PROJECTS_CHECKED_AT='9 Kasım 2026';
+const REPOSITORY_PROJECTS=[
  {
   id:'bibliocast',group:'applications',course:'ENS491 / ENS492',title:'Bibliocast · E-öğrenme platformu',
   summary:'Kurs keşfi, video izleme ve öğrenci / eğitmen / yönetici akışlarını birleştiren bitirme projesi.',
@@ -125,6 +126,26 @@ export const ACADEMIC_PROJECTS=[
  }
 ];
 
+const legacyIds={'2048-dl':'2048-agent'};
+export const ACADEMIC_PROJECTS=PORTFOLIO_PROJECTS.map(p=>{
+ const previous=REPOSITORY_PROJECTS.find(x=>x.id===(legacyIds[p.id]||p.id));
+ const base=previous||{
+  group:'applications', evidence:'Portfolyo proje kaydı',
+  purpose:'Veri tabloları, düzenlenebilir dashboard ve görsel programlama arayüzlerini karşılaştırmak ve prototiplemek.',
+  approach:['Dokuz veri-grid entegrasyonu üzerinde filtreleme, sayfalama ve CSV dışa aktarma denemeleri.','Quasar ile çalışan tablosu ve dashboard düzeni denemeleri.','Özel toolbox ve yerel çalışma alanı kaydı içeren Blockly editörü.'],
+  results:['Grid karşılaştırma uygulaması, Quasar demoları ve Blockly editörü portfolyoda ayrı depo bağlantılarıyla yer alıyor.','Portfolyo bir üretim sistemi veya performans sıralaması iddia etmiyor. Blockly’nin tüm dil çıktılarının tamamlandığı varsayılmıyor.'],
+  role:'Portfolyoda staj çalışmaları olarak listeleniyor; grid karşılaştırması, dashboard ve editör demoları tek proje kartında birleştirildi.',
+  cv:'Vue 3 ve TypeScript ile veri-grid karşılaştırması, Quasar dashboard ve Blockly tabanlı görsel editör prototipleri geliştirdim.',
+  interview:['Grid seçimini filtreleme, sayfalama ve dışa aktarma ihtiyaçları üzerinden anlat.','Dashboard düzeninin ve Blockly çalışma alanının yerelde nasıl saklandığını açıkla.'],
+  next:['Her demo için kısa bir kullanım senaryosu ve çalıştırma adımı hazırla.','Tamamlanan ve deneysel kalan özellikleri ayrı belirt.'],sources:[]
+ };
+ return {...base,id:previous?.id||p.id,title:p.title,course:p.subtitle,summary:p.description,tech:p.tags,
+  period:p.period,portfolioMeta:p.meta,portfolioDescription:p.description,
+  sources:[source('My-portfolio · proje açıklaması', 'https://doruk-yesil.github.io/my-portfolio/#projects',p.description),
+   ...(p.links||[]).map(l=>source(l.label||'GitHub proje deposu',l.href,'Portfolyodaki proje bağlantısı; '+(l.private?'özel depo, erişim yetkisi gerekir.':'proje kaynağı ve geliştirme bağlamı.'),!!l.private)),...base.sources]
+ };
+});
+
 const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const list=items=>`<ul>${items.map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul>`;
 const faq=(question,body,open=false)=>`<details class="project-faq"${open?' open':''}><summary>${escapeHTML(question)}</summary><div class="project-answer">${body}</div></details>`;
@@ -138,7 +159,8 @@ export function renderProjectResults(projects){return projects.map(p=>`<a class=
 export function renderProjects(selectedId=null){
  const cards=projects=>projects.map(p=>`<details class="academic-project" id="project-${p.id}" name="academic-project"${p.id===selectedId?' open':''}>
  <summary><span class="project-summary-main"><span class="project-course">${escapeHTML(p.course)}</span><strong>${escapeHTML(p.title)}</strong><span class="project-excerpt">${escapeHTML(p.summary)}</span></span><span class="project-plus" aria-hidden="true">+</span></summary>
- <div class="project-content"><div class="project-meta"><span>${escapeHTML(p.evidence)}</span><span>İnceleme: ${PROJECTS_CHECKED_AT}</span></div><div class="project-tech" aria-label="Kullanılan teknolojiler">${p.tech.map(t=>`<span>${escapeHTML(t)}</span>`).join('')}</div>
+ <div class="project-content"><div class="project-meta"><span>${escapeHTML(p.period)}</span><span>${escapeHTML(p.portfolioMeta)}</span><span>İnceleme: ${PROJECTS_CHECKED_AT}</span></div><div class="project-tech" aria-label="Kullanılan teknolojiler">${p.tech.map(t=>`<span>${escapeHTML(t)}</span>`).join('')}</div>
+ ${faq('Portfolyodaki proje açıklaması',`<p>${escapeHTML(p.portfolioDescription)}</p>`,true)}
  ${faq('Ne amaçla yapıldı?',`<p>${escapeHTML(p.purpose)}</p>`,true)}
  ${faq('Hangi teknoloji ve yöntemler kullanıldı?',list(p.approach))}
  ${faq('Ortaya ne çıktı? Sonuçları nasıl okumalıyım?',list(p.results))}
@@ -147,7 +169,7 @@ export function renderProjects(selectedId=null){
  ${faq('Tekrar geliştirmek istersem nereden devam ederim?',list(p.next))}
  ${faq('Kaynaklar ve doğrulama',p.sources.filter(s=>{try{return new URL(s.url).protocol==='https:';}catch{return false;}}).map(s=>`<article class="project-source"><a href="${escapeHTML(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(s.title)} <span aria-hidden="true">↗</span></a>${s.restricted?'<span class="project-source-access">Özel depo · GitHub erişimi gerekir</span>':''}<p>${escapeHTML(s.summary)}</p></article>`).join(''))}
  <a class="project-permalink" href="#view=projects&project=${p.id}">Bu projenin bağlantısını aç →</a></div></details>`).join('');
- return `<section class="collection-heading projects-heading"><span class="eyebrow">ÇALIŞMA ALANIM / PROJE ARŞİVİ</span><h1>Okul Projelerim</h1><p>Bir projeye tıkla; amacını, kullanılanları, sonuçlarını ve başvuruda nasıl anlatabileceğini aç. Her cevap kendi başlığı altında.</p><div class="project-overview"><span>${ACADEMIC_PROJECTS.length} proje</span><span>7 depo kaydı · 2 portfolyo kaydı</span><span>${PROJECTS_CHECKED_AT}</span></div></section>
+ return `<section class="collection-heading projects-heading"><span class="eyebrow">ÇALIŞMA ALANIM / PROJE ARŞİVİ</span><h1>Okul Projelerim</h1><p>Portfolyomdaki projeler ve açıklamaları. Bir projeye tıkla; teknolojileri, amacı, sonuçları ve başvuruda kullanabileceğin ayrıntıları aç.</p><div class="project-overview"><span>${ACADEMIC_PROJECTS.length} proje</span><span>My-portfolio ile aynı proje seçimi</span><span>${PROJECTS_CHECKED_AT}</span></div></section>
  <div class="projects-list">${groups.map(([id,title])=>`<section class="project-group" aria-labelledby="project-group-${id}"><h2 id="project-group-${id}">${title}</h2>${cards(ACADEMIC_PROJECTS.filter(p=>p.group===id))}</section>`).join('')}</div>
- <p class="project-footer-note">Özetler mevcut kod, kayıtlı çıktı ve portfolyo metinlerinden hazırlandı. Deneyler ve eski uygulamalar yeniden çalıştırılmadı. Kaynağı yalnız portfolyo olan kayıtlar ayrıca belirtildi.</p>`;
+ <p class="project-footer-note">Proje seçimi ve ana açıklamalar my-portfolio sitesinden 9 Kasım 2026 tarihinde aktarıldı. Ek teknik notlar önceki depo incelemesinden korunmuştur; deneyler yeniden çalıştırılmadı.</p>`;
 }
