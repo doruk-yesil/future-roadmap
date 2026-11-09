@@ -22,3 +22,11 @@ test('board exposes only three filters, inline dropdowns, add form and escaped p
  const s=createStore({storage:memory()});s.addJob('<script>','<img>');const html=renderJobsBoard(s.getState().jobs,jobFiltersFromParams(new URLSearchParams()));
  assert.equal((html.match(/data-job-filter /g)||[]).length,3);assert.equal((html.match(/data-job-edit=/g)||[]).length,3);assert.match(html,/job-add-form/);assert.match(html,/Kaydırılabilir/);assert.ok(!html.includes('<script>'));assert.match(html,/&lt;script&gt;/);assert.ok(!html.includes('jobs-role'));assert.ok(!html.includes('Doğrulanamayan'));
 });
+
+test('country options contain only user additions and existing entries, survive backup and escape text',()=>{
+ const s=createStore({storage:memory()});const name=s.addJobCountry('Almanya');assert.equal(s.addJobCountry('almanya'),name);
+ const j=s.addJob('Test','Dev');assert.equal(j.country,'');s.updateJob(j.id,{country:name});
+ const html=renderJobsBoard(s.getState().jobs,jobFiltersFromParams(new URLSearchParams()),null,[],s.getState().jobCountries);
+ assert.match(html,/Almanya/);assert.ok(!html.includes('Afganistan'));assert.match(html,/Ülke ekle/);
+ const restored=createStore({storage:memory()});restored.importBackup(s.exportBackup());assert.deepEqual(restored.getState().jobCountries,['Almanya']);
+});

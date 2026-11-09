@@ -1,14 +1,14 @@
-import {activeSections} from './sections.js?v=3.2.0';
-import {renderAgriculture,agriHref} from './agriculture.js?v=3.2.0';
-import {renderMasters,mastersHref} from './masters.js?v=3.2.0';
-import {createStore} from './state.js?v=3.2.0';
+import {activeSections} from './sections.js?v=3.2.1';
+import {renderAgriculture,agriHref} from './agriculture.js?v=3.2.1';
+import {renderMasters,mastersHref} from './masters.js?v=3.2.1';
+import {createStore} from './state.js?v=3.2.1';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.2.0';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.2.1';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
-import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.2.0';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.2.0';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.2.0';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.2.0';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.2.1';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.2.1';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.2.1';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.2.1';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -119,7 +119,7 @@ function renderRoute(){
  if(state.route==='food')return `<nav class="route-trail" aria-label="Yol içinde gezinme"><a href="#view=home">Genel bakış</a><span>›</span><span>Gıda</span></nav><section class="route-heading"><div><span class="eyebrow">ZİNCİR YEMEK SEKTÖRÜ</span><h1>Gıda</h1><p>Zincir restoranlar ve hızlı servis yemek işletmeleri.</p></div></section><div class="empty-state"><h2>Bu bölümün içeriği henüz eklenmedi.</h2><p>Nasıl ilerleyeceğini bir sonraki adımda belirleyeceğiz.</p></div>`;
  if(state.route==='agriculture'&&!state.selected&&!state.choice)return renderAgriculture(state.topic,new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='tech-study'&&!state.selected)return renderMasters(new URLSearchParams(location.hash.slice(1)));
- if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(personal.jobs||[],state.jobFilters,null,cvSummary)+(removedJob?'<button class="button quiet" data-action="undo-job">Silinen ilanı geri al</button>':'');
+ if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(personal.jobs||[],state.jobFilters,null,cvSummary,personal.jobCountries||[])+(removedJob?'<button class="button quiet" data-action="undo-job">Silinen ilanı geri al</button>':'');
  if(state.route==='china'&&state.topic==='product')return renderProductCatalog(PRODUCTS,expandedProductCategories,state.product);
  if(state.route==='china'&&state.topic==='supply'){
   const p=PRODUCTS.find(p=>p.id===state.product);
@@ -210,6 +210,7 @@ document.addEventListener('click',async event=>{
  case 'close-job':location.hash=jobsHref(state.jobFilters);break;
  case 'remove-job':{const job=personal.jobs.find(j=>j.id===id);if(job){store.removeJob(job.id);removedJob=job;refresh();toast('İlan silindi. Geri almak için Geri al düğmesini kullan.');}break;}
  case 'undo-job':if(removedJob){store.restoreJob(removedJob);removedJob=null;refresh();}break;
+ case 'job-country-add':openJobCountryForm();break;
  case 'jobs-clear':location.hash=jobsHref();break;
  case 'cv-choose':$('#cv-files')?.click();break;
  case 'cv-download':downloadCVRecord(await getCVFile(el.dataset.cv));break;
@@ -245,7 +246,7 @@ document.addEventListener('input',event=>{
 document.addEventListener('change',async event=>{
  if(event.target.matches('[data-agri-filter]')){updateAgriFilters();return;}
  if(event.target.matches('[data-master-filter]')){updateMasterFilters();return;}
- if(event.target.matches('[data-job-edit]')){try{store.updateJob(event.target.dataset.id,{[event.target.dataset.jobEdit]:event.target.value});refresh();}catch(e){toast(e.message);}return;}
+ if(event.target.matches('[data-job-edit]')){if(event.target.dataset.jobEdit==='country'&&event.target.value==='__add_country__'){const id=event.target.dataset.id;refresh();openJobCountryForm(id);return;}try{store.updateJob(event.target.dataset.id,{[event.target.dataset.jobEdit]:event.target.value});refresh();}catch(e){toast(e.message);}return;}
  if(event.target.matches('[data-job-filter]')){updateJobFilters();return;}
  if(event.target.id==='cv-files'){
   const files=Array.from(event.target.files);event.target.value='';if(!files.length)return;
@@ -256,6 +257,7 @@ document.addEventListener('change',async event=>{
 document.addEventListener('submit',event=>{
  if(event.target.id==='agri-filters'){event.preventDefault();updateAgriFilters();return;}
  if(event.target.id==='master-filters'){event.preventDefault();updateMasterFilters();return;}
+ if(event.target.id==='job-country-form'){event.preventDefault();try{const country=store.addJobCountry($('#new-country-name').value);const id=event.target.dataset.jobId;if(id)store.updateJob(id,{country});$('#modal-root').innerHTML='';refresh();}catch(e){toast(e.message);}return;}
  if(event.target.id==='job-add-form'){event.preventDefault();try{const record=store.addJob($('#new-job-company').value,$('#new-job-title').value);history.replaceState(null,'',jobsHref());state.jobFilters=jobFiltersFromParams(new URLSearchParams());refresh();$('#new-job-company')?.focus();toast(record.company+' eklendi.');}catch(e){toast(e.message);}return;}
  if(event.target.id==='task-form'){event.preventDefault();try{store.addTask($('#task-text').value);refresh();toast('Yeni görev eklendi.');}catch(e){toast(e.message);}}
  if(event.target.id==='edit-form'){
@@ -299,6 +301,9 @@ function updateMasterFilters(){
  const f=Object.fromEntries(new FormData(document.getElementById('master-filters')));
  history.replaceState(null,'',mastersHref(f));render();
  const next=focus&&document.getElementById(focus);if(next){next.focus();if(caret!==null)next.setSelectionRange(caret,caret);}
+}
+function openJobCountryForm(jobId=''){
+ $('#modal-root').innerHTML=`<div class="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="country-add-title"><h2 id="country-add-title">Ülke ekle</h2><form id="job-country-form" data-job-id="${esc(jobId)}"><label class="job-query-label" for="new-country-name"><span>Ülke adı</span><input id="new-country-name" placeholder="Örn. Türkiye" maxlength="100" required></label><div class="detail-buttons"><button class="button primary" type="submit">Ülkeyi ekle</button><button class="button quiet" type="button" data-action="cancel-import">Vazgeç</button></div></form></section></div>`;$('#new-country-name').focus();
 }
 function updateJobFilters(){
  const ids={country:'jobs-country',model:'jobs-model',application:'jobs-application'};

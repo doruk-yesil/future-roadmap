@@ -9,7 +9,7 @@ let taskSequence = 0;
 const now = () => new Date().toISOString();
 const clone = value => JSON.parse(JSON.stringify(value));
 const fail = message => { throw new Error(message); };
-const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], updatedAt: now() });
+const freshState = () => ({ version: 1, nodes: {}, tasks: [], jobs: [], jobCountries: [], updatedAt: now() });
 
 function object(value, label) {
   if (!value || typeof value !== 'object' || Array.isArray(value) ||
@@ -110,14 +110,14 @@ function node(value) {
 
 function manualJob(value) {
  keys(value,['id','company','title','country','workModel','application'],'İş ilanı');
- if(!/^[A-Z]{2}$/.test(value.country)) fail('İlan ülkesi geçersiz.');
+ string(value.country,100,'İlan ülkesi');
  if(!['onsite','hybrid','remote'].includes(value.workModel)) fail('Çalışma şekli geçersiz.');
  if(!['not_applied','applied','interview_1','interview_2','test_1','test_2','offer','rejected','withdrawn'].includes(value.application)) fail('Başvuru durumu geçersiz.');
  return {id:identifier(value.id),company:string(value.company,200,'Şirket adı',false).trim(),title:string(value.title,300,'İş başlığı',false).trim(),country:value.country,workModel:value.workModel,application:value.application};
 }
 
 function validateState(value, validNodeIds) {
-  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'updatedAt'], 'Durum');
+  keys(value, ['version', 'nodes', 'tasks', 'jobs', 'jobCountries', 'updatedAt'], 'Durum');
   if (value.version !== 1) fail('Bu yedek sürümü desteklenmiyor.');
   object(value.nodes, 'Kartlar');
   if (Object.keys(value.nodes).length > MAX_ITEMS || !Array.isArray(value.tasks) || value.tasks.length > MAX_ITEMS) fail('Yedekte çok fazla kart veya görev var.');
@@ -141,7 +141,9 @@ function validateState(value, validNodeIds) {
   });
   const jobs = (value.jobs ?? []).map(manualJob);
   if (jobs.length > MAX_ITEMS || new Set(jobs.map(j=>j.id)).size !== jobs.length) fail('İlan sayısı veya kimlikleri geçersiz.');
-  return { version: 1, nodes, tasks, jobs, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
+  const jobCountries=(value.jobCountries??[]).map(c=>string(c,100,'Ülke',false));
+  if(jobCountries.length>1000) fail('Çok fazla ülke var.');
+  return { version: 1, nodes, tasks, jobs, jobCountries, updatedAt: date(value.updatedAt, 'Güncelleme tarihi') };
 }
 
 export function createStore(options = {}) {
@@ -226,9 +228,16 @@ export function createStore(options = {}) {
       if (!state.tasks.some(item => item.id === id)) fail('Görev bulunamadı.');
       return commit({ ...clone(state), tasks: state.tasks.filter(item => item.id !== id).map(clone) });
     },
+    addJobCountry(value) {
+      const name=string(value,100,'Ülke adı',false).trim();
+      const existing=state.jobCountries.find(c=>c.toLocaleLowerCase('tr-TR')===name.toLocaleLowerCase('tr-TR'));
+      if(existing)return existing;
+      if(state.jobCountries.length>=1000)fail('Ülke sınırına ulaşıldı.');
+      commit({...clone(state),jobCountries:[...state.jobCountries,name]});return name;
+    },
     addJob(company,title) {
       if(state.jobs.length>=MAX_ITEMS) fail('İlan sınırına ulaşıldı.');
-      const record=manualJob({id:globalThis.crypto?.randomUUID?.()||`job-${Date.now()}-${++taskSequence}`,company,title,country:'TR',workModel:'onsite',application:'not_applied'});
+      const record=manualJob({id:globalThis.crypto?.randomUUID?.()||`job-${Date.now()}-${++taskSequence}`,company,title,country:'',workModel:'onsite',application:'not_applied'});
       commit({...clone(state),jobs:[...state.jobs,record]}); return clone(record);
     },
     updateJob(id,patch) {
