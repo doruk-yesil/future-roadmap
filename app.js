@@ -1,5 +1,5 @@
 import {renderFoodFairs,foodFairHref} from './food-fairs.js?v=3.8.0';
-import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.8.0';
+import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.8.2';
 import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.8.0';
 import {activeSections} from './sections.js?v=3.8.0';
 import {renderAgriculture,agriHref} from './agriculture.js?v=3.8.0';

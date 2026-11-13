@@ -50,24 +50,24 @@ test('only named US agriculture master card links to separate US list; removed h
  const card={id:'mine',title:'Amerikada Master Agriculture',description:'',notes:''};assert.ok(isUSAgricultureMasterCard(card));
  const html=renderManualAgriculture([card]);assert.match(html,/study=us-masters/);assert.ok(!html.includes('master-mini-card'));assert.ok(!html.includes('route=career'));
  const other=renderManualAgriculture([{...card,title:'Çiftlik'}]);assert.ok(!other.includes('study=us-masters'));assert.match(other,/card=mine/);
- assert.equal(US_AGRI_MASTERS.length,4);for(const p of US_AGRI_MASTERS){assert.ok(p.entry&&p.transition);for(const source of p.sources)assert.equal(new URL(source[1]).protocol,'https:');}
+ assert.ok(US_AGRI_MASTERS.length>=25);for(const p of US_AGRI_MASTERS){assert.ok(p.entry&&p.transition);for(const source of p.sources)assert.equal(new URL(source[1]).protocol,'https:');}
  const list=renderUSAgricultureMasters('mine');assert.match(list,/ABD tarım masterları listesi/);assert.match(list,/card=mine/);assert.match(list,/Cornell University/);assert.ok(!list.includes('Georgia Tech'));
 });
 
 test('US master overrides and custom programs persist and remain included in compatible backups',()=>{
  const m=new Map(),storage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)},s=createStore({storage});
- s.saveUSAgriProgram('cornell-cea',{application:'eligible',notes:'Sorulacaklar',description:'Kısa açıklama',usState:'New York'});
+ s.saveUSAgriProgram('illinois-mansc',{application:'eligible',notes:'Sorulacaklar',description:'Kısa açıklama',usState:'Illinois'});
  s.saveUSAgriProgram('my-program',{custom:true,school:'Yeni Üniversite',program:'Agriculture MS',usState:'Texas',application:'conditional'});
  const restored=createStore({storage});assert.equal(restored.getState().usAgriPrograms[0].notes,'Sorulacaklar');
- const other=createStore({storage:null});other.importBackup(s.exportBackup());const rows=mergeUSAgriPrograms(other.getState().usAgriPrograms);assert.equal(rows.length,5);
- assert.equal(filterUSAgriPrograms(rows,{usState:'New York',application:'eligible'}).length,1);
+ const other=createStore({storage:null});other.importBackup(s.exportBackup());const rows=mergeUSAgriPrograms(other.getState().usAgriPrograms);assert.equal(rows.length,US_AGRI_MASTERS.length+1);
+ assert.equal(filterUSAgriPrograms(rows,{usState:'Illinois',application:'eligible'}).length,1);
  assert.equal(filterUSAgriPrograms(rows,{usState:'Texas',application:'eligible'}).length,0);
  assert.throws(()=>s.saveUSAgriProgram('my-program',{application:'fake'}));assert.throws(()=>s.saveUSAgriProgram('my-program',{applicationUrl:'javascript:alert(1)'}));
  const old=s.exportBackup();delete old.state.usAgriPrograms;other.importBackup(old);assert.deepEqual(other.getState().usAgriPrograms,[]);
 });
 test('master rows have three inline tabs and notes stay editable while other information requires edit mode',()=>{
- const p=mergeUSAgriPrograms([{id:'cornell-cea',notes:'<script>not</script>'}])[0];
- const view=renderUSAgricultureMasters(null,[{id:'cornell-cea',notes:'<script>not</script>'}]);
+ const p=mergeUSAgriPrograms([{id:'illinois-mansc',notes:'<script>not</script>'}])[0];
+ const view=renderUSAgricultureMasters(null,[{id:'illinois-mansc',notes:'<script>not</script>'}]);
  assert.match(view,/data-usm-filter/);assert.match(view,/Bilgileri düzenle/);assert.match(view,/role="tablist"/);assert.match(view,/Program bilgisi/);assert.match(view,/Gereklilikler/);
  assert.match(view,/data-usm-edit="notes"/);assert.ok(!view.includes('data-usm-draft='));assert.ok(!view.includes('Tüm detaylar'));assert.ok(!view.includes('role="dialog"'));assert.equal(renderUSAgriMasterDetail(p),'');
  const ui={drafts:new Map([[p.id,createUSMasterDraft(p)]]),tabs:new Map([[p.id,'program']])};
@@ -89,20 +89,20 @@ test('program creation is inline like the jobs form and uses entered country/sta
  const html=renderUSAgricultureMasters();assert.match(html,/id="usm-add-form" class="job-add-form/);assert.ok(!html.includes('id="usm-new-country"'));assert.match(html,/id="usm-new-state"/);assert.match(html,/id="usm-new-application"/);assert.ok(!html.includes('data-action="usm-add"'));
  const s=createStore({storage:null});s.saveUSAgriProgram('manual',{custom:true,school:'Üniversite',program:'Tarım',country:'ABD',usState:'Texas',application:'eligible'});
  const record=mergeUSAgriPrograms(s.getState().usAgriPrograms).find(p=>p.id==='manual');assert.equal(record.country,'ABD');assert.equal(record.usState,'Texas');assert.equal(record.application,'eligible');
- assert.ok(!html.includes('<option value="Alabama"'));assert.ok(!html.includes('usm-country-suggestions'));
+ assert.ok(!html.includes('<option value="Alaska"'));assert.ok(!html.includes('usm-country-suggestions'));
 });
 
 test('deleted seeded and custom masters stay removed after reload and backup, and can be restored with notes',()=>{
  const m=new Map(),storage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)},s=createStore({storage});
- s.saveUSAgriProgram('cornell-cea',{notes:'Korunan not',deleted:true});
+ s.saveUSAgriProgram('illinois-mansc',{notes:'Korunan not',deleted:true});
  s.saveUSAgriProgram('custom-delete',{custom:true,school:'Test University',program:'MS',deleted:true});
  const restored=createStore({storage});
- assert.ok(!mergeUSAgriPrograms(restored.getState().usAgriPrograms).some(p=>['cornell-cea','custom-delete'].includes(p.id)));
+ assert.ok(!mergeUSAgriPrograms(restored.getState().usAgriPrograms).some(p=>['illinois-mansc','custom-delete'].includes(p.id)));
  const copy=createStore({storage:null});copy.importBackup(restored.exportBackup());
- assert.equal(mergeUSAgriPrograms(copy.getState().usAgriPrograms).length,3);
- copy.saveUSAgriProgram('cornell-cea',{deleted:false});
- assert.equal(mergeUSAgriPrograms(copy.getState().usAgriPrograms).find(p=>p.id==='cornell-cea').notes,'Korunan not');
- const view=renderUSAgricultureMasters(),editing=renderUSAgricultureMasters(null,[],{usState:'all',application:'all'},new Set(),{drafts:new Map([['cornell-cea',createUSMasterDraft(mergeUSAgriPrograms()[0])]])});
+ assert.equal(mergeUSAgriPrograms(copy.getState().usAgriPrograms).length,US_AGRI_MASTERS.length-1);
+ copy.saveUSAgriProgram('illinois-mansc',{deleted:false});
+ assert.equal(mergeUSAgriPrograms(copy.getState().usAgriPrograms).find(p=>p.id==='illinois-mansc').notes,'Korunan not');
+ const view=renderUSAgricultureMasters(),editing=renderUSAgricultureMasters(null,[],{usState:'all',application:'all'},new Set(),{drafts:new Map([['illinois-mansc',createUSMasterDraft(mergeUSAgriPrograms()[0])]])});
  assert.ok(!view.includes('data-action="usm-delete"'));assert.match(editing,/data-action="usm-delete"/);
 });
 
@@ -125,4 +125,19 @@ test('fair calendar includes every event day across months and shows selected de
  assert.match(html,/Seçilen fuarın detayları/);assert.match(html,/Ne bulabilirim/);assert.match(html,/Nisan 2027/);
  assert.ok(!renderFairCalendar(FOOD_FAIRS,{month:'invalid',fair:'<script>'}).includes('<script>'));
  assert.match(renderFoodFairs('all',{mode:'list'}),/food-fair-list/);
+});
+
+
+test('livestock catalog replaces retired seeds without deleting their private stored notes',()=>{
+ const s=createStore({storage:null});
+ s.saveUSAgriProgram('cornell-cea',{notes:'Özel eski not',application:'applied'});
+ const before=s.exportBackup();const rows=mergeUSAgriPrograms(s.getState().usAgriPrograms);
+ assert.ok(!rows.some(p=>['cornell-cea','iowa-susag','arizona-be','ucd-iad'].includes(p.id)));
+ assert.deepEqual(s.exportBackup(),before);assert.equal(s.getState().usAgriPrograms[0].notes,'Özel eski not');
+ assert.ok(rows.every(p=>p.application==='review'));
+ assert.equal(new Set(rows.map(p=>p.id)).size,rows.length);
+ for(const p of rows){assert.ok(p.usState&&p.duration&&p.format&&p.entry&&p.timing&&p.researchNotes);assert.equal(p.programUrl,new URL(p.programUrl).href);}
+ assert.equal(rows.find(p=>p.id==='illinois-mansc').usState,'Illinois');
+ assert.ok(rows.find(p=>p.id==='illinois-mansc').duration.includes('32'));
+ assert.ok(rows.find(p=>p.id==='illinois-mansc').researchNotes);
 });
