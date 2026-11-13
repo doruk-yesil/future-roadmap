@@ -107,7 +107,7 @@ test('deleted seeded and custom masters stay removed after reload and backup, an
 });
 
 
-import {FOOD_FAIRS,fairMatches,renderFoodFairs} from './food-fairs.js';
+import {FOOD_FAIRS,fairMatches,renderFoodFairs,fairsOnDay,renderFairCalendar} from './food-fairs.js';
 test('food fairs include early equipment events and keep packaging separate from ovens',()=>{
  assert.equal(new Set(FOOD_FAIRS.map(f=>f.id)).size,FOOD_FAIRS.length);
  for(const id of ['fhc-2026','interpack-2026','gz-hotel-2026'])assert.ok(FOOD_FAIRS.find(f=>f.id===id).start<'2027-01-01');
@@ -116,4 +116,13 @@ test('food fairs include early equipment events and keep packaging separate from
  assert.ok(!renderFoodFairs('baking').includes('Sino-Pack + PACKINNO 2027'));
  assert.match(renderFoodFairs(),/teyit gerekli/);
  assert.match(renderManualAgriculture([],'food'),new RegExp(FOOD_FAIRS.length+' fuarı incele'));
+});
+
+test('fair calendar includes every event day across months and shows selected details safely',()=>{
+ const march=fairsOnDay(FOOD_FAIRS,'2027-03-30'),april=fairsOnDay(FOOD_FAIRS,'2027-04-02');
+ assert.ok(march.some(f=>f.id==='hotelex'));assert.ok(april.some(f=>f.id==='hotelex'));assert.ok(!fairsOnDay(FOOD_FAIRS,'2027-04-03').some(f=>f.id==='hotelex'));
+ const html=renderFairCalendar(FOOD_FAIRS,{month:'2027-04',fair:'hotelex'});
+ assert.match(html,/Seçilen fuarın detayları/);assert.match(html,/Ne bulabilirim/);assert.match(html,/Nisan 2027/);
+ assert.ok(!renderFairCalendar(FOOD_FAIRS,{month:'invalid',fair:'<script>'}).includes('<script>'));
+ assert.match(renderFoodFairs('all',{mode:'list'}),/food-fair-list/);
 });

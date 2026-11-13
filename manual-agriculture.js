@@ -1,5 +1,5 @@
-import {FOOD_FAIRS} from './food-fairs.js?v=3.7.7';
-import {isUSAgricultureMasterCard,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.7.7';
+import {FOOD_FAIRS} from './food-fairs.js?v=3.8.0';
+import {isUSAgricultureMasterCard,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.8.0';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function agricultureCardHref(id,route='agriculture'){return '#'+new URLSearchParams({view:'route',route,...(id?{card:id}:{})});}
 const chinaFairCard=`<a class="option-card manual-agriculture-card" href="#view=route&route=food&fairs=china"><span class="option-icon" aria-hidden="true">✧</span><strong>Çin fuarı</strong><span class="option-summary">Fırın, hamur işleme ve zincir mutfak ekipmanları: tarihler, yerler ve resmî bağlantılar.</span><span class="option-open">${FOOD_FAIRS.length} fuarı incele →</span></a>`;

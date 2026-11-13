@@ -1,17 +1,17 @@
-import {renderFoodFairs} from './food-fairs.js?v=3.7.7';
-import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.7.7';
-import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.7.7';
-import {activeSections} from './sections.js?v=3.7.7';
-import {renderAgriculture,agriHref} from './agriculture.js?v=3.7.7';
-import {renderMasters,mastersHref} from './masters.js?v=3.7.7';
-import {createStore} from './state.js?v=3.7.7';
+import {renderFoodFairs,foodFairHref} from './food-fairs.js?v=3.8.0';
+import {renderUSAgricultureMasters,mergeUSAgriPrograms,createUSMasterDraft,usMasterFilters,usAgricultureMastersHref} from './us-agriculture-masters.js?v=3.8.0';
+import {renderManualAgriculture,renderAgricultureCard,agricultureCardHref} from './manual-agriculture.js?v=3.8.0';
+import {activeSections} from './sections.js?v=3.8.0';
+import {renderAgriculture,agriHref} from './agriculture.js?v=3.8.0';
+import {renderMasters,mastersHref} from './masters.js?v=3.8.0';
+import {createStore} from './state.js?v=3.8.0';
 import {relationLabels,searchNodes} from './graph.js';
-import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.7.7';
+import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.8.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
-import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.7.7';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.7.7';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.7.7';
-import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.7.7';
+import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.8.0';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.8.0';
+import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.8.0';
+import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.8.0';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -42,7 +42,7 @@ function navigate(view,route=null,topic=null,choice=null,node=null){
 function readRoute(){
  const previousProduct=state.product;
  const params=new URLSearchParams(location.hash.slice(1));
- state.foodFairs=params.get('fairs')==='china';state.foodFairType=params.get('equipment')||'all';state.product=params.get('product');state.agricultureCard=params.get('card');state.agriMasters=params.get('study')==='us-masters';state.agriMastersFrom=params.get('fromCard');state.usMasterProgram=null;if(params.get('program'))openedUSMasterPrograms.add(params.get('program'));state.usMasterFilters=usMasterFilters(params);
+ state.foodFairs=params.get('fairs')==='china';state.foodFairType=params.get('equipment')||'all';state.foodFairUI={mode:params.get('display'),month:params.get('month')||'2026-11',fair:params.get('fair')};state.product=params.get('product');state.agricultureCard=params.get('card');state.agriMasters=params.get('study')==='us-masters';state.agriMastersFrom=params.get('fromCard');state.usMasterProgram=null;if(params.get('program'))openedUSMasterPrograms.add(params.get('program'));state.usMasterFilters=usMasterFilters(params);
  state.job=params.get('job');state.jobFilters=jobFiltersFromParams(params);
  state.view=params.get('view')||'home';state.project=params.get('project');state.route=params.get('route');state.topic=params.get('topic');state.choice=params.get('choice');state.variant=params.get('variant');state.selected=params.get('node');state.country=COUNTRIES[params.get('country')]?params.get('country'):'all';state.editing=false;state.sidebar=false;
  const aliases={cyber:['career','cyber'],masters:['career','tech-study'],us:['agriculture','agri-study'],uae:['agriculture',null]};
@@ -128,7 +128,7 @@ function choiceCard(c){
 }
 function renderRoute(){
  if(state.route==='agriculture'&&state.agriMasters)return renderUSAgricultureMasters(personal.agricultureCards.some(c=>c.id===state.agriMastersFrom)?state.agriMastersFrom:null,personal.usAgriPrograms,state.usMasterFilters,openedUSMasterPrograms,usMasterUI)+(removedUSMaster?'<button class="button quiet" data-action="usm-undo-delete">Silinen programı geri al</button>':'');
- if(state.route==='food'&&state.foodFairs)return renderFoodFairs(state.foodFairType);
+ if(state.route==='food'&&state.foodFairs)return renderFoodFairs(state.foodFairType,state.foodFairUI);
  if(['agriculture','food'].includes(state.route))return renderManualAgriculture(personalCardList(),state.route)+(removedAgricultureCard?.route===state.route?'<button class="button quiet" data-action="undo-agriculture-card">Silinen kartı geri al</button>':'');
  if(state.route==='career'&&state.topic==='tech-study'&&!state.selected)return renderMasters(new URLSearchParams(location.hash.slice(1)));
  if(state.route==='career'&&state.topic==='jobs')return renderJobsBoard(personal.jobs||[],state.jobFilters,null,cvSummary,personal.jobCountries||[],openedJobs)+(removedJob?'<button class="button quiet" data-action="undo-job">Silinen ilanı geri al</button>':'');
@@ -268,7 +268,8 @@ document.addEventListener('input',event=>{
  }
 });
 document.addEventListener('change',async event=>{
- if(event.target.id==='food-fair-equipment'){location.hash='#view=route&route=food&fairs=china&equipment='+encodeURIComponent(event.target.value);return;}
+ if(event.target.id==='food-fair-month'){location.hash=foodFairHref({type:state.foodFairType,...state.foodFairUI,month:event.target.value,fair:null});return;}
+ if(event.target.id==='food-fair-equipment'){location.hash=foodFairHref({type:event.target.value,...state.foodFairUI,fair:null});return;}
  if(event.target.matches('[data-agri-filter]')){updateAgriFilters();return;}
  if(event.target.matches('[data-master-filter]')){updateMasterFilters();return;}
  if(event.target.matches('input[type="url"][data-usm-edit]')){saveUSMasterField(event.target,false);return;}
