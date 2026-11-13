@@ -106,3 +106,14 @@ test('deleted seeded and custom masters stay removed after reload and backup, an
  assert.ok(!view.includes('data-action="usm-delete"'));assert.match(editing,/data-action="usm-delete"/);
 });
 
+
+import {FOOD_FAIRS,fairMatches,renderFoodFairs} from './food-fairs.js';
+test('food fairs include early equipment events and keep packaging separate from ovens',()=>{
+ assert.equal(new Set(FOOD_FAIRS.map(f=>f.id)).size,FOOD_FAIRS.length);
+ for(const id of ['fhc-2026','interpack-2026','gz-hotel-2026'])assert.ok(FOOD_FAIRS.find(f=>f.id===id).start<'2027-01-01');
+ assert.equal(fairMatches(FOOD_FAIRS.find(f=>f.id==='sinopack-2027'),'baking'),false);
+ assert.equal(fairMatches(FOOD_FAIRS.find(f=>f.id==='bakery-china'),'baking'),true);
+ assert.ok(!renderFoodFairs('baking').includes('Sino-Pack + PACKINNO 2027'));
+ assert.match(renderFoodFairs(),/teyit gerekli/);
+ assert.match(renderManualAgriculture([],'food'),new RegExp(FOOD_FAIRS.length+' fuarı incele'));
+});
