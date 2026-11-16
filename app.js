@@ -9,8 +9,8 @@ import {relationLabels,searchNodes} from './graph.js';
 import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.8.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
 import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.8.0';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=20261117-hide-rejected';
-import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.8.0';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=20261117-ma-files';
+import {getCVSummary,importCVFiles,importAcademicRecords,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=20261117-ma-files';
 import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.8.0';
 
 const $=s=>document.querySelector(s);
@@ -101,14 +101,14 @@ function render(){
  const product=state.view==='route'&&state.route==='china'&&state.topic==='product'&&state.product?PRODUCTS.find(p=>p.id===state.product):null;
  const agricultureCard=state.view==='route'&&['agriculture','food'].includes(state.route)?personalCardList().find(c=>c.id===state.agricultureCard):null;
  const panel=Boolean(selected||choice||job||product||agricultureCard);
- const title=state.view==='home'?'Genel bakış':state.view==='route'?(state.route==='career'&&state.topic==='jobs'?'İş İlanları':state.route==='career'&&state.topic==='tech-study'?'Master opsiyonları':route?.name):({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım',projects:'Okul Projelerim',cv:'CV dosyalarım',chinese:'Çince öğrenme planı'})[state.view];
+ const title=state.view==='home'?'Genel bakış':state.view==='route'?(state.route==='career'&&state.topic==='jobs'?'İş İlanları':state.route==='career'&&state.topic==='tech-study'?'Master opsiyonları':route?.name):({favorites:'Favorilerim',tasks:'Yapılacaklarım',search:'Haritada ara',settings:'Yedekleme & kullanım',projects:'Okul Projelerim',cv:'Ma files',chinese:'Çince öğrenme planı'})[state.view];
  document.title=`${title} · Future`;
  $('#app').className='app-shell'+(panel?' detail-open':'');
  $('#app').innerHTML=`<aside class="sidebar ${state.sidebar?'open':''}" aria-label="Ana gezinme">
  <a class="brand" href="#view=home"><span class="brand-mark">F<span>·</span></span><span>future<span class="brand-caption">KENDİ YOLUNU ÇİZ</span></span></a>
  <div class="nav-section"><a class="nav-item ${state.view==='home'?'active':''}" href="#view=home">${icon('home')}<span>Genel bakış</span></a></div>
  <div class="nav-section"><span class="nav-label">YOL HARİTALARIM</span>${ROUTES.filter(r=>!r.secondary).map(r=>`<a href="${href(r.id)}" class="nav-item ${state.view==='route'&&route?.id===r.id?'active':''}">${icon(r.icon)}<span>${esc(r.name)}</span></a>`).join('')}</div>
- <div class="nav-section"><span class="nav-label">ÇALIŞMA ALANIM</span><a class="nav-item ${state.view==='chinese'?'active':''}" href="#view=chinese">${icon('globe')}<span>Çince öğrenme planı</span></a><a class="nav-item projects-nav-link ${state.view==='projects'?'active':''}" href="#view=projects">${icon('study')}<span>Okul Projelerim</span></a><a class="nav-item ${state.view==='cv'?'active':''}" href="#view=cv">${icon('list')}<span>CV dosyalarım</span></a><a class="nav-item ${state.view==='tasks'?'active':''}" href="#view=tasks">${icon('check')}<span>Yapılacaklarım</span><span class="nav-count">${personal.tasks.filter(t=>!t.done).length}</span></a></div>
+ <div class="nav-section"><span class="nav-label">ÇALIŞMA ALANIM</span><a class="nav-item ${state.view==='chinese'?'active':''}" href="#view=chinese">${icon('globe')}<span>Çince öğrenme planı</span></a><a class="nav-item projects-nav-link ${state.view==='projects'?'active':''}" href="#view=projects">${icon('study')}<span>Okul Projelerim</span></a><a class="nav-item ${state.view==='cv'?'active':''}" href="#view=cv">${icon('list')}<span>Ma files</span></a><a class="nav-item ${state.view==='tasks'?'active':''}" href="#view=tasks">${icon('check')}<span>Yapılacaklarım</span><span class="nav-count">${personal.tasks.filter(t=>!t.done).length}</span></a></div>
  <div class="sidebar-bottom"><a class="nav-item" href="#view=settings">${icon('download')}<span>Yedekleme & kullanım</span></a><div class="local-note"><span class="local-dot"></span> Notların bu tarayıcıda saklanır</div></div>
  </aside><button class="mobile-scrim ${state.sidebar?'open':''}" data-action="close-menu" aria-label="Menüyü kapat"></button>${panel?'<button class="drawer-scrim" data-action="close-detail" aria-label="Panelin dışından kapat"></button>':''}
  <div class="workspace"><header class="topbar"><button class="button icon mobile-nav-toggle" data-action="menu" aria-label="Menüyü aç">${icon('menu')}</button><nav class="breadcrumbs" aria-label="Sayfa yolu"><a href="#view=home">Çalışma alanım</a><span>/</span><strong>${esc(title)}</strong></nav><div class="topbar-actions"><label class="search-box">${icon('search',18)}<input type="search" id="search" aria-label="Tüm haritada ara" placeholder="Bir fikir, şirket veya koşul ara…" value="${esc(state.query)}"><kbd>/</kbd></label><button class="button icon backup-top" data-action="export" aria-label="Yedeğini indir" title="Yedeğini indir">${icon('download')}</button></div></header>
@@ -232,6 +232,7 @@ document.addEventListener('click',async event=>{
  case 'remove-job':{const job=personal.jobs.find(j=>j.id===id);if(job){store.removeJob(job.id);removedJob=job;refresh();toast('İlan silindi. Geri almak için Geri al düğmesini kullan.');}break;}
  case 'undo-job':if(removedJob){store.restoreJob(removedJob);removedJob=null;refresh();}break;
  case 'jobs-clear':location.hash=jobsHref();break;
+ case 'academic-choose':$('#academic-files')?.click();break;
  case 'cv-choose':$('#cv-files')?.click();break;
  case 'cv-download':downloadCVRecord(await getCVFile(el.dataset.cv));break;
  case 'favorite':store.toggleFavorite(id);refresh();break;
@@ -277,6 +278,10 @@ document.addEventListener('change',async event=>{
  if(event.target.matches('[data-usm-filter]')){const f={usState:$('#usm-filter-state').value,city:event.target.id==='usm-filter-state'?'all':$('#usm-filter-city').value,application:$('#usm-filter-application').value};history.replaceState(null,'',usAgricultureMastersHref(state.agriMastersFrom,f));state.usMasterFilters=f;refresh();return;}
  if(event.target.matches('[data-job-edit]')){try{store.updateJob(event.target.dataset.id,{[event.target.dataset.jobEdit]:event.target.value});refresh();}catch(e){toast(e.message);}return;}
  if(event.target.matches('[data-job-filter], [data-job-filter-toggle]')){updateJobFilters();return;}
+ if(event.target.id==='academic-files'){
+  const file=event.target.files?.[0];event.target.value='';if(!file)return;
+  try{cvSummary=await importAcademicRecords(file);cvError='';refresh();toast('Transkript yalnız bu tarayıcıya kaydedildi.');}catch(error){cvError=error.message;refresh();toast(error.message);}return;
+ }
  if(event.target.id==='cv-files'){
   const files=Array.from(event.target.files);event.target.value='';if(!files.length)return;
   try{cvSummary=await importCVFiles(files);cvError='';refresh();toast('CV kaynakların yalnız bu tarayıcıya kaydedildi.');}catch(error){cvError=error.message;refresh();toast(error.message);}return;
