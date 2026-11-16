@@ -9,7 +9,7 @@ import {relationLabels,searchNodes} from './graph.js';
 import {createNavigation,contextForNode,matchesCountry,COUNTRIES,summarize} from './navigation.js?v=3.8.0';
 import {applyResearch,getActionSteps,searchableChoices} from './research.js';
 import {renderProjects,searchProjects,renderProjectResults} from './academic-projects.js?v=3.8.0';
-import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=3.8.0';
+import {renderJobsBoard,renderJobDetail,jobFiltersFromParams,jobsHref} from './jobs.js?v=20261117-hide-rejected';
 import {getCVSummary,importCVFiles,getCVFile,downloadCVRecord,renderCVVault} from './cv-vault.js?v=3.8.0';
 import {renderProductCatalog,renderProductDetail,renderProductSuppliers,productHref,searchProducts,renderProductResults} from './products.js?v=3.8.0';
 
@@ -276,7 +276,7 @@ document.addEventListener('change',async event=>{
  if(event.target.matches('select[data-usm-edit]')){saveUSMasterField(event.target,true);return;}
  if(event.target.matches('[data-usm-filter]')){const f={usState:$('#usm-filter-state').value,city:event.target.id==='usm-filter-state'?'all':$('#usm-filter-city').value,application:$('#usm-filter-application').value};history.replaceState(null,'',usAgricultureMastersHref(state.agriMastersFrom,f));state.usMasterFilters=f;refresh();return;}
  if(event.target.matches('[data-job-edit]')){try{store.updateJob(event.target.dataset.id,{[event.target.dataset.jobEdit]:event.target.value});refresh();}catch(e){toast(e.message);}return;}
- if(event.target.matches('[data-job-filter]')){updateJobFilters();return;}
+ if(event.target.matches('[data-job-filter], [data-job-filter-toggle]')){updateJobFilters();return;}
  if(event.target.id==='cv-files'){
   const files=Array.from(event.target.files);event.target.value='';if(!files.length)return;
   try{cvSummary=await importCVFiles(files);cvError='';refresh();toast('CV kaynakların yalnız bu tarayıcıya kaydedildi.');}catch(error){cvError=error.message;refresh();toast(error.message);}return;
@@ -345,6 +345,7 @@ function saveUSMasterField(field,rerender){
 function updateJobFilters(){
  const ids={country:'jobs-country',model:'jobs-model',application:'jobs-application'};
  const f={};for(const [key,id]of Object.entries(ids)){const field=document.getElementById(id);if(!field)return;f[key]=field.value;}
+ if(document.getElementById('jobs-hide-rejected')?.checked)f.hideRejected=true;
  const focus=document.activeElement?.id;const caret=focus==='jobs-query'?document.activeElement.selectionStart:null;
  const hash=jobsHref(f);history.replaceState(null,'',hash);state.jobFilters=jobFiltersFromParams(new URLSearchParams(hash.slice(1)));state.job=null;render();
  const field=focus&&document.getElementById(focus);if(field){field.focus();if(caret!==null)field.setSelectionRange(caret,caret);}

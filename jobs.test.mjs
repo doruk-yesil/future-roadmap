@@ -3,6 +3,19 @@ import assert from 'node:assert/strict';
 import {filterJobs,renderJobsBoard,jobFiltersFromParams,jobsHref} from './jobs.js';
 import {createStore} from './state.js';
 const memory=()=>{const m=new Map();return {getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)};};
+
+test('hide rejected is reversible, combines with filters, and never changes stored jobs',()=>{
+ const s=createStore({storage:memory()});
+ for(const status of ['rejected','applied','withdrawn'])s.addJob(status,'Developer',{country:'Türkiye',workModel:'remote',application:status});
+ const before=s.getState(),f={country:'Türkiye',model:'remote',application:'all',hideRejected:true};
+ assert.deepEqual(filterJobs(s.getState().jobs,f).map(j=>j.application),['applied','withdrawn']);
+ assert.equal(filterJobs(s.getState().jobs,{...f,hideRejected:false}).length,3);
+ assert.equal(filterJobs(s.getState().jobs,{...f,application:'rejected'}).length,0);
+ assert.deepEqual(jobFiltersFromParams(new URLSearchParams(jobsHref(f).slice(1))),f);
+ assert.ok(!jobsHref().includes('jh='));
+ assert.match(renderJobsBoard(s.getState().jobs,f),/data-job-filter-toggle checked/);
+ assert.deepEqual(s.getState(),before);
+});
 test('manual jobs persist edits and backup restore, with old backups supported',()=>{
  const storage=memory(),s=createStore({storage});const j=s.addJob('Zeta','Developer');
  s.updateJob(j.id,{country:'DE',workModel:'hybrid',application:'test_2'});
